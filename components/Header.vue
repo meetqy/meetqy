@@ -16,29 +16,41 @@
 </template>
 
 <script lang="ts" setup>
-const navs = [
+interface NavItem {
+  name: string;
+  url: string;
+  children?: NavItem[];
+}
+
+const navs: NavItem[] = [
   {
     name: "Home",
+    url: "",
     children: [],
   },
   {
     name: "Header Styles",
+    url: "",
     children: [],
   },
   {
     name: "Post Features",
+    url: "",
     children: [],
   },
   {
     name: "#Tag",
+    url: "",
     children: [],
   },
   {
     name: "Features",
+    url: "",
     children: [],
   },
   {
     name: "Contact",
+    url: "",
     children: [],
   },
 ];
