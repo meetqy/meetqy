@@ -1,5 +1,8 @@
 <template>
-  <header style="height: 170px" class="flex justify-between items-center">
+  <header
+    style="height: 170px"
+    class="flex justify-between items-center border-b-2 border-white border-opacity-25"
+  >
     <div class="flex items-end">
       <W class="fill-white" :size="32" />
       <C class="fill-white" :size="24" />

@@ -10,5 +10,6 @@ export default defineNuxtConfig({
       },
     },
   },
+  css: ["~/assets/iconfont.css"],
   app: {},
 });

@@ -1,5 +1,5 @@
 <template>
-  <div class="container m-auto">
+  <div class="m-auto container px-32">
     <Header />
 
     <NuxtPage />
@@ -8,6 +8,8 @@
 
 <style lang="postcss">
 body {
+  @apply font-mono;
+
   &::before {
     content: "";
     @apply fixed left-0 top-0 w-screen h-screen -z-10;
