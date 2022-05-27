@@ -4,7 +4,7 @@
     class="flex justify-between items-center border-b-2 border-white border-opacity-25"
   >
     <div class="flex items-end">
-      <W class="fill-white" :size="32" />
+      <W class="fill-black" :size="32" />
       <C class="fill-white" :size="24" />
       <A class="fill-white" :size="24" />
       <O class="fill-white" :size="24" />

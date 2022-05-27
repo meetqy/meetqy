@@ -40,11 +40,11 @@
       <div class="text-sm text-black text-opacity-60">
         <a href="javascript:;">
           <span class="mr-1">23719</span>
-          <i class="iconfont">&#xe8f4;</i>
+          <i class="iconfont" style="color: #e84e89">&#xe8f4;</i>
         </a>
         <a href="javascript:;" class="ml-4">
           <span class="mr-1">23719</span>
-          <i class="iconfont">&#xe8b5;</i>
+          <i class="iconfont" style="color: #e84e89">&#xe8b5;</i>
         </a>
       </div>
     </footer>
