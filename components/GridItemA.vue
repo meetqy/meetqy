@@ -1,5 +1,9 @@
 <template>
-  <article class="article-a" :style="`background-image:url(${props.bgUrl})`">
+  <article
+    class="article-a"
+    :style="`background-image:url(${props.bgUrl})`"
+    @click="$router.push('/posts')"
+  >
     <div class="tags">
       <a href="javascript:;">Solar System</a>
     </div>
@@ -45,7 +49,7 @@
 
 <script lang="ts" setup>
 interface Props {
-  bgUrl: string;
+  bgUrl?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
