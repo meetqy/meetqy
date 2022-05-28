@@ -113,6 +113,14 @@
   </div>
 </template>
 
+<script setup lang="ts">
+const { data } = useAsyncData("data", () =>
+  useBaseFetch("/api/posts?populate=headerImages")
+);
+
+console.log(data.value, "---");
+</script>
+
 <style lang="postcss" scoped>
 .bottom-aside {
   @apply grid grid-cols-3 gap-x-10 mt-10;

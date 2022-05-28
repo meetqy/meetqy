@@ -10,7 +10,7 @@
       <O class="fill-white" :size="24" />
     </div>
 
-    <ul class="text-white font-sans font-semibold text-lg flex">
+    <ul class="text-white text-lg flex">
       <li class="py-5 pl-2.5 pr-4 mr-4" v-for="item in navs" :key="item.name">
         <a href="/">{{ item.name }}</a>
       </li>
@@ -27,33 +27,18 @@ interface NavItem {
 
 const navs: NavItem[] = [
   {
-    name: "Home",
-    url: "",
+    name: "首页",
+    url: "/",
     children: [],
   },
   {
-    name: "Header Styles",
-    url: "",
+    name: "模板",
+    url: "/template",
     children: [],
   },
   {
-    name: "Post Features",
-    url: "",
-    children: [],
-  },
-  {
-    name: "#Tag",
-    url: "",
-    children: [],
-  },
-  {
-    name: "Features",
-    url: "",
-    children: [],
-  },
-  {
-    name: "Contact",
-    url: "",
+    name: "工具",
+    url: "/tools",
     children: [],
   },
 ];

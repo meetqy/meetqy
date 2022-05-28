@@ -65,6 +65,7 @@ const props = withDefaults(defineProps<Props>(), {
 <style lang="postcss">
 .article-b {
   @apply rounded-2xl relative bg-white z-10;
+  cursor: pointer;
   box-shadow: 0 3px 12px -1px rgb(7 10 25 / 5%),
     0 22px 27px -20px rgb(7 10 25 / 5%);
 
