@@ -15,7 +15,5 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/iconfont.css"],
-  app: {
-    cdnURL: "http://35.220.250.52:1337",
-  },
+  app: {},
 });
