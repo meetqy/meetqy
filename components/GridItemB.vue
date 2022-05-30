@@ -1,29 +1,38 @@
 <template>
-  <article class="article-b" @click="$router.push('/posts')">
-    <div class="tags">
-      <a href="javascript:;">Solar System</a>
+  <article class="article-b">
+    <div class="tags relative z-10">
+      <a
+        href="javascript:;"
+        :style="`color: ${tag.color};background-color: ${tag.bgColor}`"
+      >
+        {{ tag.name }}
+      </a>
     </div>
 
     <header>
-      <div
-        class="featured-image"
-        :style="`background-image:url(${props.bgUrl})`"
-      ></div>
+      <Swiper class="rounded-t-2xl" :modules="modules" :navigation="true">
+        <swiper-slide v-for="item in headerImages" :key="item">
+          <div
+            class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200"
+            :style="`background-image:url(${$cdn + item});height: 225px`"
+          />
+        </swiper-slide>
+      </Swiper>
+
       <div class="flex justify-center mt-5 flex-col items-center">
         <time class="flex items-center capitalize">
           <i class="text-2xl iconfont" style="color: #e84e89">&#xe8b4;</i>
-          <span class="ml-2 text-sm">June 5, 2019</span>
+          <span class="ml-2 text-sm">{{ time }}</span>
         </time>
       </div>
     </header>
 
-    <main class="text-center px-4">
+    <main class="text-center px-4" @click="$router.push('/posts')">
       <h1 class="title py-2 text-center">
-        Mars is the fourth planet from the Sun
+        {{ title }}
       </h1>
       <p class="text-opacity-60 text-black font-light text-center">
-        Mars is the fourth planet from the Sun and the second-smallest planet in
-        the Solar System after Mercury…
+        {{ desciption }}
       </p>
     </main>
 
@@ -35,15 +44,15 @@
             background-image: url('http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/avatar-2.jpg');
           "
         ></span>
-        <span class="author-name">Steve Kotchen</span>
+        <span class="author-name">Wcao</span>
       </a>
       <div class="text-sm text-black text-opacity-60">
         <a href="javascript:;">
-          <span class="mr-1">23719</span>
+          <span class="mr-1">{{ visit }}</span>
           <i class="iconfont" style="color: #e84e89">&#xe8f4;</i>
         </a>
         <a href="javascript:;" class="ml-4">
-          <span class="mr-1">23719</span>
+          <span class="mr-1">{{ comment }}</span>
           <i class="iconfont" style="color: #e84e89">&#xe8b5;</i>
         </a>
       </div>
@@ -52,17 +61,52 @@
 </template>
 
 <script lang="ts" setup>
+import { Tag } from "~~/composables/type";
+import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/navigation";
+import { NavigationOptions } from "swiper/types";
+
 interface Props {
-  bgUrl?: string;
+  title: string;
+  desciption: string;
+  time: string;
+  visit: number;
+  comment: number;
+  tag: Tag;
+  headerImages: string[];
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  bgUrl:
-    "http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/423994-PDRVB5-888-op.jpg",
-});
+const props = withDefaults(defineProps<Props>(), {});
+
+const $cdn = useCdnUrl();
+
+const modules = [Navigation];
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
+:deep(.swiper) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: #e84e89;
+    width: 36px;
+    height: 36px;
+    @apply flex items-center justify-center rounded-full;
+
+    &::after {
+      font-size: 18px;
+      color: #fff;
+    }
+  }
+
+  .swiper-button-next {
+    &::after {
+      position: relative;
+      left: 2px;
+    }
+  }
+}
 .article-b {
   @apply rounded-2xl relative bg-white z-10;
   cursor: pointer;
@@ -73,21 +117,13 @@ const props = withDefaults(defineProps<Props>(), {
     @apply absolute w-full -top-4 right-0 text-center;
 
     a {
-      @apply text-white rounded-3xl  font-semibold py-2 px-6;
-      background-color: #c580e3;
+      @apply rounded-3xl  font-semibold py-2 px-6;
     }
   }
 
   .title {
     @apply text-2xl mb-3 mt-3 font-semibold   text-center;
     letter-spacing: 0.6px;
-  }
-
-  header {
-    .featured-image {
-      @apply rounded-t-2xl bg-cover;
-      height: 225px;
-    }
   }
 
   footer {

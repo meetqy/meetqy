@@ -1,32 +1,18 @@
 <template>
   <div>
-    <div class="multi-columns">
-      <div class="block">
-        <grid-item-a
-          bg-url="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/8048-op.jpg"
+    <div class="multi-columns" v-if="posts">
+      <div class="block" v-for="post in posts" :key="post.id">
+        <grid-item-b
+          v-if="getCategory(post).name === '模板'"
+          :title="post.attributes.title"
+          :desciption="post.attributes.desciption"
+          :time="post.attributes.updatedAt.split('T')[0]"
+          :visit="post.attributes.visit"
+          :comment="post.attributes.comment"
+          :tag="getTags(post)"
+          :header-images="getHeaderImages(post)"
         />
       </div>
-      <div class="block"><grid-item-b /></div>
-      <div class="block"><grid-item-b /></div>
-      <div class="block">
-        <grid-item-a
-          bg-url="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-600x450.jpg"
-        />
-      </div>
-      <div class="block"><grid-item-b /></div>
-      <div class="block"><grid-item-b /></div>
-      <div class="block">
-        <grid-item-a
-          bg-url="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/8048-op.jpg"
-        />
-      </div>
-      <div class="block"><grid-item-b /></div>
-      <div class="block">
-        <grid-item-a
-          bg-url="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/8048-op.jpg"
-        />
-      </div>
-      <div class="block"><grid-item-b /></div>
     </div>
 
     <div class="paging">
@@ -113,12 +99,28 @@
   </div>
 </template>
 
-<script setup lang="ts">
-const { data } = useAsyncData("data", () =>
-  useBaseFetch("/api/posts?populate=headerImages")
+<script setup>
+const { data } = await useAsyncData("posts", () =>
+  useStrapi4().find("posts", {
+    populate: ["category", "headerImages", "tags"],
+  })
 );
 
-console.log(data.value, "---");
+const posts = computed(() => data.value.data);
+
+console.log(posts.value);
+
+const getTags = (post) => {
+  return post.attributes.tags.data[0].attributes;
+};
+
+const getCategory = (post) => {
+  return post.attributes.category.data.attributes;
+};
+
+const getHeaderImages = (post) => {
+  return post.attributes.headerImages.data.map((item) => item.attributes.url);
+};
 </script>
 
 <style lang="postcss" scoped>

@@ -2,7 +2,11 @@ import { defineNuxtConfig } from "nuxt";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi"],
+  strapi: {
+    entities: ["tag"],
+    url: "http://35.220.250.52:1337",
+  },
   build: {
     postcss: {
       postcssOptions: {
@@ -11,5 +15,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/iconfont.css"],
-  app: {},
+  app: {
+    cdnURL: "http://35.220.250.52:1337",
+  },
 });
