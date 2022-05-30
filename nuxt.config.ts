@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi"],
   strapi: {
     entities: ["tag"],
-    url: "http://35.220.250.52:1337",
+    url: "https://wcao.cc/strapi",
   },
   build: {
     postcss: {
