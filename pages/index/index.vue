@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <button @click="$router.push('/posts/1')">/posts/1</button> -->
     <div class="multi-columns" v-if="posts">
       <div class="block" v-for="post in posts" :key="post.id">
         <grid-item-b
@@ -11,6 +12,7 @@
           :comment="post.attributes.comment"
           :tag="getTags(post)"
           :header-images="getHeaderImages(post)"
+          :id="post.id + ''"
         />
       </div>
     </div>
@@ -107,8 +109,6 @@ const { data } = await useAsyncData("posts", () =>
 );
 
 const posts = computed(() => data.value.data);
-
-console.log(posts.value);
 
 const getTags = (post) => {
   return post.attributes.tags.data[0].attributes;

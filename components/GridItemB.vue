@@ -27,7 +27,7 @@
       </div>
     </header>
 
-    <main class="text-center px-4" @click="$router.push('/posts')">
+    <main class="text-center px-4" @click="$router.push('/posts/' + id)">
       <h1 class="title py-2 text-center">
         {{ title }}
       </h1>
@@ -40,11 +40,9 @@
       <a href="javascript:;" class="flex items-center">
         <span
           class="author-image"
-          style="
-            background-image: url('http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/avatar-2.jpg');
-          "
+          style="background-image: url('/avatar.jpg')"
         ></span>
-        <span class="author-name">Wcao</span>
+        <span class="author-name uppercase">wcao.cc</span>
       </a>
       <div class="text-sm text-black text-opacity-60">
         <a href="javascript:;">
@@ -66,9 +64,9 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
-import { NavigationOptions } from "swiper/types";
 
 interface Props {
+  id: string;
   title: string;
   desciption: string;
   time: string;
@@ -86,27 +84,6 @@ const modules = [Navigation];
 </script>
 
 <style lang="postcss" scoped>
-:deep(.swiper) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    background-color: #e84e89;
-    width: 36px;
-    height: 36px;
-    @apply flex items-center justify-center rounded-full;
-
-    &::after {
-      font-size: 18px;
-      color: #fff;
-    }
-  }
-
-  .swiper-button-next {
-    &::after {
-      position: relative;
-      left: 2px;
-    }
-  }
-}
 .article-b {
   @apply rounded-2xl relative bg-white z-10;
   cursor: pointer;

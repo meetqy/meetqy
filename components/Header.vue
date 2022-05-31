@@ -3,7 +3,7 @@
     style="height: 170px"
     class="flex justify-between items-center border-b-2 border-white border-opacity-25"
   >
-    <div class="flex items-end">
+    <div class="flex items-end cursor-pointer" @click="$router.push('/')">
       <W class="fill-black" :size="32" />
       <C class="fill-white" :size="24" />
       <A class="fill-white" :size="24" />
