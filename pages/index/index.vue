@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <NuxtLayout name="default">
     <!-- <button @click="$router.push('/posts/1')">/posts/1</button> -->
     <div class="multi-columns" v-if="posts">
       <div class="block" v-for="post in posts" :key="post.id">
@@ -98,7 +98,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </NuxtLayout>
 </template>
 
 <script setup>

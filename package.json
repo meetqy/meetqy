@@ -16,8 +16,10 @@
     "@nuxtjs/strapi": "^1.3.2",
     "@tailwindcss/typography": "^0.5.2",
     "@vueuse/core": "^8.5.0",
+    "codemirror": "^5.65.5",
     "highlight.js": "^11.5.1",
     "markdown-it": "^13.0.1",
+    "quicktype-core": "^6.0.71",
     "swiper": "^8.1.6"
   }
 }

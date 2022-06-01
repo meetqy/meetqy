@@ -1,11 +1,5 @@
 <template>
-  <div class="m-auto container px-32">
-    <Header />
-
-    <NuxtPage />
-
-    <Footer />
-  </div>
+  <NuxtPage />
 </template>
 
 <style lang="postcss">
@@ -23,34 +17,6 @@ body {
       #01b18e,
       #32b37b
     );
-  }
-}
-
-.prose {
-  max-width: 100%;
-}
-
-.swiper {
-  user-select: none;
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    background-color: #e84e89;
-    width: 36px;
-    height: 36px;
-    @apply flex items-center justify-center rounded-full;
-
-    &::after {
-      font-size: 18px;
-      color: #fff;
-    }
-  }
-
-  .swiper-button-next {
-    &::after {
-      position: relative;
-      left: 2px;
-    }
   }
 }
 </style>
