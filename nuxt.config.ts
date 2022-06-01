@@ -15,5 +15,9 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/iconfont.css"],
-  app: {},
+  app: {
+    head: {
+      title: "wcao.cc",
+    },
+  },
 });
