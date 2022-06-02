@@ -27,4 +27,17 @@ body {
     @apply py-1;
   }
 }
+
+.logo {
+  div {
+    @apply transition-all;
+    &:first-child {
+      @apply bg-gradient-to-r from-green-400 to-blue-500 fill-white;
+    }
+
+    &:last-child {
+      @apply text-white;
+    }
+  }
+}
 </style>

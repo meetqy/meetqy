@@ -75,17 +75,4 @@ const navs: NavItem[] = [
 ];
 </script>
 
-<style lang="postcss" scoped>
-.logo {
-  div {
-    @apply transition-all;
-    &:first-child {
-      @apply bg-gradient-to-r from-green-400 to-blue-500 fill-white;
-    }
-
-    &:last-child {
-      @apply text-white;
-    }
-  }
-}
-</style>
+<style lang="postcss" scoped></style>
