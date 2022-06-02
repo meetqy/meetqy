@@ -8,6 +8,12 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  titleTemplate: useTitle().title,
+});
+</script>
+
 <style lang="postcss">
 .prose {
   max-width: 100%;

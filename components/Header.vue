@@ -17,7 +17,7 @@
         <div
           class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full"
         >
-          <span class="font-serif font-semibold">{{ cao[7 % day] }} ,</span>
+          <span class="font-serif font-semibold">{{ cao }} ,</span>
         </div>
       </div>
 
@@ -25,6 +25,10 @@
         <span class="text-yellow-400">今天星期{{ week }} </span>
       </div>
     </div>
+
+    <span class="text-white underline">
+      <slot></slot>
+    </span>
 
     <ul class="text-white text-lg flex">
       <li class="py-5 pl-2.5 pr-4 mr-4" v-for="item in navs" :key="item.name">
@@ -50,15 +54,7 @@ interface NavItem {
   children?: NavItem[];
 }
 
-const cao = ["cao", "caō", "caó", "caǒ", "caò"];
-
-const day = new Date().getDay();
-
-const week = ["天", "一", "二", "三", "四", "五", "六"][day];
-
-useHead({
-  titleTemplate: (title) => `卧槽(w ${cao[7 % day]})，今天星期${week}`,
-});
+const { cao, week } = useTitle();
 
 const navs: NavItem[] = [
   {
