@@ -27,7 +27,7 @@
                 style="box-shadow: 2px 2px 5px 1px rgb(0 0 0 / 20%)"
                 src="/avatar.jpg"
               />
-              <span class="ml-4 uppercase"> wcao.cc </span>
+              <span class="ml-3"> meetqy </span>
             </a>
 
             <a href="javascript:;" class="ml-6">
@@ -47,7 +47,10 @@
           </div>
         </header>
 
-        <article class="4/12 mt-10 prose" v-html="content"></article>
+        <article
+          class="4/12 mt-10 prose prose-neutral prose-a:text-blue-500"
+          v-html="content"
+        />
 
         <div
           class="py-16 mt-12 flex justify-center items-center"
@@ -57,20 +60,8 @@
           "
         >
           <span class="text-lg font-semibold mr-5">Link:</span>
-          <div
-            class="inline-block bg-gray-200 bg-opacity-50 border rounded-xl px-4"
-          >
-            <input
-              class="bg-transparent outline-none text-sm text-black text-opacity-50"
-              style="width: 450px; height: 45px"
-              type="text"
-              disabled
-              :value="post.link"
-            />
-
-            <a href="javascript:;" class="pl-4" @click="copy()">
-              <i class="iconfont text-purple-400">&#xe8b4;</i>
-            </a>
+          <div class="inline-block bg-opacity-50 px-4 text-blue-500 underline">
+            <a :href="post.link">{{ post.link }}</a>
           </div>
         </div>
       </div>

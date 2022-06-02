@@ -42,7 +42,7 @@
           class="author-image"
           style="background-image: url('/avatar.jpg')"
         ></span>
-        <span class="author-name uppercase">wcao.cc</span>
+        <span class="author-name">meetqy</span>
       </a>
       <div class="text-sm text-black text-opacity-60">
         <a href="javascript:;">
