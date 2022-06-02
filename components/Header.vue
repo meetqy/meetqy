@@ -4,11 +4,26 @@
     class="flex justify-between items-center"
     :class="class"
   >
-    <div class="flex items-end cursor-pointer" @click="$router.push('/')">
-      <W class="fill-black" :size="32" />
-      <C class="fill-white" :size="24" />
-      <A class="fill-white" :size="24" />
-      <O class="fill-white" :size="24" />
+    <div class="flex items-end">
+      <div
+        class="flex items-center cursor-pointer logo"
+        @click="$router.push('/')"
+      >
+        <div
+          class="w-12 h-12 rounded-full transition-all flex items-center justify-center"
+        >
+          <W :size="30" />
+        </div>
+        <div
+          class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full"
+        >
+          <span class="font-serif font-semibold">{{ cao[7 % day] }} ,</span>
+        </div>
+      </div>
+
+      <div class="inline-flex h-12 items-center text-white text-2xl">
+        <span class="text-yellow-400">今天星期{{ week }} </span>
+      </div>
     </div>
 
     <ul class="text-white text-lg flex">
@@ -35,6 +50,16 @@ interface NavItem {
   children?: NavItem[];
 }
 
+const cao = ["cao", "caō", "caó", "caǒ", "caò"];
+
+const day = new Date().getDay();
+
+const week = ["天", "一", "二", "三", "四", "五", "六"][day];
+
+useHead({
+  titleTemplate: (title) => `卧槽(w ${cao[7 % day]})，今天星期${week}`,
+});
+
 const navs: NavItem[] = [
   {
     name: "首页",
@@ -53,3 +78,18 @@ const navs: NavItem[] = [
   },
 ];
 </script>
+
+<style lang="postcss" scoped>
+.logo {
+  div {
+    @apply transition-all;
+    &:first-child {
+      @apply bg-gradient-to-r from-green-400 to-blue-500 fill-white;
+    }
+
+    &:last-child {
+      @apply text-white;
+    }
+  }
+}
+</style>

@@ -14,10 +14,23 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  // (wo caò)、(wò cao)、(wǒ caó)、(wǒ caò)、(wō caō)、(wō caō)
   css: ["~/assets/iconfont.css"],
   app: {
     head: {
-      title: "wcao.cc",
+      title: " ",
+      meta: [
+        {
+          name: "keywords",
+          content: "web前端,flutter,uniapp,模板,template,flutter,前端工具,blog",
+        },
+        {
+          name: "description",
+          content:
+            "卧槽(wo caò),卧槽(wò cao),卧槽(wǒ caó),卧槽(wǒ caò),卧槽(wō caō),卧槽(wō caō)",
+        },
+      ],
     },
   },
 });
