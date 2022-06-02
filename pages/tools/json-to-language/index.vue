@@ -84,7 +84,7 @@ const setJsonMirror = (code: string) => {
   _jsonCodeMirror.setValue(code);
   setTimeout(() => {
     _jsonCodeMirror.refresh();
-  });
+  }, 50);
 };
 
 const setCodeMirror = async (code: string, languageItem: LanguageItem) => {
