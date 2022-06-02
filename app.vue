@@ -19,4 +19,12 @@ body {
     );
   }
 }
+
+.tag {
+  @apply px-4 py-2 text-white text-center rounded-full inline-block;
+
+  &.sm {
+    @apply py-1;
+  }
+}
 </style>

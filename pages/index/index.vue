@@ -68,32 +68,87 @@
 
       <!-- about me -->
       <div>
-        <p class="bottom-title">About me</p>
+        <p class="bottom-title">关于我</p>
         <div class="mt-5">
           <div class="flex">
             <img
               class="w-24 h-24 rounded-full border-4 border-cyan-500"
-              src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/avatar-op2.jpg"
-              alt=""
+              src="/avatar.jpg"
+              alt="meetqy"
             />
             <div class="ml-5 flex flex-col justify-center">
-              <p class="text-lg font-semibold text-white">Jonathan Doe</p>
-              <p class="text-white text-opacity-70 text-sm my-1">
-                Founder & Editor
+              <p class="text-lg font-semibold text-white">
+                meetqy
+                <sup
+                  class="inline-block line-through decoration-red-500 decoration-4"
+                >
+                  都{{ new Date().getFullYear() - 1996 }}了
+                </sup>
               </p>
-              <a
-                href="javascript:;"
-                class="px-4 py-2 bg-purple-500 rounded-full bg-opacity-25 text-white text-center"
-              >
-                Button
-              </a>
+              <p class="text-white text-opacity-70 text-sm my-1">
+                前端CV工程师 - 擅长CV大法
+              </p>
             </div>
           </div>
 
           <p class="text-white mt-5 text-base text-opacity-90">
-            We are a team working from Chile. We create some Ghost and Wordpress
-            themes for differents markets, also, we offer live support via our
-            ticket system.
+            没事写一写模板，没有梦想的咸鱼。理想生活方式，找个远程外企公司，远离城市，回农村老家养几只大金毛，种点农作物自给自足，美滋滋!!!
+          </p>
+          <p class="mt-4">
+            <span
+              class="tag sm !text-black uppercase"
+              style="background-color: #e5d836"
+            >
+              js
+            </span>
+            <span
+              class="tag sm ml-2 uppercase"
+              style="background-color: #4266bb"
+            >
+              ts
+            </span>
+            <span
+              class="tag sm ml-2 capitalize"
+              style="
+                background: linear-gradient(to bottom right, #69bcf0, #28468a);
+              "
+            >
+              flutter
+            </span>
+            <span
+              class="tag sm ml-2 capitalize"
+              style="
+                background: linear-gradient(to bottom right, #8bb840, #35362d);
+              "
+              >node
+            </span>
+          </p>
+          <p class="mt-4">
+            <span
+              class="tag sm shadow !text-black"
+              style="
+                background: linear-gradient(to bottom right, #4ea1c5, #55b3a8);
+              "
+            >
+              Tailwind CSS
+            </span>
+
+            <span
+              class="tag sm ml-2 shadow"
+              style="
+                background: linear-gradient(to bottom right, #c15029, #cf642d);
+              "
+            >
+              HTML
+            </span>
+            <span
+              class="tag sm ml-2 shadow"
+              style="
+                background: linear-gradient(to bottom right, #335ca4, #5697de);
+              "
+            >
+              CSS
+            </span>
           </p>
         </div>
       </div>
