@@ -59,8 +59,8 @@
             border-bottom: 1px solid #f4f4f4;
           "
         >
-          <span class="text-lg font-semibold mr-5">Link:</span>
-          <div class="inline-block bg-opacity-50 px-4 text-blue-500 underline">
+          <span class="text-lg font-semibold mr-4">Link:</span>
+          <div class="inline-block bg-opacity-50 text-blue-500 underline">
             <a :href="post.link">{{ post.link }}</a>
           </div>
         </div>
