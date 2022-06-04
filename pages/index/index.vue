@@ -166,7 +166,8 @@ const { data } = await useAsyncData("posts", () =>
 const posts = computed(() => data.value.data);
 
 const getTags = (post) => {
-  return post.attributes.tags.data[0].attributes;
+  const tags = post.attributes.tags.data;
+  return tags.length > 0 ? tags[0].attributes : "";
 };
 
 const getCategory = (post) => {
