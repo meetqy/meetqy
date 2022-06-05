@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="tools">
-    <template #title>JSON转换工具</template>
+    <template #title>JSON在线转换工具</template>
 
     <main class="flex json-to-language">
       <div ref="jsonEditorElement" class="w-2/5"></div>
@@ -30,6 +30,12 @@ const { $codemirror } = useNuxtApp();
 
 useHead({
   titleTemplate: `JSON在线转换工具 - ${useTitle().title}`,
+  meta: [
+    {
+      name: "description",
+      content: "json快速生成ts interface,生成flutter class,生成mock.js模板",
+    },
+  ],
 });
 
 const jsonEditorElement = ref();

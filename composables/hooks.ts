@@ -7,9 +7,11 @@ export const useTitle = () => {
 
   const week = ["天", "一", "二", "三", "四", "五", "六"][day];
 
+  const result = day ? 7 % day : 0;
+
   return {
-    title: `卧槽(w ${cao[7 % day]})，今天星期${week}`,
-    cao: cao[7 % day],
+    title: `卧槽(w ${cao[result]})，今天星期${week}`,
+    cao: cao[result],
     week,
     day,
   };

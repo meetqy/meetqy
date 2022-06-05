@@ -32,8 +32,31 @@
 
     <ul class="text-white text-lg flex">
       <li class="py-5 pl-2.5 pr-4 mr-4" v-for="item in navs" :key="item.name">
-        <nuxt-link :to="item.url">{{ item.name }}</nuxt-link>
+        <nuxt-link :to="item.url">
+          {{ item.name }}
+        </nuxt-link>
       </li>
+
+      <!-- <div class="dropdown dropdown-hover" v-for="(item, index) in navs">
+        <nuxt-link :to="item.url">
+          <label :tabindex="index" class="py-5 pl-2.5 pr-4 mr-4 cursor-pointer">
+            {{ item.name }}
+          </label>
+        </nuxt-link>
+
+        <template v-if="item.children && item.children.length > 0">
+          <ul
+            :tabindex="index"
+            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li v-for="child in item.children">
+              <nuxt-link class="text-base-content" :to="child.url">
+                {{ child.name }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </template>
+      </div> -->
     </ul>
   </header>
 </template>
@@ -69,8 +92,17 @@ const navs: NavItem[] = [
   // },
   {
     name: "工具",
-    url: "/tools/json-to-language",
-    children: [],
+    url: "javascript:;",
+    children: [
+      {
+        name: "JSON在线工具",
+        url: "/tools/json-to-language",
+      },
+      {
+        name: "Image Space",
+        url: "/tools/image-space",
+      },
+    ],
   },
 ];
 </script>

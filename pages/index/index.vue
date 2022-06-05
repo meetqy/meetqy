@@ -14,6 +14,16 @@
           :header-images="getHeaderImages(post)"
           :id="post.id + ''"
         />
+
+        <grid-item-a
+          v-if="getCategory(post).name === '工具'"
+          :title="post.attributes.title"
+          :desciption="post.attributes.desciption"
+          :time="post.attributes.updatedAt.split('T')[0]"
+          :tag="getCategory(post).name"
+          :header-images="getHeaderImages(post)"
+          :link="post.attributes.link"
+        />
       </div>
     </div>
 
