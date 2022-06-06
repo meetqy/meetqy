@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto container 2xl:px-32 xl:px-12 px-6">
+  <div class="m-auto container px-4 md:px-8 2xl:px-32">
     <Header class="border-b-2 border-white border-opacity-25" />
 
     <slot></slot>

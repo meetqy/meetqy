@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="default">
     <!-- <button @click="$router.push('/posts/1')">/posts/1</button> -->
-    <div class="multi-columns xl:columns-3 lg:columns-2" v-if="posts">
+    <div class="multi-columns md:columns-2 xl:columns-3" v-if="posts">
       <div class="block" v-for="post in posts" :key="post.id">
         <grid-item-b
           v-if="getCategory(post).name === '模板'"
@@ -33,7 +33,7 @@
       <a href="javasciprt:;" class="btn">Next</a>
     </div>
 
-    <div class="bottom-aside lg:grid-cols-3">
+    <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
       <!-- post -->
       <div>
         <p class="bottom-title">Recent posts</p>
