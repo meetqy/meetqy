@@ -1,10 +1,12 @@
 <template>
-  <div class="m-auto container px-32">
+  <div class="m-auto container 2xl:px-32 xl:px-12 px-6">
     <Header class="border-b-2 border-white border-opacity-25" />
 
     <slot></slot>
 
-    <Footer class="mt-40 pb-20 flex flex-col items-center justify-center" />
+    <Footer
+      class="lg:mt-40 mt-20 pb-20 flex flex-col items-center justify-center"
+    />
   </div>
 </template>
 
