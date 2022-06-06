@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="tools">
     <template #title>Image-Space</template>
-    <main class="flex h-full container m-auto px-32 py-5">
+    <main class="flex h-full container m-auto px-32">
       <aside class="w-80 h-full rounded-md">
         <p class="py-2 px-2 text-white mb-2">类型</p>
         <ul class="px-2">
@@ -69,7 +69,7 @@ useHead({
 
 <style scoped lang="postcss">
 .prose {
-  height: calc(100vh - 168px);
+  height: calc(100vh - 96px - 64px) !important;
   &::-webkit-scrollbar {
     display: none; /* Chrome Safari */
   }

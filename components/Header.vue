@@ -1,8 +1,5 @@
 <template>
-  <header
-    class="flex justify-between items-center py-6 lg:py-12"
-    :class="class"
-  >
+  <header class="flex justify-between items-center py-12" :class="class">
     <div class="flex items-end">
       <div
         class="flex items-center cursor-pointer logo"
@@ -30,7 +27,7 @@
     </span>
 
     <ul class="text-white text-lg md:flex hidden">
-      <li class="py-5 pl-2.5 pr-4 mr-4" v-for="item in navs" :key="item.name">
+      <li class="py-5 pl-12" v-for="item in navs" :key="item.name">
         <nuxt-link :to="item.url">
           {{ item.name }}
         </nuxt-link>

@@ -1,6 +1,6 @@
 <template>
-  <div class="m-auto h-screen overflow-hidden flex flex-col">
-    <Header :height="64" class="px-32 container m-auto flex-shrink-0">
+  <div class="m-auto h-screen overflow-hidden flex-col flex">
+    <Header class="container m-auto flex-shrink-0 h-16 px-32">
       <slot name="title"></slot>
     </Header>
 

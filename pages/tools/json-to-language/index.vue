@@ -156,7 +156,7 @@ const formatJson = async (json, lang) => {
 
 <style lang="postcss">
 .json-to-language .CodeMirror {
-  height: calc(100vh - 64px - 56px) !important;
+  height: calc(100vh - 96px - 64px) !important;
 }
 </style>
 
