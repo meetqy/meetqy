@@ -1,7 +1,10 @@
 <template>
   <NuxtLayout name="default">
     <!-- <button @click="$router.push('/posts/1')">/posts/1</button> -->
-    <div class="multi-columns md:columns-2 xl:columns-3" v-if="posts">
+    <div
+      class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
+      v-if="posts"
+    >
       <div class="block" v-for="post in posts" :key="post.id">
         <grid-item-b
           v-if="getCategory(post).name === '模板'"
@@ -27,7 +30,7 @@
       </div>
     </div>
 
-    <div class="paging">
+    <div class="paging md:py-10 py-5">
       <a href="javasciprt:;" class="btn">Prev</a>
       <span class="px-5">Page 1 of 2</span>
       <a href="javasciprt:;" class="btn">Next</a>
@@ -104,21 +107,18 @@
           <p class="text-white mt-5 text-base text-opacity-90">
             摸鱼、养狗、干饭、找模板、写模板，生活就是如此的朴实无华！
           </p>
-          <p class="mt-4">
+          <p class="mt-4 about">
             <span
               class="tag sm !text-black uppercase"
               style="background-color: #e5d836"
             >
               js
             </span>
-            <span
-              class="tag sm ml-2 uppercase"
-              style="background-color: #4266bb"
-            >
+            <span class="tag sm uppercase" style="background-color: #4266bb">
               ts
             </span>
             <span
-              class="tag sm ml-2 capitalize"
+              class="tag sm capitalize"
               style="
                 background: linear-gradient(to bottom right, #69bcf0, #28468a);
               "
@@ -126,14 +126,12 @@
               flutter
             </span>
             <span
-              class="tag sm ml-2 capitalize"
+              class="tag sm capitalize"
               style="
                 background: linear-gradient(to bottom right, #8bb840, #35362d);
               "
               >node
             </span>
-          </p>
-          <p class="mt-4">
             <span
               class="tag sm shadow !text-black"
               style="
@@ -144,7 +142,7 @@
             </span>
 
             <span
-              class="tag sm ml-2 shadow"
+              class="tag sm shadow"
               style="
                 background: linear-gradient(to bottom right, #c15029, #cf642d);
               "
@@ -152,7 +150,7 @@
               HTML
             </span>
             <span
-              class="tag sm ml-2 shadow"
+              class="tag sm shadow"
               style="
                 background: linear-gradient(to bottom right, #335ca4, #5697de);
               "
@@ -214,9 +212,14 @@ const getHeaderImages = (post) => {
   }
 }
 
+.about {
+  > span {
+    @apply mb-2 mr-2;
+  }
+}
+
 .multi-columns {
   column-gap: 40px;
-  padding-top: 40px;
 
   .block {
     display: block;
@@ -227,7 +230,7 @@ const getHeaderImages = (post) => {
 }
 
 .paging {
-  @apply text-white flex justify-center items-center py-10;
+  @apply text-white flex justify-center items-center;
 
   .btn {
     @apply px-5 py-2 rounded-full text-white;

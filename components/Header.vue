@@ -1,7 +1,6 @@
 <template>
   <header
-    :style="`height: ${height}px`"
-    class="flex justify-between items-center"
+    class="flex justify-between items-center py-6 lg:py-12"
     :class="class"
   >
     <div class="flex items-end">
@@ -30,7 +29,7 @@
       <slot></slot>
     </span>
 
-    <ul class="text-white text-lg flex">
+    <ul class="text-white text-lg md:flex hidden">
       <li class="py-5 pl-2.5 pr-4 mr-4" v-for="item in navs" :key="item.name">
         <nuxt-link :to="item.url">
           {{ item.name }}
@@ -67,9 +66,7 @@ interface Props {
   class?: string;
 }
 
-withDefaults(defineProps<Props>(), {
-  height: 170,
-});
+withDefaults(defineProps<Props>(), {});
 
 interface NavItem {
   name: string;
