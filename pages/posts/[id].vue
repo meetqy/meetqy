@@ -1,7 +1,9 @@
 <template>
   <NuxtLayout>
-    <main class="mt-16 flex">
-      <div class="w-8/12 bg-white rounded-2xl post-article p-10">
+    <main class="mt-8 lg:mt-16 flex">
+      <div
+        class="w-full lg:w-8/12 bg-white rounded-2xl post-article lg:p-10 p-4"
+      >
         <header>
           <Swiper
             class="swiper bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl"
@@ -20,7 +22,7 @@
             </swiper-slide>
           </Swiper>
 
-          <div class="flex items-center mt-6">
+          <div class="flex items-center mt-6 flex-wrap">
             <a href="javascript:;" class="flex items-center justify-center">
               <img
                 class="w-8 h-8 rounded-full relative -top-0.5"
@@ -48,25 +50,28 @@
         </header>
 
         <article
-          class="4/12 mt-10 prose prose-neutral prose-a:text-blue-500"
+          class="4/12 mt-10 prose prose-neutral prose-a:text-blue-500 break-words"
           v-html="content"
         />
 
         <div
-          class="py-16 mt-12 flex justify-center items-center"
+          class="py-16 mt-12 flex justify-center items-center flex-wrap"
           style="
             border-top: 1px solid #f4f4f4;
             border-bottom: 1px solid #f4f4f4;
           "
         >
           <span class="text-lg font-semibold mr-4">Link:</span>
-          <div class="inline-block bg-opacity-50 text-blue-500 underline">
-            <a :href="post.link">{{ post.link }}</a>
-          </div>
+          <a
+            :href="post.link"
+            class="underline text-blue-500 break-words inline-block w-full text-center md:w-auto"
+          >
+            {{ post.link }}
+          </a>
         </div>
       </div>
 
-      <aside class="flex-1 ml-10">
+      <aside class="flex-1 hidden lg:block lg:ml-12">
         <section class="aside-card">
           <h1>Related Articles</h1>
 

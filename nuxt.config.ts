@@ -30,7 +30,23 @@ export default defineNuxtConfig({
           content:
             "卧槽(wo caò),卧槽(wò cao),卧槽(wǒ caó),卧槽(wǒ caò),卧槽(wō caō),卧槽(wō caō)",
         },
+        {
+          name: "theme-color",
+          content: "#6d327c",
+        },
       ],
+    },
+  },
+  vite: {
+    build: {
+      rollupOptions: {
+        // output: {
+        //   manualChunks(id) {
+        //     console.log(id.split("node_modules"), "======");
+        //     return "wq";
+        //   },
+        // },
+      },
     },
   },
 });
