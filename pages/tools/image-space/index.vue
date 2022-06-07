@@ -69,7 +69,8 @@ useHead({
 
 <style scoped lang="postcss">
 .prose {
-  height: calc(100vh - 96px - 64px) !important;
+  @apply tools-body;
+
   &::-webkit-scrollbar {
     display: none; /* Chrome Safari */
   }

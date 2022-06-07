@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-between items-center py-12" :class="class">
+  <header class="flex justify-between items-center" :class="class">
     <div class="flex items-end">
       <div
         class="flex items-center cursor-pointer logo"

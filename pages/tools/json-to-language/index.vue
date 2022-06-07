@@ -25,7 +25,10 @@
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/darcula.css";
 import "codemirror/addon/scroll/simplescrollbars.css";
-import { json2ts } from "json-ts";
+
+import toJsonSchema from "to-json-schema";
+import jsonBeautify from "json-beautify";
+import jsonFormat from "json-format";
 
 const { $codemirror } = useNuxtApp();
 
@@ -63,6 +66,12 @@ const language: LanguageItem[] = [
     className: "text-white language bg-blue-500",
     name: "TS",
     quicktype: "typescript",
+    codeMirror: "javascript",
+  },
+  {
+    name: "{√x}",
+    className: "bg-white language text-black",
+    quicktype: "json-schema",
     codeMirror: "javascript",
   },
 ];
@@ -138,35 +147,31 @@ onMounted(() => {
   });
 });
 
-const formatJson = async (json, lang): Promise<string> => {
-  try {
-    if (lang === "typescript") {
-      return json2ts(json, {
-        // namespace: "Root",
-      })
-        .replaceAll("interface", "\nexport interface")
-        .replace("\n", "");
-    } else {
-      const res = await $fetch("/api/tools/jsonToLanguage", {
-        method: "post",
-        body: {
-          lang,
-          typeName: "Hello",
-          jsonString: json,
-        },
-      });
-      return res.join("\n");
-    }
-  } catch (e) {
-    console.log(e);
-    alert(e.response._data.message);
+const formatJson = async (value: string, lang): Promise<string> => {
+  if (lang === "json-schema") {
+    const res = toJsonSchema(JSON.parse(value));
+    return jsonFormat(res, {
+      type: "space",
+      size: 4,
+    });
+    // return JSON.stringify(res);
   }
+
+  const res = await $fetch("/api/tools/jsonToLanguage", {
+    method: "post",
+    body: {
+      lang,
+      typeName: "Hello",
+      jsonString: value,
+    },
+  });
+  return res.join("\n");
 };
 </script>
 
 <style lang="postcss">
 .json-to-language .CodeMirror {
-  height: calc(100vh - 96px - 64px) !important;
+  @apply tools-body;
 }
 </style>
 
