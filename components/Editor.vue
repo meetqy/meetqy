@@ -9,9 +9,9 @@
       >
         <div
           v-for="(item, index) in language"
-          @click="changeLang(item, index)"
+          @click="$router.push(item.quicktype)"
           :key="item.name"
-          :class="[item.className, { active: curLanguage === index }]"
+          :class="[item.className, { active: curLanguageIndex === index }]"
         >
           {{ item.name }}
         </div>
@@ -25,12 +25,34 @@
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/darcula.css";
 import "codemirror/addon/scroll/simplescrollbars.css";
-
-import toJsonSchema from "to-json-schema";
-import jsonBeautify from "json-beautify";
 import jsonFormat from "json-format";
 
+import { CodeOption } from "~~/composables/jsonToLanguage";
+
+interface Props {
+  jsonValue: string;
+  codeOption: CodeOption;
+}
+
+const props = defineProps<Props>();
+
+watch(
+  () => props.jsonValue,
+  (val) => setJsonMirror(val)
+);
+
+watch(props.codeOption, (val) => setCodeMirror(val));
+
+const emit = defineEmits<{
+  (event: "change", e: unknown): void;
+}>();
+
 const { $codemirror } = useNuxtApp();
+
+const curLanguageIndex = computed(() => {
+  const lang = useRoute().path.replace("/tools/json-to-language/", "");
+  return language.findIndex((item) => item.quicktype === lang);
+});
 
 useHead({
   titleTemplate: `JSON在线转换工具 - ${useTitle().title}`,
@@ -44,8 +66,6 @@ useHead({
 
 const jsonEditorElement = ref();
 const langEditorElement = ref();
-
-const curLanguage = ref(0);
 
 interface LanguageItem {
   className: string;
@@ -76,41 +96,24 @@ const language: LanguageItem[] = [
   },
 ];
 
-const changeLang = (lang: LanguageItem, index: number) => {
-  curLanguage.value = index;
-  setCodeMirror(jsonValue.value, lang);
-};
-
 let _jsonCodeMirror = null;
 let _langCodeMirror = null;
 
-const jsonValue = ref(`{
-  "name": "张三",
-  "age": 23,
-  "posts": [
-    { "name": "甜心教主 - 王心凌", "desc": "这是我的第一篇文章！" },
-    { "name": "少女杀手 - 刘畊宏", "desc": "这是我的第二篇文章！" },
-    { "name": "小学儿歌 - 孤勇者", "desc": "这是我的第三篇文章！" }
-  ],
-  "tag": ["github", "gitee"]
-}
-`);
-
 const setJsonMirror = (code: string) => {
-  _jsonCodeMirror.setValue(code);
+  if (!code) return;
+  _jsonCodeMirror.setValue(jsonFormat(JSON.parse(code)));
   setTimeout(() => {
     _jsonCodeMirror.refresh();
   }, 50);
 };
 
-const setCodeMirror = async (code: string, languageItem: LanguageItem) => {
-  const res = await formatJson(code, languageItem.quicktype);
-  _langCodeMirror.setOption("mode", languageItem.codeMirror);
-  _langCodeMirror.setValue(res);
+const setCodeMirror = async (codeOption: CodeOption) => {
+  _langCodeMirror.setOption("mode", codeOption.codeMirrorMode);
+  _langCodeMirror.setValue(codeOption.code);
 
   setTimeout(() => {
     _langCodeMirror.refresh();
-  });
+  }, 50);
 };
 
 onMounted(() => {
@@ -127,46 +130,16 @@ onMounted(() => {
     innerHeight: "auto",
   });
 
-  setJsonMirror(jsonValue.value);
-  setCodeMirror(jsonValue.value, language[curLanguage.value]);
+  setJsonMirror(props.jsonValue);
+  setCodeMirror(props.codeOption);
 
   // 监听json输入框失去焦点
-  _jsonCodeMirror.on("blur", async (e) => {
-    const newValue = e.getValue();
-    if (!newValue) {
-      return false;
-    }
-
-    if (jsonValue === newValue) {
-      return false;
-    }
-
-    jsonValue.value = newValue;
-
-    setCodeMirror(jsonValue.value, language[curLanguage.value]);
-  });
+  _jsonCodeMirror.on("blur", async (e) => emit("change", e));
 });
 
-const formatJson = async (value: string, lang): Promise<string> => {
-  if (lang === "json-schema") {
-    const res = toJsonSchema(JSON.parse(value));
-    return jsonFormat(res, {
-      type: "space",
-      size: 4,
-    });
-    // return JSON.stringify(res);
-  }
-
-  const res = await $fetch("/api/tools/jsonToLanguage", {
-    method: "post",
-    body: {
-      lang,
-      typeName: "Hello",
-      jsonString: value,
-    },
-  });
-  return res.join("\n");
-};
+onUnmounted(() => {
+  localStorage.setItem("json-to-language", props.jsonValue);
+});
 </script>
 
 <style lang="postcss">
