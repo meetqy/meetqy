@@ -18,6 +18,7 @@
     "@vueuse/core": "^8.6.0",
     "codemirror": "^5.65.5",
     "highlight.js": "^11.5.1",
+    "json-ts": "^1.6.4",
     "markdown-it": "^13.0.1",
     "quicktype-core": "^6.0.71",
     "swiper": "^8.1.6"

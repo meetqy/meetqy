@@ -25,6 +25,7 @@
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/darcula.css";
 import "codemirror/addon/scroll/simplescrollbars.css";
+import { json2ts } from "json-ts";
 
 const { $codemirror } = useNuxtApp();
 
@@ -96,7 +97,7 @@ const setJsonMirror = (code: string) => {
 const setCodeMirror = async (code: string, languageItem: LanguageItem) => {
   const res = await formatJson(code, languageItem.quicktype);
   _langCodeMirror.setOption("mode", languageItem.codeMirror);
-  _langCodeMirror.setValue(res.join("\n"));
+  _langCodeMirror.setValue(res);
 
   setTimeout(() => {
     _langCodeMirror.refresh();
@@ -137,18 +138,27 @@ onMounted(() => {
   });
 });
 
-const formatJson = async (json, lang) => {
+const formatJson = async (json, lang): Promise<string> => {
   try {
-    const res = await $fetch("/api/tools/jsonToLanguage", {
-      method: "post",
-      body: {
-        lang,
-        typeName: "Hello",
-        jsonString: json,
-      },
-    });
-    return res;
+    if (lang === "typescript") {
+      return json2ts(json, {
+        // namespace: "Root",
+      })
+        .replaceAll("interface", "\nexport interface")
+        .replace("\n", "");
+    } else {
+      const res = await $fetch("/api/tools/jsonToLanguage", {
+        method: "post",
+        body: {
+          lang,
+          typeName: "Hello",
+          jsonString: json,
+        },
+      });
+      return res.join("\n");
+    }
   } catch (e) {
+    console.log(e);
     alert(e.response._data.message);
   }
 };
