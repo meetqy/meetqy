@@ -1,5 +1,5 @@
 <template>
-  <article class="article-b">
+  <article class="article-b" @click="$router.push(`/posts/${id}`)">
     <div class="tags relative z-10">
       <a
         href="javascript:;"
@@ -9,34 +9,34 @@
       </a>
     </div>
 
-    <nuxt-link :to="'/posts/' + id">
-      <header>
-        <Swiper class="rounded-t-2xl" :modules="modules" :navigation="true">
-          <swiper-slide v-for="item in headerImages" :key="item">
-            <div
-              class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200"
-              :style="`background-image:url(${$cdn + item});height: 225px`"
-            />
-          </swiper-slide>
-        </Swiper>
+    <header>
+      <Swiper class="rounded-t-2xl" :modules="modules" navigation>
+        <swiper-slide v-for="item in headerImages" :key="item">
+          <div
+            class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200"
+            :style="`background-image:url(${$cdn + item});height: 225px`"
+          />
+        </swiper-slide>
+      </Swiper>
 
-        <div class="flex justify-center mt-5 flex-col items-center">
-          <time class="flex items-center capitalize">
-            <i class="text-2xl iconfont" style="color: #e84e89">&#xe8b4;</i>
-            <span class="ml-2 text-sm">{{ time }}</span>
-          </time>
-        </div>
-      </header>
+      <div class="flex justify-center mt-5 flex-col items-center">
+        <time class="flex items-center capitalize">
+          <i class="text-2xl iconfont" style="color: #e84e89">&#xe8b4;</i>
+          <span class="ml-2 text-sm">{{ time }}</span>
+        </time>
+      </div>
+    </header>
 
-      <main class="text-center px-4">
-        <h1 class="title py-2 text-center">
+    <main class="text-center px-4">
+      <h1 class="title py-2 text-center">
+        <nuxt-link :to="'/posts/' + id">
           {{ title }}
-        </h1>
-        <p class="text-opacity-60 text-black font-light text-center">
-          {{ desciption }}
-        </p>
-      </main>
-    </nuxt-link>
+        </nuxt-link>
+      </h1>
+      <p class="text-opacity-60 text-black font-light text-center">
+        {{ desciption }}
+      </p>
+    </main>
 
     <footer class="flex justify-between items-center mt-10">
       <a href="javascript:;" class="flex items-center">

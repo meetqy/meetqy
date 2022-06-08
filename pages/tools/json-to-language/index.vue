@@ -1,3 +1,9 @@
+<template>
+  <NuxtLayout name="tools">
+    <h1>JSON在线转换工具</h1>
+  </NuxtLayout>
+</template>
+
 <script setup>
 useHead({
   titleTemplate: `JSON在线转换工具 - ${useTitle().title}`,
@@ -8,5 +14,8 @@ useHead({
     },
   ],
 });
-useRouter().replace("json-to-language/dart");
+
+await navigateTo("/tools/json-to-language/dart", {
+  replace: true,
+});
 </script>

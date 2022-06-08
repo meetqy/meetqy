@@ -1,6 +1,8 @@
 <template>
   <NuxtLayout name="tools">
-    <template #title>to {{ language[curLanguageIndex].language }}</template>
+    <template #title>
+      to {{ curLanguageIndex > -1 && language[curLanguageIndex].language }}
+    </template>
 
     <main class="flex json-to-language">
       <div ref="jsonEditorElement" class="w-2/5"></div>
@@ -81,7 +83,7 @@ const setCodeMirror = async (codeOption: CodeOption) => {
   }, 50);
 };
 
-onMounted(() => {
+onMounted(async () => {
   _jsonCodeMirror = $codemirror(jsonEditorElement.value, {
     mode: "application/ld+json",
     theme: "mdn-like",
