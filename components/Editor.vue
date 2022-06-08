@@ -7,14 +7,17 @@
       <div
         class="w-16 flex-shrink-0 bg-white bg-opacity-50 border-r-8 border-r-white border-y-8 border-y-orange-600 flex flex-col items-center"
       >
-        <div
+        <nuxt-link
           v-for="(item, index) in language"
-          @click="$router.push(item.quicktype)"
           :key="item.name"
-          :class="[item.className, { active: curLanguageIndex === index }]"
+          :to="item.quicktype"
         >
-          {{ item.name }}
-        </div>
+          <div
+            :class="[item.className, { active: curLanguageIndex === index }]"
+          >
+            {{ item.name }}
+          </div>
+        </nuxt-link>
       </div>
       <div class="flex-1 lang-editor" ref="langEditorElement"></div>
     </main>

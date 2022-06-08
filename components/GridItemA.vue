@@ -1,49 +1,50 @@
 <template>
-  <article
-    class="article-a"
-    :style="`background-image:url(${$cdn}${headerImages[0]})`"
-    @click="$router.push('/tools' + link)"
-  >
-    <div class="bg-black pt-10 rounded-2xl bg-opacity-60">
-      <div class="tags">
-        <a href="javascript:;">{{ tag }}</a>
-      </div>
-
-      <header class="relative flex justify-center items-center flex-col px-4">
-        <time class="flex items-center text-white capitalize">
-          <i class="text-2xl iconfont">&#xe8b4;</i>
-          <span class="ml-2 text-sm">{{ time }}</span>
-        </time>
-      </header>
-
-      <main class="text-white text-center px-4">
-        <h1 class="title py-2">{{ title }}</h1>
-        <p class="text-opacity-60">
-          {{ desciption }}
-        </p>
-      </main>
-
-      <footer class="flex justify-between items-center mt-10">
-        <a href="javascript:;" class="flex items-center">
-          <span
-            class="author-image"
-            style="background-image: url('/avatar.jpg')"
-          ></span>
-          <span class="author-name">meetqy</span>
-        </a>
-        <div class="text-white text-sm">
-          <a href="javascript:;">
-            <span class="mr-1">23719</span>
-            <i class="iconfont">&#xe8f4;</i>
-          </a>
-          <a href="javascript:;" class="ml-4">
-            <span class="mr-1">23719</span>
-            <i class="iconfont">&#xe8b5;</i>
-          </a>
+  <nuxt-link :to="'/tools' + link">
+    <article
+      class="article-a"
+      :style="`background-image:url(${$cdn}${headerImages[0]})`"
+    >
+      <div class="bg-black pt-10 rounded-2xl bg-opacity-60">
+        <div class="tags">
+          <a href="javascript:;">{{ tag }}</a>
         </div>
-      </footer>
-    </div>
-  </article>
+
+        <header class="relative flex justify-center items-center flex-col px-4">
+          <time class="flex items-center text-white capitalize">
+            <i class="text-2xl iconfont">&#xe8b4;</i>
+            <span class="ml-2 text-sm">{{ time }}</span>
+          </time>
+        </header>
+
+        <main class="text-white text-center px-4">
+          <h1 class="title py-2">{{ title }}</h1>
+          <p class="text-opacity-60">
+            {{ desciption }}
+          </p>
+        </main>
+
+        <footer class="flex justify-between items-center mt-10">
+          <a href="javascript:;" class="flex items-center">
+            <span
+              class="author-image"
+              style="background-image: url('/avatar.jpg')"
+            ></span>
+            <span class="author-name">meetqy</span>
+          </a>
+          <div class="text-white text-sm">
+            <a href="javascript:;">
+              <span class="mr-1">23719</span>
+              <i class="iconfont">&#xe8f4;</i>
+            </a>
+            <a href="javascript:;" class="ml-4">
+              <span class="mr-1">23719</span>
+              <i class="iconfont">&#xe8b5;</i>
+            </a>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </nuxt-link>
 </template>
 
 <script lang="ts" setup>
