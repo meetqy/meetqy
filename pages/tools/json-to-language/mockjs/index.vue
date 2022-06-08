@@ -8,6 +8,16 @@ import jsonFormat from "json-format";
 import { CodeOption } from "~~/composables/jsonToLanguage";
 import { useJsontoMock } from "./jsonToMock";
 
+useHead({
+  titleTemplate: `JSON在线转换工具(to mockjs) - ${useTitle().title}`,
+  meta: [
+    {
+      name: "description",
+      content: "json转换mockjs, json transform to mockjs",
+    },
+  ],
+});
+
 const change = async (e) => {
   jsonValue.value = e.getValue();
 

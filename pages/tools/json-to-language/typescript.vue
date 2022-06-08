@@ -5,6 +5,16 @@
 <script setup lang="ts">
 import { CodeOption } from "~~/composables/jsonToLanguage";
 
+useHead({
+  titleTemplate: `JSON在线转换工具(to typescript) - ${useTitle().title}`,
+  meta: [
+    {
+      name: "description",
+      content: "json转换为typescript, json transform to typescript",
+    },
+  ],
+});
+
 const change = async (e) => {
   jsonValue.value = e.getValue();
 

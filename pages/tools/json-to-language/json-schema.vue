@@ -7,6 +7,16 @@ import toJsonSchema from "to-json-schema";
 import jsonFormat from "json-format";
 import { CodeOption } from "~~/composables/jsonToLanguage";
 
+useHead({
+  titleTemplate: `JSON在线转换工具(to json-schema) - ${useTitle().title}`,
+  meta: [
+    {
+      name: "description",
+      content: "json转换json-schema, json transform to json-schema",
+    },
+  ],
+});
+
 const change = async (e) => {
   jsonValue.value = e.getValue();
 

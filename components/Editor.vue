@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="tools">
-    <template #title>JSON在线转换工具</template>
+    <template #title>to {{ language[curLanguageIndex].language }}</template>
 
     <main class="flex json-to-language">
       <div ref="jsonEditorElement" class="w-2/5"></div>
@@ -57,16 +57,6 @@ const language = allLanguage;
 const curLanguageIndex = computed(() => {
   const lang = useRoute().path.replace("/tools/json-to-language/", "");
   return language.findIndex((item) => item.language === lang);
-});
-
-useHead({
-  titleTemplate: `JSON在线转换工具 - ${useTitle().title}`,
-  meta: [
-    {
-      name: "description",
-      content: "json快速生成ts interface,生成flutter class,生成mock.js模板",
-    },
-  ],
 });
 
 const jsonEditorElement = ref();
