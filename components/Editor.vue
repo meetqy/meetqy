@@ -10,7 +10,7 @@
         <nuxt-link
           v-for="(item, index) in language"
           :key="item.name"
-          :to="item.quicktype"
+          :to="item.language"
         >
           <div
             :class="[item.className, { active: curLanguageIndex === index }]"
@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import "codemirror/lib/codemirror.css";
-import "codemirror/theme/darcula.css";
+import "codemirror/theme/mdn-like.css";
 import "codemirror/addon/scroll/simplescrollbars.css";
 import jsonFormat from "json-format";
 
@@ -52,9 +52,11 @@ const emit = defineEmits<{
 
 const { $codemirror } = useNuxtApp();
 
+const language = allLanguage;
+
 const curLanguageIndex = computed(() => {
   const lang = useRoute().path.replace("/tools/json-to-language/", "");
-  return language.findIndex((item) => item.quicktype === lang);
+  return language.findIndex((item) => item.language === lang);
 });
 
 useHead({
@@ -70,35 +72,6 @@ useHead({
 const jsonEditorElement = ref();
 const langEditorElement = ref();
 
-interface LanguageItem {
-  className: string;
-  name: string;
-  quicktype: string;
-  codeMirror: string;
-}
-
-const language: LanguageItem[] = [
-  {
-    className:
-      "bg-gradient-to-r from-green-400 to-blue-500 language text-white",
-    name: "Dart",
-    quicktype: "dart",
-    codeMirror: "dart",
-  },
-  {
-    className: "text-white language bg-blue-500",
-    name: "TS",
-    quicktype: "typescript",
-    codeMirror: "javascript",
-  },
-  {
-    name: "{√x}",
-    className: "bg-white language text-black",
-    quicktype: "json-schema",
-    codeMirror: "javascript",
-  },
-];
-
 let _jsonCodeMirror = null;
 let _langCodeMirror = null;
 
@@ -111,7 +84,6 @@ const setJsonMirror = (code: string) => {
 };
 
 const setCodeMirror = async (codeOption: CodeOption) => {
-  _langCodeMirror.setOption("mode", codeOption.codeMirrorMode);
   _langCodeMirror.setValue(codeOption.code);
 
   setTimeout(() => {
@@ -121,13 +93,15 @@ const setCodeMirror = async (codeOption: CodeOption) => {
 
 onMounted(() => {
   _jsonCodeMirror = $codemirror(jsonEditorElement.value, {
-    mode: "javascript",
+    mode: "application/ld+json",
+    theme: "mdn-like",
     scrollbarStyle: "overlay",
+    lineNumbers: true,
   });
 
   _langCodeMirror = $codemirror(langEditorElement.value, {
-    mode: "javascript",
-    theme: "darcula",
+    mode: language[curLanguageIndex.value].mode,
+    theme: "mdn-like",
     lineNumbers: true,
     scrollbarStyle: "overlay",
     innerHeight: "auto",
@@ -141,13 +115,18 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  localStorage.setItem("json-to-language", props.jsonValue);
+  try {
+    if (JSON.parse(props.jsonValue)) {
+      // 确保没有错误才保存到缓存中
+      localStorage.setItem("json-to-language", props.jsonValue);
+    }
+  } catch (e) {}
 });
 </script>
 
 <style lang="postcss">
 .json-to-language .CodeMirror {
-  @apply tools-body;
+  @apply tools-body text-base;
 }
 </style>
 
