@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-const types = ["avatar", "coffee", "girls", "dog"];
+// const types = ["avatar", "coffee", "girls", "dog", "national-flag"];
 const curTypes = ref(0);
 
 useHead({
@@ -61,9 +61,21 @@ useHead({
     {
       name: "description",
       content:
-        "根据类型随机生成图片，可以理解为有真实图片的占位图，支持类型：avatar/coffee/dog/girls",
+        "根据类型随机生成图片，可以理解为有真实图片的占位图，支持类型：avatar/coffee/dog/girls...",
     },
   ],
+});
+
+const { data } = await useAsyncData("image-space", () =>
+  useStrapi4().find(`posts/4`)
+);
+
+const post = computed(() => {
+  return data.value.data.attributes;
+});
+
+const types = computed(() => {
+  return post.value.desciption.split("：")[1].split("/");
 });
 </script>
 
