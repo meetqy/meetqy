@@ -12,14 +12,14 @@
             :class="{ active: index === curTypes }"
             @click="curTypes = index"
           >
-            <a :href="'#' + item" class="w-full inline-block">
-              {{ item }}
+            <a :href="'#' + item.name" class="w-full inline-block">
+              {{ item.name }}
             </a>
           </li>
         </ul>
       </aside>
       <div
-        class="flex-1 ml-10 bg-white bg-opacity-80 rounded-md !max-w-full prose dark:prose-neutral overflow-y-scroll px-10 py-5"
+        class="flex-1 ml-10 bg-white bg-opacity-80 rounded-md !max-w-full prose prose-neutral prose-a:text-blue-500 overflow-y-scroll px-10 py-5"
       >
         <h1>Image Space</h1>
 
@@ -31,20 +31,28 @@
         </ul>
 
         <article v-for="item in types">
-          <h2 :id="item" class="capitalize">
-            <small class="text-gray-400"># </small>{{ item }}
+          <h2 :id="item" class="capitalize flex justify-between">
+            <span><small class="text-gray-400"># </small>{{ item.name }}</span>
+            <a
+              :href="item.link"
+              target="_blank"
+              class="font-normal text-base"
+              v-if="item.link"
+            >
+              数据来源 👉🏻
+            </a>
           </h2>
 
           <div class="grid grid-cols-4 gap-4">
             <img
               v-for="num in 4"
               class="w-48 rounded-md my-0"
-              :src="`https://wcao.cc/image-space/api/${item}?${num}`"
+              :src="`https://wcao.cc/image-space/api/${item.name}?${num}`"
             />
           </div>
 
           <p>Try</p>
-          <pre> https://wcao.cc/image-space/api/{{ item }}?xxx </pre>
+          <pre> https://wcao.cc/image-space/api/{{ item.name }}?xxx </pre>
         </article>
       </div>
     </main>
@@ -75,7 +83,7 @@ const post = computed(() => {
 });
 
 const types = computed(() => {
-  return post.value.desciption.split("：")[1].split("/");
+  return post.value.imageSpace;
 });
 </script>
 
