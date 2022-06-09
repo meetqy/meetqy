@@ -31,7 +31,7 @@
         </ul>
 
         <article v-for="item in types">
-          <h2 :id="item" class="capitalize flex justify-between">
+          <h2 :id="item.name" class="capitalize flex justify-between">
             <span><small class="text-gray-400"># </small>{{ item.name }}</span>
             <a
               :href="item.link"
