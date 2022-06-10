@@ -1,8 +1,8 @@
 <template>
   <NuxtLayout name="tools">
     <template #title>Image-Space</template>
-    <main class="flex h-full container m-auto px-32">
-      <aside class="w-80 h-full rounded-md">
+    <main class="flex h-full container m-auto xl:px-32">
+      <aside class="w-80 h-full rounded-md hidden xl:block">
         <p class="py-2 px-2 text-white mb-2">类型</p>
         <ul class="px-2">
           <li
@@ -18,8 +18,9 @@
           </li>
         </ul>
       </aside>
+
       <div
-        class="flex-1 ml-10 bg-white bg-opacity-80 rounded-md !max-w-full prose prose-neutral prose-a:text-blue-500 overflow-y-scroll px-10 py-5"
+        class="flex-1 px-10 mx-5 xl:mr-0 xl:ml-10 bg-white bg-opacity-80 rounded-md !max-w-full prose prose-neutral prose-a:text-blue-500 overflow-y-scroll py-5"
       >
         <h1>Image Space</h1>
 

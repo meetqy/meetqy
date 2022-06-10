@@ -4,6 +4,6 @@
 
 @layer components {
   .tools-body {
-    height: calc(100vh - 128px);
+    height: calc(100vh - 160px);
   }
 }
