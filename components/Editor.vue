@@ -4,25 +4,31 @@
       to {{ curLanguageIndex > -1 && language[curLanguageIndex].language }}
     </template>
 
-    <main class="flex json-to-language">
-      <div ref="jsonEditorElement" class="w-2/5"></div>
-      <div
-        class="w-16 flex-shrink-0 bg-white bg-opacity-50 border-r-8 border-r-white border-y-8 border-y-orange-600 flex flex-col items-center"
-      >
-        <nuxt-link
-          v-for="(item, index) in language"
-          :key="item.name"
-          :to="item.language"
+    <div class="hidden lg:block">
+      <main class="json-to-language flex">
+        <div ref="jsonEditorElement" class="w-2/5"></div>
+        <div
+          class="w-16 flex-shrink-0 bg-white bg-opacity-50 border-r-8 border-r-white border-y-8 border-y-orange-600 flex flex-col items-center"
         >
-          <div
-            :class="[item.className, { active: curLanguageIndex === index }]"
+          <nuxt-link
+            v-for="(item, index) in language"
+            :key="item.name"
+            :to="'/tools/json-to-language/' + item.language"
           >
-            {{ item.name }}
-          </div>
-        </nuxt-link>
-      </div>
-      <div class="flex-1 lang-editor" ref="langEditorElement"></div>
-    </main>
+            <div
+              :class="[item.className, { active: curLanguageIndex === index }]"
+            >
+              {{ item.name }}
+            </div>
+          </nuxt-link>
+        </div>
+        <div class="flex-1 lang-editor" ref="langEditorElement"></div>
+      </main>
+    </div>
+
+    <div class="prose flex justify-center items-center h-full lg:hidden">
+      <h2 class="text-white">工具类不适合在手机端上显示</h2>
+    </div>
   </NuxtLayout>
 </template>
 
