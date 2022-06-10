@@ -63,7 +63,8 @@ const { $codemirror } = useNuxtApp();
 const language = allLanguage;
 
 const curLanguageIndex = computed(() => {
-  const lang = useRoute().path.replace("/tools/json-to-language/", "");
+  let lang = useRoute().path.replace("/tools/json-to-language/", "");
+  if (lang === "/tools/json-to-language") lang = "dart";
   return language.findIndex((item) => item.language === lang);
 });
 

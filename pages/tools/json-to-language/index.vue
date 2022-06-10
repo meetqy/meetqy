@@ -1,21 +1,45 @@
 <template>
-  <NuxtLayout name="tools">
-    <h1>JSON在线转换工具</h1>
-  </NuxtLayout>
+  <Editor @change="change" :json-value="jsonValue" :code-option="codeOption" />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { CodeOption } from "~~/composables/jsonToLanguage";
+
 useHead({
-  titleTemplate: `JSON在线转换工具 - ${useTitle().title}`,
+  titleTemplate: `JSON在线转换工具(to dart) - ${useTitle().title}`,
   meta: [
     {
       name: "description",
-      content: "json转换生成ts interface,flutter class,mock.js模板",
+      content: "json转换为dart class, json transform to dart",
     },
   ],
 });
 
-await navigateTo("/tools/json-to-language/dart", {
-  replace: true,
+const change = async (e) => {
+  jsonValue.value = e.getValue();
+
+  const code = await useJsonToLanguage("dart", jsonValue.value);
+
+  codeOption.code = code;
+};
+
+const jsonValue = ref<string>(useJsonDefaultValue());
+
+watch(
+  () => useRoute(),
+  (e) => {
+    jsonValue.value = useJsonDefaultValue();
+  }
+);
+
+const codeOption = reactive<CodeOption>({
+  code: "",
+  codeMirrorMode: "dart",
+});
+
+onMounted(async () => {
+  const code = await useJsonToLanguage("dart", jsonValue.value);
+
+  codeOption.code = code;
 });
 </script>

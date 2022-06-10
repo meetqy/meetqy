@@ -1,6 +1,6 @@
 <template>
-  <div class="m-auto container px-4 md:px-8 2xl:px-32 py-12">
-    <Header class="border-b-2 border-white border-opacity-25" />
+  <div class="m-auto container px-4 md:px-8 2xl:px-32 xl:py-6">
+    <Header class="border-b-2 border-white border-opacity-25 py-8" />
 
     <slot></slot>
 
