@@ -6,4 +6,9 @@
   .tools-body {
     height: calc(100vh - 160px);
   }
+
+  /* 主页内容区域样式 */
+  .main-content {
+    @apply h-full w-full mt-5 lg:mt-10;
+  }
 }

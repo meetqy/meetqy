@@ -1,56 +1,93 @@
 <template>
-  <NuxtLayout>
-    <main class="mt-8 lg:mt-16 flex">
-      <div
-        class="w-full lg:w-8/12 bg-white rounded-2xl post-article lg:p-10 p-4"
+  <NuxtLayout @change="onChange">
+    <main class="main-content flex">
+      <aside
+        :class="[
+          { fixed: asideFixed },
+          'top-0 w-96 max-h-screen hidden lg:flex flex-col z-10 flex-shrink-0',
+        ]"
       >
-        <header>
-          <Swiper
-            class="swiper bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl"
-            :modules="modules"
-            :navigation="true"
-          >
-            <swiper-slide
-              class="flex justify-center p-5 items-center"
-              v-for="item in previewImages"
-              :key="item.id"
-            >
-              <img
-                class="rounded-2xl w-1/3"
-                :src="$cdn + item.attributes.url"
-              />
-            </swiper-slide>
-          </Swiper>
-
-          <div class="flex items-center mt-6 flex-wrap">
-            <a href="javascript:;" class="flex items-center justify-center">
-              <img
-                class="w-8 h-8 rounded-full relative -top-0.5"
-                style="box-shadow: 2px 2px 5px 1px rgb(0 0 0 / 20%)"
-                src="/avatar.jpg"
-              />
-              <span class="ml-3"> meetqy </span>
-            </a>
-
-            <a href="javascript:;" class="ml-6">
-              <i class="iconfont" style="color: #e84e89">&#xe8b4;</i>
-              <span class="ml-2">{{ post.updatedAt.split("T")[0] }}</span>
-            </a>
-
-            <a href="javascript:;" class="ml-6">
-              <i class="iconfont" style="color: #e84e89">&#xe8f4;</i>
-              <span class="ml-2">{{ post.visit }}</span>
-            </a>
-
-            <a href="javascript:;" class="ml-6">
-              <i class="iconfont" style="color: #e84e89">&#xe8b5;</i>
-              <span class="ml-2">{{ post.comment }}</span>
-            </a>
+        <section class="w-full lg:pr-10 my-5" :class="{ hidden: !asideFixed }">
+          <div class="p-2 h-min rounded-box">
+            <Logo />
           </div>
-        </header>
+        </section>
+
+        <section class="w-full lg:pr-10">
+          <ul class="menu bg-base-100 p-2 w-full h-min rounded-box">
+            <li class="menu-title py-2">
+              <span>Type</span>
+            </li>
+            <li
+              class="text-xl"
+              v-for="(item, index) in types"
+              :key="item"
+              @click="curTypes = index"
+            >
+              <a
+                :href="'#' + item.name"
+                :class="{
+                  active: curTypes === index,
+                  capitalize: curTypes === index,
+                }"
+              >
+                {{ item.name }}
+              </a>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      <aside class="w-96 opacity-0 hidden lg:flex" v-show="asideFixed"></aside>
+
+      <div
+        class="flex-1 relative overflow-hidden p-5 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"
+      >
+        <Swiper
+          class="swiper w-full bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl"
+          :modules="modules"
+          :navigation="true"
+        >
+          <swiper-slide
+            class="flex justify-center items-center"
+            v-for="item in previewImages"
+            :key="item.id"
+          >
+            <img
+              class="rounded-2xl xl:w-1/5 md:w-1/3 w-1/2"
+              :src="$cdn + item.attributes.url"
+            />
+          </swiper-slide>
+        </Swiper>
+
+        <div class="flex items-center mt-6 flex-wrap">
+          <a href="javascript:;" class="flex items-center justify-center">
+            <img
+              class="w-8 h-8 rounded-full relative -top-0.5"
+              style="box-shadow: 2px 2px 5px 1px rgb(0 0 0 / 20%)"
+              src="/avatar.jpg"
+            />
+            <span class="ml-3"> meetqy </span>
+          </a>
+
+          <a href="javascript:;" class="ml-6">
+            <i class="iconfont" style="color: #e84e89">&#xe8b4;</i>
+            <span class="ml-2">{{ post.updatedAt.split("T")[0] }}</span>
+          </a>
+
+          <a href="javascript:;" class="ml-6">
+            <i class="iconfont" style="color: #e84e89">&#xe8f4;</i>
+            <span class="ml-2">{{ post.visit }}</span>
+          </a>
+
+          <a href="javascript:;" class="ml-6">
+            <i class="iconfont" style="color: #e84e89">&#xe8b5;</i>
+            <span class="ml-2">{{ post.comment }}</span>
+          </a>
+        </div>
 
         <article
-          class="4/12 mt-10 prose prose-neutral prose-a:text-blue-500 break-words"
+          class="prose prose-neutral prose-a:text-blue-500 break-words"
           v-html="content"
         />
 
@@ -70,20 +107,6 @@
           </a>
         </div>
       </div>
-
-      <aside class="flex-1 hidden lg:block lg:ml-12">
-        <section class="aside-card">
-          <h1>Related Articles</h1>
-
-          <p>123123</p>
-          <p>123123</p>
-          <p>123123</p>
-          <p>123123</p>
-          <p>123123</p>
-          <p>123123</p>
-          <p>123123</p>
-        </section>
-      </aside>
     </main>
   </NuxtLayout>
 </template>
@@ -97,6 +120,12 @@ import hljs from "highlight.js";
 import "swiper/css";
 import "swiper/css/navigation";
 import "highlight.js/styles/atom-one-dark.css";
+
+const onChange = (y) => {
+  asideFixed.value = y > 150;
+};
+
+const asideFixed = ref(false);
 
 const md = new MarkdownIt({
   highlight: function (str, lang) {
@@ -125,7 +154,7 @@ const { data } = await useAsyncData("posts/:id", () =>
 );
 
 const post = computed(() => {
-  console.log(data, "compited");
+  // console.log(data, "compited");
   return data.value.data.attributes;
 });
 
@@ -141,24 +170,3 @@ const copy = () => {
   useClipboard({ source: post.link }).copy();
 };
 </script>
-
-<style lang="postcss" scoped>
-.aside-card {
-  box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 15%);
-  @apply bg-white rounded-2xl p-7 mb-7 w-full;
-
-  h1 {
-    line-height: 1.6;
-    @apply font-semibold text-2xl mb-10;
-
-    &::after {
-      display: block;
-      content: "";
-      width: 100%;
-      height: 2px;
-      background: #f4f4f4;
-      margin-top: 20px;
-    }
-  }
-}
-</style>

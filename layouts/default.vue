@@ -1,19 +1,30 @@
 <template>
-  <div class="m-auto container px-4 md:px-8 2xl:px-32 xl:py-6">
-    <Header class="border-b-2 border-white border-opacity-25 py-8" />
+  <div id="container" ref="el">
+    <div class="container lg:max-w-full xl:container mx-auto p-6">
+      <Header class="border-b-2 border-white border-opacity-25 py-8" />
 
-    <slot></slot>
+      <slot></slot>
 
-    <Footer
-      class="lg:mt-40 mt-20 pb-20 flex flex-col items-center justify-center"
-    />
+      <Footer class="flex flex-col items-center justify-center mt-20" />
+    </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { useScroll } from "@vueuse/core";
+
 useHead({
   titleTemplate: useTitle().title,
 });
+
+const emit = defineEmits<{
+  (event: "change", y: number): void;
+}>();
+
+const el = ref<HTMLElement | null>(null);
+const { y } = useScroll(el);
+
+watch(y, (val) => emit("change", val));
 </script>
 
 <style lang="postcss">

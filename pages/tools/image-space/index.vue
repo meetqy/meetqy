@@ -1,28 +1,50 @@
 <template>
-  <NuxtLayout name="tools">
-    <template #title>Image-Space</template>
-    <main class="flex h-full container m-auto xl:px-32">
-      <aside class="w-80 h-full rounded-md hidden xl:block">
-        <p class="py-2 px-2 text-white mb-2">类型</p>
-        <ul class="px-2">
-          <li
-            v-for="(item, index) in types"
-            :key="item"
-            class="li-item"
-            :class="{ active: index === curTypes }"
-            @click="curTypes = index"
-          >
-            <a :href="'#' + item.name" class="w-full inline-block">
-              {{ item.name }}
-            </a>
-          </li>
-        </ul>
+  <NuxtLayout @change="onChange">
+    <template #title>Random Image</template>
+    <main class="main-content flex">
+      <aside
+        :class="[
+          { fixed: asideFixed },
+          'top-0 w-96 max-h-screen hidden lg:flex flex-col z-10 ',
+        ]"
+      >
+        <section class="w-full lg:pr-10 my-5" :class="{ hidden: !asideFixed }">
+          <div class="p-2 h-min rounded-box">
+            <Logo />
+          </div>
+        </section>
+
+        <section class="w-full lg:pr-10">
+          <ul class="menu bg-base-100 p-2 w-full h-min rounded-box">
+            <li class="menu-title py-2">
+              <span>Type</span>
+            </li>
+            <li
+              class="text-xl"
+              v-for="(item, index) in types"
+              :key="item"
+              @click="curTypes = index"
+            >
+              <a
+                :href="'#' + item.name"
+                :class="{
+                  active: curTypes === index,
+                  capitalize: curTypes === index,
+                }"
+              >
+                {{ item.name }}
+              </a>
+            </li>
+          </ul>
+        </section>
       </aside>
 
+      <aside class="w-96 opacity-0 hidden lg:flex" v-show="asideFixed"></aside>
+
       <div
-        class="flex-1 px-10 mx-5 xl:mr-0 xl:ml-10 bg-white bg-opacity-80 rounded-md !max-w-full prose prose-neutral prose-a:text-blue-500 overflow-y-scroll py-5"
+        class="flex-1 px-5 py-10 bg-white rounded-md prose prose-neutral prose-a:text-blue-500"
       >
-        <h1>Image Space</h1>
+        <h1>Random Image</h1>
 
         <p>根据类型随机生成一张图片</p>
 
@@ -61,7 +83,6 @@
 </template>
 
 <script setup>
-// const types = ["avatar", "coffee", "girls", "dog", "national-flag"];
 const curTypes = ref(0);
 
 useHead({
@@ -86,22 +107,10 @@ const post = computed(() => {
 const types = computed(() => {
   return post.value.imageSpace;
 });
+
+const onChange = (y) => {
+  asideFixed.value = y > 150;
+};
+
+const asideFixed = ref(false);
 </script>
-
-<style scoped lang="postcss">
-.prose {
-  @apply tools-body;
-
-  &::-webkit-scrollbar {
-    display: none; /* Chrome Safari */
-  }
-}
-
-.li-item {
-  @apply px-4 py-2 rounded-xl text-black text-opacity-80 text-2xl cursor-pointer hover:bg-white hover:bg-opacity-20 transition-all;
-
-  &.active {
-    @apply bg-pink-500 text-white capitalize;
-  }
-}
-</style>

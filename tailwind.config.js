@@ -20,5 +20,5 @@ module.exports = {
     //   // => @media (max-width: 639px) { ... }
     // },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };

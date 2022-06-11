@@ -2,9 +2,34 @@
   <NuxtPage />
 </template>
 
+<script setup>
+onMounted(() => {
+  const appHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+  };
+  window.addEventListener("resize", appHeight);
+  appHeight();
+});
+</script>
+
 <style lang="postcss">
+:root {
+  --app-height: 100%;
+}
+
+#container {
+  height: var(--app-height);
+  @apply overflow-y-scroll;
+}
+
+html,
 body {
-  @apply font-mono;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: var(--app-height);
 
   &::before {
     content: "";
@@ -25,19 +50,6 @@ body {
 
   &.sm {
     @apply py-1;
-  }
-}
-
-.logo {
-  div {
-    @apply transition-all;
-    &:first-child {
-      @apply bg-gradient-to-r from-green-400 to-blue-500 fill-white;
-    }
-
-    &:last-child {
-      @apply text-white;
-    }
   }
 }
 </style>
