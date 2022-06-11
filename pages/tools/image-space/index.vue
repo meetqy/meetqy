@@ -19,6 +19,7 @@
             <li class="menu-title py-2">
               <span>Type</span>
             </li>
+
             <li
               class="text-xl"
               v-for="(item, index) in types"

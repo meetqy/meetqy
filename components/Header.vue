@@ -38,11 +38,11 @@ const navs: NavItem[] = [
     url: "/",
     children: [],
   },
-  // {
-  //   name: "模板",
-  //   url: "/template",
-  //   children: [],
-  // },
+  {
+    name: "模板",
+    url: "javascript:;",
+    children: [],
+  },
   {
     name: "工具",
     url: "javascript:;",

@@ -44,6 +44,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   vite: {
     build: {
       rollupOptions: {

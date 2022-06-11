@@ -13,14 +13,14 @@
         class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full"
       >
         <span class="font-serif font-semibold"
-          >{{ cao }} <i v-if="showWeek">，</i></span
+          >{{ cao }} <i v-if="props.showWeek">，</i></span
         >
       </div>
     </div>
 
     <div
       class="inline-flex h-12 items-center text-white text-2xl"
-      v-if="showWeek"
+      v-if="props.showWeek"
     >
       <span class="text-yellow-400">今天星期{{ week }} </span>
     </div>
@@ -32,7 +32,7 @@ interface Props {
   showWeek: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   showWeek: true,
 });
 
