@@ -63,7 +63,7 @@
           <div
             class="btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"
             :class="{ 'btn-outline': item.preview }"
-            @click="item.preview = !item.preview"
+            @click="showCode(index)"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@
           />
 
           <pre class="bg-base-200 px-4" v-show="!item.preview">
-            <code class="rounded-box" >{{item.html}}</code>
+            <code :id="'pre-' + index" class="rounded-box" >{{item.html}}</code>
           </pre>
         </div>
       </div>
@@ -97,10 +97,7 @@
 <script setup lang="ts">
 import { a1, a2 } from "./a.js";
 import hljs from "highlight.js";
-
-onMounted(() => {
-  hljs.highlightAll();
-});
+import "highlight.js/styles/atom-one-dark.css";
 
 const temps = ref([
   {
@@ -112,6 +109,15 @@ const temps = ref([
     preview: true,
   },
 ]);
+
+const showCode = (index: number) => {
+  const item = temps.value[index];
+  item.preview = !item.preview;
+
+  if (!item.preview) {
+    hljs.highlightBlock(document.querySelector("#pre-" + index));
+  }
+};
 
 const curTemp = ref(0);
 

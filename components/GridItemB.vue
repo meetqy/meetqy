@@ -72,14 +72,17 @@ interface Props {
   title: string;
   desciption: string;
   time: string;
-  visit: number;
-  comment: number;
+  visit?: number;
+  comment?: number;
   tag: Tag;
   headerImages: string[];
   to?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {});
+const props = withDefaults(defineProps<Props>(), {
+  visit: 0,
+  comment: 0,
+});
 
 const $cdn = useCdnUrl();
 
