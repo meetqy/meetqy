@@ -3,7 +3,7 @@
 # Hi 👋, I'm MeetQY
 
 - 🤔  强制刷新，左侧的图片可以随机更换，嘿嘿
-- 🔭  我的个人博客网站 [wcao.cc](https://wcao.cc)
+- 🔭  我的个人网站 [wcao.cc](https://wcao.cc)
 - 🔓  喜欢写写模板
 - 🌶  常用的技术: `Flutter`/`Vue`/`Js`/`Ts`/`React`/`TailwindCss`/`Node`
 - 🔥  常用的 UI 库: `DaisyUI`/`Antd`等还未发现的多主题、炫酷、有眼缘的 UI 库
