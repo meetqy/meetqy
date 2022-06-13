@@ -1,0 +1,1 @@
+import{E as c}from"./entry-5e70d6ee.mjs";const o=()=>c().replace("/api",""),r=()=>{const a=["cao","ca\u014D","ca\xF3","ca\u01D2","ca\xF2"],u=new Date().getDay(),t=["\u5929","\u4E00","\u4E8C","\u4E09","\u56DB","\u4E94","\u516D"][u],e=u?7%u:0;return{title:`\u5367\u69FD(w ${a[e]})\uFF0C\u4ECA\u5929\u661F\u671F${t}`,cao:a[e],week:t,day:u}};export{r as a,o as u};

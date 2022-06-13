@@ -4,9 +4,9 @@ export { useAsyncData, useLazyAsyncData, refreshNuxtData, defineNuxtComponent, u
 export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId, onActivated, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onDeactivated, onErrorCaptured, onMounted, onRenderTracked, onRenderTriggered, onServerPrefetch, onUnmounted, onUpdated, computed, customRef, isProxy, isReactive, isReadonly, isRef, markRaw, proxyRefs, reactive, readonly, ref, shallowReactive, shallowReadonly, shallowRef, toRaw, toRef, toRefs, triggerRef, unref, watch, watchEffect, isShallow, effect, effectScope, getCurrentScope, onScopeDispose, defineComponent, defineAsyncComponent, resolveComponent, getCurrentInstance, h, inject, nextTick, provide, useAttrs, useCssModule, useCssVars, useSlots, useTransitionState } from 'vue';
 export { useCdnUrl, useTitle } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/composables/hooks';
 export { useJsonToLanguage, useJsonDefaultValue, allLanguage } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/composables/jsonToLanguage';
-export { useStrapi3 } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/node_modules/@nuxtjs/strapi/dist/runtime/composables/useStrapi3';
 export { useStrapi4 } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/node_modules/@nuxtjs/strapi/dist/runtime/composables/useStrapi4';
 export { useStrapiAuth } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/node_modules/@nuxtjs/strapi/dist/runtime/composables/useStrapiAuth';
+export { useStrapi3 } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/node_modules/@nuxtjs/strapi/dist/runtime/composables/useStrapi3';
 export { useStrapiGraphQL } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/node_modules/@nuxtjs/strapi/dist/runtime/composables/useStrapiGraphQL';
 export { useStrapiClient } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/node_modules/@nuxtjs/strapi/dist/runtime/composables/useStrapiClient';
 export { useStrapiToken } from '/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/node_modules/@nuxtjs/strapi/dist/runtime/composables/useStrapiToken';

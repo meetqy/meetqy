@@ -1,1 +1,0 @@
-import{_ as t,o,e as _,w as a,l as n,f as c}from"./entry-7d77135f.mjs";const s={},r=c(" 123132 ");function f(d,u){const e=n;return o(),_(e,{name:"default"},{default:a(()=>[r]),_:1})}var i=t(s,[["render",f]]);export{i as default};
