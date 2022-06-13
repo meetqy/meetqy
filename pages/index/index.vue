@@ -16,6 +16,7 @@
           :tag="getTags(post)"
           :header-images="getHeaderImages(post)"
           :id="post.id + ''"
+          :to="post.attributes.to"
         />
 
         <grid-item-a

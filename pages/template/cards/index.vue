@@ -32,7 +32,7 @@
                   capitalize: curTemp === index,
                 }"
               >
-                {{ index + 1 }} . card-a
+                {{ index + 1 }} . card
               </a>
             </li>
           </ul>

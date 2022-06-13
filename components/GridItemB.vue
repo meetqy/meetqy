@@ -1,5 +1,5 @@
 <template>
-  <article class="article-b" @click="$router.push(`/posts/${id}`)">
+  <article class="article-b" @click="$router.push(to || `/posts/${id}`)">
     <div class="tags relative z-10">
       <a
         href="javascript:;"
@@ -29,7 +29,7 @@
 
     <main class="text-center px-4">
       <h1 class="title py-2 text-center">
-        <nuxt-link :to="'/posts/' + id">
+        <nuxt-link :to="to || '/posts/' + id">
           {{ title }}
         </nuxt-link>
       </h1>
@@ -76,6 +76,7 @@ interface Props {
   comment: number;
   tag: Tag;
   headerImages: string[];
+  to?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {});
