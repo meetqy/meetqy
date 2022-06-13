@@ -23,6 +23,8 @@ const change = async (e) => {
     jsonValue.value
   );
 
+  localStorage.setItem("json-to-language", jsonValue.value);
+
   codeOption.code = code;
 };
 

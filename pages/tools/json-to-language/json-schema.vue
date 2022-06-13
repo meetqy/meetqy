@@ -20,6 +20,7 @@ useHead({
 const change = async (e) => {
   jsonValue.value = e.getValue();
 
+  localStorage.setItem("json-to-language", jsonValue.value);
   codeOption.code = formatJson(jsonValue.value);
 };
 

@@ -12,9 +12,9 @@
       <div
         class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full"
       >
-        <span class="font-serif font-semibold"
-          >{{ cao }} <i v-if="props.showWeek">，</i></span
-        >
+        <span class="font-serif font-semibold">
+          {{ cao }} <i v-if="props.showWeek">，</i>
+        </span>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 interface Props {
-  showWeek: boolean;
+  showWeek?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {

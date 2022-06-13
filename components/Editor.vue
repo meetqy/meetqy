@@ -90,6 +90,8 @@ const setCodeMirror = async (codeOption: CodeOption) => {
   }, 50);
 };
 
+let t;
+
 onMounted(async () => {
   _jsonCodeMirror = $codemirror(jsonEditorElement.value, {
     mode: "application/ld+json",
@@ -110,16 +112,15 @@ onMounted(async () => {
   setCodeMirror(props.codeOption);
 
   // 监听json输入框失去焦点
-  _jsonCodeMirror.on("blur", async (e) => emit("change", e));
-});
-
-onUnmounted(() => {
-  try {
-    if (JSON.parse(props.jsonValue)) {
-      // 确保没有错误才保存到缓存中
-      localStorage.setItem("json-to-language", props.jsonValue);
+  _jsonCodeMirror.on("change", async (e) => {
+    if (t) {
+      clearTimeout(t);
     }
-  } catch (e) {}
+
+    t = setTimeout(() => {
+      emit("change", e);
+    }, 1000);
+  });
 });
 </script>
 

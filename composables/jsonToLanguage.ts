@@ -17,13 +17,13 @@ export const useJsonToLanguage = async (
 export const useJsonDefaultValue = () => {
   const _ = JSON.stringify({
     name: "张三",
-    age: 23,
-    posts: [
-      { name: "甜心教主 - 王心凌", desc: "这是我的第一篇文章！" },
-      { name: "少女杀手 - 刘畊宏", desc: "这是我的第二篇文章！" },
-      { name: "小学儿歌 - 孤勇者", desc: "这是我的第三篇文章！" },
-    ],
-    tag: ["github", "gitee"],
+    // age: 23,
+    // posts: [
+    //   { name: "甜心教主 - 王心凌", desc: "这是我的第一篇文章！" },
+    //   { name: "少女杀手 - 刘畊宏", desc: "这是我的第二篇文章！" },
+    //   { name: "小学儿歌 - 孤勇者", desc: "这是我的第三篇文章！" },
+    // ],
+    // tag: ["github", "gitee"],
   });
 
   try {

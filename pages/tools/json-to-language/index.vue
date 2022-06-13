@@ -17,8 +17,9 @@ useHead({
 
 const change = async (e) => {
   jsonValue.value = e.getValue();
-
   const code = await useJsonToLanguage("dart", jsonValue.value);
+
+  localStorage.setItem("json-to-language", jsonValue.value);
 
   codeOption.code = code;
 };
