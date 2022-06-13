@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     hostname: "https://wcao.cc",
   },
   build: {
+    cache: true,
     postcss: {
       postcssOptions: {
         "postcss-color-gray": {},
