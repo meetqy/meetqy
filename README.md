@@ -1,7 +1,21 @@
-<h1 align="center">Hi 👋, I'm Meetqy</h1>
+<img src='https://wcao.cc/image-space/api/ultraman-card?xxx' align='left'>
 
-- 📝 I regularly write articles on [wcao.cc](https://wcao.cc)
+## Hi 👋, I'm Meetqy
 
-- 📫 How to reach me **meetqy@qq.com**
+- 🤔 左侧的图可以随机更换，嘿嘿
+- 🔭 我的个人博客网站 [wcao.cc](https://wcao.cc)
+- 🔓 喜欢写写模板
+- 🌶 常用的技术: `Flutter`/`Vue`/`Js`/`Ts`/`React`/`TailwindCss`/`Node`
+- 🔥 常用的 UI 库: `DaisyUI`/`Antd`等还未发现的多主题、炫酷、有眼缘的 UI 库
 
-<p align="center"><img  src="https://github-readme-stats.vercel.app/api/top-langs?username=meetqy&show_icons=true&locale=en&layout=compact" alt="meetqy" /></p>
+> 算了，编不下去了，来一首《再别康桥》片段凑凑字数。
+
+```text
+-...----.----.--/-...----.----.--/---.--.-....-../--...-....-...-/-...--.-.---..../-..---.-....--./--------....--..
+
+--.-.--.--...--/-.--..--.....-./--...-....-...-/-...----.----.--/-...----.----.--/---.--.-....-../--..---.--..-.-/--------...--.--
+
+--...-....-...-/-...----.----.--/-...----.----.--/---.--.-....-../--...-.--.--.--/--...-..-..-.--/--------....--..
+
+-..----.-.---../-.-..-...-.-.--/-...-..-.-------/-.--..-..-.-..-/---.--.-....-../-..---.-..-...-/-.-----.--.-..-/--..........-.
+```
