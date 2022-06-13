@@ -11,7 +11,8 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/head/runtime/plugin").default> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/router").default> &
   InjectionType<typeof import("../../node_modules/@nuxtjs/strapi/dist/runtime/strapi.plugin").default> &
-  InjectionType<typeof import("../../plugins/codemirror.client").default>
+  InjectionType<typeof import("../../plugins/codemirror.client").default> &
+  InjectionType<typeof import("../../plugins/loading-bar.client").default>
 
 declare module '#app' {
   interface NuxtApp extends NuxtAppInjections { }

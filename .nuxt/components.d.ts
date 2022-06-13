@@ -9,6 +9,7 @@ declare module 'vue' {
     'GridItemB': typeof import("../components/GridItemB.vue")['default'],
     'Header': typeof import("../components/Header.vue")['default'],
     'Logo': typeof import("../components/Logo.vue")['default'],
+    'NuxtLoadingBar': typeof import("../components/NuxtLoadingBar.vue")['default'],
     'O': typeof import("../components/O.vue")['default'],
     'W': typeof import("../components/W.vue")['default'],
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
@@ -25,6 +26,7 @@ declare module 'vue' {
     'LazyGridItemB': typeof import("../components/GridItemB.vue")['default'],
     'LazyHeader': typeof import("../components/Header.vue")['default'],
     'LazyLogo': typeof import("../components/Logo.vue")['default'],
+    'LazyNuxtLoadingBar': typeof import("../components/NuxtLoadingBar.vue")['default'],
     'LazyO': typeof import("../components/O.vue")['default'],
     'LazyW': typeof import("../components/W.vue")['default'],
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
@@ -43,6 +45,7 @@ export const GridItemA: typeof import("../components/GridItemA.vue")['default']
 export const GridItemB: typeof import("../components/GridItemB.vue")['default']
 export const Header: typeof import("../components/Header.vue")['default']
 export const Logo: typeof import("../components/Logo.vue")['default']
+export const NuxtLoadingBar: typeof import("../components/NuxtLoadingBar.vue")['default']
 export const O: typeof import("../components/O.vue")['default']
 export const W: typeof import("../components/W.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
@@ -59,6 +62,7 @@ export const LazyGridItemA: typeof import("../components/GridItemA.vue")['defaul
 export const LazyGridItemB: typeof import("../components/GridItemB.vue")['default']
 export const LazyHeader: typeof import("../components/Header.vue")['default']
 export const LazyLogo: typeof import("../components/Logo.vue")['default']
+export const LazyNuxtLoadingBar: typeof import("../components/NuxtLoadingBar.vue")['default']
 export const LazyO: typeof import("../components/O.vue")['default']
 export const LazyW: typeof import("../components/W.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']

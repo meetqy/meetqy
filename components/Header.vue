@@ -38,25 +38,25 @@ const navs: NavItem[] = [
     url: "/",
     children: [],
   },
-  {
-    name: "模板",
-    url: "javascript:;",
-    children: [],
-  },
-  {
-    name: "工具",
-    url: "javascript:;",
-    children: [
-      {
-        name: "JSON在线工具",
-        url: "/tools/json-to-language",
-      },
-      {
-        name: "Image Space",
-        url: "/tools/image-space",
-      },
-    ],
-  },
+  // {
+  //   name: "模板",
+  //   url: "javascript:;",
+  //   children: [],
+  // },
+  // {
+  //   name: "工具",
+  //   url: "javascript:;",
+  //   children: [
+  //     {
+  //       name: "JSON在线工具",
+  //       url: "/tools/json-to-language",
+  //     },
+  //     {
+  //       name: "Image Space",
+  //       url: "/tools/image-space",
+  //     },
+  //   ],
+  // },
 ];
 </script>
 

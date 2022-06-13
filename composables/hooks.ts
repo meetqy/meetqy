@@ -10,7 +10,7 @@ export const useTitle = () => {
   const result = day ? 7 % day : 0;
 
   return {
-    title: `卧槽(w ${cao[result]})，今天星期${week}`,
+    title: `卧槽(w ${cao[result]})`,
     cao: cao[result],
     week,
     day,

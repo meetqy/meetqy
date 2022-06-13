@@ -1,5 +1,9 @@
 <template>
-  <NuxtPage />
+  <div>
+    <NuxtLoadingBar :duration="1000" />
+
+    <NuxtPage />
+  </div>
 </template>
 
 <script setup>
