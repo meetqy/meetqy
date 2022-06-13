@@ -1213,18 +1213,18 @@ var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a3, b) => {
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a3, prop, b[prop]);
+      __defNormalProp(a, prop, b[prop]);
   if (__getOwnPropSymbols)
     for (var prop of __getOwnPropSymbols(b)) {
       if (__propIsEnum.call(b, prop))
-        __defNormalProp(a3, prop, b[prop]);
+        __defNormalProp(a, prop, b[prop]);
     }
-  return a3;
+  return a;
 };
-var __spreadProps = (a3, b) => __defProps(a3, __getOwnPropDescs(b));
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 const suspectProtoRx = /"(?:_|\\u005[Ff])(?:_|\\u005[Ff])(?:p|\\u0070)(?:r|\\u0072)(?:o|\\u006[Ff])(?:t|\\u0074)(?:o|\\u006[Ff])(?:_|\\u005[Ff])(?:_|\\u005[Ff])"\s*:/;
 const suspectConstructorRx = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/;
 const JsonSigRx = /^["{[]|^-?[0-9][0-9.]{0,14}$/;
@@ -1922,28 +1922,28 @@ var vueRouter_cjs_prod = {};
       return pathname;
     return pathname.slice(base.length) || "/";
   }
-  function isSameRouteLocation(stringifyQuery2, a3, b) {
-    const aLastIndex = a3.matched.length - 1;
+  function isSameRouteLocation(stringifyQuery2, a, b) {
+    const aLastIndex = a.matched.length - 1;
     const bLastIndex = b.matched.length - 1;
-    return aLastIndex > -1 && aLastIndex === bLastIndex && isSameRouteRecord(a3.matched[aLastIndex], b.matched[bLastIndex]) && isSameRouteLocationParams(a3.params, b.params) && stringifyQuery2(a3.query) === stringifyQuery2(b.query) && a3.hash === b.hash;
+    return aLastIndex > -1 && aLastIndex === bLastIndex && isSameRouteRecord(a.matched[aLastIndex], b.matched[bLastIndex]) && isSameRouteLocationParams(a.params, b.params) && stringifyQuery2(a.query) === stringifyQuery2(b.query) && a.hash === b.hash;
   }
-  function isSameRouteRecord(a3, b) {
-    return (a3.aliasOf || a3) === (b.aliasOf || b);
+  function isSameRouteRecord(a, b) {
+    return (a.aliasOf || a) === (b.aliasOf || b);
   }
-  function isSameRouteLocationParams(a3, b) {
-    if (Object.keys(a3).length !== Object.keys(b).length)
+  function isSameRouteLocationParams(a, b) {
+    if (Object.keys(a).length !== Object.keys(b).length)
       return false;
-    for (const key in a3) {
-      if (!isSameRouteLocationParamsValue(a3[key], b[key]))
+    for (const key in a) {
+      if (!isSameRouteLocationParamsValue(a[key], b[key]))
         return false;
     }
     return true;
   }
-  function isSameRouteLocationParamsValue(a3, b) {
-    return Array.isArray(a3) ? isEquivalentArray(a3, b) : Array.isArray(b) ? isEquivalentArray(b, a3) : a3 === b;
+  function isSameRouteLocationParamsValue(a, b) {
+    return Array.isArray(a) ? isEquivalentArray(a, b) : Array.isArray(b) ? isEquivalentArray(b, a) : a === b;
   }
-  function isEquivalentArray(a3, b) {
-    return Array.isArray(b) ? a3.length === b.length && a3.every((value, i) => value === b[i]) : a3.length === 1 && a3[0] === b;
+  function isEquivalentArray(a, b) {
+    return Array.isArray(b) ? a.length === b.length && a.every((value, i) => value === b[i]) : a.length === 1 && a[0] === b;
   }
   function resolveRelativePath(to, from) {
     if (to.startsWith("/"))
@@ -2420,24 +2420,24 @@ var vueRouter_cjs_prod = {};
       stringify: stringify2
     };
   }
-  function compareScoreArray(a3, b) {
+  function compareScoreArray(a, b) {
     let i = 0;
-    while (i < a3.length && i < b.length) {
-      const diff = b[i] - a3[i];
+    while (i < a.length && i < b.length) {
+      const diff = b[i] - a[i];
       if (diff)
         return diff;
       i++;
     }
-    if (a3.length < b.length) {
-      return a3.length === 1 && a3[0] === 40 + 40 ? -1 : 1;
-    } else if (a3.length > b.length) {
+    if (a.length < b.length) {
+      return a.length === 1 && a[0] === 40 + 40 ? -1 : 1;
+    } else if (a.length > b.length) {
       return b.length === 1 && b[0] === 40 + 40 ? 1 : -1;
     }
     return 0;
   }
-  function comparePathParserScore(a3, b) {
+  function comparePathParserScore(a, b) {
     let i = 0;
-    const aScore = a3.score;
+    const aScore = a.score;
     const bScore = b.score;
     while (i < aScore.length && i < bScore.length) {
       const comp = compareScoreArray(aScore[i], bScore[i]);
@@ -4227,53 +4227,53 @@ const commentStripRE = /^-?>|<!--|-->|--!>|<!-$/g;
 function escapeHtmlComment(src) {
   return src.replace(commentStripRE, "");
 }
-function looseCompareArrays(a3, b) {
-  if (a3.length !== b.length)
+function looseCompareArrays(a, b) {
+  if (a.length !== b.length)
     return false;
   let equal = true;
-  for (let i = 0; equal && i < a3.length; i++) {
-    equal = looseEqual(a3[i], b[i]);
+  for (let i = 0; equal && i < a.length; i++) {
+    equal = looseEqual(a[i], b[i]);
   }
   return equal;
 }
-function looseEqual(a3, b) {
-  if (a3 === b)
+function looseEqual(a, b) {
+  if (a === b)
     return true;
-  let aValidType = isDate(a3);
+  let aValidType = isDate(a);
   let bValidType = isDate(b);
   if (aValidType || bValidType) {
-    return aValidType && bValidType ? a3.getTime() === b.getTime() : false;
+    return aValidType && bValidType ? a.getTime() === b.getTime() : false;
   }
-  aValidType = isSymbol(a3);
+  aValidType = isSymbol(a);
   bValidType = isSymbol(b);
   if (aValidType || bValidType) {
-    return a3 === b;
+    return a === b;
   }
-  aValidType = isArray(a3);
+  aValidType = isArray(a);
   bValidType = isArray(b);
   if (aValidType || bValidType) {
-    return aValidType && bValidType ? looseCompareArrays(a3, b) : false;
+    return aValidType && bValidType ? looseCompareArrays(a, b) : false;
   }
-  aValidType = isObject$1(a3);
+  aValidType = isObject$1(a);
   bValidType = isObject$1(b);
   if (aValidType || bValidType) {
     if (!aValidType || !bValidType) {
       return false;
     }
-    const aKeysCount = Object.keys(a3).length;
+    const aKeysCount = Object.keys(a).length;
     const bKeysCount = Object.keys(b).length;
     if (aKeysCount !== bKeysCount) {
       return false;
     }
-    for (const key in a3) {
-      const aHasKey = a3.hasOwnProperty(key);
+    for (const key in a) {
+      const aHasKey = a.hasOwnProperty(key);
       const bHasKey = b.hasOwnProperty(key);
-      if (aHasKey && !bHasKey || !aHasKey && bHasKey || !looseEqual(a3[key], b[key])) {
+      if (aHasKey && !bHasKey || !aHasKey && bHasKey || !looseEqual(a[key], b[key])) {
         return false;
       }
     }
   }
-  return String(a3) === String(b);
+  return String(a) === String(b);
 }
 function looseIndexOf(arr, val) {
   return arr.findIndex((item) => looseEqual(item, val));
@@ -4465,18 +4465,18 @@ var __getOwnPropSymbols2 = Object.getOwnPropertySymbols;
 var __hasOwnProp2 = Object.prototype.hasOwnProperty;
 var __propIsEnum2 = Object.prototype.propertyIsEnumerable;
 var __defNormalProp2 = (obj, key, value) => key in obj ? __defProp2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues2 = (a3, b) => {
+var __spreadValues2 = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp2.call(b, prop))
-      __defNormalProp2(a3, prop, b[prop]);
+      __defNormalProp2(a, prop, b[prop]);
   if (__getOwnPropSymbols2)
     for (var prop of __getOwnPropSymbols2(b)) {
       if (__propIsEnum2.call(b, prop))
-        __defNormalProp2(a3, prop, b[prop]);
+        __defNormalProp2(a, prop, b[prop]);
     }
-  return a3;
+  return a;
 };
-var __spreadProps2 = (a3, b) => __defProps2(a3, __getOwnPropDescs2(b));
+var __spreadProps2 = (a, b) => __defProps2(a, __getOwnPropDescs2(b));
 var PROVIDE_KEY = `usehead`;
 var HEAD_COUNT_KEY = `head:count`;
 var HEAD_ATTRS_KEY = `data-head-attrs`;
@@ -5365,7 +5365,7 @@ const useStrapi4 = () => {
   };
 };
 const _imports_0 = publicAssetsURL(`avatar.jpg`);
-const meta$c = void 0;
+const meta$b = void 0;
 const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   name: "W",
   __ssrInlineRender: true,
@@ -5431,7 +5431,6 @@ _sfc_main$t.setup = (props, ctx) => {
   return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
 const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-73662c7c"]]);
-const meta$b = void 0;
 const meta$a = void 0;
 const a1 = `
 <div class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
@@ -5493,11 +5492,6 @@ const a2 = `
   </div>
 </div>
 `;
-const a = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  a1,
-  a2
-}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   name: "index",
   __ssrInlineRender: true,
@@ -5530,21 +5524,21 @@ const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<main class="main-content flex" data-v-f9d32580${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
+            _push2(`<main class="main-content flex" data-v-61590247${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
               { fixed: asideFixed.value },
               "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
-            ])}" data-v-f9d32580${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}" data-v-f9d32580${_scopeId}><div class="p-2 h-min rounded-box" data-v-f9d32580${_scopeId}>`);
+            ])}" data-v-61590247${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}" data-v-61590247${_scopeId}><div class="p-2 h-min rounded-box" data-v-61590247${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full lg:pr-10" data-v-f9d32580${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box" data-v-f9d32580${_scopeId}><li class="menu-title py-2" data-v-f9d32580${_scopeId}><span data-v-f9d32580${_scopeId}>List</span></li><!--[-->`);
+            _push2(`</div></section><section class="w-full lg:pr-10" data-v-61590247${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box" data-v-61590247${_scopeId}><li class="menu-title py-2" data-v-61590247${_scopeId}><span data-v-61590247${_scopeId}>List</span></li><!--[-->`);
             serverRenderer.exports.ssrRenderList(temps.value, (item, index2) => {
-              _push2(`<li class="text-xl" data-v-f9d32580${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#card-a" + index2)} class="${serverRenderer.exports.ssrRenderClass({
+              _push2(`<li class="text-xl" data-v-61590247${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#card-a" + index2)} class="${serverRenderer.exports.ssrRenderClass({
                 active: curTemp.value === index2,
                 capitalize: curTemp.value === index2
-              })}" data-v-f9d32580${_scopeId}>${serverRenderer.exports.ssrInterpolate(index2 + 1)} . card </a></li>`);
+              })}" data-v-61590247${_scopeId}>${serverRenderer.exports.ssrInterpolate(index2 + 1)} . card </a></li>`);
             });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}" data-v-f9d32580${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose" data-v-f9d32580${_scopeId}><h1 data-v-f9d32580${_scopeId}>Tailwind CSS - Card</h1><p data-v-f9d32580${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code data-v-f9d32580${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code data-v-f9d32580${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}" data-v-61590247${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose" data-v-61590247${_scopeId}><h1 data-v-61590247${_scopeId}>Tailwind CSS - Card</h1><p data-v-61590247${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code data-v-61590247${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code data-v-61590247${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
             serverRenderer.exports.ssrRenderList(temps.value, (item, index2) => {
-              _push2(`<div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)} data-v-f9d32580${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": item.preview }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}" data-v-f9d32580${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" data-v-f9d32580${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" data-v-f9d32580${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200" data-v-f9d32580${_scopeId}>${item.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(!item.preview ? null : { display: "none" })}" data-v-f9d32580${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box" data-v-f9d32580${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.html)}</code>
+              _push2(`<div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)} data-v-61590247${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": item.preview }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}" data-v-61590247${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" data-v-61590247${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" data-v-61590247${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200" data-v-61590247${_scopeId}>${item.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(!item.preview ? null : { display: "none" })}" data-v-61590247${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box" data-v-61590247${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.html)}</code>
           </pre></div>`);
             });
             _push2(`<!--]--></div></main>`);
@@ -6135,7 +6129,7 @@ const routes = [
     path: "/",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/index/index.vue",
     children: [],
-    meta: meta$c,
+    meta: meta$b,
     alias: [],
     component: () => Promise.resolve().then(function() {
       return index$9;
@@ -6146,21 +6140,10 @@ const routes = [
     path: "/posts/:id",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/posts/[id].vue",
     children: [],
-    meta: meta$b,
-    alias: [],
-    component: () => Promise.resolve().then(function() {
-      return _id_;
-    })
-  },
-  {
-    name: "template-cards-a",
-    path: "/template/cards/a",
-    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/template/cards/a.js",
-    children: [],
     meta: meta$a,
     alias: [],
     component: () => Promise.resolve().then(function() {
-      return a;
+      return _id_;
     })
   },
   {
@@ -7482,21 +7465,21 @@ const _sfc_main$8 = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<main class="main-content flex" data-v-f9d32580${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
+            _push2(`<main class="main-content flex" data-v-61590247${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
               { fixed: asideFixed.value },
               "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
-            ])}" data-v-f9d32580${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}" data-v-f9d32580${_scopeId}><div class="p-2 h-min rounded-box" data-v-f9d32580${_scopeId}>`);
+            ])}" data-v-61590247${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}" data-v-61590247${_scopeId}><div class="p-2 h-min rounded-box" data-v-61590247${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full lg:pr-10" data-v-f9d32580${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box" data-v-f9d32580${_scopeId}><li class="menu-title py-2" data-v-f9d32580${_scopeId}><span data-v-f9d32580${_scopeId}>List</span></li><!--[-->`);
+            _push2(`</div></section><section class="w-full lg:pr-10" data-v-61590247${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box" data-v-61590247${_scopeId}><li class="menu-title py-2" data-v-61590247${_scopeId}><span data-v-61590247${_scopeId}>List</span></li><!--[-->`);
             serverRenderer.exports.ssrRenderList(temps.value, (item, index2) => {
-              _push2(`<li class="text-xl" data-v-f9d32580${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#card-a" + index2)} class="${serverRenderer.exports.ssrRenderClass({
+              _push2(`<li class="text-xl" data-v-61590247${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#card-a" + index2)} class="${serverRenderer.exports.ssrRenderClass({
                 active: curTemp.value === index2,
                 capitalize: curTemp.value === index2
-              })}" data-v-f9d32580${_scopeId}>${serverRenderer.exports.ssrInterpolate(index2 + 1)} . card </a></li>`);
+              })}" data-v-61590247${_scopeId}>${serverRenderer.exports.ssrInterpolate(index2 + 1)} . card </a></li>`);
             });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}" data-v-f9d32580${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose" data-v-f9d32580${_scopeId}><h1 data-v-f9d32580${_scopeId}>Tailwind CSS - Card</h1><p data-v-f9d32580${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code data-v-f9d32580${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code data-v-f9d32580${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}" data-v-61590247${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose" data-v-61590247${_scopeId}><h1 data-v-61590247${_scopeId}>Tailwind CSS - Card</h1><p data-v-61590247${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code data-v-61590247${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code data-v-61590247${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
             serverRenderer.exports.ssrRenderList(temps.value, (item, index2) => {
-              _push2(`<div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)} data-v-f9d32580${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": item.preview }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}" data-v-f9d32580${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" data-v-f9d32580${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" data-v-f9d32580${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200" data-v-f9d32580${_scopeId}>${item.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(!item.preview ? null : { display: "none" })}" data-v-f9d32580${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box" data-v-f9d32580${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.html)}</code>
+              _push2(`<div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)} data-v-61590247${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": item.preview }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}" data-v-61590247${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" data-v-61590247${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" data-v-61590247${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200" data-v-61590247${_scopeId}>${item.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(!item.preview ? null : { display: "none" })}" data-v-61590247${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box" data-v-61590247${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.html)}</code>
           </pre></div>`);
             });
             _push2(`<!--]--></div></main>`);
@@ -7608,7 +7591,7 @@ _sfc_main$8.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/template/cards/index.vue");
   return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
 };
-const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-f9d32580"]]);
+const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-61590247"]]);
 const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$6

@@ -95,7 +95,7 @@
 </template>
 
 <script setup lang="ts">
-import { a1, a2 } from "./a.js";
+import { a1, a2 } from "@/templates/cards-data.js";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 
