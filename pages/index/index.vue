@@ -32,9 +32,9 @@
     </div>
 
     <div class="paging md:py-10 py-5">
-      <a href="javasciprt:;" class="btn">Prev</a>
+      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Prev</a>
       <span class="px-5">Page 1 of 2</span>
-      <a href="javasciprt:;" class="btn">Next</a>
+      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
     </div>
 
     <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
@@ -48,10 +48,10 @@
               alt=""
             />
             <div class="flex flex-col justify-center ml-5">
-              <span class="text-sm text-white text-opacity-50"
+              <span class="text-sm text-base-100 text-opacity-50"
                 >June 5, 2019</span
               >
-              <p class="text-base font-semibold text-white">
+              <p class="text-base font-semibold text-base-100">
                 Mars is the fourth planet from the Sun
               </p>
             </div>
@@ -65,7 +65,7 @@
         <div class="flex mt-5 flex-wrap">
           <a
             href="javascript:;"
-            class="px-4 py-2 text-white rounded-full mr-2 mb-4"
+            class="px-4 py-2 text-base-100 rounded-full mr-2 mb-4"
             :class="item"
             v-for="item in [
               'bg-blue-400',
@@ -91,7 +91,7 @@
               alt="meetqy"
             />
             <div class="ml-5 flex flex-col justify-center">
-              <p class="text-lg font-semibold text-white">
+              <p class="text-lg font-semibold text-base-100">
                 meetqy
                 <sup
                   class="inline-block line-through decoration-red-500 decoration-4"
@@ -99,13 +99,13 @@
                   都{{ new Date().getFullYear() - 1996 }}了
                 </sup>
               </p>
-              <p class="text-white text-opacity-70 text-sm my-1">
+              <p class="text-base-100 text-opacity-70 text-sm my-1">
                 前端CV工程师 - 擅长CV大法
               </p>
             </div>
           </div>
 
-          <p class="text-white mt-5 text-base text-opacity-90">
+          <p class="text-base-100 mt-5 text-base text-opacity-90">
             摸鱼、养狗、干饭、找模板、写模板，生活就是如此的朴实无华！
           </p>
           <p class="mt-4 about">
@@ -200,7 +200,7 @@ const getHeaderImages = (post) => {
 
   .bottom-title {
     font-size: 24px;
-    @apply text-white font-semibold border-b border-white border-opacity-20 pb-5;
+    @apply text-base-100 font-semibold border-b border-white border-opacity-20 pb-5;
   }
 
   ul {
@@ -231,11 +231,6 @@ const getHeaderImages = (post) => {
 }
 
 .paging {
-  @apply text-white flex justify-center items-center;
-
-  .btn {
-    @apply px-5 py-2 rounded-full text-white;
-    background-color: #e84e89;
-  }
+  @apply text-base-100 flex justify-center items-center;
 }
 </style>

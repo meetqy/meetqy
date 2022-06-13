@@ -40,9 +40,7 @@
 
       <aside class="w-96 opacity-0 hidden lg:flex" v-show="asideFixed"></aside>
 
-      <div
-        class="flex-1 relative overflow-hidden p-5 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"
-      >
+      <div class="flex-1 relative overflow-hidden p-5 bg-base-100 rounded-md">
         <Swiper
           class="swiper w-full bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl"
           :modules="modules"
@@ -60,7 +58,7 @@
           </swiper-slide>
         </Swiper>
 
-        <div class="flex items-center mt-6 flex-wrap">
+        <div class="flex items-center mt-6 flex-wrap mb-10">
           <a href="javascript:;" class="flex items-center justify-center">
             <img
               class="w-8 h-8 rounded-full relative -top-0.5"

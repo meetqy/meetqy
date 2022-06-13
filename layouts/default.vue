@@ -1,7 +1,7 @@
 <template>
   <div id="container" ref="el">
     <div class="container lg:max-w-full xl:container mx-auto p-6">
-      <Header class="border-b-2 border-white border-opacity-25 py-8" />
+      <Header class="border-b-2 border-base-100 border-opacity-25 py-8" />
 
       <slot></slot>
 

@@ -43,7 +43,7 @@
       <aside class="w-96 opacity-0 hidden lg:flex" v-show="asideFixed"></aside>
 
       <div
-        class="flex-1 px-5 py-10 bg-white rounded-md prose prose-neutral prose-a:text-blue-500"
+        class="flex-1 px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"
       >
         <h1>Random Image</h1>
 
@@ -56,7 +56,7 @@
 
         <article v-for="item in types">
           <h2 :id="item.name" class="capitalize flex justify-between">
-            <span><small class="text-gray-400"># </small>{{ item.name }}</span>
+            <span><small class="text-base-300"># </small>{{ item.name }}</span>
             <a
               :href="item.link"
               target="_blank"

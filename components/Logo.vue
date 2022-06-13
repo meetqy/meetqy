@@ -7,22 +7,22 @@
       <div
         class="w-12 h-12 rounded-full transition-all flex items-center justify-center"
       >
-        <W :size="30" />
+        <W :size="30" class="fill-base-100" />
       </div>
       <div
         class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full"
       >
-        <span class="font-serif font-semibold">
+        <span class="font-serif font-semibold text-base-100">
           {{ cao }} <i v-if="props.showWeek">，</i>
         </span>
       </div>
     </div>
 
     <div
-      class="inline-flex h-12 items-center text-white text-2xl"
+      class="inline-flex h-12 items-center text-base-100 text-2xl"
       v-if="props.showWeek"
     >
-      <span class="text-yellow-400">今天星期{{ week }} </span>
+      <span class="text-warning">今天星期{{ week }} </span>
     </div>
   </div>
 </template>
