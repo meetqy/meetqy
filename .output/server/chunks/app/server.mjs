@@ -7256,8 +7256,8 @@ const _sfc_main$8 = {
             });
             _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose"${_scopeId}><h1${_scopeId}>Tailwind CSS - Card</h1><p${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(fragments), (item, index2) => {
-              _push2(`<div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)}${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${item.attributes.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.html)}</code>
-          </pre></div>`);
+              _push2(`<div class="prose"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)}${_scopeId}><h3${_scopeId}><small class="text-base-300"${_scopeId}># </small> ${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</h3><div class="mockup-window border bg-base-300 w-full mb-8"${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${item.attributes.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.html)}</code>
+          </pre></div></div>`);
             });
             _push2(`<!--]--></div></main>`);
           } else {
@@ -7313,42 +7313,48 @@ const _sfc_main$8 = {
                   ]),
                   (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(fragments), (item, index2) => {
                     return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
-                      class: "mockup-window border bg-base-300 w-full mb-8",
+                      class: "prose",
                       id: "card-a" + index2,
                       key: index2
                     }, [
-                      vue_cjs_prod.createVNode("div", {
-                        class: ["btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2", { "btn-outline": !activeCode.value[index2] }],
-                        onClick: ($event) => showCode(index2)
-                      }, [
-                        (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
-                          xmlns: "http://www.w3.org/2000/svg",
-                          class: "h-6 w-6",
-                          fill: "none",
-                          viewBox: "0 0 24 24",
-                          stroke: "currentColor",
-                          "stroke-width": "2"
+                      vue_cjs_prod.createVNode("h3", null, [
+                        vue_cjs_prod.createVNode("small", { class: "text-base-300" }, "# "),
+                        vue_cjs_prod.createTextVNode(" " + vue_cjs_prod.toDisplayString(item.attributes.name), 1)
+                      ]),
+                      vue_cjs_prod.createVNode("div", { class: "mockup-window border bg-base-300 w-full mb-8" }, [
+                        vue_cjs_prod.createVNode("div", {
+                          class: ["btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2", { "btn-outline": !activeCode.value[index2] }],
+                          onClick: ($event) => showCode(index2)
                         }, [
-                          vue_cjs_prod.createVNode("path", {
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round",
-                            d: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                          })
-                        ]))
-                      ], 10, ["onClick"]),
-                      vue_cjs_prod.createVNode("div", {
-                        class: "flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200",
-                        innerHTML: item.attributes.html
-                      }, null, 8, ["innerHTML"]),
-                      vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("pre", { class: "bg-base-200 px-4" }, [
-                        vue_cjs_prod.createTextVNode("            "),
-                        vue_cjs_prod.createVNode("code", {
-                          id: "pre-" + index2,
-                          class: "rounded-box"
-                        }, vue_cjs_prod.toDisplayString(item.attributes.html), 9, ["id"]),
-                        vue_cjs_prod.createTextVNode("\n          ")
-                      ], 512), [
-                        [vue_cjs_prod.vShow, activeCode.value[index2]]
+                          (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            class: "h-6 w-6",
+                            fill: "none",
+                            viewBox: "0 0 24 24",
+                            stroke: "currentColor",
+                            "stroke-width": "2"
+                          }, [
+                            vue_cjs_prod.createVNode("path", {
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              d: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            })
+                          ]))
+                        ], 10, ["onClick"]),
+                        vue_cjs_prod.createVNode("div", {
+                          class: "flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200",
+                          innerHTML: item.attributes.html
+                        }, null, 8, ["innerHTML"]),
+                        vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("pre", { class: "bg-base-200 px-4" }, [
+                          vue_cjs_prod.createTextVNode("            "),
+                          vue_cjs_prod.createVNode("code", {
+                            id: "pre-" + index2,
+                            class: "rounded-box"
+                          }, vue_cjs_prod.toDisplayString(item.attributes.html), 9, ["id"]),
+                          vue_cjs_prod.createTextVNode("\n          ")
+                        ], 512), [
+                          [vue_cjs_prod.vShow, activeCode.value[index2]]
+                        ])
                       ])
                     ], 8, ["id"]);
                   }), 128))

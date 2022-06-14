@@ -55,39 +55,44 @@
         </p>
 
         <div
-          class="mockup-window border bg-base-300 w-full mb-8"
+          class="prose"
           :id="'card-a' + index"
           v-for="(item, index) in fragments"
           :key="index"
         >
-          <div
-            class="btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"
-            :class="{ 'btn-outline': !activeCode[index] }"
-            @click="showCode(index)"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
+          <h3>
+            <small class="text-base-300"># </small> {{ item.attributes.name }}
+          </h3>
+          <div class="mockup-window border bg-base-300 w-full mb-8">
+            <div
+              class="btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"
+              :class="{ 'btn-outline': !activeCode[index] }"
+              @click="showCode(index)"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              />
-            </svg>
-          </div>
-          <div
-            class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"
-            v-html="item.attributes.html"
-          />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+            </div>
+            <div
+              class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"
+              v-html="item.attributes.html"
+            />
 
-          <pre class="bg-base-200 px-4" v-show="activeCode[index]">
+            <pre class="bg-base-200 px-4" v-show="activeCode[index]">
             <code :id="'pre-' + index" class="rounded-box" >{{item.attributes.html}}</code>
           </pre>
+          </div>
         </div>
       </div>
     </main>
