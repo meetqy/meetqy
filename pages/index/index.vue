@@ -6,8 +6,18 @@
       v-if="posts"
     >
       <div class="block" v-for="post in posts" :key="post.id">
+        <grid-item-a
+          v-if="getCategory(post).name === '工具'"
+          :title="post.attributes.title"
+          :desciption="post.attributes.desciption"
+          :time="post.attributes.updatedAt.split('T')[0]"
+          :tag="getCategory(post).name"
+          :header-images="getHeaderImages(post)"
+          :link="post.attributes.link"
+        />
+
         <grid-item-b
-          v-if="getCategory(post).name === '模板'"
+          v-else
           :title="post.attributes.title"
           :desciption="post.attributes.desciption"
           :time="post.attributes.updatedAt.split('T')[0]"
@@ -17,16 +27,6 @@
           :header-images="getHeaderImages(post)"
           :id="post.id + ''"
           :to="post.attributes.to"
-        />
-
-        <grid-item-a
-          v-if="getCategory(post).name === '工具'"
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :tag="getCategory(post).name"
-          :header-images="getHeaderImages(post)"
-          :link="post.attributes.link"
         />
       </div>
     </div>
@@ -173,6 +173,8 @@ const { data } = await useAsyncData("posts", () =>
 );
 
 const posts = computed(() => data.value.data);
+
+console.log(posts.value);
 
 const getTags = (post) => {
   const tags = post.attributes.tags.data;

@@ -706,7 +706,7 @@ function is(selector) {
   return false;
 }
 
-function index$a() {
+function index$8() {
   let child = this[0];
   let i;
 
@@ -975,7 +975,7 @@ const Methods = {
   html,
   text,
   is,
-  index: index$a,
+  index: index$8,
   eq,
   append,
   prepend,
@@ -4006,7 +4006,7 @@ function defineNuxtLink(options) {
     }
   });
 }
-const __nuxt_component_1$2 = defineNuxtLink({ componentName: "NuxtLink" });
+const __nuxt_component_1$1 = defineNuxtLink({ componentName: "NuxtLink" });
 var shared_cjs_prod = {};
 Object.defineProperty(shared_cjs_prod, "__esModule", { value: true });
 function makeMap(str, expectsLowerCase) {
@@ -5131,6 +5131,49 @@ const useTitle = () => {
     day
   };
 };
+const _sfc_main$v = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+  name: "GridItemA",
+  __ssrInlineRender: true,
+  props: {
+    title: null,
+    desciption: null,
+    time: null,
+    tag: null,
+    headerImages: null,
+    link: null
+  },
+  setup(__props) {
+    const $cdn = useCdnUrl();
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_nuxt_link = __nuxt_component_1$1;
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
+        class: "article-a",
+        style: `background-image:url(${vue_cjs_prod.unref($cdn)}${__props.headerImages[0]})`
+      }, _attrs))}><div class="bg-base-100 pt-10 rounded-2xl bg-opacity-80"><div class="tags"><a href="javascript:;">${serverRenderer.exports.ssrInterpolate(__props.tag)}</a></div><header class="relative flex justify-center items-center flex-col px-4"><time class="flex items-center text-base-content capitalize"><i class="text-2xl iconfont">\uE8B4</i><span class="ml-2 text-sm">${serverRenderer.exports.ssrInterpolate(__props.time)}</span></time></header><main class="text-base-content text-center px-4"><h1 class="title py-2">`);
+      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
+        to: "/tools" + __props.link
+      }, {
+        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`${serverRenderer.exports.ssrInterpolate(__props.title)}`);
+          } else {
+            return [
+              vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(__props.title), 1)
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</h1><p class="text-opacity-60">${serverRenderer.exports.ssrInterpolate(__props.desciption)}</p></main><footer class="flex justify-between items-center mt-10"><a href="javascript:;" class="flex items-center"><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}"></span><span class="author-name">meetqy</span></a><div class="text-base-content text-sm"><a href="javascript:;"><span class="mr-1">23719</span><i class="iconfont">\uE8F4</i></a><a href="javascript:;" class="ml-4"><span class="mr-1">23719</span><i class="iconfont">\uE8B5</i></a></div></footer></div></article>`);
+    };
+  }
+});
+const _sfc_setup$v = _sfc_main$v.setup;
+_sfc_main$v.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemA.vue");
+  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
+};
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -5138,7 +5181,7 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   name: "GridItemB",
   __ssrInlineRender: true,
   props: {
@@ -5153,11 +5196,13 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     to: null
   },
   setup(__props) {
+    const props = __props;
+    const toLink = vue_cjs_prod.computed(() => props.to ? props.to + props.id : `/posts/${props.id}`);
     const $cdn = useCdnUrl();
     const modules = [Navigation];
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_nuxt_link = __nuxt_component_1$2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "article-b" }, _attrs))} data-v-36a1f1c6><div class="tags relative z-10" data-v-36a1f1c6><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.tag.color};background-color: ${__props.tag.bgColor}`)}" data-v-36a1f1c6>${serverRenderer.exports.ssrInterpolate(__props.tag.name)}</a></div><header data-v-36a1f1c6>`);
+      const _component_nuxt_link = __nuxt_component_1$1;
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "article-b" }, _attrs))} data-v-f368b5d4><div class="tags relative z-10" data-v-f368b5d4><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.tag.color};background-color: ${__props.tag.bgColor}`)}" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.tag.name)}</a></div><header data-v-f368b5d4>`);
       _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(Swiper), {
         class: "rounded-t-2xl",
         modules,
@@ -5170,7 +5215,7 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
               _push2(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(SwiperSlide), { key: item }, {
                 default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
-                    _push3(`<div class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`)}" data-v-36a1f1c6${_scopeId2}></div>`);
+                    _push3(`<div class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`)}" data-v-f368b5d4${_scopeId2}></div>`);
                   } else {
                     return [
                       vue_cjs_prod.createVNode("div", {
@@ -5202,10 +5247,8 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<div class="flex justify-center mt-5 flex-col items-center" data-v-36a1f1c6><time class="flex items-center capitalize" data-v-36a1f1c6><i class="text-2xl iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-36a1f1c6>\uE8B4</i><span class="ml-2 text-sm" data-v-36a1f1c6>${serverRenderer.exports.ssrInterpolate(__props.time)}</span></time></div></header><main class="text-center px-4" data-v-36a1f1c6><h1 class="title py-2 text-center" data-v-36a1f1c6>`);
-      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
-        to: __props.to || "/posts/" + __props.id
-      }, {
+      _push(`<div class="flex justify-center mt-5 flex-col items-center" data-v-f368b5d4><time class="flex items-center capitalize" data-v-f368b5d4><i class="text-2xl iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-f368b5d4>\uE8B4</i><span class="ml-2 text-sm" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.time)}</span></time></div></header><main class="text-center px-4" data-v-f368b5d4><h1 class="title py-2 text-center" data-v-f368b5d4>`);
+      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, { to: vue_cjs_prod.unref(toLink) }, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             _push2(`${serverRenderer.exports.ssrInterpolate(__props.title)}`);
@@ -5217,60 +5260,17 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</h1><p class="text-opacity-60 text-base-content font-light text-center" data-v-36a1f1c6>${serverRenderer.exports.ssrInterpolate(__props.desciption)}</p></main><footer class="flex justify-between items-center mt-10" data-v-36a1f1c6><a href="javascript:;" class="flex items-center" data-v-36a1f1c6><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-36a1f1c6></span><span class="author-name" data-v-36a1f1c6>meetqy</span></a><div class="text-sm text-base-content text-opacity-60" data-v-36a1f1c6><a href="javascript:;" data-v-36a1f1c6><span class="mr-1" data-v-36a1f1c6>${serverRenderer.exports.ssrInterpolate(__props.visit)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-36a1f1c6>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-36a1f1c6><span class="mr-1" data-v-36a1f1c6>${serverRenderer.exports.ssrInterpolate(__props.comment)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-36a1f1c6>\uE8B5</i></a></div></footer></article>`);
+      _push(`</h1><p class="text-opacity-60 text-base-content font-light text-center" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.desciption)}</p></main><footer class="flex justify-between items-center mt-10" data-v-f368b5d4><a href="javascript:;" class="flex items-center" data-v-f368b5d4><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-f368b5d4></span><span class="author-name" data-v-f368b5d4>meetqy</span></a><div class="text-sm text-base-content text-opacity-60" data-v-f368b5d4><a href="javascript:;" data-v-f368b5d4><span class="mr-1" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.visit)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-f368b5d4>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-f368b5d4><span class="mr-1" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.comment)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-f368b5d4>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
-const _sfc_setup$w = _sfc_main$w.setup;
-_sfc_main$w.setup = (props, ctx) => {
+const _sfc_setup$u = _sfc_main$u.setup;
+_sfc_main$u.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemB.vue");
-  return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
+  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-36a1f1c6"]]);
-const _sfc_main$v = /* @__PURE__ */ vue_cjs_prod.defineComponent({
-  name: "GridItemA",
-  __ssrInlineRender: true,
-  props: {
-    title: null,
-    desciption: null,
-    time: null,
-    tag: null,
-    headerImages: null,
-    link: null
-  },
-  setup(__props) {
-    const $cdn = useCdnUrl();
-    return (_ctx, _push, _parent, _attrs) => {
-      const _component_nuxt_link = __nuxt_component_1$2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
-        class: "article-a",
-        style: `background-image:url(${vue_cjs_prod.unref($cdn)}${__props.headerImages[0]})`
-      }, _attrs))}><div class="bg-base-100 pt-10 rounded-2xl bg-opacity-80"><div class="tags"><a href="javascript:;">${serverRenderer.exports.ssrInterpolate(__props.tag)}</a></div><header class="relative flex justify-center items-center flex-col px-4"><time class="flex items-center text-base-content capitalize"><i class="text-2xl iconfont">\uE8B4</i><span class="ml-2 text-sm">${serverRenderer.exports.ssrInterpolate(__props.time)}</span></time></header><main class="text-base-content text-center px-4"><h1 class="title py-2">`);
-      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
-        to: "/tools" + __props.link
-      }, {
-        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`${serverRenderer.exports.ssrInterpolate(__props.title)}`);
-          } else {
-            return [
-              vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(__props.title), 1)
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</h1><p class="text-opacity-60">${serverRenderer.exports.ssrInterpolate(__props.desciption)}</p></main><footer class="flex justify-between items-center mt-10"><a href="javascript:;" class="flex items-center"><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}"></span><span class="author-name">meetqy</span></a><div class="text-base-content text-sm"><a href="javascript:;"><span class="mr-1">23719</span><i class="iconfont">\uE8F4</i></a><a href="javascript:;" class="ml-4"><span class="mr-1">23719</span><i class="iconfont">\uE8B5</i></a></div></footer></div></article>`);
-    };
-  }
-});
-const _sfc_setup$v = _sfc_main$v.setup;
-_sfc_main$v.setup = (props, ctx) => {
-  const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemA.vue");
-  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
-};
+const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["__scopeId", "data-v-f368b5d4"]]);
 const useStrapiVersion = () => {
   const config = useRuntimeConfig().public;
   return config.strapi.version;
@@ -5366,7 +5366,7 @@ const useStrapi4 = () => {
 };
 const _imports_0 = publicAssetsURL(`avatar.jpg`);
 const meta$b = void 0;
-const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   name: "W",
   __ssrInlineRender: true,
   props: {
@@ -5389,13 +5389,13 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$u = _sfc_main$u.setup;
-_sfc_main$u.setup = (props, ctx) => {
+const _sfc_setup$t = _sfc_main$t.setup;
+_sfc_main$t.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
-  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
+  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   name: "Logo",
   __ssrInlineRender: true,
   props: {
@@ -5405,7 +5405,7 @@ const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const props = __props;
     const { cao, week } = useTitle();
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_W = _sfc_main$u;
+      const _component_W = _sfc_main$t;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "flex items-end" }, _attrs))} data-v-5d362e96><div class="flex items-center cursor-pointer logo" data-v-5d362e96><div class="w-12 h-12 rounded-full transition-all flex items-center justify-center" data-v-5d362e96>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_W, {
         size: 30,
@@ -5427,232 +5427,14 @@ const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$t = _sfc_main$t.setup;
-_sfc_main$t.setup = (props, ctx) => {
-  const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Logo.vue");
-  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
-};
-const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-5d362e96"]]);
-const meta$a = void 0;
-const a1 = `
-<div class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
-  <div class="flex items-center justify-between">
-    <span class="text-sm font-light text-gray-600 dark:text-gray-400">Mar 10, 2019</span>
-    <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">Design</a>
-  </div>
-
-  <div class="mt-2">
-    <a href="#" class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">Accessibility tools for designers and developers</a>
-    <p class="mt-2 text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
-  </div>
-
-  <div class="flex items-center justify-between mt-4">
-    <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">Read more</a>
-
-    <div class="flex items-center">
-      <img class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80" alt="avatar">
-      <a class="font-bold text-gray-700 cursor-pointer dark:text-gray-200">Khatab wedaa</a>
-    </div>
-  </div>
-</div>
-`;
-const a2 = `
-<div class="w-full max-w-sm px-4 py-3 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
-  <div class="flex items-center justify-between">
-    <span class="text-sm font-light text-gray-800 dark:text-gray-400">Courses and MOOCs</span>
-    <span class="px-3 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full dark:bg-blue-300 dark:text-blue-900">psychology</span>
-  </div>
-
-  <div>
-    <h1 class="mt-2 text-lg font-semibold text-gray-800 dark:text-white">AP\xAE Psychology - Course 5: Health and Behavior</h1>
-    <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio eligendi similique exercitationem optio libero vitae accusamus cupiditate laborum eos.</p>
-  </div>
-
-  <div>
-    <div class="flex items-center mt-2 text-gray-700 dark:text-gray-200">
-      <span>Visit on:</span>
-      <a class="mx-2 text-blue-600 cursor-pointer dark:text-blue-400 hover:underline">edx.org</a>
-      <span>or</span>
-      <a class="mx-2 text-blue-600 cursor-pointer dark:text-blue-400 hover:underline">classcentral.com</a>
-    </div>
-
-    <div class="flex items-center justify-center mt-4">
-      <a class="mr-2 text-gray-800 cursor-pointer dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
-        <svg class="w-5 h-5 fill-current" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-          <path d='M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z' />
-        </svg>
-      </a>
-
-      <a class="mr-2 text-gray-800 cursor-pointer dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14.8283 12L16.2426 13.4142L19.071 10.5858C20.6331 9.02365 20.6331 6.49099 19.071 4.9289C17.5089 3.3668 14.9762 3.3668 13.4141 4.9289L10.5857 7.75732L11.9999 9.17154L14.8283 6.34311C15.6094 5.56206 16.8757 5.56206 17.6568 6.34311C18.4378 7.12416 18.4378 8.39049 17.6568 9.17154L14.8283 12Z" />
-          <path d="M12 14.8285L13.4142 16.2427L10.5858 19.0711C9.02365 20.6332 6.49099 20.6332 4.9289 19.0711C3.3668 17.509 3.3668 14.9764 4.9289 13.4143L7.75732 10.5858L9.17154 12L6.34311 14.8285C5.56206 15.6095 5.56206 16.8758 6.34311 17.6569C7.12416 18.4379 8.39049 18.4379 9.17154 17.6569L12 14.8285Z" />
-          <path d="M14.8284 10.5857C15.2189 10.1952 15.2189 9.56199 14.8284 9.17147C14.4379 8.78094 13.8047 8.78094 13.4142 9.17147L9.17154 13.4141C8.78101 13.8046 8.78101 14.4378 9.17154 14.8283C9.56206 15.2188 10.1952 15.2188 10.5857 14.8283L14.8284 10.5857Z" />
-        </svg>
-      </a>
-    </div>
-  </div>
-</div>
-`;
-const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
-  name: "index",
-  __ssrInlineRender: true,
-  setup(__props) {
-    const temps = vue_cjs_prod.ref([
-      {
-        html: a2,
-        preview: true
-      },
-      {
-        html: a1,
-        preview: true
-      }
-    ]);
-    const showCode = (index2) => {
-      const item = temps.value[index2];
-      item.preview = !item.preview;
-      if (!item.preview) {
-        hljs.highlightBlock(document.querySelector("#pre-" + index2));
-      }
-    };
-    const curTemp = vue_cjs_prod.ref(0);
-    const onChange = (y) => {
-      asideFixed.value = y > 150;
-    };
-    const asideFixed = vue_cjs_prod.ref(false);
-    return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLayout = __nuxt_component_0$1;
-      const _component_Logo = __nuxt_component_1;
-      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
-        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`<main class="main-content flex" data-v-61590247${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
-              { fixed: asideFixed.value },
-              "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
-            ])}" data-v-61590247${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}" data-v-61590247${_scopeId}><div class="p-2 h-min rounded-box" data-v-61590247${_scopeId}>`);
-            _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full lg:pr-10" data-v-61590247${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box" data-v-61590247${_scopeId}><li class="menu-title py-2" data-v-61590247${_scopeId}><span data-v-61590247${_scopeId}>List</span></li><!--[-->`);
-            serverRenderer.exports.ssrRenderList(temps.value, (item, index2) => {
-              _push2(`<li class="text-xl" data-v-61590247${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#card-a" + index2)} class="${serverRenderer.exports.ssrRenderClass({
-                active: curTemp.value === index2,
-                capitalize: curTemp.value === index2
-              })}" data-v-61590247${_scopeId}>${serverRenderer.exports.ssrInterpolate(index2 + 1)} . card </a></li>`);
-            });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}" data-v-61590247${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose" data-v-61590247${_scopeId}><h1 data-v-61590247${_scopeId}>Tailwind CSS - Card</h1><p data-v-61590247${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code data-v-61590247${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code data-v-61590247${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
-            serverRenderer.exports.ssrRenderList(temps.value, (item, index2) => {
-              _push2(`<div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)} data-v-61590247${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": item.preview }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}" data-v-61590247${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" data-v-61590247${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" data-v-61590247${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200" data-v-61590247${_scopeId}>${item.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(!item.preview ? null : { display: "none" })}" data-v-61590247${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box" data-v-61590247${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.html)}</code>
-          </pre></div>`);
-            });
-            _push2(`<!--]--></div></main>`);
-          } else {
-            return [
-              vue_cjs_prod.createVNode("main", { class: "main-content flex" }, [
-                vue_cjs_prod.createVNode("aside", {
-                  class: [
-                    { fixed: asideFixed.value },
-                    "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
-                  ]
-                }, [
-                  vue_cjs_prod.createVNode("section", {
-                    class: ["w-full lg:pr-10 my-5", { hidden: !asideFixed.value }]
-                  }, [
-                    vue_cjs_prod.createVNode("div", { class: "p-2 h-min rounded-box" }, [
-                      vue_cjs_prod.createVNode(_component_Logo)
-                    ])
-                  ], 2),
-                  vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10" }, [
-                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-min rounded-box" }, [
-                      vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
-                        vue_cjs_prod.createVNode("span", null, "List")
-                      ]),
-                      (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(temps.value, (item, index2) => {
-                        return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("li", {
-                          class: "text-xl",
-                          key: index2,
-                          onClick: ($event) => curTemp.value = index2
-                        }, [
-                          vue_cjs_prod.createVNode("a", {
-                            href: "#card-a" + index2,
-                            class: {
-                              active: curTemp.value === index2,
-                              capitalize: curTemp.value === index2
-                            }
-                          }, vue_cjs_prod.toDisplayString(index2 + 1) + " . card ", 11, ["href"])
-                        ], 8, ["onClick"]);
-                      }), 128))
-                    ])
-                  ])
-                ], 2),
-                vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("aside", { class: "w-96 flex-shrink-0 opacity-0 hidden lg:flex" }, null, 512), [
-                  [vue_cjs_prod.vShow, asideFixed.value]
-                ]),
-                vue_cjs_prod.createVNode("div", { class: "flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose" }, [
-                  vue_cjs_prod.createVNode("h1", null, "Tailwind CSS - Card"),
-                  vue_cjs_prod.createVNode("p", null, [
-                    vue_cjs_prod.createTextVNode(" \u6536\u96C6\u7684\u4E00\u4E9B"),
-                    vue_cjs_prod.createVNode("code", null, "Card"),
-                    vue_cjs_prod.createTextVNode("\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A "),
-                    vue_cjs_prod.createVNode("code", null, "DaisyUI"),
-                    vue_cjs_prod.createTextVNode(" \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 ")
-                  ]),
-                  (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(temps.value, (item, index2) => {
-                    return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
-                      class: "mockup-window border bg-base-300 w-full mb-8",
-                      id: "card-a" + index2,
-                      key: index2
-                    }, [
-                      vue_cjs_prod.createVNode("div", {
-                        class: ["btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2", { "btn-outline": item.preview }],
-                        onClick: ($event) => showCode(index2)
-                      }, [
-                        (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
-                          xmlns: "http://www.w3.org/2000/svg",
-                          class: "h-6 w-6",
-                          fill: "none",
-                          viewBox: "0 0 24 24",
-                          stroke: "currentColor",
-                          "stroke-width": "2"
-                        }, [
-                          vue_cjs_prod.createVNode("path", {
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round",
-                            d: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                          })
-                        ]))
-                      ], 10, ["onClick"]),
-                      vue_cjs_prod.createVNode("div", {
-                        class: "flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200",
-                        innerHTML: item.html
-                      }, null, 8, ["innerHTML"]),
-                      vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("pre", { class: "bg-base-200 px-4" }, [
-                        vue_cjs_prod.createTextVNode("            "),
-                        vue_cjs_prod.createVNode("code", {
-                          id: "pre-" + index2,
-                          class: "rounded-box"
-                        }, vue_cjs_prod.toDisplayString(item.html), 9, ["id"]),
-                        vue_cjs_prod.createTextVNode("\n          ")
-                      ], 512), [
-                        [vue_cjs_prod.vShow, !item.preview]
-                      ])
-                    ], 8, ["id"]);
-                  }), 128))
-                ])
-              ])
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-    };
-  }
-});
 const _sfc_setup$s = _sfc_main$s.setup;
 _sfc_main$s.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/template/cards/index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Logo.vue");
   return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
 };
+const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["__scopeId", "data-v-5d362e96"]]);
+const meta$a = void 0;
 const meta$9 = void 0;
 const meta$8 = void 0;
 const meta$7 = void 0;
@@ -5769,7 +5551,7 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$1;
-      const _component_nuxt_link = __nuxt_component_1$2;
+      const _component_nuxt_link = __nuxt_component_1$1;
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -6135,7 +5917,7 @@ const routes = [
     meta: meta$b,
     alias: [],
     component: () => Promise.resolve().then(function() {
-      return index$9;
+      return index$7;
     })
   },
   {
@@ -6146,18 +5928,18 @@ const routes = [
     meta: meta$a,
     alias: [],
     component: () => Promise.resolve().then(function() {
-      return _id_;
+      return _id_$1;
     })
   },
   {
-    name: "template-cards",
-    path: "/template/cards",
-    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/template/cards/index.vue",
+    name: "template-type-id",
+    path: "/template-:type/:id",
+    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/template-[type]/[id].vue",
     children: [],
     meta: meta$9,
     alias: [],
     component: () => Promise.resolve().then(function() {
-      return index$7;
+      return _id_;
     })
   },
   {
@@ -6524,7 +6306,7 @@ const _sfc_main$l = {
       ]
     });
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLink = __nuxt_component_1$2;
+      const _component_NuxtLink = __nuxt_component_1$1;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-011aae6d><div class="fixed left-0 right-0 spotlight z-10" data-v-011aae6d></div><div class="max-w-520px text-center z-20" data-v-011aae6d><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-011aae6d>${serverRenderer.exports.ssrInterpolate(__props.statusCode)}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-011aae6d>${serverRenderer.exports.ssrInterpolate(__props.description)}</p><div class="w-full flex items-center justify-center" data-v-011aae6d>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/",
@@ -6828,7 +6610,7 @@ const _sfc_main$e = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     ];
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Logo = __nuxt_component_1;
-      const _component_nuxt_link = __nuxt_component_1$2;
+      const _component_nuxt_link = __nuxt_component_1$1;
       _push(`<header${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
         class: ["flex justify-between items-center", __props.class]
       }, _attrs))}>`);
@@ -6972,6 +6754,7 @@ const _sfc_main$a = {
       populate: ["category", "headerImages", "tags"]
     }))), __temp = await __temp, __restore(), __temp);
     const posts = vue_cjs_prod.computed(() => data.value.data);
+    console.log(posts.value);
     const getTags = (post) => {
       const tags = post.attributes.tags.data;
       return tags.length > 0 ? tags[0].attributes : "";
@@ -6984,16 +6767,25 @@ const _sfc_main$a = {
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$1;
-      const _component_grid_item_b = __nuxt_component_1$1;
       const _component_grid_item_a = _sfc_main$v;
+      const _component_grid_item_b = __nuxt_component_2;
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ name: "default" }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             if (vue_cjs_prod.unref(posts)) {
-              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-9fcac234${_scopeId}><!--[-->`);
+              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-165a443b${_scopeId}><!--[-->`);
               serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(posts), (post) => {
-                _push2(`<div class="block" data-v-9fcac234${_scopeId}>`);
-                if (getCategory(post).name === "\u6A21\u677F") {
+                _push2(`<div class="block" data-v-165a443b${_scopeId}>`);
+                if (getCategory(post).name === "\u5DE5\u5177") {
+                  _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
+                    title: post.attributes.title,
+                    desciption: post.attributes.desciption,
+                    time: post.attributes.updatedAt.split("T")[0],
+                    tag: getCategory(post).name,
+                    "header-images": getHeaderImages(post),
+                    link: post.attributes.link
+                  }, null, _parent2, _scopeId));
+                } else {
                   _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_b, {
                     title: post.attributes.title,
                     desciption: post.attributes.desciption,
@@ -7005,20 +6797,6 @@ const _sfc_main$a = {
                     id: post.id + "",
                     to: post.attributes.to
                   }, null, _parent2, _scopeId));
-                } else {
-                  _push2(`<!---->`);
-                }
-                if (getCategory(post).name === "\u5DE5\u5177") {
-                  _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
-                    title: post.attributes.title,
-                    desciption: post.attributes.desciption,
-                    time: post.attributes.updatedAt.split("T")[0],
-                    tag: getCategory(post).name,
-                    "header-images": getHeaderImages(post),
-                    link: post.attributes.link
-                  }, null, _parent2, _scopeId));
-                } else {
-                  _push2(`<!---->`);
                 }
                 _push2(`</div>`);
               });
@@ -7026,11 +6804,11 @@ const _sfc_main$a = {
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="paging md:py-10 py-5" data-v-9fcac234${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-9fcac234${_scopeId}>Prev</a><span class="px-5" data-v-9fcac234${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-9fcac234${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-9fcac234${_scopeId}><div data-v-9fcac234${_scopeId}><p class="bottom-title" data-v-9fcac234${_scopeId}>Recent posts</p><ul data-v-9fcac234${_scopeId}><!--[-->`);
+            _push2(`<div class="paging md:py-10 py-5" data-v-165a443b${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-165a443b${_scopeId}>Prev</a><span class="px-5" data-v-165a443b${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-165a443b${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-165a443b${_scopeId}><div data-v-165a443b${_scopeId}><p class="bottom-title" data-v-165a443b${_scopeId}>Recent posts</p><ul data-v-165a443b${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(3, (item) => {
-              _push2(`<li class="flex mt-5" data-v-9fcac234${_scopeId}><img src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg" alt="" data-v-9fcac234${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-9fcac234${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-9fcac234${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-9fcac234${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
+              _push2(`<li class="flex mt-5" data-v-165a443b${_scopeId}><img src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg" alt="" data-v-165a443b${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-165a443b${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-165a443b${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-165a443b${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
             });
-            _push2(`<!--]--></ul></div><div data-v-9fcac234${_scopeId}><p class="bottom-title" data-v-9fcac234${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-9fcac234${_scopeId}><!--[-->`);
+            _push2(`<!--]--></ul></div><div data-v-165a443b${_scopeId}><p class="bottom-title" data-v-165a443b${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-165a443b${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList([
               "bg-blue-400",
               "bg-red-500",
@@ -7038,9 +6816,9 @@ const _sfc_main$a = {
               "bg-green-500",
               "bg-orange-500"
             ], (item) => {
-              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-9fcac234${_scopeId}> Astronomy </a>`);
+              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-165a443b${_scopeId}> Astronomy </a>`);
             });
-            _push2(`<!--]--></div></div><div data-v-9fcac234${_scopeId}><p class="bottom-title" data-v-9fcac234${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-9fcac234${_scopeId}><div class="flex" data-v-9fcac234${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-9fcac234${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-9fcac234${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-9fcac234${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-9fcac234${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-9fcac234${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-9fcac234${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-9fcac234${_scopeId}><span class="tag sm !text-black uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-9fcac234${_scopeId}> js </span><span class="tag sm uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-9fcac234${_scopeId}> ts </span><span class="tag sm capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-9fcac234${_scopeId}> flutter </span><span class="tag sm capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-9fcac234${_scopeId}>node </span><span class="tag sm shadow !text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-9fcac234${_scopeId}> Tailwind CSS </span><span class="tag sm shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-9fcac234${_scopeId}> HTML </span><span class="tag sm shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-9fcac234${_scopeId}> CSS </span></p></div></div></div>`);
+            _push2(`<!--]--></div></div><div data-v-165a443b${_scopeId}><p class="bottom-title" data-v-165a443b${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-165a443b${_scopeId}><div class="flex" data-v-165a443b${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-165a443b${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-165a443b${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-165a443b${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-165a443b${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-165a443b${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-165a443b${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-165a443b${_scopeId}><span class="tag sm !text-black uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-165a443b${_scopeId}> js </span><span class="tag sm uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-165a443b${_scopeId}> ts </span><span class="tag sm capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-165a443b${_scopeId}> flutter </span><span class="tag sm capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-165a443b${_scopeId}>node </span><span class="tag sm shadow !text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-165a443b${_scopeId}> Tailwind CSS </span><span class="tag sm shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-165a443b${_scopeId}> HTML </span><span class="tag sm shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-165a443b${_scopeId}> CSS </span></p></div></div></div>`);
           } else {
             return [
               vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
@@ -7052,8 +6830,16 @@ const _sfc_main$a = {
                     class: "block",
                     key: post.id
                   }, [
-                    getCategory(post).name === "\u6A21\u677F" ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_b, {
+                    getCategory(post).name === "\u5DE5\u5177" ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_a, {
                       key: 0,
+                      title: post.attributes.title,
+                      desciption: post.attributes.desciption,
+                      time: post.attributes.updatedAt.split("T")[0],
+                      tag: getCategory(post).name,
+                      "header-images": getHeaderImages(post),
+                      link: post.attributes.link
+                    }, null, 8, ["title", "desciption", "time", "tag", "header-images", "link"])) : (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_b, {
+                      key: 1,
                       title: post.attributes.title,
                       desciption: post.attributes.desciption,
                       time: post.attributes.updatedAt.split("T")[0],
@@ -7063,16 +6849,7 @@ const _sfc_main$a = {
                       "header-images": getHeaderImages(post),
                       id: post.id + "",
                       to: post.attributes.to
-                    }, null, 8, ["title", "desciption", "time", "visit", "comment", "tag", "header-images", "id", "to"])) : vue_cjs_prod.createCommentVNode("", true),
-                    getCategory(post).name === "\u5DE5\u5177" ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_a, {
-                      key: 1,
-                      title: post.attributes.title,
-                      desciption: post.attributes.desciption,
-                      time: post.attributes.updatedAt.split("T")[0],
-                      tag: getCategory(post).name,
-                      "header-images": getHeaderImages(post),
-                      link: post.attributes.link
-                    }, null, 8, ["title", "desciption", "time", "tag", "header-images", "link"])) : vue_cjs_prod.createCommentVNode("", true)
+                    }, null, 8, ["title", "desciption", "time", "visit", "comment", "tag", "header-images", "id", "to"]))
                   ]);
                 }), 128))
               ])) : vue_cjs_prod.createCommentVNode("", true),
@@ -7187,10 +6964,10 @@ _sfc_main$a.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index/index.vue");
   return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
 };
-const index$8 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-9fcac234"]]);
-const index$9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-165a443b"]]);
+const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": index$8
+  "default": index$6
 }, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$9 = {
   name: "[id]",
@@ -7432,28 +7209,25 @@ _sfc_main$9.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/posts/[id].vue");
   return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const _id_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const _id_$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": _sfc_main$9
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$8 = /* @__PURE__ */ vue_cjs_prod.defineComponent({
-  name: "index",
+const _sfc_main$8 = {
+  name: "[id]",
   __ssrInlineRender: true,
-  setup(__props) {
-    const temps = vue_cjs_prod.ref([
-      {
-        html: a2,
-        preview: true
-      },
-      {
-        html: a1,
-        preview: true
-      }
-    ]);
+  async setup(__props) {
+    let __temp, __restore;
+    const route = useRoute();
+    const { id } = route.params;
+    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts/:id", () => useStrapi4().find(`posts/${id}`, {
+      populate: ["fragments"]
+    }))), __temp = await __temp, __restore(), __temp);
+    const activeCode = vue_cjs_prod.ref({});
+    const fragments = vue_cjs_prod.computed(() => data.value.data.attributes.fragments.data);
     const showCode = (index2) => {
-      const item = temps.value[index2];
-      item.preview = !item.preview;
-      if (!item.preview) {
+      activeCode.value[index2] = !activeCode.value[index2];
+      if (activeCode.value[index2]) {
         hljs.highlightBlock(document.querySelector("#pre-" + index2));
       }
     };
@@ -7468,21 +7242,21 @@ const _sfc_main$8 = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<main class="main-content flex" data-v-61590247${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
+            _push2(`<main class="main-content flex"${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
               { fixed: asideFixed.value },
               "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
-            ])}" data-v-61590247${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}" data-v-61590247${_scopeId}><div class="p-2 h-min rounded-box" data-v-61590247${_scopeId}>`);
+            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full lg:pr-10" data-v-61590247${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box" data-v-61590247${_scopeId}><li class="menu-title py-2" data-v-61590247${_scopeId}><span data-v-61590247${_scopeId}>List</span></li><!--[-->`);
-            serverRenderer.exports.ssrRenderList(temps.value, (item, index2) => {
-              _push2(`<li class="text-xl" data-v-61590247${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#card-a" + index2)} class="${serverRenderer.exports.ssrRenderClass({
+            _push2(`</div></section><section class="w-full lg:pr-10"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box"${_scopeId}><li class="menu-title py-2"${_scopeId}><span${_scopeId}>List</span></li><!--[-->`);
+            serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(fragments), (item, index2) => {
+              _push2(`<li class="text-xl"${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#card-a" + index2)} class="${serverRenderer.exports.ssrRenderClass({
                 active: curTemp.value === index2,
                 capitalize: curTemp.value === index2
-              })}" data-v-61590247${_scopeId}>${serverRenderer.exports.ssrInterpolate(index2 + 1)} . card </a></li>`);
+              })}"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</a></li>`);
             });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}" data-v-61590247${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose" data-v-61590247${_scopeId}><h1 data-v-61590247${_scopeId}>Tailwind CSS - Card</h1><p data-v-61590247${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code data-v-61590247${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code data-v-61590247${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
-            serverRenderer.exports.ssrRenderList(temps.value, (item, index2) => {
-              _push2(`<div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)} data-v-61590247${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": item.preview }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}" data-v-61590247${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" data-v-61590247${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" data-v-61590247${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200" data-v-61590247${_scopeId}>${item.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(!item.preview ? null : { display: "none" })}" data-v-61590247${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box" data-v-61590247${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.html)}</code>
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose"${_scopeId}><h1${_scopeId}>Tailwind CSS - Card</h1><p${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
+            serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(fragments), (item, index2) => {
+              _push2(`<div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)}${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${item.attributes.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.html)}</code>
           </pre></div>`);
             });
             _push2(`<!--]--></div></main>`);
@@ -7507,7 +7281,7 @@ const _sfc_main$8 = /* @__PURE__ */ vue_cjs_prod.defineComponent({
                       vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
                         vue_cjs_prod.createVNode("span", null, "List")
                       ]),
-                      (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(temps.value, (item, index2) => {
+                      (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(fragments), (item, index2) => {
                         return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("li", {
                           class: "text-xl",
                           key: index2,
@@ -7519,7 +7293,7 @@ const _sfc_main$8 = /* @__PURE__ */ vue_cjs_prod.defineComponent({
                               active: curTemp.value === index2,
                               capitalize: curTemp.value === index2
                             }
-                          }, vue_cjs_prod.toDisplayString(index2 + 1) + " . card ", 11, ["href"])
+                          }, vue_cjs_prod.toDisplayString(item.attributes.name), 11, ["href"])
                         ], 8, ["onClick"]);
                       }), 128))
                     ])
@@ -7537,14 +7311,14 @@ const _sfc_main$8 = /* @__PURE__ */ vue_cjs_prod.defineComponent({
                     vue_cjs_prod.createVNode("code", null, "DaisyUI"),
                     vue_cjs_prod.createTextVNode(" \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 ")
                   ]),
-                  (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(temps.value, (item, index2) => {
+                  (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(fragments), (item, index2) => {
                     return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
                       class: "mockup-window border bg-base-300 w-full mb-8",
                       id: "card-a" + index2,
                       key: index2
                     }, [
                       vue_cjs_prod.createVNode("div", {
-                        class: ["btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2", { "btn-outline": item.preview }],
+                        class: ["btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2", { "btn-outline": !activeCode.value[index2] }],
                         onClick: ($event) => showCode(index2)
                       }, [
                         (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
@@ -7564,17 +7338,17 @@ const _sfc_main$8 = /* @__PURE__ */ vue_cjs_prod.defineComponent({
                       ], 10, ["onClick"]),
                       vue_cjs_prod.createVNode("div", {
                         class: "flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200",
-                        innerHTML: item.html
+                        innerHTML: item.attributes.html
                       }, null, 8, ["innerHTML"]),
                       vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("pre", { class: "bg-base-200 px-4" }, [
                         vue_cjs_prod.createTextVNode("            "),
                         vue_cjs_prod.createVNode("code", {
                           id: "pre-" + index2,
                           class: "rounded-box"
-                        }, vue_cjs_prod.toDisplayString(item.html), 9, ["id"]),
+                        }, vue_cjs_prod.toDisplayString(item.attributes.html), 9, ["id"]),
                         vue_cjs_prod.createTextVNode("\n          ")
                       ], 512), [
-                        [vue_cjs_prod.vShow, !item.preview]
+                        [vue_cjs_prod.vShow, activeCode.value[index2]]
                       ])
                     ], 8, ["id"]);
                   }), 128))
@@ -7587,17 +7361,16 @@ const _sfc_main$8 = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       }, _parent));
     };
   }
-});
+};
 const _sfc_setup$8 = _sfc_main$8.setup;
 _sfc_main$8.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/template/cards/index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/template-[type]/[id].vue");
   return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
 };
-const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-61590247"]]);
-const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const _id_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": index$6
+  "default": _sfc_main$8
 }, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$7 = {
   name: "index",

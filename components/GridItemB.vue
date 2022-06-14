@@ -21,7 +21,7 @@
 
       <div
         class="flex justify-center mt-5 flex-col items-center"
-        @click.stop="$router.push(to || `/posts/${id}`)"
+        @click.stop="$router.push(toLink)"
       >
         <time class="flex items-center capitalize">
           <i class="text-2xl iconfont" style="color: #e84e89">&#xe8b4;</i>
@@ -30,12 +30,9 @@
       </div>
     </header>
 
-    <main
-      class="text-center px-4"
-      @click.stop="$router.push(to || `/posts/${id}`)"
-    >
+    <main class="text-center px-4" @click.stop="$router.push(toLink)">
       <h1 class="title py-2 text-center">
-        <nuxt-link :to="to || '/posts/' + id">
+        <nuxt-link :to="toLink">
           {{ title }}
         </nuxt-link>
       </h1>
@@ -89,6 +86,10 @@ const props = withDefaults(defineProps<Props>(), {
   visit: 0,
   comment: 0,
 });
+
+const toLink = computed(() =>
+  props.to ? props.to + props.id : `/posts/${props.id}`
+);
 
 const $cdn = useCdnUrl();
 
