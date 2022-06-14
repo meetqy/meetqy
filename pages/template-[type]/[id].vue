@@ -99,7 +99,10 @@
           >
             <small class="text-base-300"># </small> {{ item.attributes.name }}
           </h3>
-          <div class="mockup-window border bg-base-300 w-full mb-8">
+          <div
+            class="mockup-window border bg-base-300 w-full mb-8"
+            :data-theme="curTheme"
+          >
             <div
               class="btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"
               :class="{ 'btn-outline': !activeCode[index] }"
@@ -123,7 +126,6 @@
             <div
               class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"
               v-html="item.attributes.html"
-              :data-theme="curTheme"
             />
 
             <pre class="bg-base-200 px-4" v-show="activeCode[index]">
@@ -174,21 +176,6 @@ const themes = [
 ];
 
 const curTheme = ref("dark");
-
-useHead({
-  link: [
-    {
-      rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css",
-      type: "text/css",
-    },
-  ],
-  script: [
-    {
-      src: "https://cdn.tailwindcss.com",
-    },
-  ],
-});
 
 const { id } = route.params;
 
