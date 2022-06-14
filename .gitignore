@@ -4,3 +4,4 @@ node_modules
 .nitro
 .env
 yarn.lock
+demo.html
