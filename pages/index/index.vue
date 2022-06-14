@@ -174,7 +174,7 @@ const { data } = await useAsyncData("posts", () =>
 
 const posts = computed(() => data.value.data);
 
-console.log(posts.value);
+// console.log(posts.value);
 
 const getTags = (post) => {
   const tags = post.attributes.tags.data;

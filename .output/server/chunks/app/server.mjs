@@ -6754,7 +6754,6 @@ const _sfc_main$a = {
       populate: ["category", "headerImages", "tags"]
     }))), __temp = await __temp, __restore(), __temp);
     const posts = vue_cjs_prod.computed(() => data.value.data);
-    console.log(posts.value);
     const getTags = (post) => {
       const tags = post.attributes.tags.data;
       return tags.length > 0 ? tags[0].attributes : "";
@@ -6773,9 +6772,9 @@ const _sfc_main$a = {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             if (vue_cjs_prod.unref(posts)) {
-              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-165a443b${_scopeId}><!--[-->`);
+              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-567a35ef${_scopeId}><!--[-->`);
               serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(posts), (post) => {
-                _push2(`<div class="block" data-v-165a443b${_scopeId}>`);
+                _push2(`<div class="block" data-v-567a35ef${_scopeId}>`);
                 if (getCategory(post).name === "\u5DE5\u5177") {
                   _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
                     title: post.attributes.title,
@@ -6804,11 +6803,11 @@ const _sfc_main$a = {
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="paging md:py-10 py-5" data-v-165a443b${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-165a443b${_scopeId}>Prev</a><span class="px-5" data-v-165a443b${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-165a443b${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-165a443b${_scopeId}><div data-v-165a443b${_scopeId}><p class="bottom-title" data-v-165a443b${_scopeId}>Recent posts</p><ul data-v-165a443b${_scopeId}><!--[-->`);
+            _push2(`<div class="paging md:py-10 py-5" data-v-567a35ef${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-567a35ef${_scopeId}>Prev</a><span class="px-5" data-v-567a35ef${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-567a35ef${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-567a35ef${_scopeId}><div data-v-567a35ef${_scopeId}><p class="bottom-title" data-v-567a35ef${_scopeId}>Recent posts</p><ul data-v-567a35ef${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(3, (item) => {
-              _push2(`<li class="flex mt-5" data-v-165a443b${_scopeId}><img src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg" alt="" data-v-165a443b${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-165a443b${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-165a443b${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-165a443b${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
+              _push2(`<li class="flex mt-5" data-v-567a35ef${_scopeId}><img src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg" alt="" data-v-567a35ef${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-567a35ef${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-567a35ef${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-567a35ef${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
             });
-            _push2(`<!--]--></ul></div><div data-v-165a443b${_scopeId}><p class="bottom-title" data-v-165a443b${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-165a443b${_scopeId}><!--[-->`);
+            _push2(`<!--]--></ul></div><div data-v-567a35ef${_scopeId}><p class="bottom-title" data-v-567a35ef${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-567a35ef${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList([
               "bg-blue-400",
               "bg-red-500",
@@ -6816,9 +6815,9 @@ const _sfc_main$a = {
               "bg-green-500",
               "bg-orange-500"
             ], (item) => {
-              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-165a443b${_scopeId}> Astronomy </a>`);
+              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-567a35ef${_scopeId}> Astronomy </a>`);
             });
-            _push2(`<!--]--></div></div><div data-v-165a443b${_scopeId}><p class="bottom-title" data-v-165a443b${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-165a443b${_scopeId}><div class="flex" data-v-165a443b${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-165a443b${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-165a443b${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-165a443b${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-165a443b${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-165a443b${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-165a443b${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-165a443b${_scopeId}><span class="tag sm !text-black uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-165a443b${_scopeId}> js </span><span class="tag sm uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-165a443b${_scopeId}> ts </span><span class="tag sm capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-165a443b${_scopeId}> flutter </span><span class="tag sm capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-165a443b${_scopeId}>node </span><span class="tag sm shadow !text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-165a443b${_scopeId}> Tailwind CSS </span><span class="tag sm shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-165a443b${_scopeId}> HTML </span><span class="tag sm shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-165a443b${_scopeId}> CSS </span></p></div></div></div>`);
+            _push2(`<!--]--></div></div><div data-v-567a35ef${_scopeId}><p class="bottom-title" data-v-567a35ef${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-567a35ef${_scopeId}><div class="flex" data-v-567a35ef${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-567a35ef${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-567a35ef${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-567a35ef${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-567a35ef${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-567a35ef${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-567a35ef${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-567a35ef${_scopeId}><span class="tag sm !text-black uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-567a35ef${_scopeId}> js </span><span class="tag sm uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-567a35ef${_scopeId}> ts </span><span class="tag sm capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-567a35ef${_scopeId}> flutter </span><span class="tag sm capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-567a35ef${_scopeId}>node </span><span class="tag sm shadow !text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-567a35ef${_scopeId}> Tailwind CSS </span><span class="tag sm shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-567a35ef${_scopeId}> HTML </span><span class="tag sm shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-567a35ef${_scopeId}> CSS </span></p></div></div></div>`);
           } else {
             return [
               vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
@@ -6964,7 +6963,7 @@ _sfc_main$a.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index/index.vue");
   return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
 };
-const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-165a443b"]]);
+const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-567a35ef"]]);
 const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$6
@@ -7219,6 +7218,19 @@ const _sfc_main$8 = {
   async setup(__props) {
     let __temp, __restore;
     const route = useRoute();
+    useHead({
+      script: [
+        {
+          src: "https://cdn.tailwindcss.com"
+        }
+      ],
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css"
+        }
+      ]
+    });
     const { id } = route.params;
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts/:id", () => useStrapi4().find(`posts/${id}`, {
       populate: ["fragments"]
@@ -7254,9 +7266,9 @@ const _sfc_main$8 = {
                 capitalize: curTemp.value === index2
               })}"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</a></li>`);
             });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose"${_scopeId}><h1${_scopeId}>Tailwind CSS - Card</h1><p${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p><!--[-->`);
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"${_scopeId}><div class="prose"${_scopeId}><h1${_scopeId}>Tailwind CSS - Card</h1><p${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p></div><!--[-->`);
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(fragments), (item, index2) => {
-              _push2(`<div class="prose"${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)}${_scopeId}><h3${_scopeId}><small class="text-base-300"${_scopeId}># </small> ${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</h3><div class="mockup-window border bg-base-300 w-full mb-8"${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${item.attributes.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.html)}</code>
+              _push2(`<div${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)}${_scopeId}><h3 class="text-base-content font-semibold mt-8 mb-3" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "1.25em" })}"${_scopeId}><small class="text-base-300"${_scopeId}># </small> ${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</h3><div class="mockup-window border bg-base-300 w-full mb-8"${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${item.attributes.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.html)}</code>
           </pre></div></div>`);
             });
             _push2(`<!--]--></div></main>`);
@@ -7302,22 +7314,26 @@ const _sfc_main$8 = {
                 vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("aside", { class: "w-96 flex-shrink-0 opacity-0 hidden lg:flex" }, null, 512), [
                   [vue_cjs_prod.vShow, asideFixed.value]
                 ]),
-                vue_cjs_prod.createVNode("div", { class: "flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose" }, [
-                  vue_cjs_prod.createVNode("h1", null, "Tailwind CSS - Card"),
-                  vue_cjs_prod.createVNode("p", null, [
-                    vue_cjs_prod.createTextVNode(" \u6536\u96C6\u7684\u4E00\u4E9B"),
-                    vue_cjs_prod.createVNode("code", null, "Card"),
-                    vue_cjs_prod.createTextVNode("\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A "),
-                    vue_cjs_prod.createVNode("code", null, "DaisyUI"),
-                    vue_cjs_prod.createTextVNode(" \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 ")
+                vue_cjs_prod.createVNode("div", { class: "flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box" }, [
+                  vue_cjs_prod.createVNode("div", { class: "prose" }, [
+                    vue_cjs_prod.createVNode("h1", null, "Tailwind CSS - Card"),
+                    vue_cjs_prod.createVNode("p", null, [
+                      vue_cjs_prod.createTextVNode(" \u6536\u96C6\u7684\u4E00\u4E9B"),
+                      vue_cjs_prod.createVNode("code", null, "Card"),
+                      vue_cjs_prod.createTextVNode("\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A "),
+                      vue_cjs_prod.createVNode("code", null, "DaisyUI"),
+                      vue_cjs_prod.createTextVNode(" \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 ")
+                    ])
                   ]),
                   (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(fragments), (item, index2) => {
                     return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
-                      class: "prose",
                       id: "card-a" + index2,
                       key: index2
                     }, [
-                      vue_cjs_prod.createVNode("h3", null, [
+                      vue_cjs_prod.createVNode("h3", {
+                        class: "text-base-content font-semibold mt-8 mb-3",
+                        style: { "font-size": "1.25em" }
+                      }, [
                         vue_cjs_prod.createVNode("small", { class: "text-base-300" }, "# "),
                         vue_cjs_prod.createTextVNode(" " + vue_cjs_prod.toDisplayString(item.attributes.name), 1)
                       ]),

@@ -44,23 +44,27 @@
       ></aside>
 
       <div
-        class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box prose"
+        class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"
       >
-        <h1>Tailwind CSS - Card</h1>
+        <div class="prose">
+          <h1>Tailwind CSS - Card</h1>
 
-        <p>
-          收集的一些<code>Card</code>样式，所有的模板均改造为
-          <code>DaisyUI</code>
-          主题样式，可以完美支持主题切换。
-        </p>
+          <p>
+            收集的一些<code>Card</code>样式，所有的模板均改造为
+            <code>DaisyUI</code>
+            主题样式，可以完美支持主题切换。
+          </p>
+        </div>
 
         <div
-          class="prose"
           :id="'card-a' + index"
           v-for="(item, index) in fragments"
           :key="index"
         >
-          <h3>
+          <h3
+            class="text-base-content font-semibold mt-8 mb-3"
+            style="font-size: 1.25em"
+          >
             <small class="text-base-300"># </small> {{ item.attributes.name }}
           </h3>
           <div class="mockup-window border bg-base-300 w-full mb-8">
@@ -103,6 +107,20 @@
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 const route = useRoute();
+
+useHead({
+  script: [
+    {
+      src: "https://cdn.tailwindcss.com",
+    },
+  ],
+  link: [
+    {
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css",
+    },
+  ],
+});
 
 const { id } = route.params;
 

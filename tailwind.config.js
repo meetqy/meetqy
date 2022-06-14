@@ -1,9 +1,5 @@
 module.exports = {
-  content: [
-    "./layouts/**/*.vue",
-    "./pages/**/*.{vue,jsx,tsx,js}",
-    "./templates/**/*.js",
-  ],
+  content: ["./layouts/**/*.vue", "./pages/**/*.{vue,jsx,tsx,js}"],
   darkMode: "media",
   theme: {
     extend: {},
