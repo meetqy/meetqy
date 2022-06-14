@@ -43,7 +43,19 @@
             class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box"
           >
             <li class="menu-title py-2">
-              <span>Change Theme</span>
+              <span class="flex justify-between items-center">
+                Change Theme
+                <span>
+                  use:
+                  <a
+                    class="btn btn-link btn-xs"
+                    href="https://daisyui.com/"
+                    target="_blank"
+                  >
+                    DaisyUI
+                  </a>
+                </span>
+              </span>
             </li>
 
             <li
