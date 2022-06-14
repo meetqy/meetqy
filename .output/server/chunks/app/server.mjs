@@ -7251,11 +7251,11 @@ const _sfc_main$8 = {
     ];
     const curTheme = vue_cjs_prod.ref("dark");
     const { id } = route.params;
-    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts/:id", () => useStrapi4().find(`posts/${id}`, {
+    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("template-[type]", () => useStrapi4().find(`posts/${id}`, {
       populate: ["fragments"]
     }))), __temp = await __temp, __restore(), __temp);
-    const activeCode = vue_cjs_prod.ref({});
     const fragments = vue_cjs_prod.computed(() => data.value.data.attributes.fragments.data);
+    const activeCode = vue_cjs_prod.ref({});
     const showCode = (index2) => {
       activeCode.value[index2] = !activeCode.value[index2];
       if (activeCode.value[index2]) {

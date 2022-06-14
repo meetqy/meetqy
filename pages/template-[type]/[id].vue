@@ -179,15 +179,15 @@ const curTheme = ref("dark");
 
 const { id } = route.params;
 
-const { data } = await useAsyncData("posts/:id", () =>
+const { data } = await useAsyncData("template-[type]", () =>
   useStrapi4().find(`posts/${id}`, {
     populate: ["fragments"],
   })
 );
 
-const activeCode = ref({});
-
 const fragments = computed(() => data.value.data.attributes.fragments.data);
+
+const activeCode = ref({});
 
 const showCode = (index) => {
   activeCode.value[index] = !activeCode.value[index];
