@@ -7218,16 +7218,49 @@ const _sfc_main$8 = {
   async setup(__props) {
     let __temp, __restore;
     const route = useRoute();
+    const themes = [
+      "light",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "aqua",
+      "lofi",
+      "pastel",
+      "fantasy",
+      "wireframe",
+      "black",
+      "luxury",
+      "dracula",
+      "cmyk",
+      "autumn",
+      "business",
+      "acid",
+      "lemonade",
+      "night",
+      "coffee",
+      "winter"
+    ];
+    const curTheme = vue_cjs_prod.ref("dark");
     useHead({
-      script: [
-        {
-          src: "https://cdn.tailwindcss.com"
-        }
-      ],
       link: [
         {
           rel: "stylesheet",
-          href: "https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css"
+          href: "https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css",
+          type: "text/css"
+        }
+      ],
+      script: [
+        {
+          src: "https://cdn.tailwindcss.com"
         }
       ]
     });
@@ -7266,9 +7299,13 @@ const _sfc_main$8 = {
                 capitalize: curTemp.value === index2
               })}"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</a></li>`);
             });
+            _push2(`<!--]--></ul></section><section class="w-full lg:pr-10 mt-5"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box"${_scopeId}><li class="menu-title py-2"${_scopeId}><span${_scopeId}>Change Theme</span></li><!--[-->`);
+            serverRenderer.exports.ssrRenderList(themes, (item) => {
+              _push2(`<li${serverRenderer.exports.ssrRenderAttr("data-theme", item)} class="${serverRenderer.exports.ssrRenderClass([{ "outline-dashed": curTheme.value === item }, "my-2 shadow rounded-box"])}"${_scopeId}><a href="javascript:;" class="flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent"${_scopeId}><span${_scopeId}>${serverRenderer.exports.ssrInterpolate(item)}</span><div class="flex gap-1 h-4"${_scopeId}><div class="bg-primary w-2 rounded"${_scopeId}></div><div class="bg-secondary w-2 rounded"${_scopeId}></div><div class="bg-accent w-2 rounded"${_scopeId}></div><div class="bg-neutral w-2 rounded"${_scopeId}></div></div></a></li>`);
+            });
             _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"${_scopeId}><div class="prose"${_scopeId}><h1${_scopeId}>Tailwind CSS - Card</h1><p${_scopeId}> \u6536\u96C6\u7684\u4E00\u4E9B<code${_scopeId}>Card</code>\u6837\u5F0F\uFF0C\u6240\u6709\u7684\u6A21\u677F\u5747\u6539\u9020\u4E3A <code${_scopeId}>DaisyUI</code> \u4E3B\u9898\u6837\u5F0F\uFF0C\u53EF\u4EE5\u5B8C\u7F8E\u652F\u6301\u4E3B\u9898\u5207\u6362\u3002 </p></div><!--[-->`);
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(fragments), (item, index2) => {
-              _push2(`<div${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)}${_scopeId}><h3 class="text-base-content font-semibold mt-8 mb-3" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "1.25em" })}"${_scopeId}><small class="text-base-300"${_scopeId}># </small> ${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</h3><div class="mockup-window border bg-base-300 w-full mb-8"${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${item.attributes.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.html)}</code>
+              _push2(`<div${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)}${_scopeId}><h3 class="text-base-content font-semibold mt-8 mb-3" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "1.25em" })}"${_scopeId}><small class="text-base-300"${_scopeId}># </small> ${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</h3><div class="mockup-window border bg-base-300 w-full mb-8"${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${serverRenderer.exports.ssrRenderAttr("data-theme", curTheme.value)}${_scopeId}>${item.attributes.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.html)}</code>
           </pre></div></div>`);
             });
             _push2(`<!--]--></div></main>`);
@@ -7308,6 +7345,34 @@ const _sfc_main$8 = {
                           }, vue_cjs_prod.toDisplayString(item.attributes.name), 11, ["href"])
                         ], 8, ["onClick"]);
                       }), 128))
+                    ])
+                  ]),
+                  vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10 mt-5" }, [
+                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box" }, [
+                      vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
+                        vue_cjs_prod.createVNode("span", null, "Change Theme")
+                      ]),
+                      (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(themes, (item) => {
+                        return vue_cjs_prod.createVNode("li", {
+                          key: item,
+                          "data-theme": item,
+                          class: ["my-2 shadow rounded-box", { "outline-dashed": curTheme.value === item }]
+                        }, [
+                          vue_cjs_prod.createVNode("a", {
+                            href: "javascript:;",
+                            class: "flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent",
+                            onClick: ($event) => curTheme.value = item
+                          }, [
+                            vue_cjs_prod.createVNode("span", null, vue_cjs_prod.toDisplayString(item), 1),
+                            vue_cjs_prod.createVNode("div", { class: "flex gap-1 h-4" }, [
+                              vue_cjs_prod.createVNode("div", { class: "bg-primary w-2 rounded" }),
+                              vue_cjs_prod.createVNode("div", { class: "bg-secondary w-2 rounded" }),
+                              vue_cjs_prod.createVNode("div", { class: "bg-accent w-2 rounded" }),
+                              vue_cjs_prod.createVNode("div", { class: "bg-neutral w-2 rounded" })
+                            ])
+                          ], 8, ["onClick"])
+                        ], 10, ["data-theme"]);
+                      }), 64))
                     ])
                   ])
                 ], 2),
@@ -7359,8 +7424,9 @@ const _sfc_main$8 = {
                         ], 10, ["onClick"]),
                         vue_cjs_prod.createVNode("div", {
                           class: "flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200",
-                          innerHTML: item.attributes.html
-                        }, null, 8, ["innerHTML"]),
+                          innerHTML: item.attributes.html,
+                          "data-theme": curTheme.value
+                        }, null, 8, ["innerHTML", "data-theme"]),
                         vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("pre", { class: "bg-base-200 px-4" }, [
                           vue_cjs_prod.createTextVNode("            "),
                           vue_cjs_prod.createVNode("code", {

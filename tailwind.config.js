@@ -1,5 +1,10 @@
 module.exports = {
-  content: ["./layouts/**/*.vue", "./pages/**/*.{vue,jsx,tsx,js}"],
+  content: [
+    "./layouts/*.vue",
+    "./pages/index/*.{vue,jsx,tsx,js}",
+    "./pages/posts/*.{vue,jsx,tsx,js}",
+    "./pages/tools/*.{vue,jsx,tsx,js}",
+  ],
   darkMode: "media",
   theme: {
     extend: {},

@@ -37,6 +37,38 @@
             </li>
           </ul>
         </section>
+
+        <section class="w-full lg:pr-10 mt-5">
+          <ul
+            class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box"
+          >
+            <li class="menu-title py-2">
+              <span>Change Theme</span>
+            </li>
+
+            <li
+              v-for="item in themes"
+              :key="item"
+              :data-theme="item"
+              class="my-2 shadow rounded-box"
+              :class="{ 'outline-dashed': curTheme === item }"
+            >
+              <a
+                href="javascript:;"
+                class="flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent"
+                @click="curTheme = item"
+              >
+                <span>{{ item }}</span>
+                <div class="flex gap-1 h-4">
+                  <div class="bg-primary w-2 rounded"></div>
+                  <div class="bg-secondary w-2 rounded"></div>
+                  <div class="bg-accent w-2 rounded"></div>
+                  <div class="bg-neutral w-2 rounded"></div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
       </aside>
       <aside
         class="w-96 flex-shrink-0 opacity-0 hidden lg:flex"
@@ -91,6 +123,7 @@
             <div
               class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"
               v-html="item.attributes.html"
+              :data-theme="curTheme"
             />
 
             <pre class="bg-base-200 px-4" v-show="activeCode[index]">
@@ -108,16 +141,51 @@ import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 const route = useRoute();
 
+const themes = [
+  "light",
+  "dark",
+  "cupcake",
+  "bumblebee",
+  "emerald",
+  "corporate",
+  "synthwave",
+  "retro",
+  "cyberpunk",
+  "valentine",
+  "halloween",
+  "garden",
+  "forest",
+  "aqua",
+  "lofi",
+  "pastel",
+  "fantasy",
+  "wireframe",
+  "black",
+  "luxury",
+  "dracula",
+  "cmyk",
+  "autumn",
+  "business",
+  "acid",
+  "lemonade",
+  "night",
+  "coffee",
+  "winter",
+];
+
+const curTheme = ref("dark");
+
 useHead({
-  script: [
-    {
-      src: "https://cdn.tailwindcss.com",
-    },
-  ],
   link: [
     {
       rel: "stylesheet",
       href: "https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css",
+      type: "text/css",
+    },
+  ],
+  script: [
+    {
+      src: "https://cdn.tailwindcss.com",
     },
   ],
 });
