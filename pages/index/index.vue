@@ -110,16 +110,19 @@
           </p>
           <p class="mt-4 about">
             <span
-              class="tag sm !text-black uppercase"
+              class="badge badge-lg border-0 uppercase shadow text-black"
               style="background-color: #e5d836"
             >
               js
             </span>
-            <span class="tag sm uppercase" style="background-color: #4266bb">
+            <span
+              class="badge badge-lg border-0 uppercase"
+              style="background-color: #4266bb"
+            >
               ts
             </span>
             <span
-              class="tag sm capitalize"
+              class="badge badge-lg border-0 capitalize"
               style="
                 background: linear-gradient(to bottom right, #69bcf0, #28468a);
               "
@@ -127,14 +130,14 @@
               flutter
             </span>
             <span
-              class="tag sm capitalize"
+              class="badge badge-lg border-0 capitalize"
               style="
                 background: linear-gradient(to bottom right, #8bb840, #35362d);
               "
               >node
             </span>
             <span
-              class="tag sm shadow !text-black"
+              class="badge badge-lg border-0 shadow text-black"
               style="
                 background: linear-gradient(to bottom right, #4ea1c5, #55b3a8);
               "
@@ -143,7 +146,7 @@
             </span>
 
             <span
-              class="tag sm shadow"
+              class="badge badge-lg border-0 shadow"
               style="
                 background: linear-gradient(to bottom right, #c15029, #cf642d);
               "
@@ -151,7 +154,7 @@
               HTML
             </span>
             <span
-              class="tag sm shadow"
+              class="badge badge-lg border-0 shadow"
               style="
                 background: linear-gradient(to bottom right, #335ca4, #5697de);
               "
