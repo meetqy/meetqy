@@ -189,6 +189,11 @@ const themes = [
 
 const curTheme = ref("dark");
 
+onMounted(() => {
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  curTheme.value = media.matches ? "dark" : "light";
+});
+
 const { id } = route.params;
 
 const { data } = await useAsyncData("template-[type]", () =>
