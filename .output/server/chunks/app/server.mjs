@@ -7250,6 +7250,10 @@ const _sfc_main$8 = {
       "winter"
     ];
     const curTheme = vue_cjs_prod.ref("dark");
+    vue_cjs_prod.onMounted(() => {
+      const media = window.matchMedia("(prefers-color-scheme: dark)");
+      curTheme.value = media.matches ? "dark" : "light";
+    });
     const { id } = route.params;
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("template-[type]", () => useStrapi4().find(`posts/${id}`, {
       populate: ["fragments"]
@@ -7285,7 +7289,7 @@ const _sfc_main$8 = {
                 capitalize: curTemp.value === index2
               })}"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</a></li>`);
             });
-            _push2(`<!--]--></ul></section><section class="w-full lg:pr-10 mt-5"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box"${_scopeId}><li class="menu-title py-2"${_scopeId}><span class="flex justify-between items-center"${_scopeId}> Change Theme <span${_scopeId}> use: <a class="btn btn-link btn-xs" href="https://daisyui.com/" target="_blank"${_scopeId}> DaisyUI </a></span></span></li><!--[-->`);
+            _push2(`<!--]--></ul></section><section class="w-full lg:pr-10 mt-5"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"${_scopeId}><li class="menu-title py-2"${_scopeId}><span class="flex justify-between items-center"${_scopeId}> Change Theme <span${_scopeId}> use: <a class="btn btn-link btn-xs" href="https://daisyui.com/" target="_blank"${_scopeId}> DaisyUI </a></span></span></li><!--[-->`);
             serverRenderer.exports.ssrRenderList(themes, (item) => {
               _push2(`<li${serverRenderer.exports.ssrRenderAttr("data-theme", item)} class="${serverRenderer.exports.ssrRenderClass([{ "outline-dashed": curTheme.value === item }, "my-2 shadow rounded-box"])}"${_scopeId}><a href="javascript:;" class="flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent"${_scopeId}><span${_scopeId}>${serverRenderer.exports.ssrInterpolate(item)}</span><div class="flex gap-1 h-4"${_scopeId}><div class="bg-primary w-2 rounded"${_scopeId}></div><div class="bg-secondary w-2 rounded"${_scopeId}></div><div class="bg-accent w-2 rounded"${_scopeId}></div><div class="bg-neutral w-2 rounded"${_scopeId}></div></div></a></li>`);
             });
@@ -7334,7 +7338,7 @@ const _sfc_main$8 = {
                     ])
                   ]),
                   vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10 mt-5" }, [
-                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box" }, [
+                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar" }, [
                       vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
                         vue_cjs_prod.createVNode("span", { class: "flex justify-between items-center" }, [
                           vue_cjs_prod.createTextVNode(" Change Theme "),
