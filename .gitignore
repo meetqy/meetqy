@@ -5,5 +5,3 @@ node_modules
 .env
 yarn.lock
 demo.html
-public/github-contribution-grid-snake.gif
-public/github-contribution-grid-snake.svg
