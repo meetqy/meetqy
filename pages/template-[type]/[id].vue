@@ -40,7 +40,7 @@
 
         <section class="w-full lg:pr-10 mt-5">
           <ul
-            class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box"
+            class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"
           >
             <li class="menu-title py-2">
               <span class="flex justify-between items-center">
