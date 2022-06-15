@@ -42,19 +42,30 @@ function getPreloadType(ext) {
 }
 
 function createRendererContext({ clientManifest, publicPath, basedir, shouldPrefetch, shouldPreload }) {
-  const manifest = normalizeClientManifest(clientManifest);
-  const manifestEntries = Object.entries(manifest);
-  return {
+  const ctx = {
     shouldPrefetch: shouldPrefetch || (() => true),
     shouldPreload: shouldPreload || ((_file, asType) => ["module", "script", "style"].includes(asType)),
-    publicPath: ensureTrailingSlash(publicPath || clientManifest.publicPath || "/"),
-    clientManifest: manifest,
+    publicPath: ensureTrailingSlash(publicPath || "/"),
     basedir,
-    _dependencies: {},
-    _dependencySets: {},
-    _entrypoints: manifestEntries.filter((e) => e[1].isEntry).map(([module]) => module),
-    _dynamicEntrypoints: manifestEntries.filter((e) => e[1].isDynamicEntry).map(([module]) => module)
+    clientManifest: void 0,
+    updateManifest,
+    _dependencies: void 0,
+    _dependencySets: void 0,
+    _entrypoints: void 0,
+    _dynamicEntrypoints: void 0
   };
+  function updateManifest(clientManifest2) {
+    const manifest = normalizeClientManifest(clientManifest2);
+    const manifestEntries = Object.entries(manifest);
+    ctx.clientManifest = manifest;
+    ctx._dependencies = {};
+    ctx._dependencySets = {};
+    ctx._entrypoints = manifestEntries.filter((e) => e[1].isEntry).map(([module]) => module);
+    ctx._dynamicEntrypoints = manifestEntries.filter((e) => e[1].isDynamicEntry).map(([module]) => module);
+    ctx.publicPath = ensureTrailingSlash(publicPath || clientManifest2.publicPath || "/");
+  }
+  updateManifest(clientManifest);
+  return ctx;
 }
 function isLegacyClientManifest(clientManifest) {
   return "all" in clientManifest && "initial" in clientManifest;
@@ -252,6 +263,7 @@ function renderScripts(ssrContext, rendererContext) {
 function createRenderer(createApp, renderOptions) {
   const rendererContext = createRendererContext(renderOptions);
   return {
+    rendererContext,
     async renderToString(ssrContext) {
       ssrContext._registeredComponents = ssrContext._registeredComponents || /* @__PURE__ */ new Set();
       const _createApp = await Promise.resolve(createApp).then((r) => r.default || r);
@@ -4681,7 +4693,7 @@ reactivity_cjs_prod.unref = unref;
 	        const Component = instance.type;
 	        // explicit self name has highest priority
 	        if (type === COMPONENTS) {
-	            const selfName = getComponentName(Component);
+	            const selfName = getComponentName(Component, false /* do not include inferred name to avoid breaking existing code */);
 	            if (selfName &&
 	                (selfName === name ||
 	                    selfName === shared.camelize(name) ||
@@ -5906,7 +5918,7 @@ reactivity_cjs_prod.unref = unref;
 	                        setupState[ref] = value;
 	                    }
 	                }
-	                else if (reactivity$1.isRef(ref)) {
+	                else if (_isRef) {
 	                    ref.value = value;
 	                    if (rawRef.k)
 	                        refs[rawRef.k] = value;
@@ -5938,11 +5950,13 @@ reactivity_cjs_prod.unref = unref;
 	        if (!container.hasChildNodes()) {
 	            patch(null, vnode, container);
 	            flushPostFlushCbs();
+	            container._vnode = vnode;
 	            return;
 	        }
 	        hasMismatch = false;
 	        hydrateNode(container.firstChild, vnode, null, null, null);
 	        flushPostFlushCbs();
+	        container._vnode = vnode;
 	        if (hasMismatch && !false) {
 	            // this error should show up in production
 	            console.error(`Hydration completed but contains mismatches.`);
@@ -5989,7 +6003,7 @@ reactivity_cjs_prod.unref = unref;
 	                }
 	                break;
 	            case Static:
-	                if (domType !== 1 /* ELEMENT */) {
+	                if (domType !== 1 /* ELEMENT */ && domType !== 3 /* TEXT */) {
 	                    nextNode = onMismatch();
 	                }
 	                else {
@@ -6000,7 +6014,10 @@ reactivity_cjs_prod.unref = unref;
 	                    const needToAdoptContent = !vnode.children.length;
 	                    for (let i = 0; i < vnode.staticCount; i++) {
 	                        if (needToAdoptContent)
-	                            vnode.children += nextNode.outerHTML;
+	                            vnode.children +=
+	                                nextNode.nodeType === 1 /* ELEMENT */
+	                                    ? nextNode.outerHTML
+	                                    : nextNode.data;
 	                        if (i === vnode.staticCount - 1) {
 	                            vnode.anchor = nextNode;
 	                        }
@@ -8302,10 +8319,10 @@ reactivity_cjs_prod.unref = unref;
 	}
 	const classifyRE = /(?:^|[-_])(\w)/g;
 	const classify = (str) => str.replace(classifyRE, c => c.toUpperCase()).replace(/[-_]/g, '');
-	function getComponentName(Component) {
+	function getComponentName(Component, includeInferred = true) {
 	    return shared.isFunction(Component)
 	        ? Component.displayName || Component.name
-	        : Component.name;
+	        : Component.name || (includeInferred && Component.__name);
 	}
 	/* istanbul ignore next */
 	function formatComponentName(instance, Component, isRoot = false) {
@@ -8542,7 +8559,7 @@ reactivity_cjs_prod.unref = unref;
 	}
 
 	// Core API ------------------------------------------------------------------
-	const version = "3.2.35";
+	const version = "3.2.37";
 	const _ssrUtils = {
 	    createComponentInstance,
 	    setupComponent,
@@ -8552,7 +8569,7 @@ reactivity_cjs_prod.unref = unref;
 	    normalizeVNode
 	};
 	/**
-	 * SSR utils for \@vue/server-renderer. Only exposed in cjs builds.
+	 * SSR utils for \@vue/server-renderer. Only exposed in ssr-possible builds.
 	 * @internal
 	 */
 	const ssrUtils = (_ssrUtils );
@@ -9431,9 +9448,8 @@ reactivity_cjs_prod.unref = unref;
 	        removeTransitionClass(el, isAppear ? appearActiveClass : enterActiveClass);
 	        done && done();
 	    };
-	    let isLeaving = false;
 	    const finishLeave = (el, done) => {
-	        isLeaving = false;
+	        el._isLeaving = false;
 	        removeTransitionClass(el, leaveFromClass);
 	        removeTransitionClass(el, leaveToClass);
 	        removeTransitionClass(el, leaveActiveClass);
@@ -9467,14 +9483,14 @@ reactivity_cjs_prod.unref = unref;
 	        onEnter: makeEnterHook(false),
 	        onAppear: makeEnterHook(true),
 	        onLeave(el, done) {
-	            isLeaving = true;
+	            el._isLeaving = true;
 	            const resolve = () => finishLeave(el, done);
 	            addTransitionClass(el, leaveFromClass);
 	            // force reflow so *-leave-from classes immediately take effect (#2593)
 	            forceReflow();
 	            addTransitionClass(el, leaveActiveClass);
 	            nextFrame(() => {
-	                if (!isLeaving) {
+	                if (!el._isLeaving) {
 	                    // cancelled
 	                    return;
 	                }
@@ -10936,7 +10952,7 @@ function ssrRenderSlot(slots, slotName, slotProps, fallbackRenderFn, push, paren
     ssrRenderSlotInner(slots, slotName, slotProps, fallbackRenderFn, push, parentComponent, slotScopeId);
     push(`<!--]-->`);
 }
-function ssrRenderSlotInner(slots, slotName, slotProps, fallbackRenderFn, push, parentComponent, slotScopeId) {
+function ssrRenderSlotInner(slots, slotName, slotProps, fallbackRenderFn, push, parentComponent, slotScopeId, transition) {
     const slotFn = slots[slotName];
     if (slotFn) {
         const slotBuffer = [];
@@ -10952,10 +10968,15 @@ function ssrRenderSlotInner(slots, slotName, slotProps, fallbackRenderFn, push, 
             // ssr slot.
             // check if the slot renders all comments, in which case use the fallback
             let isEmptySlot = true;
-            for (let i = 0; i < slotBuffer.length; i++) {
-                if (!isComment(slotBuffer[i])) {
-                    isEmptySlot = false;
-                    break;
+            if (transition) {
+                isEmptySlot = false;
+            }
+            else {
+                for (let i = 0; i < slotBuffer.length; i++) {
+                    if (!isComment(slotBuffer[i])) {
+                        isEmptySlot = false;
+                        break;
+                    }
                 }
             }
             if (isEmptySlot) {
@@ -11186,7 +11207,6 @@ const renderer = eventHandler(async (event) => {
     runtimeConfig: useRuntimeConfig(),
     noSSR: !!event.req.headers["x-nuxt-no-ssr"],
     error: ssrError,
-    redirected: void 0,
     nuxt: void 0,
     payload: void 0
   };
@@ -11199,7 +11219,7 @@ const renderer = eventHandler(async (event) => {
   if (!rendered) {
     return;
   }
-  if (ssrContext.redirected || event.res.writableEnded) {
+  if (event.res.writableEnded) {
     return;
   }
   if (ssrContext.error && !ssrError) {

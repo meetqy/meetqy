@@ -43,15 +43,6 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    build: {
-      rollupOptions: {
-        // output: {
-        //   manualChunks(id) {
-        //     console.log(id.split("node_modules"), "======");
-        //     return "wq";
-        //   },
-        // },
-      },
-    },
+    esbuild: {},
   },
 });

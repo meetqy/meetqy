@@ -204,6 +204,8 @@ const { data } = await useAsyncData("template-[type]", () =>
 
 const fragments = computed(() => data.value.data.attributes.fragments.data);
 
+console.log(fragments.value);
+
 const activeCode = ref({});
 
 const showCode = (index) => {
