@@ -1,167 +1,5 @@
 <template>
-  <NuxtLayout>
-    <div
-      class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
-      v-if="posts"
-    >
-      <div class="block" v-for="post in posts" :key="post.id">
-        <grid-item-a
-          v-if="getCategory(post).name === '工具'"
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :tag="getCategory(post).name"
-          :header-images="getHeaderImages(post)"
-          :link="post.attributes.link"
-        />
-
-        <grid-item-b
-          v-else
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :visit="post.attributes.visit"
-          :comment="post.attributes.comment"
-          :tag="getTags(post)"
-          :header-images="getHeaderImages(post)"
-          :id="post.id + ''"
-          :to="post.attributes.to"
-        />
-      </div>
-    </div>
-
-    <div class="paging md:py-10 py-5">
-      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Prev</a>
-      <span class="px-5">Page 1 of 2</span>
-      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
-    </div>
-
-    <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
-      <div>
-        <p class="bottom-title">Recent posts</p>
-        <ul>
-          <li class="flex mt-5" v-for="item in 3">
-            <img
-              src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg"
-              alt=""
-            />
-            <div class="flex flex-col justify-center ml-5">
-              <span class="text-sm text-base-100 text-opacity-50"
-                >June 5, 2019</span
-              >
-              <p class="text-base font-semibold text-base-100">
-                Mars is the fourth planet from the Sun
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="bottom-title">Tag Cloud</p>
-        <div class="flex mt-5 flex-wrap">
-          <a
-            href="javascript:;"
-            class="px-4 py-2 text-base-100 rounded-full mr-2 mb-4"
-            :class="item"
-            v-for="item in [
-              'bg-blue-400',
-              'bg-red-500',
-              'bg-yellow-500',
-              'bg-green-500',
-              'bg-orange-500',
-            ]"
-          >
-            Astronomy
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <p class="bottom-title">关于我</p>
-        <div class="mt-5">
-          <div class="flex">
-            <img
-              class="w-24 h-24 rounded-full border-4 border-cyan-500"
-              src="/avatar.jpg"
-              alt="meetqy"
-            />
-            <div class="ml-5 flex flex-col justify-center">
-              <p class="text-lg font-semibold text-base-100">
-                meetqy
-                <sup
-                  class="inline-block line-through decoration-red-500 decoration-4"
-                >
-                  都{{ new Date().getFullYear() - 1996 }}了
-                </sup>
-              </p>
-              <p class="text-base-100 text-opacity-70 text-sm my-1">
-                前端CV工程师 - 擅长CV大法
-              </p>
-            </div>
-          </div>
-
-          <p class="text-base-100 mt-5 text-base text-opacity-90">
-            摸鱼、养狗、干饭、找模板、写模板，生活就是如此的朴实无华！
-          </p>
-          <p class="mt-4 about">
-            <span
-              class="badge badge-lg border-0 uppercase shadow text-black"
-              style="background-color: #e5d836"
-            >
-              js
-            </span>
-            <span
-              class="badge badge-lg border-0 uppercase"
-              style="background-color: #4266bb"
-            >
-              ts
-            </span>
-            <span
-              class="badge badge-lg border-0 capitalize"
-              style="
-                background: linear-gradient(to bottom right, #69bcf0, #28468a);
-              "
-            >
-              flutter
-            </span>
-            <span
-              class="badge badge-lg border-0 capitalize"
-              style="
-                background: linear-gradient(to bottom right, #8bb840, #35362d);
-              "
-              >node
-            </span>
-            <span
-              class="badge badge-lg border-0 shadow text-black"
-              style="
-                background: linear-gradient(to bottom right, #4ea1c5, #55b3a8);
-              "
-            >
-              Tailwind CSS
-            </span>
-
-            <span
-              class="badge badge-lg border-0 shadow"
-              style="
-                background: linear-gradient(to bottom right, #c15029, #cf642d);
-              "
-            >
-              HTML
-            </span>
-            <span
-              class="badge badge-lg border-0 shadow"
-              style="
-                background: linear-gradient(to bottom right, #335ca4, #5697de);
-              "
-            >
-              CSS
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </NuxtLayout>
+  <NuxtLayout> 321321 </NuxtLayout>
 </template>
 
 <script setup>
@@ -170,6 +8,12 @@ const { data } = await useAsyncData("posts", () =>
     populate: ["category", "headerImages", "tags"],
   })
 );
+
+const el = ref();
+
+onMounted(() => {
+  console.log(el.value);
+});
 
 useHead({
   titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
