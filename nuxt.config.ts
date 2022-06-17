@@ -23,7 +23,6 @@ export default defineNuxtConfig({
   css: ["~/assets/iconfont.css"],
   app: {
     head: {
-      title: " ",
       meta: [
         {
           name: "keywords",

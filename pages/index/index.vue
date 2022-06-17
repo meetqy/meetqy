@@ -1,6 +1,5 @@
 <template>
   <NuxtLayout>
-    <!-- <button @click="$router.push('/posts/1')">/posts/1</button> -->
     <div
       class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
       v-if="posts"
@@ -37,7 +36,7 @@
       <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
     </div>
 
-    <!-- <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
+    <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
       <div>
         <p class="bottom-title">Recent posts</p>
         <ul>
@@ -160,8 +159,8 @@
             </span>
           </p>
         </div>
-      </div> 
-    </div>-->
+      </div>
+    </div>
   </NuxtLayout>
 </template>
 
