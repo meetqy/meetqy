@@ -6,7 +6,7 @@
 import toJsonSchema from "to-json-schema";
 import jsonFormat from "json-format";
 import { CodeOption } from "~~/composables/jsonToLanguage";
-import { useJsontoMock } from "./jsonToMock";
+import { useJsontoMock } from "./jsonToMock.client";
 
 useHead({
   titleTemplate: `JSON在线转换工具(to mockjs)`,
@@ -46,7 +46,7 @@ const toMockjs = (value: string): string => {
   const res = toJsonSchema(JSON.parse(value));
 
   const str = useJsontoMock(res.properties);
-  console.log(str);
+  // console.log(str);
 
   return jsonFormat(JSON.parse(str));
 };
