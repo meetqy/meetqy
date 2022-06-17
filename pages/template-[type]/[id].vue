@@ -91,12 +91,10 @@
         class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"
       >
         <div class="prose">
-          <h1>Tailwind CSS - Card</h1>
+          <h1>{{ post.title }}</h1>
 
           <p>
-            收集的一些<code>Card</code>样式，所有的模板均改造为
-            <code>DaisyUI</code>
-            主题样式，可以完美支持主题切换。
+            {{ post.desciption }}
           </p>
         </div>
 
@@ -189,11 +187,6 @@ const themes = [
 
 const curTheme = ref("dark");
 
-onMounted(() => {
-  const media = window.matchMedia("(prefers-color-scheme: dark)");
-  curTheme.value = media.matches ? "dark" : "light";
-});
-
 const { id } = route.params;
 
 const { data } = await useAsyncData("template-[type]", () =>
@@ -202,9 +195,24 @@ const { data } = await useAsyncData("template-[type]", () =>
   })
 );
 
-const fragments = computed(() => data.value.data.attributes.fragments.data);
+const post = computed(() => data.value.data.attributes);
 
-console.log(fragments.value);
+const fragments = computed(() => post.value.fragments.data);
+
+onMounted(() => {
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  curTheme.value = media.matches ? "dark" : "light";
+
+  useHead({
+    titleTemplate: `${post.value.title} - ${post.value.desciption}`,
+    meta: [
+      {
+        name: "description",
+        content: `${post.value.desciption}`,
+      },
+    ],
+  });
+});
 
 const activeCode = ref({});
 

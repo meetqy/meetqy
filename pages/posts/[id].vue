@@ -113,7 +113,6 @@
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import MarkdownIt from "markdown-it";
-import { useClipboard } from "@vueuse/core";
 import hljs from "highlight.js";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -164,7 +163,15 @@ const modules = [Navigation];
 
 const $cdn = useCdnUrl();
 
-const copy = () => {
-  useClipboard({ source: post.link }).copy();
-};
+onMounted(() => {
+  useHead({
+    titleTemplate: `${post.value.title} - ${post.value.desciption}`,
+    meta: [
+      {
+        name: "description",
+        content: `${post.value.desciption}`,
+      },
+    ],
+  });
+});
 </script>

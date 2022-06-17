@@ -175,6 +175,12 @@ const { data } = await useAsyncData("posts", () =>
   })
 );
 
+onMounted(() => {
+  useHead({
+    titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
+  });
+});
+
 const posts = computed(() => data.value.data);
 
 // console.log(posts.value);

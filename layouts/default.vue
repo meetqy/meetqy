@@ -13,10 +13,6 @@
 <script setup lang="ts">
 import { useScroll } from "@vueuse/core";
 
-useHead({
-  titleTemplate: useTitle().title,
-});
-
 const emit = defineEmits<{
   (event: "change", y: number): void;
 }>();

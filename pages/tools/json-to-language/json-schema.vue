@@ -8,7 +8,7 @@ import jsonFormat from "json-format";
 import { CodeOption } from "~~/composables/jsonToLanguage";
 
 useHead({
-  titleTemplate: `JSON在线转换工具(to json-schema) - ${useTitle().title}`,
+  titleTemplate: `JSON在线转换工具(to json-schema)`,
   meta: [
     {
       name: "description",

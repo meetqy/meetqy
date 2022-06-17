@@ -86,23 +86,24 @@
 <script setup>
 const curTypes = ref(0);
 
-useHead({
-  titleTemplate: `Image Space - ${useTitle().title}`,
-  meta: [
-    {
-      name: "description",
-      content:
-        "根据类型随机生成图片，可以理解为有真实图片的占位图，支持类型：avatar/coffee/dog/girls...",
-    },
-  ],
-});
-
 const { data } = await useAsyncData("image-space", () =>
   useStrapi4().find(`posts/4`)
 );
 
 const post = computed(() => {
   return data.value.data.attributes;
+});
+
+onMounted(() => {
+  useHead({
+    titleTemplate: `${post.value.title} - ${post.value.desciption}`,
+    meta: [
+      {
+        name: "description",
+        content: `${post.value.desciption}`,
+      },
+    ],
+  });
 });
 
 const types = computed(() => {

@@ -9,7 +9,7 @@ import { CodeOption } from "~~/composables/jsonToLanguage";
 import { useJsontoMock } from "./jsonToMock";
 
 useHead({
-  titleTemplate: `JSON在线转换工具(to mockjs) - ${useTitle().title}`,
+  titleTemplate: `JSON在线转换工具(to mockjs)`,
   meta: [
     {
       name: "description",

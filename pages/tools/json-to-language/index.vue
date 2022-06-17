@@ -6,7 +6,7 @@
 import { CodeOption } from "~~/composables/jsonToLanguage";
 
 useHead({
-  titleTemplate: `JSON在线转换工具(to dart) - ${useTitle().title}`,
+  titleTemplate: `JSON在线转换工具(to dart)`,
   meta: [
     {
       name: "description",
