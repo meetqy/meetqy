@@ -7022,10 +7022,11 @@ const _sfc_main$9 = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
+            _push2(`<div data-v-688a8ebe${_scopeId}>`);
             if (vue_cjs_prod.unref(posts)) {
-              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-d6204da2${_scopeId}><!--[-->`);
+              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-688a8ebe${_scopeId}><!--[-->`);
               serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(posts), (post) => {
-                _push2(`<div class="block" data-v-d6204da2${_scopeId}>`);
+                _push2(`<div class="block" data-v-688a8ebe${_scopeId}>`);
                 if (getCategory(post).name === "\u5DE5\u5177") {
                   _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
                     title: post.attributes.title,
@@ -7054,51 +7055,53 @@ const _sfc_main$9 = {
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="paging md:py-10 py-5" data-v-d6204da2${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-d6204da2${_scopeId}>Prev</a><span class="px-5" data-v-d6204da2${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-d6204da2${_scopeId}>Next</a></div>`);
+            _push2(`<div class="paging md:py-10 py-5" data-v-688a8ebe${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-688a8ebe${_scopeId}>Prev</a><span class="px-5" data-v-688a8ebe${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-688a8ebe${_scopeId}>Next</a></div></div>`);
           } else {
             return [
-              vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
-                key: 0,
-                class: "multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
-              }, [
-                (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(posts), (post) => {
-                  return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
-                    class: "block",
-                    key: post.id
-                  }, [
-                    getCategory(post).name === "\u5DE5\u5177" ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_a, {
-                      key: 0,
-                      title: post.attributes.title,
-                      desciption: post.attributes.desciption,
-                      time: post.attributes.updatedAt.split("T")[0],
-                      tag: getCategory(post).name,
-                      "header-images": getHeaderImages(post),
-                      link: post.attributes.link
-                    }, null, 8, ["title", "desciption", "time", "tag", "header-images", "link"])) : (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_b, {
-                      key: 1,
-                      title: post.attributes.title,
-                      desciption: post.attributes.desciption,
-                      time: post.attributes.updatedAt.split("T")[0],
-                      visit: post.attributes.visit,
-                      comment: post.attributes.comment,
-                      tag: getTags(post),
-                      "header-images": getHeaderImages(post),
-                      id: post.id + "",
-                      to: post.attributes.to
-                    }, null, 8, ["title", "desciption", "time", "visit", "comment", "tag", "header-images", "id", "to"]))
-                  ]);
-                }), 128))
-              ])) : vue_cjs_prod.createCommentVNode("", true),
-              vue_cjs_prod.createVNode("div", { class: "paging md:py-10 py-5" }, [
-                vue_cjs_prod.createVNode("a", {
-                  href: "javasciprt:;",
-                  class: "btn rounded-full btn-md btn-info"
-                }, "Prev"),
-                vue_cjs_prod.createVNode("span", { class: "px-5" }, "Page 1 of 2"),
-                vue_cjs_prod.createVNode("a", {
-                  href: "javasciprt:;",
-                  class: "btn rounded-full btn-md btn-info"
-                }, "Next")
+              vue_cjs_prod.createVNode("div", null, [
+                vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
+                  key: 0,
+                  class: "multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
+                }, [
+                  (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(posts), (post) => {
+                    return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
+                      class: "block",
+                      key: post.id
+                    }, [
+                      getCategory(post).name === "\u5DE5\u5177" ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_a, {
+                        key: 0,
+                        title: post.attributes.title,
+                        desciption: post.attributes.desciption,
+                        time: post.attributes.updatedAt.split("T")[0],
+                        tag: getCategory(post).name,
+                        "header-images": getHeaderImages(post),
+                        link: post.attributes.link
+                      }, null, 8, ["title", "desciption", "time", "tag", "header-images", "link"])) : (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_b, {
+                        key: 1,
+                        title: post.attributes.title,
+                        desciption: post.attributes.desciption,
+                        time: post.attributes.updatedAt.split("T")[0],
+                        visit: post.attributes.visit,
+                        comment: post.attributes.comment,
+                        tag: getTags(post),
+                        "header-images": getHeaderImages(post),
+                        id: post.id + "",
+                        to: post.attributes.to
+                      }, null, 8, ["title", "desciption", "time", "visit", "comment", "tag", "header-images", "id", "to"]))
+                    ]);
+                  }), 128))
+                ])) : vue_cjs_prod.createCommentVNode("", true),
+                vue_cjs_prod.createVNode("div", { class: "paging md:py-10 py-5" }, [
+                  vue_cjs_prod.createVNode("a", {
+                    href: "javasciprt:;",
+                    class: "btn rounded-full btn-md btn-info"
+                  }, "Prev"),
+                  vue_cjs_prod.createVNode("span", { class: "px-5" }, "Page 1 of 2"),
+                  vue_cjs_prod.createVNode("a", {
+                    href: "javasciprt:;",
+                    class: "btn rounded-full btn-md btn-info"
+                  }, "Next")
+                ])
               ])
             ];
           }
@@ -7114,7 +7117,7 @@ _sfc_main$9.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const index$5 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-d6204da2"]]);
+const index$5 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-688a8ebe"]]);
 const index$6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$5

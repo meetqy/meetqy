@@ -1,39 +1,41 @@
 <template>
   <NuxtLayout>
-    <div
-      class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
-      v-if="posts"
-    >
-      <div class="block" v-for="post in posts" :key="post.id">
-        <grid-item-a
-          v-if="getCategory(post).name === '工具'"
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :tag="getCategory(post).name"
-          :header-images="getHeaderImages(post)"
-          :link="post.attributes.link"
-        />
+    <div>
+      <div
+        class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
+        v-if="posts"
+      >
+        <div class="block" v-for="post in posts" :key="post.id">
+          <grid-item-a
+            v-if="getCategory(post).name === '工具'"
+            :title="post.attributes.title"
+            :desciption="post.attributes.desciption"
+            :time="post.attributes.updatedAt.split('T')[0]"
+            :tag="getCategory(post).name"
+            :header-images="getHeaderImages(post)"
+            :link="post.attributes.link"
+          />
 
-        <grid-item-b
-          v-else
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :visit="post.attributes.visit"
-          :comment="post.attributes.comment"
-          :tag="getTags(post)"
-          :header-images="getHeaderImages(post)"
-          :id="post.id + ''"
-          :to="post.attributes.to"
-        />
+          <grid-item-b
+            v-else
+            :title="post.attributes.title"
+            :desciption="post.attributes.desciption"
+            :time="post.attributes.updatedAt.split('T')[0]"
+            :visit="post.attributes.visit"
+            :comment="post.attributes.comment"
+            :tag="getTags(post)"
+            :header-images="getHeaderImages(post)"
+            :id="post.id + ''"
+            :to="post.attributes.to"
+          />
+        </div>
       </div>
-    </div>
 
-    <div class="paging md:py-10 py-5">
-      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Prev</a>
-      <span class="px-5">Page 1 of 2</span>
-      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
+      <div class="paging md:py-10 py-5">
+        <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Prev</a>
+        <span class="px-5">Page 1 of 2</span>
+        <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
+      </div>
     </div>
   </NuxtLayout>
 </template>
