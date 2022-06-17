@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="default">
+  <NuxtLayout>
     <!-- <button @click="$router.push('/posts/1')">/posts/1</button> -->
     <div
       class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
@@ -37,8 +37,7 @@
       <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
     </div>
 
-    <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
-      <!-- post -->
+    <!-- <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
       <div>
         <p class="bottom-title">Recent posts</p>
         <ul>
@@ -59,7 +58,6 @@
         </ul>
       </div>
 
-      <!-- tag -->
       <div>
         <p class="bottom-title">Tag Cloud</p>
         <div class="flex mt-5 flex-wrap">
@@ -80,7 +78,6 @@
         </div>
       </div>
 
-      <!-- about me -->
       <div>
         <p class="bottom-title">关于我</p>
         <div class="mt-5">
@@ -163,8 +160,8 @@
             </span>
           </p>
         </div>
-      </div>
-    </div>
+      </div> 
+    </div>-->
   </NuxtLayout>
 </template>
 

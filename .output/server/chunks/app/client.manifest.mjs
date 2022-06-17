@@ -1,6 +1,6 @@
 const client_manifest = {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-88cd6f69.mjs",
+    "file": "entry-4790a800.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -19,86 +19,86 @@ const client_manifest = {
       "pages/tools/json-to-language/typescript.vue"
     ],
     "css": [
-      "entry.4014b708.css"
+      "entry.2229c843.css"
     ]
   },
   "pages/index/index.vue": {
-    "file": "index-7195d701.mjs",
+    "file": "index-8142d461.mjs",
     "src": "pages/index/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_hooks-dfa93fd5.mjs",
-      "_swiper-slide-f965acad.mjs",
-      "_useStrapi4-75f73139.mjs"
+      "_hooks-3b3982e5.mjs",
+      "_swiper-slide-f40a27d9.mjs",
+      "_useStrapi4-0ac4eedd.mjs"
     ]
   },
-  "_useStrapi4-75f73139.mjs": {
-    "file": "useStrapi4-75f73139.mjs",
+  "_useStrapi4-0ac4eedd.mjs": {
+    "file": "useStrapi4-0ac4eedd.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_hooks-dfa93fd5.mjs": {
-    "file": "hooks-dfa93fd5.mjs",
+  "_hooks-3b3982e5.mjs": {
+    "file": "hooks-3b3982e5.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_swiper-slide-f965acad.mjs": {
-    "file": "swiper-slide-f965acad.mjs",
+  "_swiper-slide-f40a27d9.mjs": {
+    "file": "swiper-slide-f40a27d9.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/posts/[id].vue": {
-    "file": "_id_-2bfb67f0.mjs",
+    "file": "_id_-00391524.mjs",
     "src": "pages/posts/[id].vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Logo-985dcef5.mjs",
+      "_Logo-c2d2a4c0.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_useStrapi4-75f73139.mjs",
-      "_hooks-dfa93fd5.mjs",
-      "_swiper-slide-f965acad.mjs",
+      "_useStrapi4-0ac4eedd.mjs",
+      "_hooks-3b3982e5.mjs",
+      "_swiper-slide-f40a27d9.mjs",
       "_index-ed8b9815.mjs"
     ]
   },
-  "_Logo-985dcef5.mjs": {
-    "file": "Logo-985dcef5.mjs",
+  "_Logo-c2d2a4c0.mjs": {
+    "file": "Logo-c2d2a4c0.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_hooks-dfa93fd5.mjs"
+      "_hooks-3b3982e5.mjs"
     ]
   },
   "_index-ed8b9815.mjs": {
     "file": "index-ed8b9815.mjs"
   },
   "pages/template-[type]/[id].vue": {
-    "file": "_id_-c02eea9c.mjs",
+    "file": "_id_-437bb67e.mjs",
     "src": "pages/template-[type]/[id].vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Logo-985dcef5.mjs",
+      "_Logo-c2d2a4c0.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_useStrapi4-75f73139.mjs",
+      "_useStrapi4-0ac4eedd.mjs",
       "_index-ed8b9815.mjs",
-      "_hooks-dfa93fd5.mjs"
+      "_hooks-3b3982e5.mjs"
     ]
   },
   "pages/tools/image-space/index.vue": {
-    "file": "index-0d99e944.mjs",
+    "file": "index-f0d8862a.mjs",
     "src": "pages/tools/image-space/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Logo-985dcef5.mjs",
+      "_Logo-c2d2a4c0.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_useStrapi4-75f73139.mjs",
-      "_hooks-dfa93fd5.mjs"
+      "_useStrapi4-0ac4eedd.mjs",
+      "_hooks-3b3982e5.mjs"
     ]
   },
   "pages/tools/index/index.vue": {
-    "file": "index-dafeace2.mjs",
+    "file": "index-d1bb29f2.mjs",
     "src": "pages/tools/index/index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -106,44 +106,44 @@ const client_manifest = {
     ]
   },
   "pages/tools/json-to-language/dart.vue": {
-    "file": "dart-87c41a3a.mjs",
+    "file": "dart-a5090f73.mjs",
     "src": "pages/tools/json-to-language/dart.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor-85215145.mjs",
+      "_Editor-3bd9cd68.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_Editor-85215145.mjs": {
-    "file": "Editor-85215145.mjs",
+  "_Editor-3bd9cd68.mjs": {
+    "file": "Editor-3bd9cd68.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/tools/json-to-language/index.vue": {
-    "file": "index-619021d7.mjs",
+    "file": "index-84f397bd.mjs",
     "src": "pages/tools/json-to-language/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor-85215145.mjs",
+      "_Editor-3bd9cd68.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/tools/json-to-language/json-schema.vue": {
-    "file": "json-schema-c148010e.mjs",
+    "file": "json-schema-d1f3a300.mjs",
     "src": "pages/tools/json-to-language/json-schema.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor-85215145.mjs",
+      "_Editor-3bd9cd68.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/tools/json-to-language/mockjs/index.vue": {
-    "file": "index-3cc5526c.mjs",
+    "file": "index-a61ff117.mjs",
     "src": "pages/tools/json-to-language/mockjs/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor-85215145.mjs",
+      "_Editor-3bd9cd68.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
       "pages/tools/json-to-language/mockjs/jsonToMock.ts"
     ]
@@ -154,45 +154,45 @@ const client_manifest = {
     "isDynamicEntry": true
   },
   "pages/tools/json-to-language/typescript.vue": {
-    "file": "typescript-e612106e.mjs",
+    "file": "typescript-70204b98.mjs",
     "src": "pages/tools/json-to-language/typescript.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor-85215145.mjs",
+      "_Editor-3bd9cd68.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "layouts/default.vue": {
-    "file": "default-6630f590.mjs",
+    "file": "default-1f56506d.mjs",
     "src": "layouts/default.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Footer-46584418.mjs",
+      "_Footer-3520cfcb.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_Logo-985dcef5.mjs",
-      "_hooks-dfa93fd5.mjs"
+      "_Logo-c2d2a4c0.mjs",
+      "_hooks-3b3982e5.mjs"
     ],
     "css": [
       "default.9ee72091.css"
     ]
   },
-  "_Footer-46584418.mjs": {
-    "file": "Footer-46584418.mjs",
+  "_Footer-3520cfcb.mjs": {
+    "file": "Footer-3520cfcb.mjs",
     "imports": [
-      "_Logo-985dcef5.mjs",
+      "_Logo-c2d2a4c0.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_hooks-dfa93fd5.mjs"
+      "_hooks-3b3982e5.mjs"
     ]
   },
   "layouts/tools.vue": {
-    "file": "tools-abeb0ba4.mjs",
+    "file": "tools-93c56cbc.mjs",
     "src": "layouts/tools.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Footer-46584418.mjs",
+      "_Footer-3520cfcb.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_Logo-985dcef5.mjs",
-      "_hooks-dfa93fd5.mjs"
+      "_Logo-c2d2a4c0.mjs",
+      "_hooks-3b3982e5.mjs"
     ]
   }
 };
