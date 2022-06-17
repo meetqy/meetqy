@@ -7001,23 +7001,93 @@ const _sfc_main$9 = {
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts", () => useStrapi4().find("posts", {
       populate: ["category", "headerImages", "tags"]
     }))), __temp = await __temp, __restore(), __temp);
-    const el = vue_cjs_prod.ref();
-    vue_cjs_prod.onMounted(() => {
-      console.log(el.value);
-    });
     useHead({
       titleTemplate: `${useTitle().title} - \u4ECA\u5929\u661F\u671F${useTitle().week}`
     });
-    vue_cjs_prod.computed(() => data.value.data);
+    const posts = vue_cjs_prod.computed(() => data.value.data);
+    const getTags = (post) => {
+      const tags = post.attributes.tags.data;
+      return tags.length > 0 ? tags[0].attributes : "";
+    };
+    const getCategory = (post) => {
+      return post.attributes.category.data.attributes;
+    };
+    const getHeaderImages = (post) => {
+      return post.attributes.headerImages.data.map((item) => item.attributes.url);
+    };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$1;
+      const _component_grid_item_a = _sfc_main$v;
+      const _component_grid_item_b = __nuxt_component_2;
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` 321321 `);
+            if (vue_cjs_prod.unref(posts)) {
+              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-a1426cea${_scopeId}><!--[-->`);
+              serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(posts), (post) => {
+                _push2(`<div class="block" data-v-a1426cea${_scopeId}>`);
+                if (getCategory(post).name === "\u5DE5\u5177") {
+                  _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
+                    title: post.attributes.title,
+                    desciption: post.attributes.desciption,
+                    time: post.attributes.updatedAt.split("T")[0],
+                    tag: getCategory(post).name,
+                    "header-images": getHeaderImages(post),
+                    link: post.attributes.link
+                  }, null, _parent2, _scopeId));
+                } else {
+                  _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_b, {
+                    title: post.attributes.title,
+                    desciption: post.attributes.desciption,
+                    time: post.attributes.updatedAt.split("T")[0],
+                    visit: post.attributes.visit,
+                    comment: post.attributes.comment,
+                    tag: getTags(post),
+                    "header-images": getHeaderImages(post),
+                    id: post.id + "",
+                    to: post.attributes.to
+                  }, null, _parent2, _scopeId));
+                }
+                _push2(`</div>`);
+              });
+              _push2(`<!--]--></div>`);
+            } else {
+              _push2(`<!---->`);
+            }
           } else {
             return [
-              vue_cjs_prod.createTextVNode(" 321321 ")
+              vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
+                key: 0,
+                class: "multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
+              }, [
+                (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(posts), (post) => {
+                  return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
+                    class: "block",
+                    key: post.id
+                  }, [
+                    getCategory(post).name === "\u5DE5\u5177" ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_a, {
+                      key: 0,
+                      title: post.attributes.title,
+                      desciption: post.attributes.desciption,
+                      time: post.attributes.updatedAt.split("T")[0],
+                      tag: getCategory(post).name,
+                      "header-images": getHeaderImages(post),
+                      link: post.attributes.link
+                    }, null, 8, ["title", "desciption", "time", "tag", "header-images", "link"])) : (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_grid_item_b, {
+                      key: 1,
+                      title: post.attributes.title,
+                      desciption: post.attributes.desciption,
+                      time: post.attributes.updatedAt.split("T")[0],
+                      visit: post.attributes.visit,
+                      comment: post.attributes.comment,
+                      tag: getTags(post),
+                      "header-images": getHeaderImages(post),
+                      id: post.id + "",
+                      to: post.attributes.to
+                    }, null, 8, ["title", "desciption", "time", "visit", "comment", "tag", "header-images", "id", "to"]))
+                  ]);
+                }), 128))
+              ])) : vue_cjs_prod.createCommentVNode("", true)
             ];
           }
         }),
@@ -7032,7 +7102,7 @@ _sfc_main$9.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const index$5 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-34732940"]]);
+const index$5 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-a1426cea"]]);
 const index$6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$5

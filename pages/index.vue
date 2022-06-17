@@ -1,5 +1,35 @@
 <template>
-  <NuxtLayout> 321321 </NuxtLayout>
+  <NuxtLayout>
+    <div
+      class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
+      v-if="posts"
+    >
+      <div class="block" v-for="post in posts" :key="post.id">
+        <grid-item-a
+          v-if="getCategory(post).name === '工具'"
+          :title="post.attributes.title"
+          :desciption="post.attributes.desciption"
+          :time="post.attributes.updatedAt.split('T')[0]"
+          :tag="getCategory(post).name"
+          :header-images="getHeaderImages(post)"
+          :link="post.attributes.link"
+        />
+
+        <grid-item-b
+          v-else
+          :title="post.attributes.title"
+          :desciption="post.attributes.desciption"
+          :time="post.attributes.updatedAt.split('T')[0]"
+          :visit="post.attributes.visit"
+          :comment="post.attributes.comment"
+          :tag="getTags(post)"
+          :header-images="getHeaderImages(post)"
+          :id="post.id + ''"
+          :to="post.attributes.to"
+        />
+      </div>
+    </div>
+  </NuxtLayout>
 </template>
 
 <script setup>
@@ -9,19 +39,11 @@ const { data } = await useAsyncData("posts", () =>
   })
 );
 
-const el = ref();
-
-onMounted(() => {
-  console.log(el.value);
-});
-
 useHead({
   titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
 });
 
 const posts = computed(() => data.value.data);
-
-// console.log(posts.value);
 
 const getTags = (post) => {
   const tags = post.attributes.tags.data;
