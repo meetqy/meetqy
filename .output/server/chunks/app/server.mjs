@@ -6755,10 +6755,8 @@ const _sfc_main$9 = {
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts", () => useStrapi4().find("posts", {
       populate: ["category", "headerImages", "tags"]
     }))), __temp = await __temp, __restore(), __temp);
-    vue_cjs_prod.onMounted(() => {
-      useHead({
-        titleTemplate: `${useTitle().title} - \u4ECA\u5929\u661F\u671F${useTitle().week}`
-      });
+    useHead({
+      titleTemplate: `${useTitle().title} - \u4ECA\u5929\u661F\u671F${useTitle().week}`
     });
     const posts = vue_cjs_prod.computed(() => data.value.data);
     const getTags = (post) => {
@@ -6779,9 +6777,9 @@ const _sfc_main$9 = {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             if (vue_cjs_prod.unref(posts)) {
-              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-70c4db9f${_scopeId}><!--[-->`);
+              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-e10e3d7c${_scopeId}><!--[-->`);
               serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(posts), (post) => {
-                _push2(`<div class="block" data-v-70c4db9f${_scopeId}>`);
+                _push2(`<div class="block" data-v-e10e3d7c${_scopeId}>`);
                 if (getCategory(post).name === "\u5DE5\u5177") {
                   _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
                     title: post.attributes.title,
@@ -6810,11 +6808,11 @@ const _sfc_main$9 = {
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="paging md:py-10 py-5" data-v-70c4db9f${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-70c4db9f${_scopeId}>Prev</a><span class="px-5" data-v-70c4db9f${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-70c4db9f${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-70c4db9f${_scopeId}><div data-v-70c4db9f${_scopeId}><p class="bottom-title" data-v-70c4db9f${_scopeId}>Recent posts</p><ul data-v-70c4db9f${_scopeId}><!--[-->`);
+            _push2(`<div class="paging md:py-10 py-5" data-v-e10e3d7c${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-e10e3d7c${_scopeId}>Prev</a><span class="px-5" data-v-e10e3d7c${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-e10e3d7c${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-e10e3d7c${_scopeId}><div data-v-e10e3d7c${_scopeId}><p class="bottom-title" data-v-e10e3d7c${_scopeId}>Recent posts</p><ul data-v-e10e3d7c${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(3, (item) => {
-              _push2(`<li class="flex mt-5" data-v-70c4db9f${_scopeId}><img src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg" alt="" data-v-70c4db9f${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-70c4db9f${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-70c4db9f${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-70c4db9f${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
+              _push2(`<li class="flex mt-5" data-v-e10e3d7c${_scopeId}><img src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg" alt="" data-v-e10e3d7c${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-e10e3d7c${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-e10e3d7c${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-e10e3d7c${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
             });
-            _push2(`<!--]--></ul></div><div data-v-70c4db9f${_scopeId}><p class="bottom-title" data-v-70c4db9f${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-70c4db9f${_scopeId}><!--[-->`);
+            _push2(`<!--]--></ul></div><div data-v-e10e3d7c${_scopeId}><p class="bottom-title" data-v-e10e3d7c${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-e10e3d7c${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList([
               "bg-blue-400",
               "bg-red-500",
@@ -6822,9 +6820,9 @@ const _sfc_main$9 = {
               "bg-green-500",
               "bg-orange-500"
             ], (item) => {
-              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-70c4db9f${_scopeId}> Astronomy </a>`);
+              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-e10e3d7c${_scopeId}> Astronomy </a>`);
             });
-            _push2(`<!--]--></div></div><div data-v-70c4db9f${_scopeId}><p class="bottom-title" data-v-70c4db9f${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-70c4db9f${_scopeId}><div class="flex" data-v-70c4db9f${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-70c4db9f${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-70c4db9f${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-70c4db9f${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-70c4db9f${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-70c4db9f${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-70c4db9f${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-70c4db9f${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-70c4db9f${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-70c4db9f${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-70c4db9f${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-70c4db9f${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-70c4db9f${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-70c4db9f${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-70c4db9f${_scopeId}> CSS </span></p></div></div></div>`);
+            _push2(`<!--]--></div></div><div data-v-e10e3d7c${_scopeId}><p class="bottom-title" data-v-e10e3d7c${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-e10e3d7c${_scopeId}><div class="flex" data-v-e10e3d7c${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-e10e3d7c${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-e10e3d7c${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-e10e3d7c${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-e10e3d7c${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-e10e3d7c${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-e10e3d7c${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-e10e3d7c${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-e10e3d7c${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-e10e3d7c${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-e10e3d7c${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-e10e3d7c${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-e10e3d7c${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-e10e3d7c${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-e10e3d7c${_scopeId}> CSS </span></p></div></div></div>`);
           } else {
             return [
               vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
@@ -6970,7 +6968,7 @@ _sfc_main$9.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const index$5 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-70c4db9f"]]);
+const index$5 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-e10e3d7c"]]);
 const index$6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$5
