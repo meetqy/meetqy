@@ -3,7 +3,9 @@
     <div class="container lg:max-w-full xl:container mx-auto p-6">
       <Header class="border-b-2 border-base-100 border-opacity-25 py-8" />
 
-      <slot></slot>
+      <main class="w-full">
+        <slot></slot>
+      </main>
 
       <Footer class="flex flex-col items-center justify-center mt-20" />
     </div>
