@@ -29,6 +29,12 @@
         />
       </div>
     </div>
+
+    <div class="paging md:py-10 py-5">
+      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Prev</a>
+      <span class="px-5">Page 1 of 2</span>
+      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
+    </div>
   </NuxtLayout>
 </template>
 
