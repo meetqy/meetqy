@@ -5230,7 +5230,7 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
             _push2(`<!--[-->`);
             serverRenderer.exports.ssrRenderList(__props.headerImages, (item) => {
               _push2(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(SwiperSlide), { key: item }, {
-                default: vue_cjs_prod.withCtx((_22, _push3, _parent3, _scopeId2) => {
+                default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
                     _push3(`<div class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`)}" data-v-f368b5d4${_scopeId2}></div>`);
                   } else {
@@ -5923,7 +5923,7 @@ const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
                 key: item.name,
                 to: "/tools/json-to-language/" + item.language
               }, {
-                default: vue_cjs_prod.withCtx((_22, _push3, _parent3, _scopeId2) => {
+                default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
                     _push3(`<div class="${serverRenderer.exports.ssrRenderClass([item.className, { active: vue_cjs_prod.unref(curLanguageIndex) === index2 }])}" data-v-40230bd6${_scopeId2}>${serverRenderer.exports.ssrInterpolate(item.name)}</div>`);
                   } else {
@@ -7088,18 +7088,6 @@ const tools$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
 const _1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null
 }, Symbol.toStringTag, { value: "Module" }));
-const _2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null
-}, Symbol.toStringTag, { value: "Module" }));
-const _3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null
-}, Symbol.toStringTag, { value: "Module" }));
-const _4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null
-}, Symbol.toStringTag, { value: "Module" }));
-const _5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null
-}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$9 = {
   __name: "index",
   __ssrInlineRender: true,
@@ -7400,7 +7388,7 @@ const _sfc_main$8 = {
               modules,
               navigation: true
             }, {
-              default: vue_cjs_prod.withCtx((_6, _push3, _parent3, _scopeId2) => {
+              default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
                   _push3(`<!--[-->`);
                   serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(previewImages), (item) => {
@@ -7408,7 +7396,7 @@ const _sfc_main$8 = {
                       class: "flex justify-center items-center",
                       key: item.id
                     }, {
-                      default: vue_cjs_prod.withCtx((_7, _push4, _parent4, _scopeId3) => {
+                      default: vue_cjs_prod.withCtx((_3, _push4, _parent4, _scopeId3) => {
                         if (_push4) {
                           _push4(`<img class="rounded-2xl xl:w-1/5 md:w-1/3 w-1/2"${serverRenderer.exports.ssrRenderAttr("src", vue_cjs_prod.unref($cdn) + item.attributes.url)}${_scopeId3}>`);
                         } else {
@@ -7589,53 +7577,25 @@ const _id_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty
   __proto__: null,
   "default": _sfc_main$8
 }, Symbol.toStringTag, { value: "Module" }));
-function __variableDynamicImportRuntime0__(path) {
-  switch (path) {
-    case "../../fragment/card/1.html":
-      return Promise.resolve().then(function() {
-        return _1;
-      });
-    case "../../fragment/card/2.html":
-      return Promise.resolve().then(function() {
-        return _2;
-      });
-    case "../../fragment/card/3.html":
-      return Promise.resolve().then(function() {
-        return _3;
-      });
-    case "../../fragment/card/4.html":
-      return Promise.resolve().then(function() {
-        return _4;
-      });
-    case "../../fragment/card/5.html":
-      return Promise.resolve().then(function() {
-        return _5;
-      });
-    default:
-      return new Promise(function(resolve, reject) {
-        (typeof queueMicrotask === "function" ? queueMicrotask : setTimeout)(reject.bind(null, new Error("Unknown variable dynamic import: " + path)));
-      });
-  }
-}
 const _sfc_main$7 = {
   __name: "[page]-[id]",
   __ssrInlineRender: true,
   async setup(__props) {
     let __temp, __restore;
     const route = useRoute();
+    const d = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => Promise.resolve().then(function() {
+      return _1;
+    })), __temp = await __temp, __restore(), __temp);
     const { type, page, id } = route.params;
     const fragments = vue_cjs_prod.ref([]);
-    vue_cjs_prod.onMounted(async () => {
-      const pageSize = 5;
-      for (let i = page; i <= pageSize; i++) {
-        __variableDynamicImportRuntime0__(`../../fragment/${type}/${i}.html`).then((res) => {
-          fragments.value.push({
-            name: ultra[i],
-            code: res.default
-          });
-        });
-      }
-    });
+    const pageSize = 5;
+    console.log(d);
+    for (let i = page; i <= pageSize; i++) {
+      fragments.value.push({
+        name: ultra[i],
+        code: d["default"]
+      });
+    }
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("template-[type]", () => useStrapi4().find(`posts/${id}`, {
       populate: ["fragments"]
     }))), __temp = await __temp, __restore(), __temp);

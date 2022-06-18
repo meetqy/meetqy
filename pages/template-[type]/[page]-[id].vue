@@ -13,15 +13,22 @@ const { type, page, id } = route.params;
 
 const fragments = ref([]);
 
+const pageSize = 5;
+
 onMounted(async () => {
-  const pageSize = 5;
+  const d = await import("~/fragments/card/1.html");
 
   for (let i = page; i <= pageSize; i++) {
-    import(`../../fragment/${type}/${i}.html`).then((res) => {
-      fragments.value.push({
-        name: ultra[i],
-        code: res.default,
-      });
+    /* @vite-ignore */
+    // import("./assets/fragments/card/1.html").then((res) => {
+    //   fragments.value.push({
+    //     name: ultra[i],
+    //     code: res.default,
+    //   });
+    // });
+    fragments.value.push({
+      name: ultra[i],
+      code: d["default"],
     });
   }
 });
