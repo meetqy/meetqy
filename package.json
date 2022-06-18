@@ -29,5 +29,8 @@
     "swiper": "^8.1.6",
     "to-json-schema": "^0.2.5",
     "vue3-highlightjs": "^1.0.5"
+  },
+  "overrides": {
+    "nitropack": "0.4.4"
   }
 }

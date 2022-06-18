@@ -20,19 +20,22 @@
             </li>
 
             <li
-              class="text-xl"
               v-for="(item, index) in fragments"
               :key="index"
               @click="curTemp = index"
             >
               <a
-                :href="'#card-a' + index"
+                :href="'#' + item.name[0]"
                 :class="{
                   active: curTemp === index,
                   capitalize: curTemp === index,
                 }"
               >
-                {{ item.attributes.name }}
+                {{ item.name[0].replace("·奥特曼", "") }}
+
+                <small class="text-xs flex-1 truncate">
+                  ({{ item.name[1] }})
+                </small>
               </a>
             </li>
           </ul>
@@ -91,23 +94,25 @@
         class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"
       >
         <div class="prose">
-          <h1>{{ post.title }}</h1>
+          <h1>{{ title }}</h1>
 
-          <p>
-            {{ post.desciption }}
-          </p>
+          <p>{{ desc }}</p>
         </div>
 
         <div
-          :id="'card-a' + index"
-          v-for="(item, index) in fragments"
+          :id="item.name[0]"
+          v-for="(item, index) in props.fragments"
           :key="index"
         >
           <h3
             class="text-base-content font-semibold mt-8 mb-3"
             style="font-size: 1.25em"
           >
-            <small class="text-base-300"># </small> {{ item.attributes.name }}
+            <small class="text-info text-opacity-50"># </small>
+            {{ item.name[0] }}
+            <small class="font-light ml-2 text-base-content text-opacity-70">
+              ({{ item.name[1] }})
+            </small>
           </h3>
           <div
             class="mockup-window border bg-base-300 w-full mb-8"
@@ -115,7 +120,7 @@
           >
             <div
               class="btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"
-              :class="{ 'btn-outline': !activeCode[index] }"
+              :class="{ 'btn-link': !activeCode[index] }"
               @click="showCode(index)"
             >
               <svg
@@ -135,11 +140,11 @@
             </div>
             <div
               class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"
-              v-html="item.attributes.html"
+              v-html="item.code"
             />
 
             <pre class="bg-base-200 px-4" v-show="activeCode[index]">
-            <code :id="'pre-' + index" class="rounded-box" >{{item.attributes.html}}</code>
+            <code :id="'pre-' + index" class="rounded-box" >{{item.code}}</code>
           </pre>
           </div>
         </div>
@@ -148,10 +153,19 @@
   </NuxtLayout>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
-const route = useRoute();
+interface Props {
+  fragments: {
+    name: string[];
+    code: string[];
+  }[];
+  title: string;
+  desc: string;
+}
+
+const props = defineProps<Props>();
 
 const themes = [
   "light",
@@ -185,35 +199,6 @@ const themes = [
   "winter",
 ];
 
-const curTheme = ref("dark");
-
-const { id } = route.params;
-
-const { data } = await useAsyncData("template-[type]", () =>
-  useStrapi4().find(`posts/${id}`, {
-    populate: ["fragments"],
-  })
-);
-
-const post = computed(() => data.value.data.attributes);
-
-const fragments = computed(() => post.value.fragments.data);
-
-onMounted(() => {
-  const media = window.matchMedia("(prefers-color-scheme: dark)");
-  curTheme.value = media.matches ? "dark" : "light";
-
-  useHead({
-    titleTemplate: `${post.value.title} - ${post.value.desciption}`,
-    meta: [
-      {
-        name: "description",
-        content: `${post.value.desciption}`,
-      },
-    ],
-  });
-});
-
 const activeCode = ref({});
 
 const showCode = (index) => {
@@ -224,11 +209,28 @@ const showCode = (index) => {
   }
 };
 
-const curTemp = ref(0);
+const curTheme = ref("dark");
+
+onMounted(() => {
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  curTheme.value = media.matches ? "dark" : "light";
+
+  //   useHead({
+  //     titleTemplate: `${post.value.title} - ${post.value.desciption}`,
+  //     meta: [
+  //       {
+  //         name: "description",
+  //         content: `${post.value.desciption}`,
+  //       },
+  //     ],
+  //   });
+});
 
 const onChange = (y) => {
   asideFixed.value = y > 150;
 };
+
+const curTemp = ref(0);
 
 const asideFixed = ref(false);
 </script>

@@ -42,6 +42,19 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    build: {
+      sourcemap: false,
+    },
     esbuild: {},
+    plugins: [
+      {
+        name: "transform-html",
+        transform(src, id) {
+          if (/\.(html)$/.test(id)) {
+            return `export default \`${src}\``;
+          }
+        },
+      },
+    ],
   },
 });

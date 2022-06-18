@@ -5148,7 +5148,7 @@ const useTitle = () => {
     day
   };
 };
-const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$v = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemA",
   __ssrInlineRender: true,
   props: {
@@ -5185,11 +5185,11 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$u = _sfc_main$u.setup;
-_sfc_main$u.setup = (props, ctx) => {
+const _sfc_setup$v = _sfc_main$v.setup;
+_sfc_main$v.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemA.vue");
-  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
+  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
@@ -5198,7 +5198,7 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemB",
   __ssrInlineRender: true,
   props: {
@@ -5230,7 +5230,7 @@ const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
             _push2(`<!--[-->`);
             serverRenderer.exports.ssrRenderList(__props.headerImages, (item) => {
               _push2(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(SwiperSlide), { key: item }, {
-                default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
+                default: vue_cjs_prod.withCtx((_22, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
                     _push3(`<div class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`)}" data-v-f368b5d4${_scopeId2}></div>`);
                   } else {
@@ -5281,13 +5281,13 @@ const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$t = _sfc_main$t.setup;
-_sfc_main$t.setup = (props, ctx) => {
+const _sfc_setup$u = _sfc_main$u.setup;
+_sfc_main$u.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemB.vue");
-  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
+  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-f368b5d4"]]);
+const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["__scopeId", "data-v-f368b5d4"]]);
 const useStrapiVersion = () => {
   const config = useRuntimeConfig().public;
   return config.strapi.version;
@@ -5383,7 +5383,7 @@ const useStrapi4 = () => {
 };
 const _imports_0 = publicAssetsURL(`avatar.jpg`);
 const meta$a = void 0;
-const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "W",
   __ssrInlineRender: true,
   props: {
@@ -5406,13 +5406,13 @@ const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$s = _sfc_main$s.setup;
-_sfc_main$s.setup = (props, ctx) => {
+const _sfc_setup$t = _sfc_main$t.setup;
+_sfc_main$t.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
-  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
+  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Logo",
   __ssrInlineRender: true,
   props: {
@@ -5422,7 +5422,7 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const props = __props;
     const { cao, week } = useTitle();
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_W = _sfc_main$s;
+      const _component_W = _sfc_main$t;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "flex items-end" }, _attrs))} data-v-5d362e96><div class="flex items-center cursor-pointer logo" data-v-5d362e96><div class="w-12 h-12 rounded-full transition-all flex items-center justify-center" data-v-5d362e96>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_W, {
         size: 30,
@@ -5444,14 +5444,350 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
+const _sfc_setup$s = _sfc_main$s.setup;
+_sfc_main$s.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Logo.vue");
+  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
+};
+const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["__scopeId", "data-v-5d362e96"]]);
+const meta$9 = void 0;
+const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+  __name: "Fragment",
+  __ssrInlineRender: true,
+  props: {
+    fragments: null,
+    title: null,
+    desc: null
+  },
+  setup(__props) {
+    const props = __props;
+    const themes = [
+      "light",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "aqua",
+      "lofi",
+      "pastel",
+      "fantasy",
+      "wireframe",
+      "black",
+      "luxury",
+      "dracula",
+      "cmyk",
+      "autumn",
+      "business",
+      "acid",
+      "lemonade",
+      "night",
+      "coffee",
+      "winter"
+    ];
+    const activeCode = vue_cjs_prod.ref({});
+    const showCode = (index2) => {
+      activeCode.value[index2] = !activeCode.value[index2];
+      if (activeCode.value[index2]) {
+        hljs.highlightBlock(document.querySelector("#pre-" + index2));
+      }
+    };
+    const curTheme = vue_cjs_prod.ref("dark");
+    vue_cjs_prod.onMounted(() => {
+      const media = window.matchMedia("(prefers-color-scheme: dark)");
+      curTheme.value = media.matches ? "dark" : "light";
+    });
+    const onChange = (y) => {
+      asideFixed.value = y > 150;
+    };
+    const curTemp = vue_cjs_prod.ref(0);
+    const asideFixed = vue_cjs_prod.ref(false);
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLayout = __nuxt_component_0$1;
+      const _component_Logo = __nuxt_component_1;
+      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
+        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<main class="main-content flex"${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
+              { fixed: asideFixed.value },
+              "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
+            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
+            _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
+            _push2(`</div></section><section class="w-full lg:pr-10"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box"${_scopeId}><li class="menu-title py-2"${_scopeId}><span${_scopeId}>List</span></li><!--[-->`);
+            serverRenderer.exports.ssrRenderList(__props.fragments, (item, index2) => {
+              _push2(`<li${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#" + item.name[0])} class="${serverRenderer.exports.ssrRenderClass({
+                active: curTemp.value === index2,
+                capitalize: curTemp.value === index2
+              })}"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.name[0].replace("\xB7\u5965\u7279\u66FC", ""))} <small class="text-xs flex-1 truncate"${_scopeId}> (${serverRenderer.exports.ssrInterpolate(item.name[1])}) </small></a></li>`);
+            });
+            _push2(`<!--]--></ul></section><section class="w-full lg:pr-10 mt-5"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"${_scopeId}><li class="menu-title py-2"${_scopeId}><span class="flex justify-between items-center"${_scopeId}> Change Theme <span${_scopeId}> use: <a class="btn btn-link btn-xs" href="https://daisyui.com/" target="_blank"${_scopeId}> DaisyUI </a></span></span></li><!--[-->`);
+            serverRenderer.exports.ssrRenderList(themes, (item) => {
+              _push2(`<li${serverRenderer.exports.ssrRenderAttr("data-theme", item)} class="${serverRenderer.exports.ssrRenderClass([{ "outline-dashed": curTheme.value === item }, "my-2 shadow rounded-box"])}"${_scopeId}><a href="javascript:;" class="flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent"${_scopeId}><span${_scopeId}>${serverRenderer.exports.ssrInterpolate(item)}</span><div class="flex gap-1 h-4"${_scopeId}><div class="bg-primary w-2 rounded"${_scopeId}></div><div class="bg-secondary w-2 rounded"${_scopeId}></div><div class="bg-accent w-2 rounded"${_scopeId}></div><div class="bg-neutral w-2 rounded"${_scopeId}></div></div></a></li>`);
+            });
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"${_scopeId}><div class="prose"${_scopeId}><h1${_scopeId}>${serverRenderer.exports.ssrInterpolate(__props.title)}</h1><p${_scopeId}>${serverRenderer.exports.ssrInterpolate(__props.desc)}</p></div><!--[-->`);
+            serverRenderer.exports.ssrRenderList(props.fragments, (item, index2) => {
+              _push2(`<div${serverRenderer.exports.ssrRenderAttr("id", item.name[0])}${_scopeId}><h3 class="text-base-content font-semibold mt-8 mb-3" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "1.25em" })}"${_scopeId}><small class="text-info text-opacity-50"${_scopeId}># </small> ${serverRenderer.exports.ssrInterpolate(item.name[0])} <small class="font-light ml-2 text-base-content text-opacity-70"${_scopeId}> (${serverRenderer.exports.ssrInterpolate(item.name[1])}) </small></h3><div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("data-theme", curTheme.value)}${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-link": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${item.code}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.code)}</code>
+          </pre></div></div>`);
+            });
+            _push2(`<!--]--></div></main>`);
+          } else {
+            return [
+              vue_cjs_prod.createVNode("main", { class: "main-content flex" }, [
+                vue_cjs_prod.createVNode("aside", {
+                  class: [
+                    { fixed: asideFixed.value },
+                    "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
+                  ]
+                }, [
+                  vue_cjs_prod.createVNode("section", {
+                    class: ["w-full lg:pr-10 my-5", { hidden: !asideFixed.value }]
+                  }, [
+                    vue_cjs_prod.createVNode("div", { class: "p-2 h-min rounded-box" }, [
+                      vue_cjs_prod.createVNode(_component_Logo)
+                    ])
+                  ], 2),
+                  vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10" }, [
+                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-min rounded-box" }, [
+                      vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
+                        vue_cjs_prod.createVNode("span", null, "List")
+                      ]),
+                      (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(__props.fragments, (item, index2) => {
+                        return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("li", {
+                          key: index2,
+                          onClick: ($event) => curTemp.value = index2
+                        }, [
+                          vue_cjs_prod.createVNode("a", {
+                            href: "#" + item.name[0],
+                            class: {
+                              active: curTemp.value === index2,
+                              capitalize: curTemp.value === index2
+                            }
+                          }, [
+                            vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(item.name[0].replace("\xB7\u5965\u7279\u66FC", "")) + " ", 1),
+                            vue_cjs_prod.createVNode("small", { class: "text-xs flex-1 truncate" }, " (" + vue_cjs_prod.toDisplayString(item.name[1]) + ") ", 1)
+                          ], 10, ["href"])
+                        ], 8, ["onClick"]);
+                      }), 128))
+                    ])
+                  ]),
+                  vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10 mt-5" }, [
+                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar" }, [
+                      vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
+                        vue_cjs_prod.createVNode("span", { class: "flex justify-between items-center" }, [
+                          vue_cjs_prod.createTextVNode(" Change Theme "),
+                          vue_cjs_prod.createVNode("span", null, [
+                            vue_cjs_prod.createTextVNode(" use: "),
+                            vue_cjs_prod.createVNode("a", {
+                              class: "btn btn-link btn-xs",
+                              href: "https://daisyui.com/",
+                              target: "_blank"
+                            }, " DaisyUI ")
+                          ])
+                        ])
+                      ]),
+                      (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(themes, (item) => {
+                        return vue_cjs_prod.createVNode("li", {
+                          key: item,
+                          "data-theme": item,
+                          class: ["my-2 shadow rounded-box", { "outline-dashed": curTheme.value === item }]
+                        }, [
+                          vue_cjs_prod.createVNode("a", {
+                            href: "javascript:;",
+                            class: "flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent",
+                            onClick: ($event) => curTheme.value = item
+                          }, [
+                            vue_cjs_prod.createVNode("span", null, vue_cjs_prod.toDisplayString(item), 1),
+                            vue_cjs_prod.createVNode("div", { class: "flex gap-1 h-4" }, [
+                              vue_cjs_prod.createVNode("div", { class: "bg-primary w-2 rounded" }),
+                              vue_cjs_prod.createVNode("div", { class: "bg-secondary w-2 rounded" }),
+                              vue_cjs_prod.createVNode("div", { class: "bg-accent w-2 rounded" }),
+                              vue_cjs_prod.createVNode("div", { class: "bg-neutral w-2 rounded" })
+                            ])
+                          ], 8, ["onClick"])
+                        ], 10, ["data-theme"]);
+                      }), 64))
+                    ])
+                  ])
+                ], 2),
+                vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("aside", { class: "w-96 flex-shrink-0 opacity-0 hidden lg:flex" }, null, 512), [
+                  [vue_cjs_prod.vShow, asideFixed.value]
+                ]),
+                vue_cjs_prod.createVNode("div", { class: "flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box" }, [
+                  vue_cjs_prod.createVNode("div", { class: "prose" }, [
+                    vue_cjs_prod.createVNode("h1", null, vue_cjs_prod.toDisplayString(__props.title), 1),
+                    vue_cjs_prod.createVNode("p", null, vue_cjs_prod.toDisplayString(__props.desc), 1)
+                  ]),
+                  (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(props.fragments, (item, index2) => {
+                    return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
+                      id: item.name[0],
+                      key: index2
+                    }, [
+                      vue_cjs_prod.createVNode("h3", {
+                        class: "text-base-content font-semibold mt-8 mb-3",
+                        style: { "font-size": "1.25em" }
+                      }, [
+                        vue_cjs_prod.createVNode("small", { class: "text-info text-opacity-50" }, "# "),
+                        vue_cjs_prod.createTextVNode(" " + vue_cjs_prod.toDisplayString(item.name[0]) + " ", 1),
+                        vue_cjs_prod.createVNode("small", { class: "font-light ml-2 text-base-content text-opacity-70" }, " (" + vue_cjs_prod.toDisplayString(item.name[1]) + ") ", 1)
+                      ]),
+                      vue_cjs_prod.createVNode("div", {
+                        class: "mockup-window border bg-base-300 w-full mb-8",
+                        "data-theme": curTheme.value
+                      }, [
+                        vue_cjs_prod.createVNode("div", {
+                          class: ["btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2", { "btn-link": !activeCode.value[index2] }],
+                          onClick: ($event) => showCode(index2)
+                        }, [
+                          (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            class: "h-6 w-6",
+                            fill: "none",
+                            viewBox: "0 0 24 24",
+                            stroke: "currentColor",
+                            "stroke-width": "2"
+                          }, [
+                            vue_cjs_prod.createVNode("path", {
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              d: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            })
+                          ]))
+                        ], 10, ["onClick"]),
+                        vue_cjs_prod.createVNode("div", {
+                          class: "flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200",
+                          innerHTML: item.code
+                        }, null, 8, ["innerHTML"]),
+                        vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("pre", { class: "bg-base-200 px-4" }, [
+                          vue_cjs_prod.createTextVNode("            "),
+                          vue_cjs_prod.createVNode("code", {
+                            id: "pre-" + index2,
+                            class: "rounded-box"
+                          }, vue_cjs_prod.toDisplayString(item.code), 9, ["id"]),
+                          vue_cjs_prod.createTextVNode("\n          ")
+                        ], 512), [
+                          [vue_cjs_prod.vShow, activeCode.value[index2]]
+                        ])
+                      ], 8, ["data-theme"])
+                    ], 8, ["id"]);
+                  }), 128))
+                ])
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+    };
+  }
+});
 const _sfc_setup$r = _sfc_main$r.setup;
 _sfc_main$r.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Logo.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Fragment.vue");
   return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["__scopeId", "data-v-5d362e96"]]);
-const meta$9 = void 0;
+const ultra = [
+  ["\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3 / \u521D\u4EE3\u30DE\u30F3", "Ultraman"],
+  ["\u4F50\u83F2", "\u30BE\u30D5\u30A3\u30FC", "Zoffy"],
+  ["\u8D5B\u6587\xB7\u5965\u7279\u66FC", "Ultraseven/\u30A6\u30EB\u30C8\u30E9\u30BB\u30D6\u30F3", "Ultraseven"],
+  ["\u8D5B\u6587\u4E0A\u53F8", "\u30BB\u30D6\u30F3\u4E0A\u53F8", "Seven's Superior"],
+  ["\u8D5B\u6587X\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30BB\u30D6\u30F3X", "Ultraseven X"],
+  [
+    "\u6770\u514B\xB7\u5965\u7279\u66FC",
+    "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B8\u30E3\u30C3\u30AF / \u5E30\u3063\u3066\u304D\u305F\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3",
+    "Ultraman Jack"
+  ],
+  ["\u827E\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30A8\u30FC\u30B9 ", "Ultraman Ace"],
+  ["\u5965\u7279\u4E4B\u7236", "\u30A6\u30EB\u30C8\u30E9\u306E\u7236", "Father of Ultra"],
+  ["\u6CF0\u7F57\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BF\u30ED\u30A6", "Ultraman Taro"],
+  ["\u5965\u7279\u4E4B\u6BCD", "\u30A6\u30EB\u30C8\u30E9\u306E\u6BCD", "Mother of Ultra"],
+  ["\u96F7\u6B27\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30AA", "Ultraman Leo"],
+  ["\u963F\u65AF\u7279\u62C9", "\u30A2\u30B9\u30C8\u30E9", "Astra"],
+  ["\u5965\u7279\u4E4B\u738B", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AD\u30F3\u30B0", "Ultraman King"],
+  ["\u7231\u8FEA\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u7231\u8FEA", "Ultraman \u7231\u8FEA"],
+  ["\u5C24\u8389\u5B89", "\u30E6\u30EA\u30A2\u30F3", "Yullian"],
+  ["\u68A6\u6BD4\u4F18\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30E1\u30D3\u30A6\u30B9", "Ultraman Mebius"],
+  ["\u5E0C\u5361\u5229\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D2\u30AB\u30EA", "UItraman Hikari"],
+  ["\u96F7\u6B27\xB7\u5965\u7279\u66FC\u65AF", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CD\u30AA\u30B9", "Ultraman Neos"],
+  ["\u8D5B\u658721\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30BB\u30D6\u30F321", "Ultraseven 21"],
+  ["\u9EA6\u514B\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30DE\u30C3\u30AF\u30B9", "Ultraman Max"],
+  ["\u5965\u7279\u66FC\u6770\u8BFA", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BC\u30CE\u30F3", "Ultraman Xenon"],
+  ["\u535A\u4F0A\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30DC\u30FC\u30A4", "Ultraman Boy"],
+  ["\u5965\u7279\u66FC\u5229\u5E03\u7279", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EA\u30D6\u30C3\u30C8", "Ultraman Ribut"],
+  ["\u7D22\u62C9", "\u30BD\u30E9(\u30A6\u30EB\u30C8\u30E9\u30A6\u30FC\u30DE\u30F3) ", "Sora"],
+  ["\u845B\u96F7\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B0\u30EC\u30FC\u30C8", "Ultraman Great"],
+  ["\u5E15\u74E6\u7279\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D1\u30EF\u30FC\u30C9", "Ultraman Powered"],
+  ["\u53F2\u8003\u7279\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B9\u30B3\u30C3\u30C8", "Ultraman Scott"],
+  ["\u5965\u7279\u66FC\u67E5\u514B", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C1\u30E3\u30C3\u30AF", "Ultraman Chuck"],
+  ["\u5965\u7279\u66FC\u8D1D\u65AF", "\u30A6\u30EB\u30C8\u30E9\u30A6\u30FC\u30DE\u30F3\u30D9\u30B9", "Ultrawoman Beth"],
+  ["\u5965\u7279\u66FC\u4E54\u5C3C\u4E9A\u65AF", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B8\u30E7\u30FC\u30CB\u30A2\u30B9", "Ultraman Joneus"],
+  ["\u57C3\u7C73\u4E9A", "\u30ED\u30C8", "Amia"],
+  ["\u827E\u96F7\u514B", "\u30A8\u30EC\u30AF", "Elek"],
+  ["\u6D1B\u7279", "\u30A2\u30DF\u30A2", "Loto"],
+  ["\u8FEA\u8FE6\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C6\u30A3\u30AC", "Ultraman Tiga"],
+  ["\u8FEA\u8FE6\u4E4B\u5730\u7684\u77F3\u50CFA\u3001B", "\u30C6\u30A3\u30AC\u306E\u30D4\u30E9\u30DF\u30C3\u30C9\u306E\u5DE8\u4EBA", "Tiga's companions"],
+  ["\u90AA\u6076\u8FEA\u8FE6", "\u30A4\u30FC\u30F4\u30A3\u30EB\u30C6\u30A3\u30AC", "Evil Tiga[15]"],
+  ["\u7231\u618E\u6226\u58EB\u5361\u871C\u62C9", "\u30AB\u30DF\u30FC\u30E9", "Camearra"],
+  ["\u521A\u529B\u6226\u58EB\u8FBE\u62C9\u59C6", "\u30C0\u30FC\u30E9\u30E0", "Darramb"],
+  ["\u4FCA\u654F\u6226\u58EB\u5E0C\u7279\u62C9", "\u30D2\u30E5\u30C9\u30E9", "Hudra"],
+  ["\u6234\u62FF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C0\u30A4\u30CA", "Ultraman Dyna"],
+  ["\u4EBA\u9020\u6234\u62FF", "\u30C6\u30E9\u30CE\u30A4\u30C9", "Terranoid"],
+  ["\u76D6\u4E9A\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AC\u30A4\u30A2", "Ultraman Gaia"],
+  ["\u963F\u53E4\u8339\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30A2\u30B0\u30EB", "Ultraman Agul"],
+  ["\u9AD8\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B3\u30B9\u30E2\u30B9", "Ultraman Cosmos"],
+  ["\u6770\u65AF\u63D0\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B8\u30E3\u30B9\u30C6\u30A3\u30B9", "Ultraman Justice"],
+  ["\u96F7\u6770\u591A\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30B8\u30A7\u30F3\u30C9", "Ultraman Legend"],
+  ["\u5948\u514B\u65AF\u7279\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30FB\u30B6\u30FB\u30CD\u30AF\u30B9\u30C8", "Ultraman The Next"],
+  ["\u5948\u514B\u745F\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CD\u30AF\u30B5\u30B9", "Ultraman Nexus"],
+  ["\u8BFA\u4E9A\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CE\u30A2", "Ultraman Noa"],
+  ["\u9ED1\u6697\u6D6E\u58EB\u5FB7", "\u30C0\u30FC\u30AF\u30D5\u30A1\u30A6\u30B9\u30C8", "Dark Faust"],
+  ["\u9ED1\u6697\u6885\u83F2\u65AF\u7279", "\u30C0\u30FC\u30AF\u30E1\u30D5\u30A3\u30B9\u30C8", "Dark Mephisto"],
+  ["\u9ED1\u6697\u6885\u83F2\u65AF\u7279II", "\u30C0\u30FC\u30AF\u30E1\u30D5\u30A3\u30B9\u30C8 II", "Dark Mephisto II"],
+  ["\u9ED1\u6697\u624E\u57FA", "\u30C0\u30FC\u30AF\u30B6\u30AE", "Dark Zagi"],
+  ["\u8D5B\u7F57\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BC\u30ED", "Ultraman Zero"],
+  ["\u5965\u7279\u66FC\u8D1D\u5229\u4E9A", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D9\u30EA\u30A2\u30EB", "Ultraman Belial"],
+  ["\u8D5B\u8FE6\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B5\u30FC\u30AC", "Ultraman Saga"],
+  ["\u94F6\u6CB3\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AE\u30F3\u30AC", "Ultraman Ginga"],
+  ["\u7EF4\u514B\u7279\u5229\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D3\u30AF\u30C8\u30EA\u30FC", "Ultraman Victory"],
+  [
+    "\u94F6\u6CB3\u7DAD\u514B\u7279\u5229\xB7\u5965\u7279\u66FC",
+    "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AE\u30F3\u30AC\u30D3\u30AF\u30C8\u30EA\u30FC",
+    "Ultraman Ginga Victory"
+  ],
+  ["\u827E\u514B\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30A8\u30C3\u30AF\u30B9", "Ultraman X"],
+  ["\u5965\u7279\u66FC\u6B27\u5E03", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AA\u30FC\u30D6", "Ultraman Orb"],
+  ["\u5965\u7279\u66FC\u6377\u5FB7", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B8\u30FC\u30C9", "Ultraman \u6377\u5FB7"],
+  ["\u5965\u7279\u66FC\u7F57\u7D22", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30ED\u30C3\u30BD", "Ultraman Rosso"],
+  ["\u5965\u7279\u66FC\u5E03\u9C81", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D6\u30EB", "Ultraman Blu"],
+  ["\u7F57\u5E03\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EB\u30FC\u30D6", "Ultraman R / B"],
+  ["\u5973\u5965\u7279\u66FC\u683C\u4E3D\u4E54", "\u30A6\u30EB\u30C8\u30E9\u30A6\u30FC\u30DE\u30F3\u30B0\u30EA\u30FC\u30B8\u30E7", "Ultrawoman Grigio"],
+  ["\u5965\u7279\u66FC\u683C\u7F57\u5E03", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B0\u30EB\u30FC\u30D6", "Ultraman Gruebe"],
+  ["\u6CF0\u8FE6\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BF\u30A4\u30AC", "Ultraman Taiga"],
+  ["\u5965\u7279\u66FC\u6CF0\u5854\u65AF", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BF\u30A4\u30BF\u30B9", "Ultraman Titas"],
+  ["\u5965\u7279\u66FC\u98CE\u9A6C", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D5\u30FC\u30DE", "Ultraman Fuma"],
+  ["\u5965\u7279\u66FC\u6258\u96F7\u57FA\u4E9A", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C8\u30EC\u30AE\u30A2", "Ultraman Tregear"],
+  ["\u5965\u7279\u66FC\u4EE4\u6CB3", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30A4\u30AC", "Ultraman Reiga"],
+  ["\u5965\u7279\u66FC\u6770\u7279", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BC\u30C3\u30C8", "Ultraman Zett"],
+  ["\u5965\u7279\u66FC\u7279\u5229\u8FE6", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C8\u30EA\u30AC\u30FC", "Ultraman \u7279\u5229\u8FE6"],
+  ["\u6697\u9ED1\u52C7\u58EB\u9ED1\u6697\u7279\u5229\u8FE6", "\u30C8\u30EA\u30AC\u30FC\u30C0\u30FC\u30AF", "\u7279\u5229\u8FE6 dark"],
+  ["\u5996\u4E3D\u6218\u58EB\u5361\u5C14\u871C\u62C9", "\u5996\u4E3D\u6226\u58EB\u30AB\u30EB\u30DF\u30E9", ""],
+  ["\u521A\u529B\u6597\u58EB\u8FBE\u8D21", "\u521A\u529B\u95D8\u58EB\u30C0\u30FC\u30B4\u30F3", ""],
+  ["\u4FCA\u654F\u7B56\u58EB\u5E0C\u7279\u62C9\u59C6", "\u4FCA\u654F\u7B56\u58EB\u30D2\u30E5\u30C9\u30E9\u30E0", ""],
+  ["\u90AA\u6076\u7279\u5229\u8FE6", "\u30A4\u30FC\u30F4\u30A3\u30EB\u30C8\u30EA\u30AC\u30FC", "\u7279\u5229\u8FE6 Evil"],
+  ["\u5965\u7279\u66FCDecker", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C7\u30C3\u30AB\u30FC", "Ultraman Decker"],
+  ["\u54C9\u963F\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BC\u30A2\u30B9", "Ultraman Zearth"],
+  ["\u5F71\u5B50\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B7\u30E3\u30C9\u30FC", "Ultraman Shadow"],
+  ["\u7EB3\u4F0A\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CA\u30A4\u30B9", "Ultraman Nice"],
+  ["\u96F7\u53E4\u6D1B\u601D\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30B0\u30ED\u30B9", "Ultraman Regulos"]
+];
 const meta$8 = void 0;
 const meta$7 = void 0;
 const meta$6 = void 0;
@@ -5587,7 +5923,7 @@ const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
                 key: item.name,
                 to: "/tools/json-to-language/" + item.language
               }, {
-                default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
+                default: vue_cjs_prod.withCtx((_22, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
                     _push3(`<div class="${serverRenderer.exports.ssrRenderClass([item.className, { active: vue_cjs_prod.unref(curLanguageIndex) === index2 }])}" data-v-40230bd6${_scopeId2}>${serverRenderer.exports.ssrInterpolate(item.name)}</div>`);
                   } else {
@@ -5943,18 +6279,18 @@ const routes = [
     meta: meta$9,
     alias: [],
     component: () => Promise.resolve().then(function() {
-      return _id_$1;
+      return _id_;
     })
   },
   {
-    name: "template-type-id",
-    path: "/template-:type/:id",
-    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/template-[type]/[id].vue",
+    name: "template-type-page-id",
+    path: "/template-:type/:page-:id",
+    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/template-[type]/[page]-[id].vue",
     children: [],
     meta: meta$8,
     alias: [],
     component: () => Promise.resolve().then(function() {
-      return _id_;
+      return _page___id_;
     })
   },
   {
@@ -6749,6 +7085,21 @@ const tools$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   "default": tools
 }, Symbol.toStringTag, { value: "Module" }));
+const _1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null
+}, Symbol.toStringTag, { value: "Module" }));
+const _2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null
+}, Symbol.toStringTag, { value: "Module" }));
+const _3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null
+}, Symbol.toStringTag, { value: "Module" }));
+const _4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null
+}, Symbol.toStringTag, { value: "Module" }));
+const _5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$9 = {
   __name: "index",
   __ssrInlineRender: true,
@@ -6777,7 +7128,7 @@ const _sfc_main$9 = {
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$1;
-      const _component_grid_item_a = _sfc_main$u;
+      const _component_grid_item_a = _sfc_main$v;
       const _component_grid_item_b = __nuxt_component_2;
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -7049,7 +7400,7 @@ const _sfc_main$8 = {
               modules,
               navigation: true
             }, {
-              default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
+              default: vue_cjs_prod.withCtx((_6, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
                   _push3(`<!--[-->`);
                   serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(previewImages), (item) => {
@@ -7057,7 +7408,7 @@ const _sfc_main$8 = {
                       class: "flex justify-center items-center",
                       key: item.id
                     }, {
-                      default: vue_cjs_prod.withCtx((_3, _push4, _parent4, _scopeId3) => {
+                      default: vue_cjs_prod.withCtx((_7, _push4, _parent4, _scopeId3) => {
                         if (_push4) {
                           _push4(`<img class="rounded-2xl xl:w-1/5 md:w-1/3 w-1/2"${serverRenderer.exports.ssrRenderAttr("src", vue_cjs_prod.unref($cdn) + item.attributes.url)}${_scopeId3}>`);
                         } else {
@@ -7234,261 +7585,78 @@ _sfc_main$8.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/posts/[id].vue");
   return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
 };
-const _id_$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const _id_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": _sfc_main$8
 }, Symbol.toStringTag, { value: "Module" }));
+function __variableDynamicImportRuntime0__(path) {
+  switch (path) {
+    case "../../fragment/card/1.html":
+      return Promise.resolve().then(function() {
+        return _1;
+      });
+    case "../../fragment/card/2.html":
+      return Promise.resolve().then(function() {
+        return _2;
+      });
+    case "../../fragment/card/3.html":
+      return Promise.resolve().then(function() {
+        return _3;
+      });
+    case "../../fragment/card/4.html":
+      return Promise.resolve().then(function() {
+        return _4;
+      });
+    case "../../fragment/card/5.html":
+      return Promise.resolve().then(function() {
+        return _5;
+      });
+    default:
+      return new Promise(function(resolve, reject) {
+        (typeof queueMicrotask === "function" ? queueMicrotask : setTimeout)(reject.bind(null, new Error("Unknown variable dynamic import: " + path)));
+      });
+  }
+}
 const _sfc_main$7 = {
-  __name: "[id]",
+  __name: "[page]-[id]",
   __ssrInlineRender: true,
   async setup(__props) {
     let __temp, __restore;
     const route = useRoute();
-    const themes = [
-      "light",
-      "dark",
-      "cupcake",
-      "bumblebee",
-      "emerald",
-      "corporate",
-      "synthwave",
-      "retro",
-      "cyberpunk",
-      "valentine",
-      "halloween",
-      "garden",
-      "forest",
-      "aqua",
-      "lofi",
-      "pastel",
-      "fantasy",
-      "wireframe",
-      "black",
-      "luxury",
-      "dracula",
-      "cmyk",
-      "autumn",
-      "business",
-      "acid",
-      "lemonade",
-      "night",
-      "coffee",
-      "winter"
-    ];
-    const curTheme = vue_cjs_prod.ref("dark");
-    const { id } = route.params;
+    const { type, page, id } = route.params;
+    const fragments = vue_cjs_prod.ref([]);
+    vue_cjs_prod.onMounted(async () => {
+      const pageSize = 5;
+      for (let i = page; i <= pageSize; i++) {
+        __variableDynamicImportRuntime0__(`../../fragment/${type}/${i}.html`).then((res) => {
+          fragments.value.push({
+            name: ultra[i],
+            code: res.default
+          });
+        });
+      }
+    });
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("template-[type]", () => useStrapi4().find(`posts/${id}`, {
       populate: ["fragments"]
     }))), __temp = await __temp, __restore(), __temp);
     const post = vue_cjs_prod.computed(() => data.value.data.attributes);
-    const fragments = vue_cjs_prod.computed(() => post.value.fragments.data);
-    vue_cjs_prod.onMounted(() => {
-      const media = window.matchMedia("(prefers-color-scheme: dark)");
-      curTheme.value = media.matches ? "dark" : "light";
-      useHead({
-        titleTemplate: `${post.value.title} - ${post.value.desciption}`,
-        meta: [
-          {
-            name: "description",
-            content: `${post.value.desciption}`
-          }
-        ]
-      });
-    });
-    const activeCode = vue_cjs_prod.ref({});
-    const showCode = (index2) => {
-      activeCode.value[index2] = !activeCode.value[index2];
-      if (activeCode.value[index2]) {
-        hljs.highlightBlock(document.querySelector("#pre-" + index2));
-      }
-    };
-    const curTemp = vue_cjs_prod.ref(0);
-    const onChange = (y) => {
-      asideFixed.value = y > 150;
-    };
-    const asideFixed = vue_cjs_prod.ref(false);
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLayout = __nuxt_component_0$1;
-      const _component_Logo = __nuxt_component_1;
-      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
-        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`<main class="main-content flex"${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
-              { fixed: asideFixed.value },
-              "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
-            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
-            _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full lg:pr-10"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box"${_scopeId}><li class="menu-title py-2"${_scopeId}><span${_scopeId}>List</span></li><!--[-->`);
-            serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(fragments), (item, index2) => {
-              _push2(`<li class="text-xl"${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#card-a" + index2)} class="${serverRenderer.exports.ssrRenderClass({
-                active: curTemp.value === index2,
-                capitalize: curTemp.value === index2
-              })}"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</a></li>`);
-            });
-            _push2(`<!--]--></ul></section><section class="w-full lg:pr-10 mt-5"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"${_scopeId}><li class="menu-title py-2"${_scopeId}><span class="flex justify-between items-center"${_scopeId}> Change Theme <span${_scopeId}> use: <a class="btn btn-link btn-xs" href="https://daisyui.com/" target="_blank"${_scopeId}> DaisyUI </a></span></span></li><!--[-->`);
-            serverRenderer.exports.ssrRenderList(themes, (item) => {
-              _push2(`<li${serverRenderer.exports.ssrRenderAttr("data-theme", item)} class="${serverRenderer.exports.ssrRenderClass([{ "outline-dashed": curTheme.value === item }, "my-2 shadow rounded-box"])}"${_scopeId}><a href="javascript:;" class="flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent"${_scopeId}><span${_scopeId}>${serverRenderer.exports.ssrInterpolate(item)}</span><div class="flex gap-1 h-4"${_scopeId}><div class="bg-primary w-2 rounded"${_scopeId}></div><div class="bg-secondary w-2 rounded"${_scopeId}></div><div class="bg-accent w-2 rounded"${_scopeId}></div><div class="bg-neutral w-2 rounded"${_scopeId}></div></div></a></li>`);
-            });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"${_scopeId}><div class="prose"${_scopeId}><h1${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).title)}</h1><p${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).desciption)}</p></div><!--[-->`);
-            serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(fragments), (item, index2) => {
-              _push2(`<div${serverRenderer.exports.ssrRenderAttr("id", "card-a" + index2)}${_scopeId}><h3 class="text-base-content font-semibold mt-8 mb-3" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "1.25em" })}"${_scopeId}><small class="text-base-300"${_scopeId}># </small> ${serverRenderer.exports.ssrInterpolate(item.attributes.name)}</h3><div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("data-theme", curTheme.value)}${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-outline": !activeCode.value[index2] }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${item.attributes.html}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value[index2] ? null : { display: "none" })}"${_scopeId}>            <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + index2)} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.attributes.html)}</code>
-          </pre></div></div>`);
-            });
-            _push2(`<!--]--></div></main>`);
-          } else {
-            return [
-              vue_cjs_prod.createVNode("main", { class: "main-content flex" }, [
-                vue_cjs_prod.createVNode("aside", {
-                  class: [
-                    { fixed: asideFixed.value },
-                    "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
-                  ]
-                }, [
-                  vue_cjs_prod.createVNode("section", {
-                    class: ["w-full lg:pr-10 my-5", { hidden: !asideFixed.value }]
-                  }, [
-                    vue_cjs_prod.createVNode("div", { class: "p-2 h-min rounded-box" }, [
-                      vue_cjs_prod.createVNode(_component_Logo)
-                    ])
-                  ], 2),
-                  vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10" }, [
-                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-min rounded-box" }, [
-                      vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
-                        vue_cjs_prod.createVNode("span", null, "List")
-                      ]),
-                      (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(fragments), (item, index2) => {
-                        return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("li", {
-                          class: "text-xl",
-                          key: index2,
-                          onClick: ($event) => curTemp.value = index2
-                        }, [
-                          vue_cjs_prod.createVNode("a", {
-                            href: "#card-a" + index2,
-                            class: {
-                              active: curTemp.value === index2,
-                              capitalize: curTemp.value === index2
-                            }
-                          }, vue_cjs_prod.toDisplayString(item.attributes.name), 11, ["href"])
-                        ], 8, ["onClick"]);
-                      }), 128))
-                    ])
-                  ]),
-                  vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10 mt-5" }, [
-                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar" }, [
-                      vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
-                        vue_cjs_prod.createVNode("span", { class: "flex justify-between items-center" }, [
-                          vue_cjs_prod.createTextVNode(" Change Theme "),
-                          vue_cjs_prod.createVNode("span", null, [
-                            vue_cjs_prod.createTextVNode(" use: "),
-                            vue_cjs_prod.createVNode("a", {
-                              class: "btn btn-link btn-xs",
-                              href: "https://daisyui.com/",
-                              target: "_blank"
-                            }, " DaisyUI ")
-                          ])
-                        ])
-                      ]),
-                      (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(themes, (item) => {
-                        return vue_cjs_prod.createVNode("li", {
-                          key: item,
-                          "data-theme": item,
-                          class: ["my-2 shadow rounded-box", { "outline-dashed": curTheme.value === item }]
-                        }, [
-                          vue_cjs_prod.createVNode("a", {
-                            href: "javascript:;",
-                            class: "flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent",
-                            onClick: ($event) => curTheme.value = item
-                          }, [
-                            vue_cjs_prod.createVNode("span", null, vue_cjs_prod.toDisplayString(item), 1),
-                            vue_cjs_prod.createVNode("div", { class: "flex gap-1 h-4" }, [
-                              vue_cjs_prod.createVNode("div", { class: "bg-primary w-2 rounded" }),
-                              vue_cjs_prod.createVNode("div", { class: "bg-secondary w-2 rounded" }),
-                              vue_cjs_prod.createVNode("div", { class: "bg-accent w-2 rounded" }),
-                              vue_cjs_prod.createVNode("div", { class: "bg-neutral w-2 rounded" })
-                            ])
-                          ], 8, ["onClick"])
-                        ], 10, ["data-theme"]);
-                      }), 64))
-                    ])
-                  ])
-                ], 2),
-                vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("aside", { class: "w-96 flex-shrink-0 opacity-0 hidden lg:flex" }, null, 512), [
-                  [vue_cjs_prod.vShow, asideFixed.value]
-                ]),
-                vue_cjs_prod.createVNode("div", { class: "flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box" }, [
-                  vue_cjs_prod.createVNode("div", { class: "prose" }, [
-                    vue_cjs_prod.createVNode("h1", null, vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(post).title), 1),
-                    vue_cjs_prod.createVNode("p", null, vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(post).desciption), 1)
-                  ]),
-                  (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(fragments), (item, index2) => {
-                    return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
-                      id: "card-a" + index2,
-                      key: index2
-                    }, [
-                      vue_cjs_prod.createVNode("h3", {
-                        class: "text-base-content font-semibold mt-8 mb-3",
-                        style: { "font-size": "1.25em" }
-                      }, [
-                        vue_cjs_prod.createVNode("small", { class: "text-base-300" }, "# "),
-                        vue_cjs_prod.createTextVNode(" " + vue_cjs_prod.toDisplayString(item.attributes.name), 1)
-                      ]),
-                      vue_cjs_prod.createVNode("div", {
-                        class: "mockup-window border bg-base-300 w-full mb-8",
-                        "data-theme": curTheme.value
-                      }, [
-                        vue_cjs_prod.createVNode("div", {
-                          class: ["btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2", { "btn-outline": !activeCode.value[index2] }],
-                          onClick: ($event) => showCode(index2)
-                        }, [
-                          (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            class: "h-6 w-6",
-                            fill: "none",
-                            viewBox: "0 0 24 24",
-                            stroke: "currentColor",
-                            "stroke-width": "2"
-                          }, [
-                            vue_cjs_prod.createVNode("path", {
-                              "stroke-linecap": "round",
-                              "stroke-linejoin": "round",
-                              d: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                            })
-                          ]))
-                        ], 10, ["onClick"]),
-                        vue_cjs_prod.createVNode("div", {
-                          class: "flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200",
-                          innerHTML: item.attributes.html
-                        }, null, 8, ["innerHTML"]),
-                        vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("pre", { class: "bg-base-200 px-4" }, [
-                          vue_cjs_prod.createTextVNode("            "),
-                          vue_cjs_prod.createVNode("code", {
-                            id: "pre-" + index2,
-                            class: "rounded-box"
-                          }, vue_cjs_prod.toDisplayString(item.attributes.html), 9, ["id"]),
-                          vue_cjs_prod.createTextVNode("\n          ")
-                        ], 512), [
-                          [vue_cjs_prod.vShow, activeCode.value[index2]]
-                        ])
-                      ], 8, ["data-theme"])
-                    ], 8, ["id"]);
-                  }), 128))
-                ])
-              ])
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
+      const _component_Fragment = _sfc_main$r;
+      _push(serverRenderer.exports.ssrRenderComponent(_component_Fragment, vue_cjs_prod.mergeProps({
+        fragments: fragments.value,
+        title: vue_cjs_prod.unref(post).title,
+        desc: vue_cjs_prod.unref(post).desciption
+      }, _attrs), null, _parent));
     };
   }
 };
 const _sfc_setup$7 = _sfc_main$7.setup;
 _sfc_main$7.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/template-[type]/[id].vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/template-[type]/[page]-[id].vue");
   return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
 };
-const _id_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const _page___id_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": _sfc_main$7
 }, Symbol.toStringTag, { value: "Module" }));
