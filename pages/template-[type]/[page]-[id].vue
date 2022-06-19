@@ -1,9 +1,12 @@
 <template>
-  <Fragment
-    :fragments="fragments"
-    :title="post.title"
-    :desc="post.desciption"
-  />
+  <div>
+    <Fragment
+      :fragments="fragments"
+      :title="post.title"
+      :desc="post.desciption"
+    />
+    123
+  </div>
 </template>
 
 <script setup>
@@ -15,23 +18,20 @@ const fragments = ref([]);
 
 const pageSize = 5;
 
-onMounted(async () => {
-  const d = await import("~/fragments/card/1.html");
+for (let i = page; i <= pageSize; i++) {
+  const index = Number((page - 1) * pageSize + i);
+  const { data: d } = await useFetch(`/fragments/${type}/${index}.html`, {
+    baseURL:
+      process.env.NODE_ENV === "prodcuton"
+        ? "https://wcao.cc"
+        : "http://localhost:3000",
+  });
 
-  for (let i = page; i <= pageSize; i++) {
-    /* @vite-ignore */
-    // import("./assets/fragments/card/1.html").then((res) => {
-    //   fragments.value.push({
-    //     name: ultra[i],
-    //     code: res.default,
-    //   });
-    // });
-    fragments.value.push({
-      name: ultra[i],
-      code: d["default"],
-    });
-  }
-});
+  fragments.value.push({
+    name: ultra[i],
+    code: d.value,
+  });
+}
 
 const { data } = await useAsyncData("template-[type]", () =>
   useStrapi4().find(`posts/${id}`, {

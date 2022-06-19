@@ -1893,7 +1893,7 @@ var vueRouter_cjs_prod = {};
   const TRAILING_SLASH_RE = /\/$/;
   const removeTrailingSlash = (path) => path.replace(TRAILING_SLASH_RE, "");
   function parseURL(parseQuery2, location2, currentLocation = "/") {
-    let path, query = {}, searchString = "", hash = "";
+    let path, query = {}, searchString = "", hash2 = "";
     const searchPos = location2.indexOf("?");
     const hashPos = location2.indexOf("#", searchPos > -1 ? searchPos : 0);
     if (searchPos > -1) {
@@ -1903,14 +1903,14 @@ var vueRouter_cjs_prod = {};
     }
     if (hashPos > -1) {
       path = path || location2.slice(0, hashPos);
-      hash = location2.slice(hashPos, location2.length);
+      hash2 = location2.slice(hashPos, location2.length);
     }
     path = resolveRelativePath(path != null ? path : location2, currentLocation);
     return {
-      fullPath: path + (searchString && "?") + searchString + hash,
+      fullPath: path + (searchString && "?") + searchString + hash2,
       path,
       query,
-      hash
+      hash: hash2
     };
   }
   function stringifyURL(stringifyQuery2, location2) {
@@ -1998,17 +1998,17 @@ var vueRouter_cjs_prod = {};
   });
   let createBaseLocation = () => location.protocol + "//" + location.host;
   function createCurrentLocation(base, location2) {
-    const { pathname, search, hash } = location2;
+    const { pathname, search, hash: hash2 } = location2;
     const hashPos = base.indexOf("#");
     if (hashPos > -1) {
-      let slicePos = hash.includes(base.slice(hashPos)) ? base.slice(hashPos).length : 1;
-      let pathFromHash = hash.slice(slicePos);
+      let slicePos = hash2.includes(base.slice(hashPos)) ? base.slice(hashPos).length : 1;
+      let pathFromHash = hash2.slice(slicePos);
       if (pathFromHash[0] !== "/")
         pathFromHash = "/" + pathFromHash;
       return stripBase(pathFromHash, "");
     }
     const path = stripBase(pathname, base);
-    return path + search + hash;
+    return path + search + hash2;
   }
   function useHistoryListeners(base, historyState, currentLocation, replace) {
     let listeners = [];
@@ -2775,10 +2775,10 @@ var vueRouter_cjs_prod = {};
   function mergeMetaFields(matched) {
     return matched.reduce((meta2, record) => assign(meta2, record.meta), {});
   }
-  function mergeOptions(defaults, partialOptions) {
+  function mergeOptions(defaults2, partialOptions) {
     const options = {};
-    for (const key in defaults) {
-      options[key] = key in partialOptions ? partialOptions[key] : defaults[key];
+    for (const key in defaults2) {
+      options[key] = key in partialOptions ? partialOptions[key] : defaults2[key];
     }
     return options;
   }
@@ -3219,16 +3219,16 @@ var vueRouter_cjs_prod = {};
         currentLocation.params = encodeParams(currentLocation.params);
       }
       const matchedRoute = matcher.resolve(matcherLocation, currentLocation);
-      const hash = rawLocation.hash || "";
+      const hash2 = rawLocation.hash || "";
       matchedRoute.params = normalizeParams(decodeParams(matchedRoute.params));
       const fullPath = stringifyURL(stringifyQuery$1, assign({}, rawLocation, {
-        hash: encodeHash(hash),
+        hash: encodeHash(hash2),
         path: matchedRoute.path
       }));
       const href = routerHistory.createHref(fullPath);
       return assign({
         fullPath,
-        hash,
+        hash: hash2,
         query: stringifyQuery$1 === stringifyQuery ? normalizeQuery(rawLocation.query) : rawLocation.query || {}
       }, matchedRoute, {
         redirectedFrom: void 0,
@@ -3674,6 +3674,357 @@ const throwError = (_err) => {
   }
   return err;
 };
+function murmurHash(key, seed = 0) {
+  if (typeof key === "string") {
+    key = createBuffer(key);
+  }
+  let i = 0;
+  let h1 = seed;
+  let k1;
+  let h1b;
+  const remainder = key.length & 3;
+  const bytes = key.length - remainder;
+  const c1 = 3432918353;
+  const c2 = 461845907;
+  while (i < bytes) {
+    k1 = key[i] & 255 | (key[++i] & 255) << 8 | (key[++i] & 255) << 16 | (key[++i] & 255) << 24;
+    ++i;
+    k1 = (k1 & 65535) * c1 + (((k1 >>> 16) * c1 & 65535) << 16) & 4294967295;
+    k1 = k1 << 15 | k1 >>> 17;
+    k1 = (k1 & 65535) * c2 + (((k1 >>> 16) * c2 & 65535) << 16) & 4294967295;
+    h1 ^= k1;
+    h1 = h1 << 13 | h1 >>> 19;
+    h1b = (h1 & 65535) * 5 + (((h1 >>> 16) * 5 & 65535) << 16) & 4294967295;
+    h1 = (h1b & 65535) + 27492 + (((h1b >>> 16) + 58964 & 65535) << 16);
+  }
+  k1 = 0;
+  switch (remainder) {
+    case 3:
+      k1 ^= (key[i + 2] & 255) << 16;
+      break;
+    case 2:
+      k1 ^= (key[i + 1] & 255) << 8;
+      break;
+    case 1:
+      k1 ^= key[i] & 255;
+      k1 = (k1 & 65535) * c1 + (((k1 >>> 16) * c1 & 65535) << 16) & 4294967295;
+      k1 = k1 << 15 | k1 >>> 17;
+      k1 = (k1 & 65535) * c2 + (((k1 >>> 16) * c2 & 65535) << 16) & 4294967295;
+      h1 ^= k1;
+  }
+  h1 ^= key.length;
+  h1 ^= h1 >>> 16;
+  h1 = (h1 & 65535) * 2246822507 + (((h1 >>> 16) * 2246822507 & 65535) << 16) & 4294967295;
+  h1 ^= h1 >>> 13;
+  h1 = (h1 & 65535) * 3266489909 + (((h1 >>> 16) * 3266489909 & 65535) << 16) & 4294967295;
+  h1 ^= h1 >>> 16;
+  return h1 >>> 0;
+}
+function createBuffer(val) {
+  return new TextEncoder().encode(val);
+}
+const defaults = {
+  ignoreUnknown: false,
+  respectType: false,
+  respectFunctionNames: false,
+  respectFunctionProperties: false,
+  unorderedObjects: true,
+  unorderedArrays: false,
+  unorderedSets: false
+};
+function objectHash(object, options = {}) {
+  options = __spreadValues(__spreadValues({}, defaults), options);
+  const hasher = createHasher(options);
+  hasher.dispatch(object);
+  return hasher.toString();
+}
+function createHasher(options) {
+  const buff = [];
+  let context = [];
+  const write = (str) => {
+    buff.push(str);
+  };
+  return {
+    toString() {
+      return buff.join("");
+    },
+    getContext() {
+      return context;
+    },
+    dispatch(value) {
+      if (options.replacer) {
+        value = options.replacer(value);
+      }
+      const type = value === null ? "null" : typeof value;
+      return this["_" + type](value);
+    },
+    _object(object) {
+      const pattern = /\[object (.*)\]/i;
+      const objString = Object.prototype.toString.call(object);
+      const _objType = pattern.exec(objString);
+      const objType = _objType ? _objType[1].toLowerCase() : "unknown:[" + objString.toLowerCase() + "]";
+      let objectNumber = null;
+      if ((objectNumber = context.indexOf(object)) >= 0) {
+        return this.dispatch("[CIRCULAR:" + objectNumber + "]");
+      } else {
+        context.push(object);
+      }
+      if (typeof Buffer !== "undefined" && Buffer.isBuffer && Buffer.isBuffer(object)) {
+        write("buffer:");
+        return write(object.toString("utf8"));
+      }
+      if (objType !== "object" && objType !== "function" && objType !== "asyncfunction") {
+        if (this["_" + objType]) {
+          this["_" + objType](object);
+        } else if (options.ignoreUnknown) {
+          return write("[" + objType + "]");
+        } else {
+          throw new Error('Unknown object type "' + objType + '"');
+        }
+      } else {
+        let keys = Object.keys(object);
+        if (options.unorderedObjects) {
+          keys = keys.sort();
+        }
+        if (options.respectType !== false && !isNativeFunction(object)) {
+          keys.splice(0, 0, "prototype", "__proto__", "letructor");
+        }
+        if (options.excludeKeys) {
+          keys = keys.filter(function(key) {
+            return !options.excludeKeys(key);
+          });
+        }
+        write("object:" + keys.length + ":");
+        return keys.forEach((key) => {
+          this.dispatch(key);
+          write(":");
+          if (!options.excludeValues) {
+            this.dispatch(object[key]);
+          }
+          write(",");
+        });
+      }
+    },
+    _array(arr, unordered) {
+      unordered = typeof unordered !== "undefined" ? unordered : options.unorderedArrays !== false;
+      write("array:" + arr.length + ":");
+      if (!unordered || arr.length <= 1) {
+        return arr.forEach((entry2) => {
+          return this.dispatch(entry2);
+        });
+      }
+      const contextAdditions = [];
+      const entries = arr.map((entry2) => {
+        const hasher = createHasher(options);
+        hasher.dispatch(entry2);
+        contextAdditions.push(hasher.getContext());
+        return hasher.toString();
+      });
+      context = context.concat(contextAdditions);
+      entries.sort();
+      return this._array(entries, false);
+    },
+    _date(date) {
+      return write("date:" + date.toJSON());
+    },
+    _symbol(sym) {
+      return write("symbol:" + sym.toString());
+    },
+    _error(err) {
+      return write("error:" + err.toString());
+    },
+    _boolean(bool) {
+      return write("bool:" + bool.toString());
+    },
+    _string(string) {
+      write("string:" + string.length + ":");
+      write(string.toString());
+    },
+    _function(fn) {
+      write("fn:");
+      if (isNativeFunction(fn)) {
+        this.dispatch("[native]");
+      } else {
+        this.dispatch(fn.toString());
+      }
+      if (options.respectFunctionNames !== false) {
+        this.dispatch("function-name:" + String(fn.name));
+      }
+      if (options.respectFunctionProperties) {
+        this._object(fn);
+      }
+    },
+    _number(number) {
+      return write("number:" + number.toString());
+    },
+    _xml(xml) {
+      return write("xml:" + xml.toString());
+    },
+    _null() {
+      return write("Null");
+    },
+    _undefined() {
+      return write("Undefined");
+    },
+    _regexp(regex) {
+      return write("regex:" + regex.toString());
+    },
+    _uint8array(arr) {
+      write("uint8array:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _uint8clampedarray(arr) {
+      write("uint8clampedarray:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _int8array(arr) {
+      write("int8array:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _uint16array(arr) {
+      write("uint16array:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _int16array(arr) {
+      write("int16array:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _uint32array(arr) {
+      write("uint32array:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _int32array(arr) {
+      write("int32array:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _float32array(arr) {
+      write("float32array:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _float64array(arr) {
+      write("float64array:");
+      return this.dispatch(Array.prototype.slice.call(arr));
+    },
+    _arraybuffer(arr) {
+      write("arraybuffer:");
+      return this.dispatch(new Uint8Array(arr));
+    },
+    _url(url) {
+      return write("url:" + url.toString());
+    },
+    _map(map) {
+      write("map:");
+      const arr = Array.from(map);
+      return this._array(arr, options.unorderedSets !== false);
+    },
+    _set(set) {
+      write("set:");
+      const arr = Array.from(set);
+      return this._array(arr, options.unorderedSets !== false);
+    },
+    _file(file) {
+      write("file:");
+      return this.dispatch([file.name, file.size, file.type, file.lastModfied]);
+    },
+    _blob() {
+      if (options.ignoreUnknown) {
+        return write("[blob]");
+      }
+      throw new Error('Hashing Blob objects is currently not supported\nUse "options.replacer" or "options.ignoreUnknown"\n');
+    },
+    _domwindow() {
+      return write("domwindow");
+    },
+    _bigint(number) {
+      return write("bigint:" + number.toString());
+    },
+    _process() {
+      return write("process");
+    },
+    _timer() {
+      return write("timer");
+    },
+    _pipe() {
+      return write("pipe");
+    },
+    _tcp() {
+      return write("tcp");
+    },
+    _udp() {
+      return write("udp");
+    },
+    _tty() {
+      return write("tty");
+    },
+    _statwatcher() {
+      return write("statwatcher");
+    },
+    _securecontext() {
+      return write("securecontext");
+    },
+    _connection() {
+      return write("connection");
+    },
+    _zlib() {
+      return write("zlib");
+    },
+    _context() {
+      return write("context");
+    },
+    _nodescript() {
+      return write("nodescript");
+    },
+    _httpparser() {
+      return write("httpparser");
+    },
+    _dataview() {
+      return write("dataview");
+    },
+    _signal() {
+      return write("signal");
+    },
+    _fsevent() {
+      return write("fsevent");
+    },
+    _tlswrap() {
+      return write("tlswrap");
+    }
+  };
+}
+function isNativeFunction(f) {
+  if (typeof f !== "function") {
+    return false;
+  }
+  const exp = /^function\s+\w*\s*\(\s*\)\s*{\s+\[native code\]\s+}$/i;
+  return exp.exec(Function.prototype.toString.call(f)) != null;
+}
+function hash(object, options = {}) {
+  const hashed = typeof object === "string" ? object : objectHash(object, options);
+  return String(murmurHash(hashed));
+}
+function useFetch(request, opts = {}) {
+  const key = "$f_" + (opts.key || hash([request, __spreadProps(__spreadValues({}, opts), { transform: null })]));
+  const _request = vue_cjs_prod.computed(() => {
+    let r = request;
+    if (typeof r === "function") {
+      r = r();
+    }
+    return vue_cjs_prod.isRef(r) ? r.value : r;
+  });
+  const _fetchOptions = __spreadProps(__spreadValues({}, opts), {
+    cache: typeof opts.cache === "boolean" ? void 0 : opts.cache
+  });
+  const _asyncDataOptions = __spreadProps(__spreadValues({}, opts), {
+    watch: [
+      _request,
+      ...opts.watch || []
+    ]
+  });
+  const asyncData = useAsyncData(key, () => {
+    return $fetch(_request.value, _fetchOptions);
+  }, _asyncDataOptions);
+  return asyncData;
+}
 const decode = decodeURIComponent;
 const encode = encodeURIComponent;
 const pairSplitRegExp = /; */;
@@ -4754,11 +5105,11 @@ var renderHeadToString = (head) => {
 function isObject(val) {
   return val !== null && typeof val === "object";
 }
-function _defu(baseObj, defaults, namespace = ".", merger) {
-  if (!isObject(defaults)) {
+function _defu(baseObj, defaults2, namespace = ".", merger) {
+  if (!isObject(defaults2)) {
     return _defu(baseObj, {}, namespace, merger);
   }
-  const obj = Object.assign({}, defaults);
+  const obj = Object.assign({}, defaults2);
   for (const key in baseObj) {
     if (key === "__proto__" || key === "constructor") {
       continue;
@@ -7085,9 +7436,6 @@ const tools$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   "default": tools
 }, Symbol.toStringTag, { value: "Module" }));
-const _1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null
-}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$9 = {
   __name: "index",
   __ssrInlineRender: true,
@@ -7583,17 +7931,17 @@ const _sfc_main$7 = {
   async setup(__props) {
     let __temp, __restore;
     const route = useRoute();
-    const d = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => Promise.resolve().then(function() {
-      return _1;
-    })), __temp = await __temp, __restore(), __temp);
     const { type, page, id } = route.params;
     const fragments = vue_cjs_prod.ref([]);
     const pageSize = 5;
-    console.log(d);
     for (let i = page; i <= pageSize; i++) {
+      const index2 = Number((page - 1) * pageSize + i);
+      const { data: d } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/fragments/${type}/${index2}.html`, {
+        baseURL: "http://localhost:3000"
+      })), __temp = await __temp, __restore(), __temp);
       fragments.value.push({
         name: ultra[i],
-        code: d["default"]
+        code: d.value
       });
     }
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("template-[type]", () => useStrapi4().find(`posts/${id}`, {
@@ -7602,11 +7950,13 @@ const _sfc_main$7 = {
     const post = vue_cjs_prod.computed(() => data.value.data.attributes);
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Fragment = _sfc_main$r;
-      _push(serverRenderer.exports.ssrRenderComponent(_component_Fragment, vue_cjs_prod.mergeProps({
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}>`);
+      _push(serverRenderer.exports.ssrRenderComponent(_component_Fragment, {
         fragments: fragments.value,
         title: vue_cjs_prod.unref(post).title,
         desc: vue_cjs_prod.unref(post).desciption
-      }, _attrs), null, _parent));
+      }, null, _parent));
+      _push(` 123 </div>`);
     };
   }
 };

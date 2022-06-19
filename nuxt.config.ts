@@ -7,9 +7,11 @@ export default defineNuxtConfig({
     entities: ["tag"],
     url: "https://wcao.cc/strapi",
   },
+
   sitemap: {
     hostname: "https://wcao.cc",
   },
+
   build: {
     cache: true,
     postcss: {
@@ -17,6 +19,22 @@ export default defineNuxtConfig({
         "postcss-color-gray": {},
       },
     },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          html: {
+            name: "html",
+            test: /\.(html)$/,
+            chunks: "all",
+            enforce: true,
+          },
+        },
+      },
+    },
+  },
+
+  autoImports: {
+    dirs: ["components/", "composables/", "fragments/"],
   },
 
   // (wo caò)、(wò cao)、(wǒ caó)、(wǒ caò)、(wō caō)、(wō caō)
@@ -46,15 +64,18 @@ export default defineNuxtConfig({
       sourcemap: false,
     },
     esbuild: {},
-    plugins: [
-      {
-        name: "transform-html",
-        transform(src, id) {
-          if (/\.(html)$/.test(id)) {
-            return `export default \`${src}\``;
-          }
-        },
-      },
-    ],
+    // plugins: [
+    //   {
+    //     name: "transform-html",
+    //     transform(src, id) {
+    //       if (/\.(html)$/.test(id)) {
+    //         return {
+    //           code: `export default \`${src}\``,
+    //           map: null,
+    //         };
+    //       }
+    //     },
+    //   },
+    // ],
   },
 });
