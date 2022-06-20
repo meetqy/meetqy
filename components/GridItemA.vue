@@ -6,7 +6,12 @@
   >
     <div class="bg-base-100 pt-10 rounded-2xl bg-opacity-80">
       <div class="tags">
-        <a href="javascript:;">{{ tag }}</a>
+        <a
+          href="javascript:;"
+          :style="`color: ${category.color};${category.bgColor}`"
+        >
+          {{ category.name }}
+        </a>
       </div>
 
       <header class="relative flex justify-center items-center flex-col px-4">
@@ -51,11 +56,13 @@
 </template>
 
 <script lang="ts" setup>
+import { CategoryItem } from "~~/composables/type";
+
 interface Props {
   title: string;
   desciption: string;
   time: string;
-  tag: string;
+  category: CategoryItem;
   headerImages: string[];
   link: string;
 }
@@ -73,8 +80,7 @@ const $cdn = useCdnUrl();
     @apply absolute w-full -top-4 right-0 text-center;
 
     a {
-      @apply text-base-100 rounded-3xl  font-semibold py-2 px-6;
-      background-color: #ed586c;
+      @apply text-base-100 rounded-box py-2 px-6;
     }
   }
 
@@ -92,7 +98,6 @@ const $cdn = useCdnUrl();
     }
 
     .author-image {
-      background-image: url(http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/avatar-2.jpg);
       @apply w-9 h-9 rounded-full mr-2 inline-block bg-cover;
     }
   }

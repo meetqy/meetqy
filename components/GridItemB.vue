@@ -3,12 +3,11 @@
     <div class="tags relative z-10">
       <a
         href="javascript:;"
-        :style="`color: ${tag.color};background-color: ${tag.bgColor}`"
+        :style="`color: ${category.color};${category.bgColor}`"
       >
-        {{ tag.name }}
+        {{ category.name }}
       </a>
     </div>
-
     <header>
       <Swiper class="rounded-t-2xl" :modules="modules" navigation>
         <swiper-slide v-for="item in headerImages" :key="item">
@@ -51,11 +50,16 @@
       </a>
       <div class="text-sm text-base-content text-opacity-60">
         <a href="javascript:;">
-          <span class="mr-1">{{ visit }}</span>
+          <span class="mr-1">{{
+            visit ||
+            Date.now().toString().split("").reverse().join("").substring(0, 4)
+          }}</span>
           <i class="iconfont" style="color: #e84e89">&#xe8f4;</i>
         </a>
         <a href="javascript:;" class="ml-4">
-          <span class="mr-1">{{ comment }}</span>
+          <span class="mr-1">{{
+            comment || Date.now().toString().substring(0, 3)
+          }}</span>
           <i class="iconfont" style="color: #e84e89">&#xe8b5;</i>
         </a>
       </div>
@@ -64,7 +68,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Tag } from "~~/composables/type";
+import { CategoryItem } from "~~/composables/type";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
@@ -77,7 +81,7 @@ interface Props {
   time: string;
   visit?: number;
   comment?: number;
-  tag: Tag;
+  category: CategoryItem;
   headerImages: string[];
   to?: string;
 }
@@ -117,7 +121,6 @@ const modules = [Navigation];
     @apply border-t-2 border-base-content border-opacity-5 py-4 px-4;
 
     .author-image {
-      background-image: url(http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/avatar-2.jpg);
       @apply w-9 h-9 rounded-full mr-2 inline-block bg-cover;
     }
 

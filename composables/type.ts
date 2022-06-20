@@ -1,5 +1,7 @@
-export interface Tag {
+export interface CategoryItem {
   bgColor: string;
   color: string;
   name: string;
+  sort: number;
+  templateType: "a" | "b";
 }

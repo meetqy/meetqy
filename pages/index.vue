@@ -6,11 +6,11 @@
     >
       <div class="block" v-for="post in posts" :key="post.id">
         <grid-item-a
-          v-if="getCategory(post).name === '工具'"
+          v-if="getCategory(post).templateType === 'a'"
           :title="post.attributes.title"
           :desciption="post.attributes.desciption"
           :time="post.attributes.updatedAt.split('T')[0]"
-          :tag="getCategory(post).name"
+          :category="getCategory(post)"
           :header-images="getHeaderImages(post)"
           :link="post.attributes.link"
         />
@@ -22,7 +22,7 @@
           :time="post.attributes.updatedAt.split('T')[0]"
           :visit="post.attributes.visit"
           :comment="post.attributes.comment"
-          :tag="getTags(post)"
+          :category="getCategory(post)"
           :header-images="getHeaderImages(post)"
           :id="post.id + ''"
           :to="post.attributes.to"
