@@ -5,7 +5,6 @@
       :title="post.title"
       :desc="post.desciption"
     />
-    123
   </div>
 </template>
 
@@ -17,15 +16,15 @@ const { type, page, id } = route.params;
 const fragments = ref([]);
 
 const pageSize = 5;
+const count = pageSize * page;
+const start = (page - 1) * pageSize + 1;
 
-for (let i = page; i <= pageSize; i++) {
-  const index = Number((page - 1) * pageSize + i);
-  const { data: d } = await useFetch(`/fragments/${type}/${index}.html`, {
-    baseURL:
-      process.env.NODE_ENV === "prodcuton"
-        ? "https://wcao.cc"
-        : "http://localhost:3000",
+for (let i = start; i <= count; i++) {
+  const { data: d } = await useFetch(`/fragments/${type}/${i}.html`, {
+    baseURL: useBaseUrl(),
   });
+
+  if (!d.value) break;
 
   fragments.value.push({
     name: ultra[i],
@@ -38,6 +37,8 @@ const { data } = await useAsyncData("template-[type]", () =>
     populate: ["fragments"],
   })
 );
+
+console.log(data);
 
 const post = computed(() => data.value.data.attributes);
 </script>

@@ -1,4 +1,11 @@
+// strapi 资源地址
 export const useCdnUrl = () => useStrapiUrl().replace("/api", "");
+
+export const useIsProducton = () => process.env.NODE_ENV === "prodcuton";
+
+export const useBaseUrl = () => {
+  return useIsProducton() ? "https://wcao.cc" : "http://localhost:3000";
+};
 
 export const useTitle = () => {
   const cao = ["cao", "caō", "caó", "caǒ", "caò"];

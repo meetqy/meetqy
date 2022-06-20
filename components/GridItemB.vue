@@ -13,7 +13,7 @@
       <Swiper class="rounded-t-2xl" :modules="modules" navigation>
         <swiper-slide v-for="item in headerImages" :key="item">
           <div
-            class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200"
+            class="bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200"
             :style="`background-image:url(${$cdn + item});height: 225px`"
           />
         </swiper-slide>

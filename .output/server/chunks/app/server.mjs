@@ -5487,6 +5487,9 @@ const useStrapiUrl = () => {
   return version === "v3" ? config.strapi.url : `${config.strapi.url}${config.strapi.prefix}`;
 };
 const useCdnUrl = () => useStrapiUrl().replace("/api", "");
+const useBaseUrl = () => {
+  return "http://localhost:3000";
+};
 const useTitle = () => {
   const cao = ["cao", "ca\u014D", "ca\xF3", "ca\u01D2", "ca\xF2"];
   const day = new Date().getDay();
@@ -5570,7 +5573,7 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const modules = [Navigation];
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_1$1;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "article-b" }, _attrs))} data-v-f368b5d4><div class="tags relative z-10" data-v-f368b5d4><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.tag.color};background-color: ${__props.tag.bgColor}`)}" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.tag.name)}</a></div><header data-v-f368b5d4>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "article-b" }, _attrs))} data-v-79ef61e5><div class="tags relative z-10" data-v-79ef61e5><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.tag.color};background-color: ${__props.tag.bgColor}`)}" data-v-79ef61e5>${serverRenderer.exports.ssrInterpolate(__props.tag.name)}</a></div><header data-v-79ef61e5>`);
       _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(Swiper), {
         class: "rounded-t-2xl",
         modules,
@@ -5583,11 +5586,11 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
               _push2(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(SwiperSlide), { key: item }, {
                 default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
-                    _push3(`<div class="bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`)}" data-v-f368b5d4${_scopeId2}></div>`);
+                    _push3(`<div class="bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`)}" data-v-79ef61e5${_scopeId2}></div>`);
                   } else {
                     return [
                       vue_cjs_prod.createVNode("div", {
-                        class: "bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200",
+                        class: "bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200",
                         style: `background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`
                       }, null, 4)
                     ];
@@ -5603,7 +5606,7 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
                 return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.unref(SwiperSlide), { key: item }, {
                   default: vue_cjs_prod.withCtx(() => [
                     vue_cjs_prod.createVNode("div", {
-                      class: "bg-cover hover:bg-bottom transition-all duration-500 ease-linear delay-200",
+                      class: "bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200",
                       style: `background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`
                     }, null, 4)
                   ]),
@@ -5615,7 +5618,7 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<div class="flex justify-center mt-5 flex-col items-center" data-v-f368b5d4><time class="flex items-center capitalize" data-v-f368b5d4><i class="text-2xl iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-f368b5d4>\uE8B4</i><span class="ml-2 text-sm" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.time)}</span></time></div></header><main class="text-center px-4" data-v-f368b5d4><h1 class="title py-2 text-center" data-v-f368b5d4>`);
+      _push(`<div class="flex justify-center mt-5 flex-col items-center" data-v-79ef61e5><time class="flex items-center capitalize" data-v-79ef61e5><i class="text-2xl iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-79ef61e5>\uE8B4</i><span class="ml-2 text-sm" data-v-79ef61e5>${serverRenderer.exports.ssrInterpolate(__props.time)}</span></time></div></header><main class="text-center px-4" data-v-79ef61e5><h1 class="title py-2 text-center" data-v-79ef61e5>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, { to: vue_cjs_prod.unref(toLink) }, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -5628,7 +5631,7 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</h1><p class="text-opacity-60 text-base-content font-light text-center" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.desciption)}</p></main><footer class="flex justify-between items-center mt-10" data-v-f368b5d4><a href="javascript:;" class="flex items-center" data-v-f368b5d4><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-f368b5d4></span><span class="author-name" data-v-f368b5d4>meetqy</span></a><div class="text-sm text-base-content text-opacity-60" data-v-f368b5d4><a href="javascript:;" data-v-f368b5d4><span class="mr-1" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.visit)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-f368b5d4>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-f368b5d4><span class="mr-1" data-v-f368b5d4>${serverRenderer.exports.ssrInterpolate(__props.comment)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-f368b5d4>\uE8B5</i></a></div></footer></article>`);
+      _push(`</h1><p class="text-opacity-60 text-base-content font-light text-center" data-v-79ef61e5>${serverRenderer.exports.ssrInterpolate(__props.desciption)}</p></main><footer class="flex justify-between items-center mt-10" data-v-79ef61e5><a href="javascript:;" class="flex items-center" data-v-79ef61e5><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-79ef61e5></span><span class="author-name" data-v-79ef61e5>meetqy</span></a><div class="text-sm text-base-content text-opacity-60" data-v-79ef61e5><a href="javascript:;" data-v-79ef61e5><span class="mr-1" data-v-79ef61e5>${serverRenderer.exports.ssrInterpolate(__props.visit)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-79ef61e5>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-79ef61e5><span class="mr-1" data-v-79ef61e5>${serverRenderer.exports.ssrInterpolate(__props.comment)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-79ef61e5>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -5638,7 +5641,7 @@ _sfc_main$u.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemB.vue");
   return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["__scopeId", "data-v-f368b5d4"]]);
+const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["__scopeId", "data-v-79ef61e5"]]);
 const useStrapiVersion = () => {
   const config = useRuntimeConfig().public;
   return config.strapi.version;
@@ -7441,9 +7444,6 @@ const _sfc_main$9 = {
   __ssrInlineRender: true,
   async setup(__props) {
     let __temp, __restore;
-    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts", () => useStrapi4().find("posts", {
-      populate: ["category", "headerImages", "tags"]
-    }))), __temp = await __temp, __restore(), __temp);
     const el = vue_cjs_prod.ref();
     vue_cjs_prod.onMounted(() => {
       console.log(el.value);
@@ -7451,6 +7451,10 @@ const _sfc_main$9 = {
     useHead({
       titleTemplate: `${useTitle().title} - \u4ECA\u5929\u661F\u671F${useTitle().week}`
     });
+    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts", () => useStrapi4().find("posts", {
+      publicationState: "preview",
+      populate: ["category", "headerImages", "tags"]
+    }))), __temp = await __temp, __restore(), __temp);
     const posts = vue_cjs_prod.computed(() => data.value.data);
     const getTags = (post) => {
       const tags = post.attributes.tags.data;
@@ -7460,7 +7464,11 @@ const _sfc_main$9 = {
       return post.attributes.category.data.attributes;
     };
     const getHeaderImages = (post) => {
-      return post.attributes.headerImages.data.map((item) => item.attributes.url);
+      if (post.attributes.headerImages.data) {
+        return post.attributes.headerImages.data.map((item) => item.attributes.url);
+      } else {
+        return [];
+      }
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$1;
@@ -7470,9 +7478,9 @@ const _sfc_main$9 = {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             if (vue_cjs_prod.unref(posts)) {
-              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-dbfa2482${_scopeId}><!--[-->`);
+              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-6985e7dc${_scopeId}><!--[-->`);
               serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(posts), (post) => {
-                _push2(`<div class="block" data-v-dbfa2482${_scopeId}>`);
+                _push2(`<div class="block" data-v-6985e7dc${_scopeId}>`);
                 if (getCategory(post).name === "\u5DE5\u5177") {
                   _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
                     title: post.attributes.title,
@@ -7501,11 +7509,11 @@ const _sfc_main$9 = {
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="paging md:py-10 py-5" data-v-dbfa2482${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-dbfa2482${_scopeId}>Prev</a><span class="px-5" data-v-dbfa2482${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-dbfa2482${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-dbfa2482${_scopeId}><div data-v-dbfa2482${_scopeId}><p class="bottom-title" data-v-dbfa2482${_scopeId}>Recent posts</p><ul data-v-dbfa2482${_scopeId}><!--[-->`);
+            _push2(`<div class="paging md:py-10 py-5" data-v-6985e7dc${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-6985e7dc${_scopeId}>Prev</a><span class="px-5" data-v-6985e7dc${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-6985e7dc${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-6985e7dc${_scopeId}><div data-v-6985e7dc${_scopeId}><p class="bottom-title" data-v-6985e7dc${_scopeId}>Recent posts</p><ul data-v-6985e7dc${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(3, (item) => {
-              _push2(`<li class="flex mt-5" data-v-dbfa2482${_scopeId}><img src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg" alt="" data-v-dbfa2482${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-dbfa2482${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-dbfa2482${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-dbfa2482${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
+              _push2(`<li class="flex mt-5" data-v-6985e7dc${_scopeId}><img src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg" alt="" data-v-6985e7dc${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-6985e7dc${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-6985e7dc${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-6985e7dc${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
             });
-            _push2(`<!--]--></ul></div><div data-v-dbfa2482${_scopeId}><p class="bottom-title" data-v-dbfa2482${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-dbfa2482${_scopeId}><!--[-->`);
+            _push2(`<!--]--></ul></div><div data-v-6985e7dc${_scopeId}><p class="bottom-title" data-v-6985e7dc${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-6985e7dc${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList([
               "bg-blue-400",
               "bg-red-500",
@@ -7513,9 +7521,9 @@ const _sfc_main$9 = {
               "bg-green-500",
               "bg-orange-500"
             ], (item) => {
-              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-dbfa2482${_scopeId}> Astronomy </a>`);
+              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-6985e7dc${_scopeId}> Astronomy </a>`);
             });
-            _push2(`<!--]--></div></div><div data-v-dbfa2482${_scopeId}><p class="bottom-title" data-v-dbfa2482${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-dbfa2482${_scopeId}><div class="flex" data-v-dbfa2482${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-dbfa2482${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-dbfa2482${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-dbfa2482${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-dbfa2482${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-dbfa2482${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-dbfa2482${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-dbfa2482${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-dbfa2482${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-dbfa2482${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-dbfa2482${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-dbfa2482${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-dbfa2482${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-dbfa2482${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-dbfa2482${_scopeId}> CSS </span></p></div></div></div>`);
+            _push2(`<!--]--></div></div><div data-v-6985e7dc${_scopeId}><p class="bottom-title" data-v-6985e7dc${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-6985e7dc${_scopeId}><div class="flex" data-v-6985e7dc${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-6985e7dc${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-6985e7dc${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-6985e7dc${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-6985e7dc${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-6985e7dc${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-6985e7dc${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-6985e7dc${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-6985e7dc${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-6985e7dc${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-6985e7dc${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-6985e7dc${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-6985e7dc${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-6985e7dc${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-6985e7dc${_scopeId}> CSS </span></p></div></div></div>`);
           } else {
             return [
               vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
@@ -7665,7 +7673,7 @@ _sfc_main$9.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const index$5 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-dbfa2482"]]);
+const index$5 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-6985e7dc"]]);
 const index$6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$5
@@ -7934,11 +7942,14 @@ const _sfc_main$7 = {
     const { type, page, id } = route.params;
     const fragments = vue_cjs_prod.ref([]);
     const pageSize = 5;
-    for (let i = page; i <= pageSize; i++) {
-      const index2 = Number((page - 1) * pageSize + i);
-      const { data: d } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/fragments/${type}/${index2}.html`, {
-        baseURL: "http://localhost:3000"
+    const count = pageSize * page;
+    const start = (page - 1) * pageSize + 1;
+    for (let i = start; i <= count; i++) {
+      const { data: d } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/fragments/${type}/${i}.html`, {
+        baseURL: useBaseUrl()
       })), __temp = await __temp, __restore(), __temp);
+      if (!d.value)
+        break;
       fragments.value.push({
         name: ultra[i],
         code: d.value
@@ -7947,6 +7958,7 @@ const _sfc_main$7 = {
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("template-[type]", () => useStrapi4().find(`posts/${id}`, {
       populate: ["fragments"]
     }))), __temp = await __temp, __restore(), __temp);
+    console.log(data);
     const post = vue_cjs_prod.computed(() => data.value.data.attributes);
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Fragment = _sfc_main$r;
@@ -7956,7 +7968,7 @@ const _sfc_main$7 = {
         title: vue_cjs_prod.unref(post).title,
         desc: vue_cjs_prod.unref(post).desciption
       }, null, _parent));
-      _push(` 123 </div>`);
+      _push(`</div>`);
     };
   }
 };

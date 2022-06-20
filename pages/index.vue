@@ -165,12 +165,6 @@
 </template>
 
 <script setup>
-const { data } = await useAsyncData("posts", () =>
-  useStrapi4().find("posts", {
-    populate: ["category", "headerImages", "tags"],
-  })
-);
-
 const el = ref();
 
 onMounted(() => {
@@ -181,9 +175,14 @@ useHead({
   titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
 });
 
-const posts = computed(() => data.value.data);
+const { data } = await useAsyncData("posts", () =>
+  useStrapi4().find("posts", {
+    publicationState: useIsProducton() ? "live" : "preview",
+    populate: ["category", "headerImages", "tags"],
+  })
+);
 
-// console.log(posts.value);
+const posts = computed(() => data.value.data);
 
 const getTags = (post) => {
   const tags = post.attributes.tags.data;
@@ -195,7 +194,11 @@ const getCategory = (post) => {
 };
 
 const getHeaderImages = (post) => {
-  return post.attributes.headerImages.data.map((item) => item.attributes.url);
+  if (post.attributes.headerImages.data) {
+    return post.attributes.headerImages.data.map((item) => item.attributes.url);
+  } else {
+    return [];
+  }
 };
 </script>
 
