@@ -1,0 +1,1 @@
+import{y as s}from"./entry-d96375f4.mjs";const o=()=>s().replace("/api",""),r=()=>"http://localhost:3000",n=()=>{const a=["cao","ca\u014D","ca\xF3","ca\u01D2","ca\xF2"],t=new Date().getDay(),e=["\u5929","\u4E00","\u4E8C","\u4E09","\u56DB","\u4E94","\u516D"][t],u=t?7%t:0;return{title:`\u5367\u69FD(w ${a[u]})`,cao:a[u],week:e,day:t}};export{n as a,r as b,o as u};
