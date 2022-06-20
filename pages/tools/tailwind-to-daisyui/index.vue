@@ -67,7 +67,7 @@ onMounted(async () => {
       // 按钮
       const btn = classname.filter((item) => /hover|focus/.test(item));
       if (btn.length > 1) {
-        classname = ["btn", "capitalize"];
+        classname = ["btn", "capitalize", "btn-primary"];
       }
 
       // 移除 dark:xxx
