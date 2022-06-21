@@ -6,7 +6,7 @@
       <main class="tailwind-to-daisyui flex">
         <div ref="leftEditorElement" class="w-1/2"></div>
 
-        <div class="flex-1 lang-editor" ref="rightEditorElement"></div>
+        <div class="w-1/2 lang-editor" ref="rightEditorElement"></div>
       </main>
     </div>
 
@@ -19,6 +19,7 @@
 <script setup>
 import "codemirror/lib/codemirror.css";
 import "codemirror/addon/scroll/simplescrollbars.css";
+import defaultCode from "./default.client";
 
 const leftEditorElement = ref();
 const rightEditorElement = ref();
@@ -27,6 +28,50 @@ const { $codemirror } = useNuxtApp();
 
 let _leftCodeMirror = null;
 let _rightCodeMirror = null;
+
+const setLeftMirror = (code) => {
+  if (!code) return;
+  _leftCodeMirror.setValue(code);
+  setTimeout(() => {
+    _leftCodeMirror.refresh();
+  }, 50);
+};
+
+const setRightMirror = async (code) => {
+  _rightCodeMirror.setValue(code);
+
+  setTimeout(() => {
+    _rightCodeMirror.refresh();
+  }, 50);
+};
+
+// 转换daisyui
+const toDaisyUI = (str) => {
+  return str
+    .replace(/class=('|").*?("|')/g, (e) => {
+      let classname = e.split("class=")[1].replace(/'|"/g, "").split(" ");
+      // 按钮
+      const btn = classname.filter((item) => /hover|focus/.test(item));
+      if (btn.length > 1) {
+        classname = ["btn", "capitalize", "btn-primary"];
+      }
+      // 移除 dark:xxx
+      classname = classname.filter((item) => !/dark:/.test(item));
+      // bg-white 替换为 bg-base-100
+      classname = classname.map((item) =>
+        item.replace(/bg-white/, "bg-base-100")
+      );
+      // gray
+      classname = classname.map((item) => {
+        return item.replace(/text-gray-[0-9]+/, (e) => {
+          const n = e.match(/[0-9]+/)[0];
+          return `text-base-content text-opacity-${+n / 10}`;
+        });
+      });
+      return `class="${classname.join(" ")}"`;
+    })
+    .replace(/src=('|").*?("|')/g, `src='https://wcao.cc/r/a/xxx'`);
+};
 
 onMounted(async () => {
   await import("codemirror/mode/xml/xml.js");
@@ -47,6 +92,9 @@ onMounted(async () => {
 
   let t;
 
+  setLeftMirror(defaultCode);
+  setRightMirror(toDaisyUI(defaultCode));
+
   // 监听json输入框失去焦点
   _leftCodeMirror.on("change", async (e) => {
     if (t) {
@@ -55,40 +103,9 @@ onMounted(async () => {
 
     t = setTimeout(() => {
       const res = toDaisyUI(e.getValue());
-      _rightCodeMirror.setValue(res);
-    }, 1000);
+      setRightMirror(res);
+    }, 500);
   });
-
-  // 转换daisyui
-  const toDaisyUI = (str) => {
-    return str.replace(/class=('|")(.*?)+("|')/g, (e) => {
-      let classname = e.split("class=")[1].replace(/'|"/g, "").split(" ");
-
-      // 按钮
-      const btn = classname.filter((item) => /hover|focus/.test(item));
-      if (btn.length > 1) {
-        classname = ["btn", "capitalize", "btn-primary"];
-      }
-
-      // 移除 dark:xxx
-      classname = classname.filter((item) => !/dark:/.test(item));
-
-      // bg-white 替换为 bg-base-100
-      classname = classname.map((item) =>
-        item.replace(/bg-white/, "bg-base-100")
-      );
-
-      // gray
-      classname = classname.map((item) => {
-        return item.replace(/text-gray-[0-9]+/, (e) => {
-          const n = e.match(/[0-9]+/)[0];
-          return `text-base-content text-opacity-${+n / 10}`;
-        });
-      });
-
-      return `class="${classname.join(" ")}"`;
-    });
-  };
 });
 </script>
 

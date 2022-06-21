@@ -2,7 +2,12 @@ import { defineNuxtConfig } from "nuxt";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi", "~/modules/sitemap"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/strapi",
+    "~/modules/sitemap",
+    "@nuxtjs/mdx",
+  ],
   strapi: {
     entities: ["tag"],
     url: "https://wcao.cc/strapi",
@@ -10,27 +15,6 @@ export default defineNuxtConfig({
 
   sitemap: {
     hostname: "https://wcao.cc",
-  },
-
-  build: {
-    cache: true,
-    postcss: {
-      postcssOptions: {
-        "postcss-color-gray": {},
-      },
-    },
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          html: {
-            name: "html",
-            test: /\.(html)$/,
-            chunks: "all",
-            enforce: true,
-          },
-        },
-      },
-    },
   },
 
   autoImports: {
@@ -48,8 +32,7 @@ export default defineNuxtConfig({
         },
         {
           name: "description",
-          content:
-            "卧槽(wo caò),卧槽(wò cao),卧槽(wǒ caó),卧槽(wǒ caò),卧槽(wō caō),卧槽(wō caō)",
+          content: "收集的多主题模板，模板、前端相关在线工具 - 卧槽(wo caò)",
         },
         {
           name: "theme-color",
@@ -57,25 +40,5 @@ export default defineNuxtConfig({
         },
       ],
     },
-  },
-
-  vite: {
-    build: {
-      sourcemap: false,
-    },
-    esbuild: {},
-    // plugins: [
-    //   {
-    //     name: "transform-html",
-    //     transform(src, id) {
-    //       if (/\.(html)$/.test(id)) {
-    //         return {
-    //           code: `export default \`${src}\``,
-    //           map: null,
-    //         };
-    //       }
-    //     },
-    //   },
-    // ],
   },
 });

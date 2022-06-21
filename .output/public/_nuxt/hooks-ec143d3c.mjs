@@ -1,0 +1,1 @@
+import{v as e}from"./entry-be881c9c.mjs";const o=()=>e().replace("/api",""),r=()=>"https://wcao.cc",n=()=>{const t=["cao","ca\u014D","ca\xF3","ca\u01D2","ca\xF2"],a=new Date().getDay(),c=["\u5929","\u4E00","\u4E8C","\u4E09","\u56DB","\u4E94","\u516D"][a],u=a?7%a:0;return{title:`\u5367\u69FD(w ${t[u]})`,cao:t[u],week:c,day:a}};export{n as a,r as b,o as u};

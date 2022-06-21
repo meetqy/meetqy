@@ -12,7 +12,7 @@
           :time="post.attributes.updatedAt.split('T')[0]"
           :category="getCategory(post)"
           :header-images="getHeaderImages(post)"
-          :link="post.attributes.link"
+          :to="post.attributes.to"
         />
 
         <grid-item-b
@@ -36,15 +36,12 @@
       <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
     </div>
 
-    <div ref="el" class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
+    <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
       <div>
         <p class="bottom-title">Recent posts</p>
         <ul>
           <li class="flex mt-5" v-for="item in 3">
-            <img
-              src="http://estudiopatagon.com/themes/wordpress/breek/wp-content/uploads/2019/06/480016-PGKTGR-852-120x120.jpg"
-              alt=""
-            />
+            <img src="https://wcao.cc/r/a/avatar" alt="" />
             <div class="flex flex-col justify-center ml-5">
               <span class="text-sm text-base-100 text-opacity-50"
                 >June 5, 2019</span
@@ -165,12 +162,6 @@
 </template>
 
 <script setup>
-const el = ref();
-
-onMounted(() => {
-  console.log(el.value);
-});
-
 useHead({
   titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
 });
@@ -183,11 +174,6 @@ const { data } = await useAsyncData("posts", () =>
 );
 
 const posts = computed(() => data.value.data);
-
-const getTags = (post) => {
-  const tags = post.attributes.tags.data;
-  return tags.length > 0 ? tags[0].attributes : "";
-};
 
 const getCategory = (post) => {
   return post.attributes.category.data.attributes;

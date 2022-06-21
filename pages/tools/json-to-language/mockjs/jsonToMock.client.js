@@ -1,4 +1,4 @@
-export function useJsontoMock(json: object): string {
+export function useJsontoMock(json) {
   let str = "";
   for (let k in json) {
     const v = json[k];
