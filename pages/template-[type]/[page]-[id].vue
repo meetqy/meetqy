@@ -39,12 +39,10 @@ const { data } = await useAsyncData(`template-${type}-${id}`, () =>
     populate: ["fragments"],
   })
 );
-// console.log(data.value);
 
 const post = computed(() => data.value.data.attributes);
 
 onMounted(() => {
-  console.log(post.value);
   useHead({
     titleTemplate: post.value.title,
     meta: [

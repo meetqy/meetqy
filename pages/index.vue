@@ -31,9 +31,19 @@
     </div>
 
     <div class="paging md:py-10 py-5">
-      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Prev</a>
-      <span class="px-5">Page 1 of 2</span>
-      <a href="javasciprt:;" class="btn rounded-full btn-md btn-info">Next</a>
+      <a
+        href="javasciprt:;"
+        class="btn rounded-full btn-sm btn-info capitalize"
+      >
+        Prev
+      </a>
+      <span class="px-5 text-base-content">Page 1 of 2</span>
+      <a
+        href="javasciprt:;"
+        class="btn rounded-full btn-sm btn-info capitalize"
+      >
+        Next
+      </a>
     </div>
 
     <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
@@ -43,10 +53,8 @@
           <li class="flex mt-5" v-for="item in 3">
             <img :src="'https://wcao.cc/r/a/avatar?' + item" alt="" />
             <div class="flex flex-col justify-center ml-5">
-              <span class="text-sm text-base-100 text-opacity-50"
-                >June 5, 2019</span
-              >
-              <p class="text-base font-semibold text-base-100">
+              <span class="text-md text-base-content"> June 5, 2019 </span>
+              <p class="text-xl text-base-300">
                 Mars is the fourth planet from the Sun
               </p>
             </div>
@@ -84,21 +92,21 @@
               alt="meetqy"
             />
             <div class="ml-5 flex flex-col justify-center">
-              <p class="text-lg font-semibold text-base-100">
+              <p class="text-lg font-semibold text-base-content">
                 meetqy
                 <sup
-                  class="inline-block line-through decoration-red-500 decoration-4"
+                  class="inline-block line-through decoration-error decoration-2"
                 >
                   都{{ new Date().getFullYear() - 1996 }}了
                 </sup>
               </p>
-              <p class="text-base-100 text-opacity-70 text-sm my-1">
+              <p class="text-base-content text-sm my-1">
                 前端CV工程师 - 擅长CV大法
               </p>
             </div>
           </div>
 
-          <p class="text-base-100 mt-5 text-base text-opacity-90">
+          <p class="text-base-content mt-5">
             摸鱼、养狗、干饭、找模板、写模板，生活就是如此的朴实无华！
           </p>
           <p class="mt-4 about">
@@ -199,16 +207,13 @@ const getHeaderImages = (post) => {
   }
 
   .bottom-title {
-    font-size: 24px;
-    @apply text-base-100 font-semibold border-b border-white border-opacity-20 pb-5;
+    @apply text-base-content font-semibold border-b border-base-100 border-opacity-20 pb-5 text-2xl;
   }
 
   ul {
     @apply px-4;
     img {
-      box-shadow: 0 3px 12px -1px rgb(7 10 25 / 20%),
-        0 22px 27px -20px rgb(7 10 25 / 20%);
-      @apply w-20 h-20 rounded-full;
+      @apply w-20 h-20 rounded-full shadow-md;
     }
   }
 }

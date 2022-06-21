@@ -35,10 +35,9 @@ watch(y, (val) => emit("change", val));
 
   .swiper-button-next,
   .swiper-button-prev {
-    background-color: #e84e89;
     width: 36px;
     height: 36px;
-    @apply flex items-center justify-center rounded-full;
+    @apply flex items-center justify-center rounded-full bg-error;
 
     &::after {
       font-size: 18px;

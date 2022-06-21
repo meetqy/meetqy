@@ -12,9 +12,11 @@
       <Swiper class="rounded-t-2xl" :modules="modules" navigation>
         <swiper-slide v-for="item in headerImages" :key="item">
           <div
-            class="bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200"
+            class="bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200 relative"
             :style="`background-image:url(${$cdn + item});height: 225px`"
-          />
+          >
+            <div class="swiper-mask" />
+          </div>
         </swiper-slide>
       </Swiper>
 

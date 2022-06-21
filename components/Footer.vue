@@ -2,10 +2,10 @@
   <footer :class="class">
     <Logo v-show="showLogo" :show-week="false" />
     <p
-      class="text-base-100 text-opacity-70 text-sm"
+      class="text-base-content text-opacity-70 text-sm"
       :class="{ 'mt-4': showLogo }"
     >
-      Copyright © 2022 wcao.cc <span class="mx-2 text-base-300">|</span>
+      Copyright © 2022 wcao.cc <span class="mx-2 text-base-200">|</span>
       <span>运行: {{ time }}</span>
     </p>
   </footer>

@@ -154,6 +154,7 @@
 </template>
 
 <script setup lang="ts">
+import { useDark, useToggle } from "@vueuse/core";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 interface Props {
@@ -211,19 +212,15 @@ const showCode = (index) => {
 
 const curTheme = ref("dark");
 
-onMounted(() => {
-  const media = window.matchMedia("(prefers-color-scheme: dark)");
-  curTheme.value = media.matches ? "dark" : "light";
+const isDark = useDark({
+  selector: "html",
+  attribute: "data-theme",
+  valueDark: "dark",
+  valueLight: "light",
+});
 
-  //   useHead({
-  //     titleTemplate: `${post.value.title} - ${post.value.desciption}`,
-  //     meta: [
-  //       {
-  //         name: "description",
-  //         content: `${post.value.desciption}`,
-  //       },
-  //     ],
-  //   });
+onMounted(() => {
+  curTheme.value = isDark.value ? "dark" : "light";
 });
 
 const onChange = (y) => {

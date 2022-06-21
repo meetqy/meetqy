@@ -42,7 +42,7 @@
 
       <div class="flex-1 relative overflow-hidden p-5 bg-base-100 rounded-md">
         <Swiper
-          class="swiper w-full bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl"
+          class="swiper w-full rounded-2xl"
           :modules="modules"
           :navigation="true"
         >
@@ -85,17 +85,12 @@
         </div>
 
         <article
-          class="prose prose-neutral prose-a:text-blue-500 break-words"
+          class="prose prose-neutral prose-a:text-blue-500 break-words mb-20"
           v-html="content"
         />
 
-        <div
-          class="py-16 mt-12 flex justify-center items-center flex-wrap"
-          style="
-            border-top: 1px solid #f4f4f4;
-            border-bottom: 1px solid #f4f4f4;
-          "
-        >
+        <div class="divider">End</div>
+        <div class="py-12 flex justify-center items-center flex-wrap">
           <span class="text-lg font-semibold mr-4">Link:</span>
           <a
             :href="post.link"
@@ -144,7 +139,7 @@ const md = new MarkdownIt({
 
 const { id } = useRoute().params;
 
-const { data } = await useAsyncData("posts/:id", () =>
+const { data } = await useAsyncData(`posts/${id}`, () =>
   useStrapi4().find(`posts/${id}`, {
     populate: ["category", "tags", "previewImages"],
   })
@@ -175,3 +170,9 @@ onMounted(() => {
   });
 });
 </script>
+
+<style lang="postcss" scoped>
+.swiper-wrapper {
+  @apply bg-base-300 items-center py-5;
+}
+</style>

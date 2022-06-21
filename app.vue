@@ -27,17 +27,20 @@ onMounted(() => {
   @apply overflow-y-scroll;
 }
 
-html,
-body {
+html {
   padding: 0;
   margin: 0;
   overflow: hidden;
   width: 100vw;
   height: var(--app-height);
+  @apply transition-all;
+}
 
+html[data-theme="light"] {
   &::before {
     content: "";
     @apply fixed left-0 top-0 w-screen h-screen -z-10;
+
     background: linear-gradient(
       to right bottom,
       #6d327c,
@@ -46,6 +49,23 @@ body {
       #01b18e,
       #32b37b
     );
+  }
+
+  .swiper-mask {
+    @apply hidden;
+  }
+}
+
+html[data-theme="dark"] {
+  .swiper-mask {
+    @apply fixed w-full h-full z-10 top-0 left-0 bg-base-100 bg-opacity-50;
+  }
+
+  &::before {
+    content: "";
+    @apply fixed left-0 top-0 w-screen h-screen -z-10;
+
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   }
 }
 </style>

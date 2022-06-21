@@ -12,17 +12,14 @@
       <div
         class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full"
       >
-        <span class="font-serif font-semibold text-base-100">
+        <span class="font-serif font-semibold text-base-content">
           {{ cao }} <i v-if="props.showWeek">，</i>
         </span>
       </div>
     </div>
 
-    <div
-      class="inline-flex h-12 items-center text-base-100 text-2xl"
-      v-if="props.showWeek"
-    >
-      <span class="text-warning">今天星期{{ week }} </span>
+    <div class="inline-flex h-12 items-center text-2xl" v-if="props.showWeek">
+      <span class="text-info">今天星期{{ week }} </span>
     </div>
   </div>
 </template>
