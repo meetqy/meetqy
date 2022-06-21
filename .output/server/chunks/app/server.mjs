@@ -6,7 +6,7 @@ import MarkdownIt from 'markdown-it';
 import hljs from 'highlight.js';
 import toJsonSchema from 'to-json-schema';
 import jsonFormat from 'json-format';
-import { useScroll } from '@vueuse/core';
+import { useInterval, useScroll } from '@vueuse/core';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
@@ -5502,6 +5502,7 @@ const useTitle = () => {
     day
   };
 };
+const startTime = new Date("2022-5-25 22:11:23").getTime();
 const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemA",
   __ssrInlineRender: true,
@@ -6158,7 +6159,14 @@ const useJsonToLanguage = async (lang, value) => {
 };
 const useJsonDefaultValue = () => {
   const _ = JSON.stringify({
-    name: "\u5F20\u4E09"
+    name: "\u5F20\u4E09",
+    age: 23,
+    posts: [
+      { name: "\u751C\u5FC3\u6559\u4E3B - \u738B\u5FC3\u51CC", desc: "\u8FD9\u662F\u6211\u7684\u7B2C\u4E00\u7BC7\u6587\u7AE0\uFF01" },
+      { name: "\u5C11\u5973\u6740\u624B - \u5218\u754A\u5B8F", desc: "\u8FD9\u662F\u6211\u7684\u7B2C\u4E8C\u7BC7\u6587\u7AE0\uFF01" },
+      { name: "\u5C0F\u5B66\u513F\u6B4C - \u5B64\u52C7\u8005", desc: "\u8FD9\u662F\u6211\u7684\u7B2C\u4E09\u7BC7\u6587\u7AE0\uFF01" }
+    ],
+    tag: ["github", "gitee"]
   });
   try {
     return localStorage.getItem("json-to-language") || _;
@@ -7400,7 +7408,28 @@ const _sfc_main$d = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     showLogo: { type: Boolean, default: true }
   },
   setup(__props) {
-    useTitle();
+    const counter = useInterval(1e3);
+    const time = vue_cjs_prod.ref();
+    vue_cjs_prod.watch(counter, (val) => {
+      const t = (Date.now() - startTime) / 1e3;
+      time.value = getDuration(t);
+    });
+    const getDuration = (second) => {
+      var duration;
+      var days = Math.floor(second / 86400);
+      var hours = Math.floor(second % 86400 / 3600);
+      var minutes = Math.floor(second % 86400 % 3600 / 60);
+      var seconds = Math.floor(second % 86400 % 3600 % 60);
+      if (days > 0)
+        duration = days + "\u5929" + hours + "\u65F6" + minutes + "\u5206" + seconds + "\u79D2";
+      else if (hours > 0)
+        duration = hours + "\u65F6" + minutes + "\u5206" + seconds + "\u79D2";
+      else if (minutes > 0)
+        duration = minutes + "\u5206" + seconds + "\u79D2";
+      else if (seconds > 0)
+        duration = seconds + "\u79D2";
+      return duration;
+    };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Logo = __nuxt_component_1;
       _push(`<footer${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: __props.class }, _attrs))}>`);
@@ -7408,7 +7437,7 @@ const _sfc_main$d = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         style: __props.showLogo ? null : { display: "none" },
         "show-week": false
       }, null, _parent));
-      _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "mt-4": __props.showLogo }, "text-base-100 text-opacity-70 text-sm"])}"> Copyright \xA9 2022 wcao.cc </p></footer>`);
+      _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "mt-4": __props.showLogo }, "text-base-100 text-opacity-70 text-sm"])}"> Copyright \xA9 2022 wcao.cc <span class="mx-2 text-base-300">|</span><span>\u8FD0\u884C: ${serverRenderer.exports.ssrInterpolate(time.value)}</span></p></footer>`);
     };
   }
 });
@@ -7521,9 +7550,9 @@ const _sfc_main$a = {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             if (vue_cjs_prod.unref(posts)) {
-              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-76165974${_scopeId}><!--[-->`);
+              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-8587a71a${_scopeId}><!--[-->`);
               serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(posts), (post) => {
-                _push2(`<div class="block" data-v-76165974${_scopeId}>`);
+                _push2(`<div class="block" data-v-8587a71a${_scopeId}>`);
                 if (getCategory(post).templateType === "a") {
                   _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
                     title: post.attributes.title,
@@ -7552,11 +7581,11 @@ const _sfc_main$a = {
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="paging md:py-10 py-5" data-v-76165974${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-76165974${_scopeId}>Prev</a><span class="px-5" data-v-76165974${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-76165974${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-76165974${_scopeId}><div data-v-76165974${_scopeId}><p class="bottom-title" data-v-76165974${_scopeId}>Recent posts</p><ul data-v-76165974${_scopeId}><!--[-->`);
+            _push2(`<div class="paging md:py-10 py-5" data-v-8587a71a${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-8587a71a${_scopeId}>Prev</a><span class="px-5" data-v-8587a71a${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-md btn-info" data-v-8587a71a${_scopeId}>Next</a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-8587a71a${_scopeId}><div data-v-8587a71a${_scopeId}><p class="bottom-title" data-v-8587a71a${_scopeId}>Recent posts</p><ul data-v-8587a71a${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(3, (item) => {
-              _push2(`<li class="flex mt-5" data-v-76165974${_scopeId}><img src="https://wcao.cc/r/a/avatar" alt="" data-v-76165974${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-76165974${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-76165974${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-76165974${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
+              _push2(`<li class="flex mt-5" data-v-8587a71a${_scopeId}><img${serverRenderer.exports.ssrRenderAttr("src", "https://wcao.cc/r/a/avatar?" + item)} alt="" data-v-8587a71a${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-8587a71a${_scopeId}><span class="text-sm text-base-100 text-opacity-50" data-v-8587a71a${_scopeId}>June 5, 2019</span><p class="text-base font-semibold text-base-100" data-v-8587a71a${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
             });
-            _push2(`<!--]--></ul></div><div data-v-76165974${_scopeId}><p class="bottom-title" data-v-76165974${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-76165974${_scopeId}><!--[-->`);
+            _push2(`<!--]--></ul></div><div data-v-8587a71a${_scopeId}><p class="bottom-title" data-v-8587a71a${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-8587a71a${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList([
               "bg-blue-400",
               "bg-red-500",
@@ -7564,9 +7593,9 @@ const _sfc_main$a = {
               "bg-green-500",
               "bg-orange-500"
             ], (item) => {
-              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-76165974${_scopeId}> Astronomy </a>`);
+              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-8587a71a${_scopeId}> Astronomy </a>`);
             });
-            _push2(`<!--]--></div></div><div data-v-76165974${_scopeId}><p class="bottom-title" data-v-76165974${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-76165974${_scopeId}><div class="flex" data-v-76165974${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-76165974${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-76165974${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-76165974${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-76165974${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-76165974${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-76165974${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-76165974${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-76165974${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-76165974${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-76165974${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-76165974${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-76165974${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-76165974${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-76165974${_scopeId}> CSS </span></p></div></div></div>`);
+            _push2(`<!--]--></div></div><div data-v-8587a71a${_scopeId}><p class="bottom-title" data-v-8587a71a${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-8587a71a${_scopeId}><div class="flex" data-v-8587a71a${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-8587a71a${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-8587a71a${_scopeId}><p class="text-lg font-semibold text-base-100" data-v-8587a71a${_scopeId}> meetqy <sup class="inline-block line-through decoration-red-500 decoration-4" data-v-8587a71a${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-100 text-opacity-70 text-sm my-1" data-v-8587a71a${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-100 mt-5 text-base text-opacity-90" data-v-8587a71a${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-8587a71a${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-8587a71a${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-8587a71a${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-8587a71a${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-8587a71a${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-8587a71a${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-8587a71a${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-8587a71a${_scopeId}> CSS </span></p></div></div></div>`);
           } else {
             return [
               vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
@@ -7619,9 +7648,9 @@ const _sfc_main$a = {
                     (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(3, (item) => {
                       return vue_cjs_prod.createVNode("li", { class: "flex mt-5" }, [
                         vue_cjs_prod.createVNode("img", {
-                          src: "https://wcao.cc/r/a/avatar",
+                          src: "https://wcao.cc/r/a/avatar?" + item,
                           alt: ""
-                        }),
+                        }, null, 8, ["src"]),
                         vue_cjs_prod.createVNode("div", { class: "flex flex-col justify-center ml-5" }, [
                           vue_cjs_prod.createVNode("span", { class: "text-sm text-base-100 text-opacity-50" }, "June 5, 2019"),
                           vue_cjs_prod.createVNode("p", { class: "text-base font-semibold text-base-100" }, " Mars is the fourth planet from the Sun ")
@@ -7712,7 +7741,7 @@ _sfc_main$a.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
 };
-const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-76165974"]]);
+const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-8587a71a"]]);
 const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$6
@@ -8479,6 +8508,15 @@ const _sfc_main = {
   __name: "index",
   __ssrInlineRender: true,
   setup(__props) {
+    useHead({
+      titleTemplate: `\u5FEB\u901F\u628A Tailwind \u8F6C\u6362\u4E3A DaisyUI \u4E3B\u9898`,
+      meta: [
+        {
+          name: "description",
+          content: "\u5FEB\u901F\u628A Tailwind \u8F6C\u6362\u4E3A DaisyUI \u4E3B\u9898"
+        }
+      ]
+    });
     const leftEditorElement = vue_cjs_prod.ref();
     const rightEditorElement = vue_cjs_prod.ref();
     const { $codemirror } = useNuxtApp();
@@ -8507,10 +8545,13 @@ const _sfc_main = {
         }
         classname = classname.filter((item) => !/dark:/.test(item));
         classname = classname.map((item) => item.replace(/bg-white/, "bg-base-100"));
+        classname = classname.map((item) => item.replace(/blue-(\d)+/, "primary"));
+        classname = classname.map((item) => item.replace(/green-(\d)+/, "success"));
         classname = classname.map((item) => {
-          return item.replace(/text-gray-[0-9]+/, (e2) => {
+          return item.replace(/[a-z]+-gray-[0-9]+/, (e2) => {
             const n = e2.match(/[0-9]+/)[0];
-            return `text-base-content text-opacity-${+n / 10}`;
+            const prefix = e2.split("-gray")[0];
+            return `${prefix}-base-content ${prefix}-opacity-${+n / 10}`;
           });
         });
         return `class="${classname.join(" ")}"`;

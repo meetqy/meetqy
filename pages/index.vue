@@ -41,7 +41,7 @@
         <p class="bottom-title">Recent posts</p>
         <ul>
           <li class="flex mt-5" v-for="item in 3">
-            <img src="https://wcao.cc/r/a/avatar" alt="" />
+            <img :src="'https://wcao.cc/r/a/avatar?' + item" alt="" />
             <div class="flex flex-col justify-center ml-5">
               <span class="text-sm text-base-100 text-opacity-50"
                 >June 5, 2019</span

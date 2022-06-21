@@ -21,6 +21,16 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/addon/scroll/simplescrollbars.css";
 import defaultCode from "./default.client";
 
+useHead({
+  titleTemplate: `快速把 Tailwind 转换为 DaisyUI 主题`,
+  meta: [
+    {
+      name: "description",
+      content: "快速把 Tailwind 转换为 DaisyUI 主题",
+    },
+  ],
+});
+
 const leftEditorElement = ref();
 const rightEditorElement = ref();
 
@@ -57,15 +67,28 @@ const toDaisyUI = (str) => {
       }
       // 移除 dark:xxx
       classname = classname.filter((item) => !/dark:/.test(item));
+
       // bg-white 替换为 bg-base-100
       classname = classname.map((item) =>
         item.replace(/bg-white/, "bg-base-100")
       );
+
+      // *-blue-*  => primary
+      classname = classname.map((item) =>
+        item.replace(/blue-(\d)+/, "primary")
+      );
+
+      // *-green-*  => success
+      classname = classname.map((item) =>
+        item.replace(/green-(\d)+/, "success")
+      );
+
       // gray
       classname = classname.map((item) => {
-        return item.replace(/text-gray-[0-9]+/, (e) => {
+        return item.replace(/[a-z]+-gray-[0-9]+/, (e) => {
           const n = e.match(/[0-9]+/)[0];
-          return `text-base-content text-opacity-${+n / 10}`;
+          const prefix = e.split("-gray")[0];
+          return `${prefix}-base-content ${prefix}-opacity-${+n / 10}`;
         });
       });
       return `class="${classname.join(" ")}"`;
