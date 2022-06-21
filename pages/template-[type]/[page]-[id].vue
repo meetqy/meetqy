@@ -19,9 +19,11 @@ const pageSize = 5;
 const count = pageSize * page;
 const start = (page - 1) * pageSize + 1;
 
+const baseURL = useBaseUrl();
+
 for (let i = start; i <= count; i++) {
   const { data: d } = await useFetch(`/fragments/${type}/${i}.html`, {
-    baseURL: useBaseUrl(),
+    baseURL,
   });
 
   if (!d.value) break;
@@ -38,7 +40,7 @@ const { data } = await useAsyncData("template-[type]", () =>
   })
 );
 
-console.log(data);
+// console.log(data);
 
 const post = computed(() => data.value.data.attributes);
 </script>

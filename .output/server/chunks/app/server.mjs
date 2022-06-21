@@ -5488,7 +5488,7 @@ const useStrapiUrl = () => {
 };
 const useCdnUrl = () => useStrapiUrl().replace("/api", "");
 const useBaseUrl = () => {
-  return "http://localhost:3000";
+  return "https://wcao.cc" ;
 };
 const useTitle = () => {
   const cao = ["cao", "ca\u014D", "ca\xF3", "ca\u01D2", "ca\xF2"];
@@ -7464,7 +7464,7 @@ const _sfc_main$a = {
       titleTemplate: `${useTitle().title} - \u4ECA\u5929\u661F\u671F${useTitle().week}`
     });
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts", () => useStrapi4().find("posts", {
-      publicationState: "preview",
+      publicationState: "live" ,
       populate: ["category", "headerImages", "tags"]
     }))), __temp = await __temp, __restore(), __temp);
     const posts = vue_cjs_prod.computed(() => data.value.data);
@@ -7952,9 +7952,10 @@ const _sfc_main$8 = {
     const pageSize = 5;
     const count = pageSize * page;
     const start = (page - 1) * pageSize + 1;
+    const baseURL2 = useBaseUrl();
     for (let i = start; i <= count; i++) {
       const { data: d } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/fragments/${type}/${i}.html`, {
-        baseURL: useBaseUrl()
+        baseURL: baseURL2
       })), __temp = await __temp, __restore(), __temp);
       if (!d.value)
         break;
@@ -7966,7 +7967,6 @@ const _sfc_main$8 = {
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("template-[type]", () => useStrapi4().find(`posts/${id}`, {
       populate: ["fragments"]
     }))), __temp = await __temp, __restore(), __temp);
-    console.log(data);
     const post = vue_cjs_prod.computed(() => data.value.data.attributes);
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Fragment = _sfc_main$s;
@@ -8482,7 +8482,7 @@ const _sfc_main = {
           let classname = e.split("class=")[1].replace(/'|"/g, "").split(" ");
           const btn = classname.filter((item) => /hover|focus/.test(item));
           if (btn.length > 1) {
-            classname = ["btn", "capitalize"];
+            classname = ["btn", "capitalize", "btn-primary"];
           }
           classname = classname.filter((item) => !/dark:/.test(item));
           classname = classname.map((item) => item.replace(/bg-white/, "bg-base-100"));
