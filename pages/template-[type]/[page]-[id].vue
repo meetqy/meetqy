@@ -34,13 +34,25 @@ for (let i = start; i <= count; i++) {
   });
 }
 
-const { data } = await useAsyncData("template-[type]", () =>
+const { data } = await useAsyncData(`template-${type}-${id}`, () =>
   useStrapi4().find(`posts/${id}`, {
     populate: ["fragments"],
   })
 );
-
-// console.log(data);
+// console.log(data.value);
 
 const post = computed(() => data.value.data.attributes);
+
+onMounted(() => {
+  console.log(post.value);
+  useHead({
+    titleTemplate: post.value.title,
+    meta: [
+      {
+        name: "description",
+        content: post.value.desciption,
+      },
+    ],
+  });
+});
 </script>

@@ -8024,10 +8024,22 @@ const _sfc_main$8 = {
         code: d.value
       });
     }
-    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("template-[type]", () => useStrapi4().find(`posts/${id}`, {
+    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`template-${type}-${id}`, () => useStrapi4().find(`posts/${id}`, {
       populate: ["fragments"]
     }))), __temp = await __temp, __restore(), __temp);
     const post = vue_cjs_prod.computed(() => data.value.data.attributes);
+    vue_cjs_prod.onMounted(() => {
+      console.log(post.value);
+      useHead({
+        titleTemplate: post.value.title,
+        meta: [
+          {
+            name: "description",
+            content: post.value.desciption
+          }
+        ]
+      });
+    });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Fragment = _sfc_main$s;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}>`);
