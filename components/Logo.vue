@@ -4,18 +4,20 @@
       class="flex items-center cursor-pointer logo"
       @click="$router.push('/')"
     >
-      <div
-        class="w-12 h-12 rounded-full transition-all flex items-center justify-center"
-      >
-        <W :size="30" class="fill-base-100" />
-      </div>
-      <div
-        class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full"
-      >
-        <span class="font-serif font-semibold text-neutral-content">
-          {{ cao }} <i v-if="props.showWeek">，</i>
-        </span>
-      </div>
+      <nuxt-link to="/" class="flex">
+        <div
+          class="w-12 h-12 rounded-full transition-all flex items-center justify-center"
+        >
+          <W :size="30" class="fill-base-100" />
+        </div>
+        <div
+          class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full"
+        >
+          <span class="font-serif font-semibold text-neutral-content">
+            {{ cao }} <i v-if="props.showWeek">，</i>
+          </span>
+        </div>
+      </nuxt-link>
     </div>
 
     <div class="inline-flex h-12 items-center text-xl" v-if="props.showWeek">

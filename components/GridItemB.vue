@@ -52,16 +52,11 @@
       </a>
       <div class="text-sm text-base-content text-opacity-60">
         <a href="javascript:;">
-          <span class="mr-1">{{
-            visit ||
-            Date.now().toString().split("").reverse().join("").substring(0, 4)
-          }}</span>
+          <span class="mr-1">{{ visit || 0 }}</span>
           <i class="iconfont" style="color: #e84e89">&#xe8f4;</i>
         </a>
         <a href="javascript:;" class="ml-4">
-          <span class="mr-1">{{
-            comment || Date.now().toString().substring(0, 3)
-          }}</span>
+          <span class="mr-1">{{ comment || 0 }}</span>
           <i class="iconfont" style="color: #e84e89">&#xe8b5;</i>
         </a>
       </div>

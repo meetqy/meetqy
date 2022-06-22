@@ -1,50 +1,6 @@
 <template>
   <NuxtLayout>
-    <div
-      class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
-      v-if="posts"
-    >
-      <div class="block" v-for="post in posts" :key="post.id">
-        <grid-item-a
-          v-if="getCategory(post).templateType === 'a'"
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :category="getCategory(post)"
-          :header-images="getHeaderImages(post)"
-          :to="post.attributes.to"
-        />
-
-        <grid-item-b
-          v-else
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :visit="post.attributes.visit"
-          :comment="post.attributes.comment"
-          :category="getCategory(post)"
-          :header-images="getHeaderImages(post)"
-          :id="post.id + ''"
-          :to="post.attributes.to"
-        />
-      </div>
-    </div>
-
-    <div class="paging md:py-10 py-5">
-      <a
-        href="javasciprt:;"
-        class="btn rounded-full btn-sm btn-info capitalize"
-      >
-        Prev
-      </a>
-      <span class="px-5 text-neutral-content">Page 1 of 2</span>
-      <a
-        href="javasciprt:;"
-        class="btn rounded-full btn-sm btn-info capitalize"
-      >
-        Next
-      </a>
-    </div>
+    <PostList :posts="posts" />
 
     <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
       <div>
@@ -63,22 +19,23 @@
       </div>
 
       <div>
-        <p class="bottom-title">Tag Cloud</p>
+        <p class="bottom-title">标签</p>
         <div class="flex mt-5 flex-wrap">
-          <a
-            href="javascript:;"
-            class="px-4 py-2 text-base-100 rounded-full mr-2 mb-4"
-            :class="item"
-            v-for="item in [
-              'bg-blue-400',
-              'bg-red-500',
-              'bg-yellow-500',
-              'bg-green-500',
-              'bg-orange-500',
-            ]"
+          <nuxt-link
+            :to="`/tag/${item.id}`"
+            class="btn btn-sm border-0 shadow-md capitalize mr-2 mb-4"
+            :style="{
+              color: item.attributes.color,
+              backgroundColor: item.attributes.bgColor,
+            }"
+            v-for="item in tags"
+            :key="item.id"
           >
-            Astronomy
-          </a>
+            {{ item.attributes.name }}
+            <span class="ml-1">
+              ({{ item.attributes.posts.data.length }})
+            </span>
+          </nuxt-link>
         </div>
       </div>
 
@@ -170,30 +127,29 @@
 </template>
 
 <script setup>
-useHead({
-  titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
-});
+// useHead({
+//   titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
+// });
 
-const { data } = await useAsyncData("posts", () =>
+const { data: postsRes } = await useAsyncData("posts", () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
     populate: ["category", "headerImages", "tags"],
+    pagination: {
+      page: 1,
+      pageSize: 15,
+    },
   })
 );
+const posts = computed(() => postsRes.value.data);
 
-const posts = computed(() => data.value.data);
-
-const getCategory = (post) => {
-  return post.attributes.category.data.attributes;
-};
-
-const getHeaderImages = (post) => {
-  if (post.attributes.headerImages.data) {
-    return post.attributes.headerImages.data.map((item) => item.attributes.url);
-  } else {
-    return [];
-  }
-};
+const { data: tagsRes } = await useAsyncData("tags", () =>
+  useStrapi4().find("tags", {
+    publicationState: useIsProducton() ? "live" : "preview",
+    populate: ["posts"],
+  })
+);
+const tags = computed(() => tagsRes.value.data);
 </script>
 
 <style lang="postcss" scoped>
@@ -222,20 +178,5 @@ const getHeaderImages = (post) => {
   > span {
     @apply mb-2 mr-2;
   }
-}
-
-.multi-columns {
-  column-gap: 40px;
-
-  .block {
-    display: block;
-    word-wrap: break-word;
-    padding: 30px 0;
-    page-break-inside: avoid;
-  }
-}
-
-.paging {
-  @apply text-base-100 flex justify-center items-center;
 }
 </style>

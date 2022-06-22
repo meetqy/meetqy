@@ -1,0 +1,1 @@
+import{_ as t,o,a,b as _,d as n,i as c}from"./entry-a6c350cd.mjs";const s={},r=c(" 123132 ");function d(f,u){const e=n;return o(),a(e,{name:"default"},{default:_(()=>[r]),_:1})}var i=t(s,[["render",d]]);export{i as default};
