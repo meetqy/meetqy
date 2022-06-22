@@ -7,7 +7,7 @@
     </span>
 
     <ul
-      class="menu text-base-content menu-horizontal rounded-box md:flex hidden"
+      class="menu text-neutral-content menu-horizontal rounded-box md:flex hidden"
     >
       <li v-for="item in navs" :key="item.name">
         <nuxt-link :to="item.url">

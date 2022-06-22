@@ -37,7 +37,7 @@
       >
         Prev
       </a>
-      <span class="px-5 text-base-content">Page 1 of 2</span>
+      <span class="px-5 text-neutral-content">Page 1 of 2</span>
       <a
         href="javasciprt:;"
         class="btn rounded-full btn-sm btn-info capitalize"
@@ -87,26 +87,26 @@
         <div class="mt-5">
           <div class="flex">
             <img
-              class="w-24 h-24 rounded-full border-4 border-cyan-500"
+              class="w-24 h-24 rounded-full border-4 border-info"
               src="/avatar.jpg"
               alt="meetqy"
             />
             <div class="ml-5 flex flex-col justify-center">
-              <p class="text-lg font-semibold text-base-content">
-                meetqy
+              <p class="text-neutral-content">
+                <span class="text-xl font-semibold">meetqy</span>
                 <sup
-                  class="inline-block line-through decoration-error decoration-2"
+                  class="inline-block line-through decoration-error decoration-2 relative -top-3"
                 >
                   都{{ new Date().getFullYear() - 1996 }}了
                 </sup>
               </p>
-              <p class="text-base-content text-sm my-1">
+              <p class="text-neutral-content text-opacity-80 text-sm my-1">
                 前端CV工程师 - 擅长CV大法
               </p>
             </div>
           </div>
 
-          <p class="text-base-content mt-5">
+          <p class="text-neutral-content mt-5">
             摸鱼、养狗、干饭、找模板、写模板，生活就是如此的朴实无华！
           </p>
           <p class="mt-4 about">
@@ -207,7 +207,7 @@ const getHeaderImages = (post) => {
   }
 
   .bottom-title {
-    @apply text-base-content font-semibold border-b border-base-100 border-opacity-20 pb-5 text-2xl;
+    @apply text-neutral-content font-semibold border-b border-neutral-content border-opacity-20  pb-5 text-2xl;
   }
 
   ul {
