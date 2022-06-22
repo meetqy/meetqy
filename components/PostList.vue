@@ -37,7 +37,9 @@
       >
         Prev
       </a>
-      <span class="px-5 text-neutral-content">Page 1 of 2</span>
+      <span class="px-5 text-neutral-content">
+        {{ pagination.page }} / {{ pagination.pageCount }}
+      </span>
       <a
         href="javasciprt:;"
         class="btn rounded-full btn-sm btn-info capitalize"
@@ -51,6 +53,7 @@
 <script setup>
 const props = defineProps({
   posts: Array,
+  pagination: Object,
 });
 
 const getCategory = (post) => {

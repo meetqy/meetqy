@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <PostList :posts="posts" />
+    <PostList :posts="posts" :pagination="postsRes.meta.pagination" />
 
     <div class="bottom-aside lg:grid-cols-3 md:grid-cols-2">
       <div>
@@ -21,21 +21,23 @@
       <div>
         <p class="bottom-title">标签</p>
         <div class="flex mt-5 flex-wrap">
-          <nuxt-link
-            :to="`/tag/${item.id}`"
-            class="btn btn-sm border-0 shadow-md capitalize mr-2 mb-4"
-            :style="{
-              color: item.attributes.color,
-              backgroundColor: item.attributes.bgColor,
-            }"
-            v-for="item in tags"
-            :key="item.id"
-          >
-            {{ item.attributes.name }}
-            <span class="ml-1">
-              ({{ item.attributes.posts.data.length }})
-            </span>
-          </nuxt-link>
+          <template v-for="item in tags">
+            <nuxt-link
+              :to="`/tag/${item.id}`"
+              class="btn btn-sm border-0 shadow-md capitalize mr-2 mb-4"
+              v-if="item.attributes.posts.data.length > 0"
+              :style="{
+                color: item.attributes.color,
+                backgroundColor: item.attributes.bgColor,
+              }"
+              :key="item.id"
+            >
+              {{ item.attributes.name }}
+              <span class="ml-1">
+                ({{ item.attributes.posts.data.length }})
+              </span>
+            </nuxt-link>
+          </template>
         </div>
       </div>
 
@@ -127,9 +129,9 @@
 </template>
 
 <script setup>
-// useHead({
-//   titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
-// });
+useHead({
+  titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
+});
 
 const { data: postsRes } = await useAsyncData("posts", () =>
   useStrapi4().find("posts", {
@@ -141,6 +143,7 @@ const { data: postsRes } = await useAsyncData("posts", () =>
     },
   })
 );
+
 const posts = computed(() => postsRes.value.data);
 
 const { data: tagsRes } = await useAsyncData("tags", () =>

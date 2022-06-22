@@ -8,7 +8,7 @@
           }}</a>
         </div>
       </div>
-      <PostList :posts="posts" />
+      <PostList :posts="posts" :pagination="postsRes.meta.pagination" />
     </div>
   </NuxtLayout>
 </template>
@@ -42,4 +42,10 @@ const tag = computed(
     posts.value[0].attributes.tags.data.filter((item) => item.id === +id)[0]
       .attributes
 );
+
+onMounted(() => {
+  useHead({
+    titleTemplate: `标签-${tag.value.name}`,
+  });
+});
 </script>
