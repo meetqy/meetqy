@@ -5782,20 +5782,20 @@ const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const { cao, week } = useTitle();
     return (_ctx, _push, _parent, _attrs) => {
       const _component_W = _sfc_main$u;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "flex items-end" }, _attrs))} data-v-8d0983d6><div class="flex items-center cursor-pointer logo" data-v-8d0983d6><div class="w-12 h-12 rounded-full transition-all flex items-center justify-center" data-v-8d0983d6>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "flex items-end" }, _attrs))} data-v-0c6ccc3b><div class="flex items-center cursor-pointer logo" data-v-0c6ccc3b><div class="w-12 h-12 rounded-full transition-all flex items-center justify-center" data-v-0c6ccc3b>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_W, {
         size: 30,
         class: "fill-base-100"
       }, null, _parent));
-      _push(`</div><div class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full" data-v-8d0983d6><span class="font-serif font-semibold text-base-content" data-v-8d0983d6>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(cao))} `);
+      _push(`</div><div class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full" data-v-0c6ccc3b><span class="font-serif font-semibold text-neutral-content" data-v-0c6ccc3b>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(cao))} `);
       if (props.showWeek) {
-        _push(`<i data-v-8d0983d6>\uFF0C</i>`);
+        _push(`<i data-v-0c6ccc3b>\uFF0C</i>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</span></div></div>`);
       if (props.showWeek) {
-        _push(`<div class="inline-flex h-12 items-center text-2xl" data-v-8d0983d6><span class="text-info" data-v-8d0983d6>\u4ECA\u5929\u661F\u671F${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(week))}</span></div>`);
+        _push(`<div class="inline-flex h-12 items-center text-xl" data-v-0c6ccc3b><span class="text-info" data-v-0c6ccc3b>\u4ECA\u5929\u661F\u671F${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(week))}</span></div>`);
       } else {
         _push(`<!---->`);
       }
@@ -5809,7 +5809,7 @@ _sfc_main$t.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Logo.vue");
   return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-8d0983d6"]]);
+const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-0c6ccc3b"]]);
 const meta$b = void 0;
 const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Fragment",
@@ -7386,7 +7386,7 @@ const _sfc_main$e = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       _push(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent));
       _push(`<span class="text-base-100 underline">`);
       serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
-      _push(`</span><ul class="menu text-base-content menu-horizontal rounded-box md:flex hidden"><!--[-->`);
+      _push(`</span><ul class="menu text-neutral-content menu-horizontal rounded-box md:flex hidden"><!--[-->`);
       serverRenderer.exports.ssrRenderList(navs, (item) => {
         _push(`<li>`);
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
@@ -7452,7 +7452,7 @@ const _sfc_main$d = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         style: __props.showLogo ? null : { display: "none" },
         "show-week": false
       }, null, _parent));
-      _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "mt-4": __props.showLogo }, "text-base-content text-opacity-70 text-sm"])}"> Copyright \xA9 2022 wcao.cc <span class="mx-2 text-base-200">|</span><span>\u8FD0\u884C: ${serverRenderer.exports.ssrInterpolate(time.value)}</span></p></footer>`);
+      _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "mt-4": __props.showLogo }, "text-neutral-content text-sm"])}"> Copyright \xA9 2022 wcao.cc <span class="mx-2 text-neutral-content text-opacity-20">|</span><span>\u8FD0\u884C: ${serverRenderer.exports.ssrInterpolate(time.value)}</span></p></footer>`);
     };
   }
 });
@@ -7565,9 +7565,9 @@ const _sfc_main$a = {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             if (vue_cjs_prod.unref(posts)) {
-              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-2c760f86${_scopeId}><!--[-->`);
+              _push2(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-7ba344bd${_scopeId}><!--[-->`);
               serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(posts), (post) => {
-                _push2(`<div class="block" data-v-2c760f86${_scopeId}>`);
+                _push2(`<div class="block" data-v-7ba344bd${_scopeId}>`);
                 if (getCategory(post).templateType === "a") {
                   _push2(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
                     title: post.attributes.title,
@@ -7596,11 +7596,11 @@ const _sfc_main$a = {
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="paging md:py-10 py-5" data-v-2c760f86${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-sm btn-info capitalize" data-v-2c760f86${_scopeId}> Prev </a><span class="px-5 text-base-content" data-v-2c760f86${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-sm btn-info capitalize" data-v-2c760f86${_scopeId}> Next </a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-2c760f86${_scopeId}><div data-v-2c760f86${_scopeId}><p class="bottom-title" data-v-2c760f86${_scopeId}>Recent posts</p><ul data-v-2c760f86${_scopeId}><!--[-->`);
+            _push2(`<div class="paging md:py-10 py-5" data-v-7ba344bd${_scopeId}><a href="javasciprt:;" class="btn rounded-full btn-sm btn-info capitalize" data-v-7ba344bd${_scopeId}> Prev </a><span class="px-5 text-neutral-content" data-v-7ba344bd${_scopeId}>Page 1 of 2</span><a href="javasciprt:;" class="btn rounded-full btn-sm btn-info capitalize" data-v-7ba344bd${_scopeId}> Next </a></div><div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-7ba344bd${_scopeId}><div data-v-7ba344bd${_scopeId}><p class="bottom-title" data-v-7ba344bd${_scopeId}>Recent posts</p><ul data-v-7ba344bd${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(3, (item) => {
-              _push2(`<li class="flex mt-5" data-v-2c760f86${_scopeId}><img${serverRenderer.exports.ssrRenderAttr("src", "https://wcao.cc/r/a/avatar?" + item)} alt="" data-v-2c760f86${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-2c760f86${_scopeId}><span class="text-md text-base-content" data-v-2c760f86${_scopeId}> June 5, 2019 </span><p class="text-xl text-base-300" data-v-2c760f86${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
+              _push2(`<li class="flex mt-5" data-v-7ba344bd${_scopeId}><img${serverRenderer.exports.ssrRenderAttr("src", "https://wcao.cc/r/a/avatar?" + item)} alt="" data-v-7ba344bd${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-7ba344bd${_scopeId}><span class="text-md text-base-content" data-v-7ba344bd${_scopeId}> June 5, 2019 </span><p class="text-xl text-base-300" data-v-7ba344bd${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
             });
-            _push2(`<!--]--></ul></div><div data-v-2c760f86${_scopeId}><p class="bottom-title" data-v-2c760f86${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-2c760f86${_scopeId}><!--[-->`);
+            _push2(`<!--]--></ul></div><div data-v-7ba344bd${_scopeId}><p class="bottom-title" data-v-7ba344bd${_scopeId}>Tag Cloud</p><div class="flex mt-5 flex-wrap" data-v-7ba344bd${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList([
               "bg-blue-400",
               "bg-red-500",
@@ -7608,9 +7608,9 @@ const _sfc_main$a = {
               "bg-green-500",
               "bg-orange-500"
             ], (item) => {
-              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-2c760f86${_scopeId}> Astronomy </a>`);
+              _push2(`<a href="javascript:;" class="${serverRenderer.exports.ssrRenderClass([item, "px-4 py-2 text-base-100 rounded-full mr-2 mb-4"])}" data-v-7ba344bd${_scopeId}> Astronomy </a>`);
             });
-            _push2(`<!--]--></div></div><div data-v-2c760f86${_scopeId}><p class="bottom-title" data-v-2c760f86${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-2c760f86${_scopeId}><div class="flex" data-v-2c760f86${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-cyan-500"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-2c760f86${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-2c760f86${_scopeId}><p class="text-lg font-semibold text-base-content" data-v-2c760f86${_scopeId}> meetqy <sup class="inline-block line-through decoration-error decoration-2" data-v-2c760f86${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-base-content text-sm my-1" data-v-2c760f86${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-base-content mt-5" data-v-2c760f86${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-2c760f86${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-2c760f86${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-2c760f86${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-2c760f86${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-2c760f86${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-2c760f86${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-2c760f86${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-2c760f86${_scopeId}> CSS </span></p></div></div></div>`);
+            _push2(`<!--]--></div></div><div data-v-7ba344bd${_scopeId}><p class="bottom-title" data-v-7ba344bd${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-7ba344bd${_scopeId}><div class="flex" data-v-7ba344bd${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-info"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-7ba344bd${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-7ba344bd${_scopeId}><p class="text-neutral-content" data-v-7ba344bd${_scopeId}><span class="text-xl font-semibold" data-v-7ba344bd${_scopeId}>meetqy</span><sup class="inline-block line-through decoration-error decoration-2 relative -top-3" data-v-7ba344bd${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-neutral-content text-opacity-80 text-sm my-1" data-v-7ba344bd${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-neutral-content mt-5" data-v-7ba344bd${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-7ba344bd${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-7ba344bd${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-7ba344bd${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-7ba344bd${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-7ba344bd${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-7ba344bd${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-7ba344bd${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-7ba344bd${_scopeId}> CSS </span></p></div></div></div>`);
           } else {
             return [
               vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
@@ -7650,7 +7650,7 @@ const _sfc_main$a = {
                   href: "javasciprt:;",
                   class: "btn rounded-full btn-sm btn-info capitalize"
                 }, " Prev "),
-                vue_cjs_prod.createVNode("span", { class: "px-5 text-base-content" }, "Page 1 of 2"),
+                vue_cjs_prod.createVNode("span", { class: "px-5 text-neutral-content" }, "Page 1 of 2"),
                 vue_cjs_prod.createVNode("a", {
                   href: "javasciprt:;",
                   class: "btn rounded-full btn-sm btn-info capitalize"
@@ -7696,19 +7696,19 @@ const _sfc_main$a = {
                   vue_cjs_prod.createVNode("div", { class: "mt-5" }, [
                     vue_cjs_prod.createVNode("div", { class: "flex" }, [
                       vue_cjs_prod.createVNode("img", {
-                        class: "w-24 h-24 rounded-full border-4 border-cyan-500",
+                        class: "w-24 h-24 rounded-full border-4 border-info",
                         src: _imports_0,
                         alt: "meetqy"
                       }),
                       vue_cjs_prod.createVNode("div", { class: "ml-5 flex flex-col justify-center" }, [
-                        vue_cjs_prod.createVNode("p", { class: "text-lg font-semibold text-base-content" }, [
-                          vue_cjs_prod.createTextVNode(" meetqy "),
-                          vue_cjs_prod.createVNode("sup", { class: "inline-block line-through decoration-error decoration-2" }, " \u90FD" + vue_cjs_prod.toDisplayString(new Date().getFullYear() - 1996) + "\u4E86 ", 1)
+                        vue_cjs_prod.createVNode("p", { class: "text-neutral-content" }, [
+                          vue_cjs_prod.createVNode("span", { class: "text-xl font-semibold" }, "meetqy"),
+                          vue_cjs_prod.createVNode("sup", { class: "inline-block line-through decoration-error decoration-2 relative -top-3" }, " \u90FD" + vue_cjs_prod.toDisplayString(new Date().getFullYear() - 1996) + "\u4E86 ", 1)
                         ]),
-                        vue_cjs_prod.createVNode("p", { class: "text-base-content text-sm my-1" }, " \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 ")
+                        vue_cjs_prod.createVNode("p", { class: "text-neutral-content text-opacity-80 text-sm my-1" }, " \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 ")
                       ])
                     ]),
-                    vue_cjs_prod.createVNode("p", { class: "text-base-content mt-5" }, " \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 "),
+                    vue_cjs_prod.createVNode("p", { class: "text-neutral-content mt-5" }, " \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 "),
                     vue_cjs_prod.createVNode("p", { class: "mt-4 about" }, [
                       vue_cjs_prod.createVNode("span", {
                         class: "badge badge-lg border-0 uppercase shadow text-black",
@@ -7756,7 +7756,7 @@ _sfc_main$a.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
 };
-const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-2c760f86"]]);
+const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-7ba344bd"]]);
 const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$6
