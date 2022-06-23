@@ -5837,7 +5837,7 @@ _sfc_main$v.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
-const version = "0.0.6";
+const version = "0.0.7";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev",
@@ -5848,8 +5848,7 @@ const scripts = {
 const devDependencies = {
   "@nuxtjs/tailwindcss": "^5.1.2",
   nuxt: "^3.0.0-rc.4",
-  "postcss-color-gray": "^5.0.0",
-  sitemap: "^7.1.1"
+  "postcss-color-gray": "^5.0.0"
 };
 const dependencies = {
   "@nuxtjs/strapi": "^1.3.2",

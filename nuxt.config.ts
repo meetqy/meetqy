@@ -2,14 +2,10 @@ import { defineNuxtConfig } from "nuxt";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi", "~/modules/sitemap"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi"],
   strapi: {
     entities: ["tag"],
     url: "https://wcao.cc/strapi",
-  },
-
-  sitemap: {
-    hostname: "https://wcao.cc",
   },
 
   autoImports: {
