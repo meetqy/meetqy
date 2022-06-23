@@ -5372,7 +5372,7 @@ const Components = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePr
   Html,
   Body
 }, Symbol.toStringTag, { value: "Module" }));
-const metaConfig = { "globalMeta": { "charset": "utf-8", "viewport": "width=device-width, initial-scale=1", "meta": [{ "name": "keywords", "content": "web\u524D\u7AEF,flutter,uniapp,\u6A21\u677F,template,flutter,\u524D\u7AEF\u5DE5\u5177,blog" }, { "name": "description", "content": "\u6536\u96C6\u7684\u591A\u4E3B\u9898\u6A21\u677F\uFF0C\u6A21\u677F\u3001\u524D\u7AEF\u76F8\u5173\u5728\u7EBF\u5DE5\u5177 - \u5367\u69FD(wo ca\xF2)" }, { "name": "theme-color", "content": "#6d327c" }], "link": [], "style": [], "script": [] } };
+const metaConfig = { "globalMeta": { "charset": "utf-8", "viewport": "width=device-width, initial-scale=1", "meta": [{ "name": "keywords", "content": "web\u524D\u7AEF,flutter,uniapp,\u6A21\u677F,template,flutter,\u524D\u7AEF\u5DE5\u5177,blog" }, { "name": "description", "content": "\u6536\u96C6\u7684\u591A\u4E3B\u9898\u6A21\u677F\uFF0C\u6A21\u677F\u3001\u524D\u7AEF\u76F8\u5173\u5728\u7EBF\u5DE5\u5177 - \u5367\u69FD(wo ca\xF2)" }, { "name": "viewport", "content": "width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" }], "link": [], "style": [], "script": [] } };
 const metaMixin = {
   created() {
     const instance = vue_cjs_prod.getCurrentInstance();
@@ -5502,7 +5502,7 @@ const useTitle = () => {
     day
   };
 };
-const startTime = new Date("2022-5-25 22:11:23").getTime();
+const startTime = new Date("2022/5/25 22:11:23").getTime();
 const _sfc_main$y = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemA",
   __ssrInlineRender: true,
@@ -5900,21 +5900,21 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2;
       const _component_W = _sfc_main$v;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "flex items-end" }, _attrs))} data-v-fd2af2b2><div class="flex items-center cursor-pointer logo" data-v-fd2af2b2>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "flex items-end" }, _attrs))} data-v-1395e552><div class="flex items-center cursor-pointer logo" data-v-1395e552>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: "/",
         class: "flex"
       }, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="w-12 h-12 rounded-full transition-all flex items-center justify-center" data-v-fd2af2b2${_scopeId}>`);
+            _push2(`<div class="w-12 h-12 rounded-full transition-all flex items-center justify-center" data-v-1395e552${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_W, {
               size: 30,
               class: "fill-base-100"
             }, null, _parent2, _scopeId));
-            _push2(`</div><div class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full" data-v-fd2af2b2${_scopeId}><span class="font-serif font-semibold text-neutral-content" data-v-fd2af2b2${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(cao))} `);
+            _push2(`</div><div class="h-12 text-2xl uppercase inline-flex items-center px-2 rounded-full" data-v-1395e552${_scopeId}><span class="font-serif font-semibold text-neutral-content" data-v-1395e552${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(cao))} `);
             if (props.showWeek) {
-              _push2(`<i data-v-fd2af2b2${_scopeId}>\uFF0C</i>`);
+              _push2(`<i data-v-1395e552${_scopeId}>\uFF0C</i>`);
             } else {
               _push2(`<!---->`);
             }
@@ -5940,9 +5940,9 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       }, _parent));
       _push(`</div>`);
       if (props.showWeek) {
-        _push(`<div class="inline-flex h-12 items-center text-xl" data-v-fd2af2b2><span class="text-info" data-v-fd2af2b2>\u4ECA\u5929\u661F\u671F${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(week))}</span><div class="dropdown dropdown-end" data-v-fd2af2b2><label tabindex="0" class="btn btn-circle btn-ghost text-neutral-content btn-xs relative -top-4" data-v-fd2af2b2><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current" data-v-fd2af2b2><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" data-v-fd2af2b2></path></svg></label><div tabindex="0" class="card compact dropdown-content shadow bg-base-100 rounded-box w-72" data-v-fd2af2b2><div class="card-body" data-v-fd2af2b2><h6 class="card-title mb-2" data-v-fd2af2b2>\u7F51\u7AD9\u57FA\u672C\u4FE1\u606F</h6><!--[-->`);
+        _push(`<div class="inline-flex h-12 items-center text-xl" data-v-1395e552><span class="text-info" data-v-1395e552>\u4ECA\u5929\u661F\u671F${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(week))}</span><div class="dropdown dropdown-end" data-v-1395e552><label tabindex="0" class="btn btn-circle btn-ghost text-neutral-content btn-xs" data-v-1395e552><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 xl:w-4 xl:h-4 stroke-current" data-v-1395e552><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" data-v-1395e552></path></svg></label><div tabindex="0" class="card z-50 compact dropdown-content shadow bg-base-100 rounded-box w-72" data-v-1395e552><div class="card-body" data-v-1395e552><h6 class="card-title mb-2" data-v-1395e552>\u7F51\u7AD9\u57FA\u672C\u4FE1\u606F</h6><!--[-->`);
         serverRenderer.exports.ssrRenderList(websiteInfo.value, (item, index2) => {
-          _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "border-b": index2 < websiteInfo.value.length - 1 }, "flex justify-between items-center border-base-200 pb-2"])}" data-v-fd2af2b2><span class="capitalize" data-v-fd2af2b2>${serverRenderer.exports.ssrInterpolate(item.name)}</span><span class="${serverRenderer.exports.ssrRenderClass([{ badge: item.badge }, "capitalize"])}" data-v-fd2af2b2>${serverRenderer.exports.ssrInterpolate(item.val)}</span></p>`);
+          _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "border-b": index2 < websiteInfo.value.length - 1 }, "flex justify-between items-center border-base-200 pb-2"])}" data-v-1395e552><span class="capitalize" data-v-1395e552>${serverRenderer.exports.ssrInterpolate(item.name)}</span><span class="${serverRenderer.exports.ssrRenderClass([{ badge: item.badge }, "capitalize"])}" data-v-1395e552>${serverRenderer.exports.ssrInterpolate(item.val)}</span></p>`);
         });
         _push(`<!--]--></div></div></div></div>`);
       } else {
@@ -5958,7 +5958,7 @@ _sfc_main$u.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Logo.vue");
   return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["__scopeId", "data-v-fd2af2b2"]]);
+const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["__scopeId", "data-v-1395e552"]]);
 const meta$c = void 0;
 const meta$b = void 0;
 const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
@@ -7608,12 +7608,14 @@ const _sfc_main$e = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Logo = __nuxt_component_1;
-      _push(`<footer${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: __props.class }, _attrs))}>`);
+      _push(`<footer${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
+        class: [__props.class, "py-8"]
+      }, _attrs))}>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_Logo, {
         style: __props.showLogo ? null : { display: "none" },
         "show-week": false
       }, null, _parent));
-      _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "mt-4": __props.showLogo }, "text-neutral-content text-sm"])}"> Copyright \xA9 2022 wcao.cc <span class="mx-2 text-neutral-content text-opacity-20">|</span><span>\u8FD0\u884C: ${serverRenderer.exports.ssrInterpolate(time.value)}</span></p></footer>`);
+      _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "mt-4": __props.showLogo }, "text-neutral-content text-sm flex flex-col-reverse justify-center items-center"])}"><span>Copyright \xA9 2022 wcao.cc</span><span class="mx-2 text-neutral-content text-opacity-20 hidden xl:inline-block">|</span><span>\u8FD0\u884C: ${serverRenderer.exports.ssrInterpolate(time.value)}</span></p></footer>`);
     };
   }
 });
@@ -7638,7 +7640,7 @@ const _sfc_main$d = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         id: "container",
         ref_key: "el",
         ref: el
-      }, _attrs))}><div class="container lg:max-w-full xl:container mx-auto p-6">`);
+      }, _attrs))}><div class="container lg:max-w-full xl:container mx-auto px-3">`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_Header, { class: "border-b-2 border-base-100 border-opacity-25 py-8" }, null, _parent));
       _push(`<main class="w-full">`);
       serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
