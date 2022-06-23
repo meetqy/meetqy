@@ -25,13 +25,13 @@
       <div class="dropdown dropdown-end">
         <label
           tabindex="0"
-          class="btn btn-circle btn-ghost text-neutral-content btn-xs relative -top-4"
+          class="btn btn-circle btn-ghost text-neutral-content btn-xs"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="w-4 h-4 stroke-current"
+            class="w-6 h-6 xl:w-4 xl:h-4 stroke-current"
           >
             <path
               stroke-linecap="round"
@@ -43,7 +43,7 @@
         </label>
         <div
           tabindex="0"
-          class="card compact dropdown-content shadow bg-base-100 rounded-box w-72"
+          class="card z-50 compact dropdown-content shadow bg-base-100 rounded-box w-72"
         >
           <div class="card-body">
             <h6 class="card-title mb-2">网站基本信息</h6>

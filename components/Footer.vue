@@ -1,9 +1,15 @@
 <template>
-  <footer :class="class">
+  <footer :class="class" class="py-8">
     <Logo v-show="showLogo" :show-week="false" />
-    <p class="text-neutral-content text-sm" :class="{ 'mt-4': showLogo }">
-      Copyright © 2022 wcao.cc
-      <span class="mx-2 text-neutral-content text-opacity-20">|</span>
+    <p
+      class="text-neutral-content text-sm flex flex-col-reverse justify-center items-center"
+      :class="{ 'mt-4': showLogo }"
+    >
+      <span>Copyright © 2022 wcao.cc</span>
+      <span
+        class="mx-2 text-neutral-content text-opacity-20 hidden xl:inline-block"
+        >|</span
+      >
       <span>运行: {{ time }}</span>
     </p>
   </footer>

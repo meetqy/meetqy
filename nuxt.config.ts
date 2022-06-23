@@ -30,8 +30,9 @@ export default defineNuxtConfig({
           content: "收集的多主题模板，模板、前端相关在线工具 - 卧槽(wo caò)",
         },
         {
-          name: "theme-color",
-          content: "#6d327c",
+          name: "viewport",
+          content:
+            "width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0",
         },
       ],
     },

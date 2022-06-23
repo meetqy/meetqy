@@ -24,4 +24,4 @@ export const useTitle = () => {
   };
 };
 
-export const startTime = new Date("2022-5-25 22:11:23").getTime();
+export const startTime = new Date("2022/5/25 22:11:23").getTime();
