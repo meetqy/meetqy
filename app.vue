@@ -10,10 +10,17 @@
 onMounted(() => {
   const appHeight = () => {
     const doc = document.documentElement;
-    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+    doc.style.setProperty(
+      "--app-height",
+      `${document.documentElement.clientHeight}px`
+    );
   };
   window.addEventListener("resize", appHeight);
   appHeight();
+
+  window.addEventListener("orientationchange", () => {
+    window.location.reload();
+  });
 });
 </script>
 

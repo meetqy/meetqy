@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3"
+      class="multi-columns pt-5 md:pt-10 md:columns-2 columns-1 xl:columns-3"
       v-if="props.posts"
     >
       <div class="block" v-for="post in props.posts" :key="post.id">

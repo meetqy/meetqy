@@ -7,13 +7,16 @@
           'top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 ',
         ]"
       >
-        <section class="w-full lg:pr-10 my-5" :class="{ hidden: !asideFixed }">
+        <section
+          class="w-full xl:pr-10 pr-4 my-5"
+          :class="{ hidden: !asideFixed }"
+        >
           <div class="p-2 h-min rounded-box">
             <Logo />
           </div>
         </section>
 
-        <section class="w-full lg:pr-10 mt-5">
+        <section class="w-full xl:pr-10 pr-4 xl:mt-5">
           <ul
             class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"
           >

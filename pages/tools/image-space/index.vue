@@ -8,14 +8,19 @@
           'top-0 w-96 max-h-screen hidden lg:flex flex-col z-10 ',
         ]"
       >
-        <section class="w-full lg:pr-10 my-5" :class="{ hidden: !asideFixed }">
+        <section
+          class="w-full xl:pr-10 pr-5 my-5"
+          :class="{ hidden: !asideFixed }"
+        >
           <div class="p-2 h-min rounded-box">
             <Logo />
           </div>
         </section>
 
-        <section class="w-full lg:pr-10">
-          <ul class="menu bg-base-100 p-2 w-full h-min rounded-box">
+        <section class="w-full xl:pr-10 pr-4">
+          <ul
+            class="menu bg-base-100 p-2 w-full rounded-box overflow-y-scroll h-96 scrollbar"
+          >
             <li class="menu-title py-2">
               <span>Type</span>
             </li>
@@ -71,7 +76,10 @@
             <img
               v-for="num in 4"
               class="w-48 rounded-md my-0"
-              :src="`https://wcao.cc/image-space/api/${item.name}?${num}`"
+              v-lazy="{
+                src: `https://wcao.cc/image-space/api/${item.name}?${num}`,
+                loading: '/loading.gif',
+              }"
             />
           </div>
 

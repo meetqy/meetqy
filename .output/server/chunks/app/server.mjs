@@ -38,7 +38,7 @@ import 'url';
  * Released on: December 13, 2021
  */
 /* eslint-disable no-param-reassign */
-function isObject$2(obj) {
+function isObject$3(obj) {
     return (obj !== null &&
         typeof obj === 'object' &&
         'constructor' in obj &&
@@ -48,8 +48,8 @@ function extend$1(target = {}, src = {}) {
     Object.keys(src).forEach((key) => {
         if (typeof target[key] === 'undefined')
             target[key] = src[key];
-        else if (isObject$2(src[key]) &&
-            isObject$2(target[key]) &&
+        else if (isObject$3(src[key]) &&
+            isObject$3(target[key]) &&
             Object.keys(src[key]).length > 0) {
             extend$1(target[key], src[key]);
         }
@@ -706,7 +706,7 @@ function is(selector) {
   return false;
 }
 
-function index$8() {
+function index$9() {
   let child = this[0];
   let i;
 
@@ -975,7 +975,7 @@ const Methods = {
   html,
   text,
   is,
-  index: index$8,
+  index: index$9,
   eq,
   append,
   prepend,
@@ -1205,6 +1205,239 @@ function Navigation(_ref) {
     destroy
   });
 }
+
+var LifecycleEnum = /* @__PURE__ */ ((LifecycleEnum2) => {
+  LifecycleEnum2["LOADING"] = "loading";
+  LifecycleEnum2["LOADED"] = "loaded";
+  LifecycleEnum2["ERROR"] = "error";
+  return LifecycleEnum2;
+})(LifecycleEnum || {});
+const hasIntersectionObserver = checkIntersectionObserver();
+const isEnumerable = Object.prototype.propertyIsEnumerable;
+const getSymbols = Object.getOwnPropertySymbols;
+function isObject$2(val) {
+  return typeof val === "function" || toString.call(val) === "[object Object]";
+}
+function isPrimitive(val) {
+  return typeof val === "object" ? val === null : typeof val !== "function";
+}
+function isValidKey(key) {
+  return key !== "__proto__" && key !== "constructor" && key !== "prototype";
+}
+function checkIntersectionObserver() {
+  return false;
+}
+function assignSymbols(target, ...args) {
+  if (!isObject$2(target))
+    throw new TypeError("expected the first argument to be an object");
+  if (args.length === 0 || typeof Symbol !== "function" || typeof getSymbols !== "function")
+    return target;
+  for (const arg of args) {
+    const names = getSymbols(arg);
+    for (const key of names) {
+      if (isEnumerable.call(arg, key))
+        target[key] = arg[key];
+    }
+  }
+  return target;
+}
+function assign(target, ...args) {
+  let i = 0;
+  if (isPrimitive(target))
+    target = args[i++];
+  if (!target)
+    target = {};
+  for (; i < args.length; i++) {
+    if (isObject$2(args[i])) {
+      for (const key of Object.keys(args[i])) {
+        if (isValidKey(key)) {
+          if (isObject$2(target[key]) && isObject$2(args[i][key]))
+            assign(target[key], args[i][key]);
+          else
+            target[key] = args[i][key];
+        }
+      }
+      assignSymbols(target, args[i]);
+    }
+  }
+  return target;
+}
+
+const DEFAULT_LOADING = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+const DEFAULT_ERROR = "";
+
+const DEFAULT_OBSERVER_OPTIONS = {
+  rootMargin: "0px",
+  threshold: 0
+};
+const TIMEOUT_ID_DATA_ATTR = "data-lazy-timeout-id";
+class Lazy {
+  constructor(options) {
+    this.options = {
+      loading: DEFAULT_LOADING,
+      error: DEFAULT_ERROR,
+      observerOptions: DEFAULT_OBSERVER_OPTIONS,
+      log: true,
+      lifecycle: {}
+    };
+    this._images = /* @__PURE__ */ new WeakMap();
+    this.config(options);
+  }
+  config(options = {}) {
+    assign(this.options, options);
+  }
+  mount(el, binding) {
+    if (!el)
+      return;
+    const { src, loading, error, lifecycle, delay } = this._valueFormatter(typeof binding === "string" ? binding : binding.value);
+    this._lifecycle(LifecycleEnum.LOADING, lifecycle, el);
+    el.setAttribute("src", loading || DEFAULT_LOADING);
+    if (!hasIntersectionObserver) {
+      this.loadImages(el, src, error, lifecycle);
+      this._log(() => {
+        throw new Error("Not support IntersectionObserver!");
+      });
+    }
+    this._initIntersectionObserver(el, src, error, lifecycle, delay);
+  }
+  update(el, binding) {
+    if (!el)
+      return;
+    this._realObserver(el)?.unobserve(el);
+    const { src, error, lifecycle, delay } = this._valueFormatter(typeof binding === "string" ? binding : binding.value);
+    this._initIntersectionObserver(el, src, error, lifecycle, delay);
+  }
+  unmount(el) {
+    if (!el)
+      return;
+    this._realObserver(el)?.unobserve(el);
+    this._images.delete(el);
+  }
+  loadImages(el, src, error, lifecycle) {
+    this._setImageSrc(el, src, error, lifecycle);
+  }
+  _setImageSrc(el, src, error, lifecycle) {
+    if (el.tagName.toLowerCase() === "img") {
+      if (src) {
+        const preSrc = el.getAttribute("src");
+        if (preSrc !== src)
+          el.setAttribute("src", src);
+      }
+      this._listenImageStatus(el, () => {
+        this._lifecycle(LifecycleEnum.LOADED, lifecycle, el);
+      }, () => {
+        el.onload = null;
+        this._lifecycle(LifecycleEnum.ERROR, lifecycle, el);
+        this._realObserver(el)?.disconnect();
+        if (error)
+          el.setAttribute("src", error);
+        this._log(() => {
+          throw new Error(`Image failed to load!And failed src was: ${src} `);
+        });
+      });
+    } else {
+      el.style.backgroundImage = `url('${src}')`;
+    }
+  }
+  _initIntersectionObserver(el, src, error, lifecycle, delay) {
+    const observerOptions = this.options.observerOptions;
+    this._images.set(el, new IntersectionObserver((entries) => {
+      Array.prototype.forEach.call(entries, (entry) => {
+        if (delay && delay > 0)
+          this._delayedIntersectionCallback(el, entry, delay, src, error, lifecycle);
+        else
+          this._intersectionCallback(el, entry, src, error, lifecycle);
+      });
+    }, observerOptions));
+    this._realObserver(el)?.observe(el);
+  }
+  _intersectionCallback(el, entry, src, error, lifecycle) {
+    if (entry.isIntersecting) {
+      this._realObserver(el)?.unobserve(entry.target);
+      this._setImageSrc(el, src, error, lifecycle);
+    }
+  }
+  _delayedIntersectionCallback(el, entry, delay, src, error, lifecycle) {
+    if (entry.isIntersecting) {
+      if (entry.target.hasAttribute(TIMEOUT_ID_DATA_ATTR))
+        return;
+      const timeoutId = setTimeout(() => {
+        this._intersectionCallback(el, entry, src, error, lifecycle);
+        entry.target.removeAttribute(TIMEOUT_ID_DATA_ATTR);
+      }, delay);
+      entry.target.setAttribute(TIMEOUT_ID_DATA_ATTR, String(timeoutId));
+    } else {
+      if (entry.target.hasAttribute(TIMEOUT_ID_DATA_ATTR)) {
+        clearTimeout(Number(entry.target.getAttribute(TIMEOUT_ID_DATA_ATTR)));
+        entry.target.removeAttribute(TIMEOUT_ID_DATA_ATTR);
+      }
+    }
+  }
+  _listenImageStatus(image, success, error) {
+    image.onload = success;
+    image.onerror = error;
+  }
+  _valueFormatter(value) {
+    let src = value;
+    let loading = this.options.loading;
+    let error = this.options.error;
+    let lifecycle = this.options.lifecycle;
+    let delay = this.options.delay;
+    if (isObject$2(value)) {
+      src = value.src;
+      loading = value.loading || this.options.loading;
+      error = value.error || this.options.error;
+      lifecycle = value.lifecycle || this.options.lifecycle;
+      delay = value.delay || this.options.delay;
+    }
+    return {
+      src,
+      loading,
+      error,
+      lifecycle,
+      delay
+    };
+  }
+  _log(callback) {
+    if (this.options.log)
+      callback();
+  }
+  _lifecycle(life, lifecycle, el) {
+    switch (life) {
+      case LifecycleEnum.LOADING:
+        el?.setAttribute("lazy", LifecycleEnum.LOADING);
+        if (lifecycle?.loading)
+          lifecycle.loading(el);
+        break;
+      case LifecycleEnum.LOADED:
+        el?.setAttribute("lazy", LifecycleEnum.LOADED);
+        if (lifecycle?.loaded)
+          lifecycle.loaded(el);
+        break;
+      case LifecycleEnum.ERROR:
+        el?.setAttribute("lazy", LifecycleEnum.ERROR);
+        if (lifecycle?.error)
+          lifecycle.error(el);
+        break;
+    }
+  }
+  _realObserver(el) {
+    return this._images.get(el);
+  }
+}
+
+const index$8 = {
+  install(Vue, options) {
+    const lazy = new Lazy(options);
+    Vue.config.globalProperties.$Lazyload = lazy;
+    Vue.provide("Lazyload", lazy);
+    Vue.directive("lazy", {
+      mounted: lazy.mount.bind(lazy),
+      updated: lazy.update.bind(lazy),
+      unmounted: lazy.unmount.bind(lazy)
+    });
+  }
+};
 
 var __defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
@@ -5720,11 +5953,11 @@ const _sfc_main$w = {
       const _component_grid_item_c = __nuxt_component_1$2;
       const _component_grid_item_b = __nuxt_component_2;
       const _component_nuxt_link = __nuxt_component_2$1;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-fb20d670>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-e696deae>`);
       if (props.posts) {
-        _push(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-fb20d670><!--[-->`);
+        _push(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 columns-1 xl:columns-3" data-v-e696deae><!--[-->`);
         serverRenderer.exports.ssrRenderList(props.posts, (post) => {
-          _push(`<div class="block" data-v-fb20d670>`);
+          _push(`<div class="block" data-v-e696deae>`);
           if (post.attributes.useTemplate === "a") {
             _push(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
               title: post.attributes.title,
@@ -5760,7 +5993,7 @@ const _sfc_main$w = {
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="paging md:py-10 py-5" data-v-fb20d670>`);
+      _push(`<div class="paging md:py-10 py-5" data-v-e696deae>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: "/" + (__props.pagination.page - 1),
         class: ["btn rounded-full btn-sm btn-info capitalize", { "btn-disabled": __props.pagination.page <= 1 }]
@@ -5776,7 +6009,7 @@ const _sfc_main$w = {
         }),
         _: 1
       }, _parent));
-      _push(`<span class="px-5 text-neutral-content" data-v-fb20d670>${serverRenderer.exports.ssrInterpolate(__props.pagination.page)} / ${serverRenderer.exports.ssrInterpolate(__props.pagination.pageCount)}</span>`);
+      _push(`<span class="px-5 text-neutral-content" data-v-e696deae>${serverRenderer.exports.ssrInterpolate(__props.pagination.page)} / ${serverRenderer.exports.ssrInterpolate(__props.pagination.pageCount)}</span>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: "/" + (__props.pagination.page + 1),
         class: ["btn rounded-full btn-sm btn-info capitalize", { "btn-disabled": __props.pagination.page >= __props.pagination.pageCount }]
@@ -5802,7 +6035,7 @@ _sfc_main$w.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/PostList.vue");
   return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-fb20d670"]]);
+const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-e696deae"]]);
 const useStrapiVersion = () => {
   const config = useRuntimeConfig().public;
   return config.strapi.version;
@@ -5928,7 +6161,7 @@ _sfc_main$v.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
-const version = "0.0.10";
+const version = "0.0.11";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev",
@@ -5956,7 +6189,8 @@ const dependencies = {
   "quicktype-core": "^6.0.71",
   swiper: "^8.1.6",
   "to-json-schema": "^0.2.5",
-  "vue3-highlightjs": "^1.0.5"
+  "vue3-highlightjs": "^1.0.5",
+  "vue3-lazyload": "^0.3.4"
 };
 const overrides = {
   nitropack: "0.4.4"
@@ -7035,13 +7269,17 @@ const _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modu
   const { fetchUser } = useStrapiAuth();
   await fetchUser();
 });
+const _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47plugins_47lazy_45img_46ts = defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(index$8);
+});
 const _plugins = [
   preload,
   _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47_46nuxt_47components_46plugin_46mjs,
   _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modules_47nuxt_47dist_47head_47runtime_47lib_47vueuse_45head_46plugin,
   _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modules_47nuxt_47dist_47head_47runtime_47plugin,
   _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modules_47nuxt_47dist_47pages_47runtime_47router,
-  _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modules_47_64nuxtjs_47strapi_47dist_47runtime_47strapi_46plugin
+  _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modules_47_64nuxtjs_47strapi_47dist_47runtime_47strapi_46plugin,
+  _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47plugins_47lazy_45img_46ts
 ];
 const _sfc_main$n = {
   __name: "error-404",
@@ -7326,10 +7564,13 @@ const _sfc_main$h = {
     vue_cjs_prod.onMounted(() => {
       const appHeight = () => {
         const doc = document.documentElement;
-        doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+        doc.style.setProperty("--app-height", `${document.documentElement.clientHeight}px`);
       };
       window.addEventListener("resize", appHeight);
       appHeight();
+      window.addEventListener("orientationchange", () => {
+        window.location.reload();
+      });
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLoadingBar = _sfc_main$i;
@@ -8340,9 +8581,9 @@ const _sfc_main$8 = {
             _push2(`<main class="main-content flex"${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
               { fixed: asideFixed.value },
               "top-0 w-96 flex-shrink-0 max-h-screen hidden lg:flex flex-col z-10 "
-            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
+            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full xl:pr-10 pr-4 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full lg:pr-10 mt-5"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"${_scopeId}><li class="menu-title py-2"${_scopeId}><span class="flex justify-between items-center"${_scopeId}> Change Theme <span${_scopeId}> use: <a class="btn btn-link btn-xs" href="https://daisyui.com/" target="_blank"${_scopeId}> DaisyUI </a></span></span></li><!--[-->`);
+            _push2(`</div></section><section class="w-full xl:pr-10 pr-4 xl:mt-5"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"${_scopeId}><li class="menu-title py-2"${_scopeId}><span class="flex justify-between items-center"${_scopeId}> Change Theme <span${_scopeId}> use: <a class="btn btn-link btn-xs" href="https://daisyui.com/" target="_blank"${_scopeId}> DaisyUI </a></span></span></li><!--[-->`);
             serverRenderer.exports.ssrRenderList(themes, (item) => {
               _push2(`<li${serverRenderer.exports.ssrRenderAttr("data-theme", item)} class="${serverRenderer.exports.ssrRenderClass([{ "outline-dashed": curTheme.value === item }, "my-2 shadow rounded-box"])}"${_scopeId}><a href="javascript:;" class="flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent"${_scopeId}><span${_scopeId}>${serverRenderer.exports.ssrInterpolate(item)}</span><div class="flex gap-1 h-4"${_scopeId}><div class="bg-primary w-2 rounded"${_scopeId}></div><div class="bg-secondary w-2 rounded"${_scopeId}></div><div class="bg-accent w-2 rounded"${_scopeId}></div><div class="bg-neutral w-2 rounded"${_scopeId}></div></div></a></li>`);
             });
@@ -8358,13 +8599,13 @@ const _sfc_main$8 = {
                   ]
                 }, [
                   vue_cjs_prod.createVNode("section", {
-                    class: ["w-full lg:pr-10 my-5", { hidden: !asideFixed.value }]
+                    class: ["w-full xl:pr-10 pr-4 my-5", { hidden: !asideFixed.value }]
                   }, [
                     vue_cjs_prod.createVNode("div", { class: "p-2 h-min rounded-box" }, [
                       vue_cjs_prod.createVNode(_component_Logo)
                     ])
                   ], 2),
-                  vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10 mt-5" }, [
+                  vue_cjs_prod.createVNode("section", { class: "w-full xl:pr-10 pr-4 xl:mt-5" }, [
                     vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar" }, [
                       vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
                         vue_cjs_prod.createVNode("span", { class: "flex justify-between items-center" }, [
@@ -8505,6 +8746,7 @@ const _sfc_main$7 = {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$2;
       const _component_Logo = __nuxt_component_1;
+      const _directive_lazy = vue_cjs_prod.resolveDirective("lazy");
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
         title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -8520,9 +8762,9 @@ const _sfc_main$7 = {
             _push2(`<main class="main-content flex"${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
               { fixed: asideFixed.value },
               "top-0 w-96 max-h-screen hidden lg:flex flex-col z-10 "
-            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
+            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full xl:pr-10 pr-5 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full lg:pr-10"${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box"${_scopeId}><li class="menu-title py-2"${_scopeId}><span${_scopeId}>Type</span></li><!--[-->`);
+            _push2(`</div></section><section class="w-full xl:pr-10 pr-4"${_scopeId}><ul class="menu bg-base-100 p-2 w-full rounded-box overflow-y-scroll h-96 scrollbar"${_scopeId}><li class="menu-title py-2"${_scopeId}><span${_scopeId}>Type</span></li><!--[-->`);
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(types), (item, index2) => {
               _push2(`<li class="text-xl"${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#" + item.name)} class="${serverRenderer.exports.ssrRenderClass({
                 active: curTypes.value === index2,
@@ -8539,7 +8781,10 @@ const _sfc_main$7 = {
               }
               _push2(`</h2><div class="grid grid-cols-4 gap-4"${_scopeId}><!--[-->`);
               serverRenderer.exports.ssrRenderList(4, (num) => {
-                _push2(`<img class="w-48 rounded-md my-0"${serverRenderer.exports.ssrRenderAttr("src", `https://wcao.cc/image-space/api/${item.name}?${num}`)}${_scopeId}>`);
+                _push2(`<img${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "w-48 rounded-md my-0" }, serverRenderer.exports.ssrGetDirectiveProps(_ctx, _directive_lazy, {
+                  src: `https://wcao.cc/image-space/api/${item.name}?${num}`,
+                  loading: "/loading.gif"
+                })))}${_scopeId}>`);
               });
               _push2(`<!--]--></div><p${_scopeId}>Try</p><pre${_scopeId}> https://wcao.cc/image-space/api/${serverRenderer.exports.ssrInterpolate(item.name)}?xxx </pre></article>`);
             });
@@ -8554,14 +8799,14 @@ const _sfc_main$7 = {
                   ]
                 }, [
                   vue_cjs_prod.createVNode("section", {
-                    class: ["w-full lg:pr-10 my-5", { hidden: !asideFixed.value }]
+                    class: ["w-full xl:pr-10 pr-5 my-5", { hidden: !asideFixed.value }]
                   }, [
                     vue_cjs_prod.createVNode("div", { class: "p-2 h-min rounded-box" }, [
                       vue_cjs_prod.createVNode(_component_Logo)
                     ])
                   ], 2),
-                  vue_cjs_prod.createVNode("section", { class: "w-full lg:pr-10" }, [
-                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full h-min rounded-box" }, [
+                  vue_cjs_prod.createVNode("section", { class: "w-full xl:pr-10 pr-4" }, [
+                    vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full rounded-box overflow-y-scroll h-96 scrollbar" }, [
                       vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
                         vue_cjs_prod.createVNode("span", null, "Type")
                       ]),
@@ -8612,10 +8857,12 @@ const _sfc_main$7 = {
                       ], 8, ["id"]),
                       vue_cjs_prod.createVNode("div", { class: "grid grid-cols-4 gap-4" }, [
                         (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(4, (num) => {
-                          return vue_cjs_prod.createVNode("img", {
-                            class: "w-48 rounded-md my-0",
-                            src: `https://wcao.cc/image-space/api/${item.name}?${num}`
-                          }, null, 8, ["src"]);
+                          return vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("img", { class: "w-48 rounded-md my-0" }, null, 512), [
+                            [_directive_lazy, {
+                              src: `https://wcao.cc/image-space/api/${item.name}?${num}`,
+                              loading: "/loading.gif"
+                            }]
+                          ]);
                         }), 64))
                       ]),
                       vue_cjs_prod.createVNode("p", null, "Try"),
