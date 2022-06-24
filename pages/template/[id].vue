@@ -160,12 +160,16 @@ const activeCode = ref(false);
 const { id } = route.params;
 
 const { data } = await useAsyncData(`posts/${id}`, () =>
-  useStrapi4().find(`posts/${id}`)
+  useStrapi4().find(`posts/${id}`, {
+    populate: ["tags"],
+  })
 );
 
 const post = computed(() => {
   return data.value.data.attributes;
 });
+
+const tags = computed(() => post.value.tags.data);
 
 const file = post.value.title.split(" Part ");
 const { data: html } = await useFetch(
@@ -204,15 +208,13 @@ const onChange = (y) => {
 
 const asideFixed = ref(false);
 
+// console.log(post.value);
+
 onMounted(() => {
   useHead({
-    titleTemplate: post.value.title,
-    meta: [
-      {
-        name: "description",
-        content: post.value.desciption,
-      },
-    ],
+    titleTemplate: `${post.value.title}:${post.value.desciption} - ${tags.value
+      .map((item) => item.attributes.name)
+      .join(",")}模板`,
   });
 });
 </script>

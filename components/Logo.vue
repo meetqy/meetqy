@@ -22,7 +22,7 @@
 
     <div class="inline-flex h-12 items-center text-xl" v-if="props.showWeek">
       <span class="text-info">今天星期{{ week }} </span>
-      <div class="dropdown dropdown-end">
+      <div class="dropdown dropdown-end relative -top-4">
         <label
           tabindex="0"
           class="btn btn-circle btn-ghost text-neutral-content btn-xs"

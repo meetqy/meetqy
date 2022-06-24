@@ -1,6 +1,6 @@
 <template>
   <article
-    class="relative flex flex-col justify-center bg-base-content pt-4 bg-opacity-20 rounded-lg shadow-md"
+    class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
     @click="$router.push(`/template/${id}`)"
   >
     <div v-html="html" class="flex justify-center px-4" />
