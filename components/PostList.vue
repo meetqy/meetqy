@@ -6,12 +6,20 @@
     >
       <div class="block" v-for="post in props.posts" :key="post.id">
         <grid-item-a
-          v-if="getCategory(post).templateType === 'a'"
+          v-if="post.attributes.useTemplate === 'a'"
           :title="post.attributes.title"
           :desciption="post.attributes.desciption"
           :time="post.attributes.updatedAt.split('T')[0]"
           :category="getCategory(post)"
           :header-images="getHeaderImages(post)"
+          :to="post.attributes.to"
+        />
+
+        <grid-item-c
+          v-else-if="post.attributes.useTemplate === 'c'"
+          :title="post.attributes.title"
+          :category="getCategory(post)"
+          :id="post.id + ''"
           :to="post.attributes.to"
         />
 

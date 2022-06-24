@@ -72,7 +72,7 @@ const props = defineProps<Props>();
 const $cdn = useCdnUrl();
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .article-a {
   @apply rounded-2xl relative bg-cover cursor-pointer shadow-md;
 

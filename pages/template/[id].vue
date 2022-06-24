@@ -13,34 +13,6 @@
           </div>
         </section>
 
-        <section class="w-full lg:pr-10">
-          <ul class="menu bg-base-100 p-2 w-full h-min rounded-box">
-            <li class="menu-title py-2">
-              <span>List</span>
-            </li>
-
-            <li
-              v-for="(item, index) in fragments"
-              :key="index"
-              @click="curTemp = index"
-            >
-              <a
-                :href="'#' + item.name[0]"
-                :class="{
-                  active: curTemp === index,
-                  capitalize: curTemp === index,
-                }"
-              >
-                {{ item.name[0].replace("·奥特曼", "") }}
-
-                <small class="text-xs flex-1 truncate">
-                  ({{ item.name[1] }})
-                </small>
-              </a>
-            </li>
-          </ul>
-        </section>
-
         <section class="w-full lg:pr-10 mt-5">
           <ul
             class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"
@@ -93,80 +65,63 @@
       <div
         class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"
       >
-        <div class="prose">
-          <h1>{{ title }}</h1>
+        <div class="prose mb-8">
+          <h2 class="flex justify-between">
+            {{ post.title }}
 
-          <p>{{ desc }}</p>
+            <span>
+              <small class="text-info">{{ name[0] }} </small>
+
+              <small class="font-light ml-2 text-base-content text-opacity-50">
+                {{ name[1] }}
+              </small>
+            </span>
+          </h2>
         </div>
 
         <div
-          :id="item.name[0]"
-          v-for="(item, index) in props.fragments"
-          :key="index"
+          class="mockup-window border bg-base-300 w-full mb-8"
+          :data-theme="curTheme"
         >
-          <h3
-            class="text-base-content font-semibold mt-8 mb-3"
-            style="font-size: 1.25em"
-          >
-            <small class="text-info text-opacity-50"># </small>
-            {{ item.name[0] }}
-            <small class="font-light ml-2 text-base-content text-opacity-70">
-              ({{ item.name[1] }})
-            </small>
-          </h3>
           <div
-            class="mockup-window border bg-base-300 w-full mb-8"
-            :data-theme="curTheme"
+            class="btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"
+            :class="{ 'btn-link': !activeCode }"
+            @click="showCode"
           >
-            <div
-              class="btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"
-              :class="{ 'btn-link': !activeCode[index] }"
-              @click="showCode(index)"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"
-              v-html="item.code"
-            />
-
-            <pre class="bg-base-200 px-4" v-show="activeCode[index]">
-            <code :id="'pre-' + index" class="rounded-box" >{{item.code}}</code>
-          </pre>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              />
+            </svg>
           </div>
+          <div
+            class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"
+            v-html="html"
+          />
+
+          <pre class="bg-base-200 px-4" v-show="activeCode">
+                <code :id="'pre-' + id" class="rounded-box" >{{html}}</code>
+            </pre>
         </div>
       </div>
     </main>
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
-import { useDark, useToggle } from "@vueuse/core";
+<script setup>
+import { useDark } from "@vueuse/core";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
-interface Props {
-  fragments: {
-    name: string[];
-    code: string[];
-  }[];
-  title: string;
-  desc: string;
-}
-
-const props = defineProps<Props>();
+const route = useRoute();
 
 const themes = [
   "light",
@@ -200,17 +155,37 @@ const themes = [
   "winter",
 ];
 
-const activeCode = ref({});
+const activeCode = ref(false);
 
-const showCode = (index) => {
-  activeCode.value[index] = !activeCode.value[index];
+const { id } = route.params;
 
-  if (activeCode.value[index]) {
-    hljs.highlightBlock(document.querySelector("#pre-" + index));
+const { data } = await useAsyncData(`posts/${id}`, () =>
+  useStrapi4().find(`posts/${id}`)
+);
+
+const post = computed(() => {
+  return data.value.data.attributes;
+});
+
+const file = post.value.title.split(" Part ");
+const { data: html } = await useFetch(
+  `/fragments/${file[0].toLowerCase()}/${file[1]}.html`,
+  {
+    baseURL: useBaseUrl(),
   }
-};
+);
+
+const name = post.value.desciption.split("-");
 
 const curTheme = ref("dark");
+
+const showCode = () => {
+  activeCode.value = !activeCode.value;
+
+  if (activeCode.value) {
+    hljs.highlightBlock(document.querySelector("#pre-" + id));
+  }
+};
 
 const isDark = useDark({
   selector: "html",
@@ -227,7 +202,17 @@ const onChange = (y) => {
   asideFixed.value = y > 150;
 };
 
-const curTemp = ref(0);
-
 const asideFixed = ref(false);
+
+onMounted(() => {
+  useHead({
+    titleTemplate: post.value.title,
+    meta: [
+      {
+        name: "description",
+        content: post.value.desciption,
+      },
+    ],
+  });
+});
 </script>

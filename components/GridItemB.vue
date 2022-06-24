@@ -1,6 +1,6 @@
 <template>
   <article class="article-b">
-    <div class="tags relative z-10">
+    <div class="tags relative z-20">
       <a
         href="javascript:;"
         :style="`color: ${category.color};${category.bgColor}`"
@@ -79,7 +79,7 @@ interface Props {
   visit?: number;
   comment?: number;
   category: CategoryItem;
-  headerImages: string[];
+  headerImages?: string[];
   to?: string;
 }
 
