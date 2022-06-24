@@ -39,21 +39,25 @@
     </div>
 
     <div class="paging md:py-10 py-5">
-      <a
-        href="javasciprt:;"
+      <nuxt-link
+        :to="'/' + (pagination.page - 1)"
         class="btn rounded-full btn-sm btn-info capitalize"
+        :class="{ 'btn-disabled': pagination.page <= 1 }"
       >
         Prev
-      </a>
+      </nuxt-link>
+
       <span class="px-5 text-neutral-content">
         {{ pagination.page }} / {{ pagination.pageCount }}
       </span>
-      <a
-        href="javasciprt:;"
+
+      <nuxt-link
+        :to="'/' + (pagination.page + 1)"
         class="btn rounded-full btn-sm btn-info capitalize"
+        :class="{ 'btn-disabled': pagination.page >= pagination.pageCount }"
       >
         Next
-      </a>
+      </nuxt-link>
     </div>
   </div>
 </template>

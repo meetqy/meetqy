@@ -129,16 +129,20 @@
 </template>
 
 <script setup>
+const route = useRoute();
+const { pageIndex } = route.params;
+
 useHead({
   titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
 });
 
-const { data: postsRes } = await useAsyncData("posts", () =>
+const { data: postsRes } = await useAsyncData(`index/${pageIndex}`, () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
     populate: ["category", "headerImages", "tags"],
+    sort: ["updatedAt:desc"],
     pagination: {
-      page: 1,
+      page: pageIndex,
       pageSize: 15,
     },
   })

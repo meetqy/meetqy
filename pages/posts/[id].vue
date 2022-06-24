@@ -141,6 +141,7 @@ const { id } = useRoute().params;
 
 const { data } = await useAsyncData(`posts/${id}`, () =>
   useStrapi4().find(`posts/${id}`, {
+    publicationState: useIsProducton() ? "live" : "preview",
     populate: ["category", "tags", "previewImages"],
   })
 );

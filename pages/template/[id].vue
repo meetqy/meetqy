@@ -66,14 +66,14 @@
         class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"
       >
         <div class="prose mb-8">
-          <h2 class="flex justify-between">
+          <h2 class="flex justify-between capitalize">
             {{ post.title }}
 
             <span>
               <small class="text-info">{{ name[0] }} </small>
 
               <small class="font-light ml-2 text-base-content text-opacity-50">
-                {{ name[1] }}
+                ({{ name[1] }})
               </small>
             </span>
           </h2>
@@ -161,6 +161,7 @@ const { id } = route.params;
 
 const { data } = await useAsyncData(`posts/${id}`, () =>
   useStrapi4().find(`posts/${id}`, {
+    publicationState: useIsProducton() ? "live" : "preview",
     populate: ["tags"],
   })
 );
@@ -179,7 +180,7 @@ const { data: html } = await useFetch(
   }
 );
 
-const name = post.value.desciption.split("-");
+const name = computed(() => ultra[post.value.title.split(" Part ")[1]]);
 
 const curTheme = ref("dark");
 
@@ -207,8 +208,6 @@ const onChange = (y) => {
 };
 
 const asideFixed = ref(false);
-
-// console.log(post.value);
 
 onMounted(() => {
   useHead({

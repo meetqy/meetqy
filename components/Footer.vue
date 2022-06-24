@@ -2,7 +2,7 @@
   <footer :class="class" class="py-8">
     <Logo v-show="showLogo" :show-week="false" />
     <p
-      class="text-neutral-content text-sm flex flex-col-reverse justify-center items-center"
+      class="text-neutral-content text-sm flex flex-col-reverse xl:flex-row justify-center items-center"
       :class="{ 'mt-4': showLogo }"
     >
       <span>Copyright © 2022 wcao.cc</span>

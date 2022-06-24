@@ -3,7 +3,8 @@
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
     @click="$router.push(`/template/${id}`)"
   >
-    <div v-html="html" class="flex justify-center px-4" />
+    <div v-html="html" class="flex justify-center px-4 relative" />
+
     <nuxt-link :to="`/template/${id}`" class="opacity-0 absolute">
       go to {{ title }}
     </nuxt-link>

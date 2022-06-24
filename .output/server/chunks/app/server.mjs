@@ -5510,7 +5510,7 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$y = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$z = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemA",
   __ssrInlineRender: true,
   props: {
@@ -5547,14 +5547,14 @@ const _sfc_main$y = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$y = _sfc_main$y.setup;
-_sfc_main$y.setup = (props, ctx) => {
+const _sfc_setup$z = _sfc_main$z.setup;
+_sfc_main$z.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemA.vue");
-  return _sfc_setup$y ? _sfc_setup$y(props, ctx) : void 0;
+  return _sfc_setup$z ? _sfc_setup$z(props, ctx) : void 0;
 };
-const __nuxt_component_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["__scopeId", "data-v-15767cb2"]]);
-const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const __nuxt_component_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["__scopeId", "data-v-15767cb2"]]);
+const _sfc_main$y = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemC",
   __ssrInlineRender: true,
   props: {
@@ -5575,7 +5575,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     }
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2$1;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-7c12e67d><div class="flex justify-center px-4" data-v-7c12e67d>${html.value}</div>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-3626934e><div class="flex justify-center px-4 relative" data-v-3626934e>${html.value}</div>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/${__props.id}`,
         class: "opacity-0 absolute"
@@ -5591,18 +5591,18 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-10 w-full h-full cursor-pointer" data-v-7c12e67d><div class="tags" data-v-7c12e67d><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-7c12e67d>${serverRenderer.exports.ssrInterpolate(__props.category.name)}</a></div></div><footer class="flex justify-between items-center" data-v-7c12e67d><a href="javascript:;" class="flex items-center" data-v-7c12e67d><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-7c12e67d></span><span class="author-name" data-v-7c12e67d>meetqy</span></a><div class="text-base-content text-sm" data-v-7c12e67d><a href="javascript:;" data-v-7c12e67d><span class="mr-1" data-v-7c12e67d>23719</span><i class="iconfont" data-v-7c12e67d>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-7c12e67d><span class="mr-1" data-v-7c12e67d>23719</span><i class="iconfont" data-v-7c12e67d>\uE8B5</i></a></div></footer></article>`);
+      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-10 w-full h-full cursor-pointer" data-v-3626934e><div class="tags" data-v-3626934e><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-3626934e>${serverRenderer.exports.ssrInterpolate(__props.category.name)}</a></div></div><footer class="flex justify-between items-center" data-v-3626934e><a href="javascript:;" class="flex items-center" data-v-3626934e><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-3626934e></span><span class="author-name" data-v-3626934e>meetqy</span></a><div class="text-base-content text-sm" data-v-3626934e><a href="javascript:;" data-v-3626934e><span class="mr-1" data-v-3626934e>23719</span><i class="iconfont" data-v-3626934e>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-3626934e><span class="mr-1" data-v-3626934e>23719</span><i class="iconfont" data-v-3626934e>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
-const _sfc_setup$x = _sfc_main$x.setup;
-_sfc_main$x.setup = (props, ctx) => {
+const _sfc_setup$y = _sfc_main$y.setup;
+_sfc_main$y.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
-  return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
+  return _sfc_setup$y ? _sfc_setup$y(props, ctx) : void 0;
 };
-const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-7c12e67d"]]);
-const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["__scopeId", "data-v-3626934e"]]);
+const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemB",
   __ssrInlineRender: true,
   props: {
@@ -5689,14 +5689,14 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$w = _sfc_main$w.setup;
-_sfc_main$w.setup = (props, ctx) => {
+const _sfc_setup$x = _sfc_main$x.setup;
+_sfc_main$x.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemB.vue");
-  return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
+  return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-5bd887ee"]]);
-const _sfc_main$v = {
+const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-5bd887ee"]]);
+const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
   props: {
@@ -5719,11 +5719,12 @@ const _sfc_main$v = {
       const _component_grid_item_a = __nuxt_component_0$1;
       const _component_grid_item_c = __nuxt_component_1$2;
       const _component_grid_item_b = __nuxt_component_2;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-0219a849>`);
+      const _component_nuxt_link = __nuxt_component_2$1;
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-fb20d670>`);
       if (props.posts) {
-        _push(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-0219a849><!--[-->`);
+        _push(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 xl:columns-3" data-v-fb20d670><!--[-->`);
         serverRenderer.exports.ssrRenderList(props.posts, (post) => {
-          _push(`<div class="block" data-v-0219a849>`);
+          _push(`<div class="block" data-v-fb20d670>`);
           if (post.attributes.useTemplate === "a") {
             _push(serverRenderer.exports.ssrRenderComponent(_component_grid_item_a, {
               title: post.attributes.title,
@@ -5759,17 +5760,49 @@ const _sfc_main$v = {
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="paging md:py-10 py-5" data-v-0219a849><a href="javasciprt:;" class="btn rounded-full btn-sm btn-info capitalize" data-v-0219a849> Prev </a><span class="px-5 text-neutral-content" data-v-0219a849>${serverRenderer.exports.ssrInterpolate(__props.pagination.page)} / ${serverRenderer.exports.ssrInterpolate(__props.pagination.pageCount)}</span><a href="javasciprt:;" class="btn rounded-full btn-sm btn-info capitalize" data-v-0219a849> Next </a></div></div>`);
+      _push(`<div class="paging md:py-10 py-5" data-v-fb20d670>`);
+      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
+        to: "/" + (__props.pagination.page - 1),
+        class: ["btn rounded-full btn-sm btn-info capitalize", { "btn-disabled": __props.pagination.page <= 1 }]
+      }, {
+        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(` Prev `);
+          } else {
+            return [
+              vue_cjs_prod.createTextVNode(" Prev ")
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`<span class="px-5 text-neutral-content" data-v-fb20d670>${serverRenderer.exports.ssrInterpolate(__props.pagination.page)} / ${serverRenderer.exports.ssrInterpolate(__props.pagination.pageCount)}</span>`);
+      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
+        to: "/" + (__props.pagination.page + 1),
+        class: ["btn rounded-full btn-sm btn-info capitalize", { "btn-disabled": __props.pagination.page >= __props.pagination.pageCount }]
+      }, {
+        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(` Next `);
+          } else {
+            return [
+              vue_cjs_prod.createTextVNode(" Next ")
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div></div>`);
     };
   }
 };
-const _sfc_setup$v = _sfc_main$v.setup;
-_sfc_main$v.setup = (props, ctx) => {
+const _sfc_setup$w = _sfc_main$w.setup;
+_sfc_main$w.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/PostList.vue");
-  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
+  return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["__scopeId", "data-v-0219a849"]]);
+const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-fb20d670"]]);
 const useStrapiVersion = () => {
   const config = useRuntimeConfig().public;
   return config.strapi.version;
@@ -5864,8 +5897,9 @@ const useStrapi4 = () => {
   };
 };
 const _imports_0 = publicAssetsURL(`avatar.jpg`);
+const meta$e = void 0;
 const meta$d = void 0;
-const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$v = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "W",
   __ssrInlineRender: true,
   props: {
@@ -5888,13 +5922,13 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$u = _sfc_main$u.setup;
-_sfc_main$u.setup = (props, ctx) => {
+const _sfc_setup$v = _sfc_main$v.setup;
+_sfc_main$v.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
-  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
+  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
-const version = "0.0.9";
+const version = "0.0.10";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev",
@@ -5935,7 +5969,7 @@ const pkg = {
   dependencies,
   overrides
 };
-const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Logo",
   __ssrInlineRender: true,
   props: {
@@ -5955,7 +5989,7 @@ const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const { cao, week } = useTitle();
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2$1;
-      const _component_W = _sfc_main$u;
+      const _component_W = _sfc_main$v;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "flex items-end" }, _attrs))} data-v-87db058c><div class="flex items-center cursor-pointer logo" data-v-87db058c>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: "/",
@@ -6008,15 +6042,109 @@ const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$t = _sfc_main$t.setup;
-_sfc_main$t.setup = (props, ctx) => {
+const _sfc_setup$u = _sfc_main$u.setup;
+_sfc_main$u.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Logo.vue");
-  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
+  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-87db058c"]]);
+const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["__scopeId", "data-v-87db058c"]]);
 const meta$c = void 0;
 const meta$b = void 0;
+const ultra = [
+  ["\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3 / \u521D\u4EE3\u30DE\u30F3", "Ultraman"],
+  ["\u4F50\u83F2", "\u30BE\u30D5\u30A3\u30FC", "Zoffy"],
+  ["\u8D5B\u6587\xB7\u5965\u7279\u66FC", "Ultraseven/\u30A6\u30EB\u30C8\u30E9\u30BB\u30D6\u30F3", "Ultraseven"],
+  ["\u8D5B\u6587\u4E0A\u53F8", "\u30BB\u30D6\u30F3\u4E0A\u53F8", "Seven's Superior"],
+  ["\u8D5B\u6587X\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30BB\u30D6\u30F3X", "Ultraseven X"],
+  [
+    "\u6770\u514B\xB7\u5965\u7279\u66FC",
+    "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B8\u30E3\u30C3\u30AF / \u5E30\u3063\u3066\u304D\u305F\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3",
+    "Ultraman Jack"
+  ],
+  ["\u827E\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30A8\u30FC\u30B9 ", "Ultraman Ace"],
+  ["\u5965\u7279\u4E4B\u7236", "\u30A6\u30EB\u30C8\u30E9\u306E\u7236", "Father of Ultra"],
+  ["\u6CF0\u7F57\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BF\u30ED\u30A6", "Ultraman Taro"],
+  ["\u5965\u7279\u4E4B\u6BCD", "\u30A6\u30EB\u30C8\u30E9\u306E\u6BCD", "Mother of Ultra"],
+  ["\u96F7\u6B27\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30AA", "Ultraman Leo"],
+  ["\u963F\u65AF\u7279\u62C9", "\u30A2\u30B9\u30C8\u30E9", "Astra"],
+  ["\u5965\u7279\u4E4B\u738B", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AD\u30F3\u30B0", "Ultraman King"],
+  ["\u7231\u8FEA\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u7231\u8FEA", "Ultraman \u7231\u8FEA"],
+  ["\u5C24\u8389\u5B89", "\u30E6\u30EA\u30A2\u30F3", "Yullian"],
+  ["\u68A6\u6BD4\u4F18\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30E1\u30D3\u30A6\u30B9", "Ultraman Mebius"],
+  ["\u5E0C\u5361\u5229\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D2\u30AB\u30EA", "UItraman Hikari"],
+  ["\u96F7\u6B27\xB7\u5965\u7279\u66FC\u65AF", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CD\u30AA\u30B9", "Ultraman Neos"],
+  ["\u8D5B\u658721\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30BB\u30D6\u30F321", "Ultraseven 21"],
+  ["\u9EA6\u514B\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30DE\u30C3\u30AF\u30B9", "Ultraman Max"],
+  ["\u5965\u7279\u66FC\u6770\u8BFA", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BC\u30CE\u30F3", "Ultraman Xenon"],
+  ["\u535A\u4F0A\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30DC\u30FC\u30A4", "Ultraman Boy"],
+  ["\u5965\u7279\u66FC\u5229\u5E03\u7279", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EA\u30D6\u30C3\u30C8", "Ultraman Ribut"],
+  ["\u7D22\u62C9", "\u30BD\u30E9(\u30A6\u30EB\u30C8\u30E9\u30A6\u30FC\u30DE\u30F3) ", "Sora"],
+  ["\u845B\u96F7\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B0\u30EC\u30FC\u30C8", "Ultraman Great"],
+  ["\u5E15\u74E6\u7279\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D1\u30EF\u30FC\u30C9", "Ultraman Powered"],
+  ["\u53F2\u8003\u7279\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B9\u30B3\u30C3\u30C8", "Ultraman Scott"],
+  ["\u5965\u7279\u66FC\u67E5\u514B", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C1\u30E3\u30C3\u30AF", "Ultraman Chuck"],
+  ["\u5965\u7279\u66FC\u8D1D\u65AF", "\u30A6\u30EB\u30C8\u30E9\u30A6\u30FC\u30DE\u30F3\u30D9\u30B9", "Ultrawoman Beth"],
+  ["\u5965\u7279\u66FC\u4E54\u5C3C\u4E9A\u65AF", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B8\u30E7\u30FC\u30CB\u30A2\u30B9", "Ultraman Joneus"],
+  ["\u57C3\u7C73\u4E9A", "\u30ED\u30C8", "Amia"],
+  ["\u827E\u96F7\u514B", "\u30A8\u30EC\u30AF", "Elek"],
+  ["\u6D1B\u7279", "\u30A2\u30DF\u30A2", "Loto"],
+  ["\u8FEA\u8FE6\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C6\u30A3\u30AC", "Ultraman Tiga"],
+  ["\u8FEA\u8FE6\u4E4B\u5730\u7684\u77F3\u50CFA\u3001B", "\u30C6\u30A3\u30AC\u306E\u30D4\u30E9\u30DF\u30C3\u30C9\u306E\u5DE8\u4EBA", "Tiga's companions"],
+  ["\u90AA\u6076\u8FEA\u8FE6", "\u30A4\u30FC\u30F4\u30A3\u30EB\u30C6\u30A3\u30AC", "Evil Tiga[15]"],
+  ["\u7231\u618E\u6226\u58EB\u5361\u871C\u62C9", "\u30AB\u30DF\u30FC\u30E9", "Camearra"],
+  ["\u521A\u529B\u6226\u58EB\u8FBE\u62C9\u59C6", "\u30C0\u30FC\u30E9\u30E0", "Darramb"],
+  ["\u4FCA\u654F\u6226\u58EB\u5E0C\u7279\u62C9", "\u30D2\u30E5\u30C9\u30E9", "Hudra"],
+  ["\u6234\u62FF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C0\u30A4\u30CA", "Ultraman Dyna"],
+  ["\u4EBA\u9020\u6234\u62FF", "\u30C6\u30E9\u30CE\u30A4\u30C9", "Terranoid"],
+  ["\u76D6\u4E9A\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AC\u30A4\u30A2", "Ultraman Gaia"],
+  ["\u963F\u53E4\u8339\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30A2\u30B0\u30EB", "Ultraman Agul"],
+  ["\u9AD8\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B3\u30B9\u30E2\u30B9", "Ultraman Cosmos"],
+  ["\u6770\u65AF\u63D0\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B8\u30E3\u30B9\u30C6\u30A3\u30B9", "Ultraman Justice"],
+  ["\u96F7\u6770\u591A\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30B8\u30A7\u30F3\u30C9", "Ultraman Legend"],
+  ["\u5948\u514B\u65AF\u7279\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30FB\u30B6\u30FB\u30CD\u30AF\u30B9\u30C8", "Ultraman The Next"],
+  ["\u5948\u514B\u745F\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CD\u30AF\u30B5\u30B9", "Ultraman Nexus"],
+  ["\u8BFA\u4E9A\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CE\u30A2", "Ultraman Noa"],
+  ["\u9ED1\u6697\u6D6E\u58EB\u5FB7", "\u30C0\u30FC\u30AF\u30D5\u30A1\u30A6\u30B9\u30C8", "Dark Faust"],
+  ["\u9ED1\u6697\u6885\u83F2\u65AF\u7279", "\u30C0\u30FC\u30AF\u30E1\u30D5\u30A3\u30B9\u30C8", "Dark Mephisto"],
+  ["\u9ED1\u6697\u6885\u83F2\u65AF\u7279II", "\u30C0\u30FC\u30AF\u30E1\u30D5\u30A3\u30B9\u30C8 II", "Dark Mephisto II"],
+  ["\u9ED1\u6697\u624E\u57FA", "\u30C0\u30FC\u30AF\u30B6\u30AE", "Dark Zagi"],
+  ["\u8D5B\u7F57\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BC\u30ED", "Ultraman Zero"],
+  ["\u5965\u7279\u66FC\u8D1D\u5229\u4E9A", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D9\u30EA\u30A2\u30EB", "Ultraman Belial"],
+  ["\u8D5B\u8FE6\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B5\u30FC\u30AC", "Ultraman Saga"],
+  ["\u94F6\u6CB3\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AE\u30F3\u30AC", "Ultraman Ginga"],
+  ["\u7EF4\u514B\u7279\u5229\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D3\u30AF\u30C8\u30EA\u30FC", "Ultraman Victory"],
+  [
+    "\u94F6\u6CB3\u7DAD\u514B\u7279\u5229\xB7\u5965\u7279\u66FC",
+    "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AE\u30F3\u30AC\u30D3\u30AF\u30C8\u30EA\u30FC",
+    "Ultraman Ginga Victory"
+  ],
+  ["\u827E\u514B\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30A8\u30C3\u30AF\u30B9", "Ultraman X"],
+  ["\u5965\u7279\u66FC\u6B27\u5E03", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30AA\u30FC\u30D6", "Ultraman Orb"],
+  ["\u5965\u7279\u66FC\u6377\u5FB7", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B8\u30FC\u30C9", "Ultraman \u6377\u5FB7"],
+  ["\u5965\u7279\u66FC\u7F57\u7D22", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30ED\u30C3\u30BD", "Ultraman Rosso"],
+  ["\u5965\u7279\u66FC\u5E03\u9C81", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D6\u30EB", "Ultraman Blu"],
+  ["\u7F57\u5E03\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EB\u30FC\u30D6", "Ultraman R / B"],
+  ["\u5973\u5965\u7279\u66FC\u683C\u4E3D\u4E54", "\u30A6\u30EB\u30C8\u30E9\u30A6\u30FC\u30DE\u30F3\u30B0\u30EA\u30FC\u30B8\u30E7", "Ultrawoman Grigio"],
+  ["\u5965\u7279\u66FC\u683C\u7F57\u5E03", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B0\u30EB\u30FC\u30D6", "Ultraman Gruebe"],
+  ["\u6CF0\u8FE6\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BF\u30A4\u30AC", "Ultraman Taiga"],
+  ["\u5965\u7279\u66FC\u6CF0\u5854\u65AF", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BF\u30A4\u30BF\u30B9", "Ultraman Titas"],
+  ["\u5965\u7279\u66FC\u98CE\u9A6C", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30D5\u30FC\u30DE", "Ultraman Fuma"],
+  ["\u5965\u7279\u66FC\u6258\u96F7\u57FA\u4E9A", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C8\u30EC\u30AE\u30A2", "Ultraman Tregear"],
+  ["\u5965\u7279\u66FC\u4EE4\u6CB3", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30A4\u30AC", "Ultraman Reiga"],
+  ["\u5965\u7279\u66FC\u6770\u7279", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BC\u30C3\u30C8", "Ultraman Zett"],
+  ["\u5965\u7279\u66FC\u7279\u5229\u8FE6", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C8\u30EA\u30AC\u30FC", "Ultraman \u7279\u5229\u8FE6"],
+  ["\u6697\u9ED1\u52C7\u58EB\u9ED1\u6697\u7279\u5229\u8FE6", "\u30C8\u30EA\u30AC\u30FC\u30C0\u30FC\u30AF", "\u7279\u5229\u8FE6 dark"],
+  ["\u5996\u4E3D\u6218\u58EB\u5361\u5C14\u871C\u62C9", "\u5996\u4E3D\u6226\u58EB\u30AB\u30EB\u30DF\u30E9", ""],
+  ["\u521A\u529B\u6597\u58EB\u8FBE\u8D21", "\u521A\u529B\u95D8\u58EB\u30C0\u30FC\u30B4\u30F3", ""],
+  ["\u4FCA\u654F\u7B56\u58EB\u5E0C\u7279\u62C9\u59C6", "\u4FCA\u654F\u7B56\u58EB\u30D2\u30E5\u30C9\u30E9\u30E0", ""],
+  ["\u90AA\u6076\u7279\u5229\u8FE6", "\u30A4\u30FC\u30F4\u30A3\u30EB\u30C8\u30EA\u30AC\u30FC", "\u7279\u5229\u8FE6 Evil"],
+  ["\u5965\u7279\u66FCDecker", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30C7\u30C3\u30AB\u30FC", "Ultraman Decker"],
+  ["\u54C9\u963F\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30BC\u30A2\u30B9", "Ultraman Zearth"],
+  ["\u5F71\u5B50\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30B7\u30E3\u30C9\u30FC", "Ultraman Shadow"],
+  ["\u7EB3\u4F0A\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CA\u30A4\u30B9", "Ultraman Nice"],
+  ["\u96F7\u53E4\u6D1B\u601D\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30B0\u30ED\u30B9", "Ultraman Regulos"]
+];
 const meta$a = void 0;
 const meta$9 = void 0;
 const meta$8 = void 0;
@@ -6074,7 +6202,7 @@ const allLanguage = [
     mode: "application/ld+json"
   }
 ];
-const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Editor",
   __ssrInlineRender: true,
   props: {
@@ -6216,14 +6344,14 @@ const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$s = _sfc_main$s.setup;
-_sfc_main$s.setup = (props, ctx) => {
+const _sfc_setup$t = _sfc_main$t.setup;
+_sfc_main$t.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Editor.vue");
-  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
+  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["__scopeId", "data-v-40230bd6"]]);
-const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-40230bd6"]]);
+const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "dart",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6264,14 +6392,14 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$r = _sfc_main$r.setup;
-_sfc_main$r.setup = (props, ctx) => {
+const _sfc_setup$s = _sfc_main$s.setup;
+_sfc_main$s.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/dart.vue");
-  return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
+  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
 };
 const meta$7 = void 0;
-const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "index",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6312,14 +6440,14 @@ const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$q = _sfc_main$q.setup;
-_sfc_main$q.setup = (props, ctx) => {
+const _sfc_setup$r = _sfc_main$r.setup;
+_sfc_main$r.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/index.vue");
-  return _sfc_setup$q ? _sfc_setup$q(props, ctx) : void 0;
+  return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
 };
 const meta$6 = void 0;
-const _sfc_main$p = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "json-schema",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6362,11 +6490,11 @@ const _sfc_main$p = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$p = _sfc_main$p.setup;
-_sfc_main$p.setup = (props, ctx) => {
+const _sfc_setup$q = _sfc_main$q.setup;
+_sfc_main$q.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/json-schema.vue");
-  return _sfc_setup$p ? _sfc_setup$p(props, ctx) : void 0;
+  return _sfc_setup$q ? _sfc_setup$q(props, ctx) : void 0;
 };
 const meta$5 = void 0;
 function useJsontoMock(json) {
@@ -6396,7 +6524,7 @@ const jsonToMock_client = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.d
   __proto__: null,
   useJsontoMock
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$o = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$p = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "index",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6439,15 +6567,15 @@ const _sfc_main$o = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$o = _sfc_main$o.setup;
-_sfc_main$o.setup = (props, ctx) => {
+const _sfc_setup$p = _sfc_main$p.setup;
+_sfc_main$p.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/mockjs/index.vue");
-  return _sfc_setup$o ? _sfc_setup$o(props, ctx) : void 0;
+  return _sfc_setup$p ? _sfc_setup$p(props, ctx) : void 0;
 };
 const meta$4 = void 0;
 const meta$3 = void 0;
-const _sfc_main$n = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$o = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "typescript",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6488,11 +6616,11 @@ const _sfc_main$n = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$n = _sfc_main$n.setup;
-_sfc_main$n.setup = (props, ctx) => {
+const _sfc_setup$o = _sfc_main$o.setup;
+_sfc_main$o.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/typescript.vue");
-  return _sfc_setup$n ? _sfc_setup$n(props, ctx) : void 0;
+  return _sfc_setup$o ? _sfc_setup$o(props, ctx) : void 0;
 };
 const meta$2 = void 0;
 const meta$1 = void 0;
@@ -6526,9 +6654,20 @@ const default_client = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defi
 const meta = void 0;
 const routes = [
   {
+    name: "index-pageIndex",
+    path: "//:pageIndex",
+    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/index/[pageIndex].vue",
+    children: [],
+    meta: meta$e,
+    alias: [],
+    component: () => Promise.resolve().then(function() {
+      return _pageIndex_$1;
+    })
+  },
+  {
     name: "index",
     path: "/",
-    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/index.vue",
+    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/index/index.vue",
     children: [],
     meta: meta$d,
     alias: [],
@@ -6904,7 +7043,7 @@ const _plugins = [
   _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modules_47nuxt_47dist_47pages_47runtime_47router,
   _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modules_47_64nuxtjs_47strapi_47dist_47runtime_47strapi_46plugin
 ];
-const _sfc_main$m = {
+const _sfc_main$n = {
   __name: "error-404",
   __ssrInlineRender: true,
   props: {
@@ -6966,14 +7105,14 @@ const _sfc_main$m = {
     };
   }
 };
-const _sfc_setup$m = _sfc_main$m.setup;
-_sfc_main$m.setup = (props, ctx) => {
+const _sfc_setup$n = _sfc_main$n.setup;
+_sfc_main$n.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-404.vue");
-  return _sfc_setup$m ? _sfc_setup$m(props, ctx) : void 0;
+  return _sfc_setup$n ? _sfc_setup$n(props, ctx) : void 0;
 };
-const Error404 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["__scopeId", "data-v-011aae6d"]]);
-const _sfc_main$l = {
+const Error404 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["__scopeId", "data-v-011aae6d"]]);
+const _sfc_main$m = {
   __name: "error-500",
   __ssrInlineRender: true,
   props: {
@@ -7014,14 +7153,14 @@ const _sfc_main$l = {
     };
   }
 };
-const _sfc_setup$l = _sfc_main$l.setup;
-_sfc_main$l.setup = (props, ctx) => {
+const _sfc_setup$m = _sfc_main$m.setup;
+_sfc_main$m.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-500.vue");
-  return _sfc_setup$l ? _sfc_setup$l(props, ctx) : void 0;
+  return _sfc_setup$m ? _sfc_setup$m(props, ctx) : void 0;
 };
-const Error500 = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["__scopeId", "data-v-6aee6495"]]);
-const _sfc_main$j = {
+const Error500 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["__scopeId", "data-v-6aee6495"]]);
+const _sfc_main$k = {
   __name: "nuxt-error-page",
   __ssrInlineRender: true,
   props: {
@@ -7049,13 +7188,13 @@ const _sfc_main$j = {
     };
   }
 };
-const _sfc_setup$j = _sfc_main$j.setup;
-_sfc_main$j.setup = (props, ctx) => {
+const _sfc_setup$k = _sfc_main$k.setup;
+_sfc_main$k.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-error-page.vue");
-  return _sfc_setup$j ? _sfc_setup$j(props, ctx) : void 0;
+  return _sfc_setup$k ? _sfc_setup$k(props, ctx) : void 0;
 };
-const _sfc_main$i = {
+const _sfc_main$j = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
@@ -7073,7 +7212,7 @@ const _sfc_main$i = {
       serverRenderer.exports.ssrRenderSuspense(_push, {
         default: () => {
           if (vue_cjs_prod.unref(error)) {
-            _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(_sfc_main$j), { error: vue_cjs_prod.unref(error) }, null, _parent));
+            _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(_sfc_main$k), { error: vue_cjs_prod.unref(error) }, null, _parent));
           } else {
             _push(serverRenderer.exports.ssrRenderComponent(_component_App, null, null, _parent));
           }
@@ -7083,13 +7222,13 @@ const _sfc_main$i = {
     };
   }
 };
-const _sfc_setup$i = _sfc_main$i.setup;
-_sfc_main$i.setup = (props, ctx) => {
+const _sfc_setup$j = _sfc_main$j.setup;
+_sfc_main$j.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue");
-  return _sfc_setup$i ? _sfc_setup$i(props, ctx) : void 0;
+  return _sfc_setup$j ? _sfc_setup$j(props, ctx) : void 0;
 };
-const _sfc_main$h = {
+const _sfc_main$i = {
   __name: "NuxtLoadingBar",
   __ssrInlineRender: true,
   props: {
@@ -7174,13 +7313,13 @@ const _sfc_main$h = {
     };
   }
 };
-const _sfc_setup$h = _sfc_main$h.setup;
-_sfc_main$h.setup = (props, ctx) => {
+const _sfc_setup$i = _sfc_main$i.setup;
+_sfc_main$i.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/NuxtLoadingBar.vue");
-  return _sfc_setup$h ? _sfc_setup$h(props, ctx) : void 0;
+  return _sfc_setup$i ? _sfc_setup$i(props, ctx) : void 0;
 };
-const _sfc_main$g = {
+const _sfc_main$h = {
   __name: "app",
   __ssrInlineRender: true,
   setup(__props) {
@@ -7193,7 +7332,7 @@ const _sfc_main$g = {
       appHeight();
     });
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLoadingBar = _sfc_main$h;
+      const _component_NuxtLoadingBar = _sfc_main$i;
       const _component_NuxtPage = vue_cjs_prod.resolveComponent("NuxtPage");
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLoadingBar, { duration: 1e3 }, null, _parent));
@@ -7202,11 +7341,11 @@ const _sfc_main$g = {
     };
   }
 };
-const _sfc_setup$g = _sfc_main$g.setup;
-_sfc_main$g.setup = (props, ctx) => {
+const _sfc_setup$h = _sfc_main$h.setup;
+_sfc_main$h.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("app.vue");
-  return _sfc_setup$g ? _sfc_setup$g(props, ctx) : void 0;
+  return _sfc_setup$h ? _sfc_setup$h(props, ctx) : void 0;
 };
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch$1.create({
@@ -7217,8 +7356,8 @@ let entry;
 const plugins = normalizePlugins(_plugins);
 {
   entry = async function createNuxtAppServer(ssrContext) {
-    const vueApp = vue_cjs_prod.createApp(_sfc_main$i);
-    vueApp.component("App", _sfc_main$g);
+    const vueApp = vue_cjs_prod.createApp(_sfc_main$j);
+    vueApp.component("App", _sfc_main$h);
     const nuxt = createNuxtApp({ vueApp, ssrContext });
     try {
       await applyPlugins(nuxt, plugins);
@@ -7231,7 +7370,7 @@ const plugins = normalizePlugins(_plugins);
   };
 }
 const entry$1 = (ctx) => entry(ctx);
-const _sfc_main$f = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$g = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Header",
   __ssrInlineRender: true,
   props: {
@@ -7285,13 +7424,13 @@ const _sfc_main$f = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$f = _sfc_main$f.setup;
-_sfc_main$f.setup = (props, ctx) => {
+const _sfc_setup$g = _sfc_main$g.setup;
+_sfc_main$g.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Header.vue");
-  return _sfc_setup$f ? _sfc_setup$f(props, ctx) : void 0;
+  return _sfc_setup$g ? _sfc_setup$g(props, ctx) : void 0;
 };
-const _sfc_main$e = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$f = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Footer",
   __ssrInlineRender: true,
   props: {
@@ -7330,17 +7469,17 @@ const _sfc_main$e = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         style: __props.showLogo ? null : { display: "none" },
         "show-week": false
       }, null, _parent));
-      _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "mt-4": __props.showLogo }, "text-neutral-content text-sm flex flex-col-reverse justify-center items-center"])}"><span>Copyright \xA9 2022 wcao.cc</span><span class="mx-2 text-neutral-content text-opacity-20 hidden xl:inline-block">|</span><span>\u8FD0\u884C: ${serverRenderer.exports.ssrInterpolate(time.value)}</span></p></footer>`);
+      _push(`<p class="${serverRenderer.exports.ssrRenderClass([{ "mt-4": __props.showLogo }, "text-neutral-content text-sm flex flex-col-reverse xl:flex-row justify-center items-center"])}"><span>Copyright \xA9 2022 wcao.cc</span><span class="mx-2 text-neutral-content text-opacity-20 hidden xl:inline-block">|</span><span>\u8FD0\u884C: ${serverRenderer.exports.ssrInterpolate(time.value)}</span></p></footer>`);
     };
   }
 });
-const _sfc_setup$e = _sfc_main$e.setup;
-_sfc_main$e.setup = (props, ctx) => {
+const _sfc_setup$f = _sfc_main$f.setup;
+_sfc_main$f.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Footer.vue");
-  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
+  return _sfc_setup$f ? _sfc_setup$f(props, ctx) : void 0;
 };
-const _sfc_main$d = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$e = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "default",
   __ssrInlineRender: true,
   emits: ["change"],
@@ -7349,8 +7488,8 @@ const _sfc_main$d = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const { y } = useScroll(el);
     vue_cjs_prod.watch(y, (val) => emit("change", val));
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_Header = _sfc_main$f;
-      const _component_Footer = _sfc_main$e;
+      const _component_Header = _sfc_main$g;
+      const _component_Footer = _sfc_main$f;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
         id: "container",
         ref_key: "el",
@@ -7365,20 +7504,20 @@ const _sfc_main$d = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$d = _sfc_main$d.setup;
-_sfc_main$d.setup = (props, ctx) => {
+const _sfc_setup$e = _sfc_main$e.setup;
+_sfc_main$e.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("layouts/default.vue");
-  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
+  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
 };
 const _default = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": _sfc_main$d
+  "default": _sfc_main$e
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$c = {};
+const _sfc_main$d = {};
 function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
-  const _component_Header = _sfc_main$f;
-  const _component_Footer = _sfc_main$e;
+  const _component_Header = _sfc_main$g;
+  const _component_Footer = _sfc_main$f;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "m-auto h-screen overflow-hidden flex-col flex" }, _attrs))}>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_Header, { class: "container m-auto flex-shrink-0 h-20 xl:px-32 px-4" }, {
     default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -7401,16 +7540,205 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$c = _sfc_main$c.setup;
-_sfc_main$c.setup = (props, ctx) => {
+const _sfc_setup$d = _sfc_main$d.setup;
+_sfc_main$d.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("layouts/tools.vue");
-  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
+  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
 };
-const tools = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["ssrRender", _sfc_ssrRender$1]]);
+const tools = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["ssrRender", _sfc_ssrRender$1]]);
 const tools$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": tools
+}, Symbol.toStringTag, { value: "Module" }));
+const _sfc_main$c = {
+  __name: "[pageIndex]",
+  __ssrInlineRender: true,
+  async setup(__props) {
+    let __temp, __restore;
+    const route = useRoute();
+    const { pageIndex } = route.params;
+    useHead({
+      titleTemplate: `${useTitle().title} - \u4ECA\u5929\u661F\u671F${useTitle().week}`
+    });
+    const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`index/${pageIndex}`, () => useStrapi4().find("posts", {
+      publicationState: "live" ,
+      populate: ["category", "headerImages", "tags"],
+      sort: ["updatedAt:desc"],
+      pagination: {
+        page: pageIndex,
+        pageSize: 15
+      }
+    }))), __temp = await __temp, __restore(), __temp);
+    const posts = vue_cjs_prod.computed(() => postsRes.value.data);
+    const { data: tagsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("tags", () => useStrapi4().find("tags", {
+      publicationState: "live" ,
+      populate: ["posts"]
+    }))), __temp = await __temp, __restore(), __temp);
+    const tags = vue_cjs_prod.computed(() => tagsRes.value.data);
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLayout = __nuxt_component_0$2;
+      const _component_PostList = __nuxt_component_1$1;
+      const _component_nuxt_link = __nuxt_component_2$1;
+      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
+        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(serverRenderer.exports.ssrRenderComponent(_component_PostList, {
+              posts: vue_cjs_prod.unref(posts),
+              pagination: vue_cjs_prod.unref(postsRes).meta.pagination
+            }, null, _parent2, _scopeId));
+            _push2(`<div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-fe2ee1ec${_scopeId}><div data-v-fe2ee1ec${_scopeId}><p class="bottom-title" data-v-fe2ee1ec${_scopeId}>Recent posts</p><ul data-v-fe2ee1ec${_scopeId}><!--[-->`);
+            serverRenderer.exports.ssrRenderList(3, (item) => {
+              _push2(`<li class="flex mt-5" data-v-fe2ee1ec${_scopeId}><img${serverRenderer.exports.ssrRenderAttr("src", "https://wcao.cc/r/a/avatar?" + item)} alt="" data-v-fe2ee1ec${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-fe2ee1ec${_scopeId}><span class="text-md text-base-content" data-v-fe2ee1ec${_scopeId}> June 5, 2019 </span><p class="text-xl text-base-300" data-v-fe2ee1ec${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
+            });
+            _push2(`<!--]--></ul></div><div data-v-fe2ee1ec${_scopeId}><p class="bottom-title" data-v-fe2ee1ec${_scopeId}>\u6807\u7B7E</p><div class="flex mt-5 flex-wrap" data-v-fe2ee1ec${_scopeId}><!--[-->`);
+            serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(tags), (item) => {
+              _push2(`<!--[-->`);
+              if (item.attributes.posts.data.length > 0) {
+                _push2(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
+                  to: `/tag/${item.id}`,
+                  class: "btn btn-sm border-0 shadow-md capitalize mr-2 mb-4",
+                  style: {
+                    color: item.attributes.color,
+                    backgroundColor: item.attributes.bgColor
+                  },
+                  key: item.id
+                }, {
+                  default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
+                    if (_push3) {
+                      _push3(`${serverRenderer.exports.ssrInterpolate(item.attributes.name)} <span class="ml-1" data-v-fe2ee1ec${_scopeId2}> (${serverRenderer.exports.ssrInterpolate(item.attributes.posts.data.length)}) </span>`);
+                    } else {
+                      return [
+                        vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(item.attributes.name) + " ", 1),
+                        vue_cjs_prod.createVNode("span", { class: "ml-1" }, " (" + vue_cjs_prod.toDisplayString(item.attributes.posts.data.length) + ") ", 1)
+                      ];
+                    }
+                  }),
+                  _: 2
+                }, _parent2, _scopeId));
+              } else {
+                _push2(`<!---->`);
+              }
+              _push2(`<!--]-->`);
+            });
+            _push2(`<!--]--></div></div><div data-v-fe2ee1ec${_scopeId}><p class="bottom-title" data-v-fe2ee1ec${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-fe2ee1ec${_scopeId}><div class="flex" data-v-fe2ee1ec${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-info"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-fe2ee1ec${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-fe2ee1ec${_scopeId}><p class="text-neutral-content" data-v-fe2ee1ec${_scopeId}><span class="text-xl font-semibold" data-v-fe2ee1ec${_scopeId}>meetqy</span><sup class="inline-block line-through decoration-error decoration-2 relative -top-3" data-v-fe2ee1ec${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-neutral-content text-opacity-80 text-sm my-1" data-v-fe2ee1ec${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-neutral-content mt-5" data-v-fe2ee1ec${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-fe2ee1ec${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-fe2ee1ec${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-fe2ee1ec${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-fe2ee1ec${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-fe2ee1ec${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-fe2ee1ec${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-fe2ee1ec${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-fe2ee1ec${_scopeId}> CSS </span></p></div></div></div>`);
+          } else {
+            return [
+              vue_cjs_prod.createVNode(_component_PostList, {
+                posts: vue_cjs_prod.unref(posts),
+                pagination: vue_cjs_prod.unref(postsRes).meta.pagination
+              }, null, 8, ["posts", "pagination"]),
+              vue_cjs_prod.createVNode("div", { class: "bottom-aside lg:grid-cols-3 md:grid-cols-2" }, [
+                vue_cjs_prod.createVNode("div", null, [
+                  vue_cjs_prod.createVNode("p", { class: "bottom-title" }, "Recent posts"),
+                  vue_cjs_prod.createVNode("ul", null, [
+                    (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(3, (item) => {
+                      return vue_cjs_prod.createVNode("li", { class: "flex mt-5" }, [
+                        vue_cjs_prod.createVNode("img", {
+                          src: "https://wcao.cc/r/a/avatar?" + item,
+                          alt: ""
+                        }, null, 8, ["src"]),
+                        vue_cjs_prod.createVNode("div", { class: "flex flex-col justify-center ml-5" }, [
+                          vue_cjs_prod.createVNode("span", { class: "text-md text-base-content" }, " June 5, 2019 "),
+                          vue_cjs_prod.createVNode("p", { class: "text-xl text-base-300" }, " Mars is the fourth planet from the Sun ")
+                        ])
+                      ]);
+                    }), 64))
+                  ])
+                ]),
+                vue_cjs_prod.createVNode("div", null, [
+                  vue_cjs_prod.createVNode("p", { class: "bottom-title" }, "\u6807\u7B7E"),
+                  vue_cjs_prod.createVNode("div", { class: "flex mt-5 flex-wrap" }, [
+                    (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(tags), (item) => {
+                      return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, [
+                        item.attributes.posts.data.length > 0 ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_nuxt_link, {
+                          to: `/tag/${item.id}`,
+                          class: "btn btn-sm border-0 shadow-md capitalize mr-2 mb-4",
+                          style: {
+                            color: item.attributes.color,
+                            backgroundColor: item.attributes.bgColor
+                          },
+                          key: item.id
+                        }, {
+                          default: vue_cjs_prod.withCtx(() => [
+                            vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(item.attributes.name) + " ", 1),
+                            vue_cjs_prod.createVNode("span", { class: "ml-1" }, " (" + vue_cjs_prod.toDisplayString(item.attributes.posts.data.length) + ") ", 1)
+                          ]),
+                          _: 2
+                        }, 1032, ["to", "style"])) : vue_cjs_prod.createCommentVNode("", true)
+                      ], 64);
+                    }), 256))
+                  ])
+                ]),
+                vue_cjs_prod.createVNode("div", null, [
+                  vue_cjs_prod.createVNode("p", { class: "bottom-title" }, "\u5173\u4E8E\u6211"),
+                  vue_cjs_prod.createVNode("div", { class: "mt-5" }, [
+                    vue_cjs_prod.createVNode("div", { class: "flex" }, [
+                      vue_cjs_prod.createVNode("img", {
+                        class: "w-24 h-24 rounded-full border-4 border-info",
+                        src: _imports_0,
+                        alt: "meetqy"
+                      }),
+                      vue_cjs_prod.createVNode("div", { class: "ml-5 flex flex-col justify-center" }, [
+                        vue_cjs_prod.createVNode("p", { class: "text-neutral-content" }, [
+                          vue_cjs_prod.createVNode("span", { class: "text-xl font-semibold" }, "meetqy"),
+                          vue_cjs_prod.createVNode("sup", { class: "inline-block line-through decoration-error decoration-2 relative -top-3" }, " \u90FD" + vue_cjs_prod.toDisplayString(new Date().getFullYear() - 1996) + "\u4E86 ", 1)
+                        ]),
+                        vue_cjs_prod.createVNode("p", { class: "text-neutral-content text-opacity-80 text-sm my-1" }, " \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 ")
+                      ])
+                    ]),
+                    vue_cjs_prod.createVNode("p", { class: "text-neutral-content mt-5" }, " \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 "),
+                    vue_cjs_prod.createVNode("p", { class: "mt-4 about" }, [
+                      vue_cjs_prod.createVNode("span", {
+                        class: "badge badge-lg border-0 uppercase shadow text-black",
+                        style: { "background-color": "#e5d836" }
+                      }, " js "),
+                      vue_cjs_prod.createVNode("span", {
+                        class: "badge badge-lg border-0 uppercase",
+                        style: { "background-color": "#4266bb" }
+                      }, " ts "),
+                      vue_cjs_prod.createVNode("span", {
+                        class: "badge badge-lg border-0 capitalize",
+                        style: { "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" }
+                      }, " flutter "),
+                      vue_cjs_prod.createVNode("span", {
+                        class: "badge badge-lg border-0 capitalize",
+                        style: { "background": "linear-gradient(to bottom right, #8bb840, #35362d)" }
+                      }, "node "),
+                      vue_cjs_prod.createVNode("span", {
+                        class: "badge badge-lg border-0 shadow text-black",
+                        style: { "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" }
+                      }, " Tailwind CSS "),
+                      vue_cjs_prod.createVNode("span", {
+                        class: "badge badge-lg border-0 shadow",
+                        style: { "background": "linear-gradient(to bottom right, #c15029, #cf642d)" }
+                      }, " HTML "),
+                      vue_cjs_prod.createVNode("span", {
+                        class: "badge badge-lg border-0 shadow",
+                        style: { "background": "linear-gradient(to bottom right, #335ca4, #5697de)" }
+                      }, " CSS ")
+                    ])
+                  ])
+                ])
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+    };
+  }
+};
+const _sfc_setup$c = _sfc_main$c.setup;
+_sfc_main$c.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index/[pageIndex].vue");
+  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
+};
+const _pageIndex_ = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-fe2ee1ec"]]);
+const _pageIndex_$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  "default": _pageIndex_
 }, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$b = {
   __name: "index",
@@ -7420,9 +7748,10 @@ const _sfc_main$b = {
     useHead({
       titleTemplate: `${useTitle().title} - \u4ECA\u5929\u661F\u671F${useTitle().week}`
     });
-    const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("posts", () => useStrapi4().find("posts", {
+    const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("index/1", () => useStrapi4().find("posts", {
       publicationState: "live" ,
       populate: ["category", "headerImages", "tags"],
+      sort: ["updatedAt:desc"],
       pagination: {
         page: 1,
         pageSize: 15
@@ -7445,11 +7774,11 @@ const _sfc_main$b = {
               posts: vue_cjs_prod.unref(posts),
               pagination: vue_cjs_prod.unref(postsRes).meta.pagination
             }, null, _parent2, _scopeId));
-            _push2(`<div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-22126430${_scopeId}><div data-v-22126430${_scopeId}><p class="bottom-title" data-v-22126430${_scopeId}>Recent posts</p><ul data-v-22126430${_scopeId}><!--[-->`);
+            _push2(`<div class="bottom-aside lg:grid-cols-3 md:grid-cols-2" data-v-e7fab59a${_scopeId}><div data-v-e7fab59a${_scopeId}><p class="bottom-title" data-v-e7fab59a${_scopeId}>Recent posts</p><ul data-v-e7fab59a${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(3, (item) => {
-              _push2(`<li class="flex mt-5" data-v-22126430${_scopeId}><img${serverRenderer.exports.ssrRenderAttr("src", "https://wcao.cc/r/a/avatar?" + item)} alt="" data-v-22126430${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-22126430${_scopeId}><span class="text-md text-base-content" data-v-22126430${_scopeId}> June 5, 2019 </span><p class="text-xl text-base-300" data-v-22126430${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
+              _push2(`<li class="flex mt-5" data-v-e7fab59a${_scopeId}><img${serverRenderer.exports.ssrRenderAttr("src", "https://wcao.cc/r/a/avatar?" + item)} alt="" data-v-e7fab59a${_scopeId}><div class="flex flex-col justify-center ml-5" data-v-e7fab59a${_scopeId}><span class="text-md text-base-content" data-v-e7fab59a${_scopeId}> June 5, 2019 </span><p class="text-xl text-base-300" data-v-e7fab59a${_scopeId}> Mars is the fourth planet from the Sun </p></div></li>`);
             });
-            _push2(`<!--]--></ul></div><div data-v-22126430${_scopeId}><p class="bottom-title" data-v-22126430${_scopeId}>\u6807\u7B7E</p><div class="flex mt-5 flex-wrap" data-v-22126430${_scopeId}><!--[-->`);
+            _push2(`<!--]--></ul></div><div data-v-e7fab59a${_scopeId}><p class="bottom-title" data-v-e7fab59a${_scopeId}>\u6807\u7B7E</p><div class="flex mt-5 flex-wrap" data-v-e7fab59a${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(tags), (item) => {
               _push2(`<!--[-->`);
               if (item.attributes.posts.data.length > 0) {
@@ -7464,7 +7793,7 @@ const _sfc_main$b = {
                 }, {
                   default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                     if (_push3) {
-                      _push3(`${serverRenderer.exports.ssrInterpolate(item.attributes.name)} <span class="ml-1" data-v-22126430${_scopeId2}> (${serverRenderer.exports.ssrInterpolate(item.attributes.posts.data.length)}) </span>`);
+                      _push3(`${serverRenderer.exports.ssrInterpolate(item.attributes.name)} <span class="ml-1" data-v-e7fab59a${_scopeId2}> (${serverRenderer.exports.ssrInterpolate(item.attributes.posts.data.length)}) </span>`);
                     } else {
                       return [
                         vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(item.attributes.name) + " ", 1),
@@ -7479,7 +7808,7 @@ const _sfc_main$b = {
               }
               _push2(`<!--]-->`);
             });
-            _push2(`<!--]--></div></div><div data-v-22126430${_scopeId}><p class="bottom-title" data-v-22126430${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-22126430${_scopeId}><div class="flex" data-v-22126430${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-info"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-22126430${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-22126430${_scopeId}><p class="text-neutral-content" data-v-22126430${_scopeId}><span class="text-xl font-semibold" data-v-22126430${_scopeId}>meetqy</span><sup class="inline-block line-through decoration-error decoration-2 relative -top-3" data-v-22126430${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-neutral-content text-opacity-80 text-sm my-1" data-v-22126430${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-neutral-content mt-5" data-v-22126430${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-22126430${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-22126430${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-22126430${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-22126430${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-22126430${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-22126430${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-22126430${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-22126430${_scopeId}> CSS </span></p></div></div></div>`);
+            _push2(`<!--]--></div></div><div data-v-e7fab59a${_scopeId}><p class="bottom-title" data-v-e7fab59a${_scopeId}>\u5173\u4E8E\u6211</p><div class="mt-5" data-v-e7fab59a${_scopeId}><div class="flex" data-v-e7fab59a${_scopeId}><img class="w-24 h-24 rounded-full border-4 border-info"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} alt="meetqy" data-v-e7fab59a${_scopeId}><div class="ml-5 flex flex-col justify-center" data-v-e7fab59a${_scopeId}><p class="text-neutral-content" data-v-e7fab59a${_scopeId}><span class="text-xl font-semibold" data-v-e7fab59a${_scopeId}>meetqy</span><sup class="inline-block line-through decoration-error decoration-2 relative -top-3" data-v-e7fab59a${_scopeId}> \u90FD${serverRenderer.exports.ssrInterpolate(new Date().getFullYear() - 1996)}\u4E86 </sup></p><p class="text-neutral-content text-opacity-80 text-sm my-1" data-v-e7fab59a${_scopeId}> \u524D\u7AEFCV\u5DE5\u7A0B\u5E08 - \u64C5\u957FCV\u5927\u6CD5 </p></div></div><p class="text-neutral-content mt-5" data-v-e7fab59a${_scopeId}> \u6478\u9C7C\u3001\u517B\u72D7\u3001\u5E72\u996D\u3001\u627E\u6A21\u677F\u3001\u5199\u6A21\u677F\uFF0C\u751F\u6D3B\u5C31\u662F\u5982\u6B64\u7684\u6734\u5B9E\u65E0\u534E\uFF01 </p><p class="mt-4 about" data-v-e7fab59a${_scopeId}><span class="badge badge-lg border-0 uppercase shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#e5d836" })}" data-v-e7fab59a${_scopeId}> js </span><span class="badge badge-lg border-0 uppercase" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "#4266bb" })}" data-v-e7fab59a${_scopeId}> ts </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #69bcf0, #28468a)" })}" data-v-e7fab59a${_scopeId}> flutter </span><span class="badge badge-lg border-0 capitalize" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #8bb840, #35362d)" })}" data-v-e7fab59a${_scopeId}>node </span><span class="badge badge-lg border-0 shadow text-black" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #4ea1c5, #55b3a8)" })}" data-v-e7fab59a${_scopeId}> Tailwind CSS </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #c15029, #cf642d)" })}" data-v-e7fab59a${_scopeId}> HTML </span><span class="badge badge-lg border-0 shadow" style="${serverRenderer.exports.ssrRenderStyle({ "background": "linear-gradient(to bottom right, #335ca4, #5697de)" })}" data-v-e7fab59a${_scopeId}> CSS </span></p></div></div></div>`);
           } else {
             return [
               vue_cjs_prod.createVNode(_component_PostList, {
@@ -7590,10 +7919,10 @@ const _sfc_main$b = {
 const _sfc_setup$b = _sfc_main$b.setup;
 _sfc_main$b.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index/index.vue");
   return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
 };
-const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-22126430"]]);
+const index$6 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-e7fab59a"]]);
 const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": index$6
@@ -7620,6 +7949,7 @@ const _sfc_main$a = {
     });
     const { id } = useRoute().params;
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`posts/${id}`, () => useStrapi4().find(`posts/${id}`, {
+      publicationState: "live" ,
       populate: ["category", "tags", "previewImages"]
     }))), __temp = await __temp, __restore(), __temp);
     const post = vue_cjs_prod.computed(() => {
@@ -7646,19 +7976,19 @@ const _sfc_main$a = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<main class="main-content flex" data-v-0e38af15${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
+            _push2(`<main class="main-content flex" data-v-9706bfc2${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
               { fixed: asideFixed.value },
               "top-0 w-96 max-h-screen hidden lg:flex flex-col z-10 flex-shrink-0"
-            ])}" data-v-0e38af15${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}" data-v-0e38af15${_scopeId}><div class="p-2 h-min rounded-box" data-v-0e38af15${_scopeId}>`);
+            ])}" data-v-9706bfc2${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full lg:pr-10 my-5"])}" data-v-9706bfc2${_scopeId}><div class="p-2 h-min rounded-box" data-v-9706bfc2${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full lg:pr-10" data-v-0e38af15${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box" data-v-0e38af15${_scopeId}><li class="menu-title py-2" data-v-0e38af15${_scopeId}><span data-v-0e38af15${_scopeId}>Type</span></li><!--[-->`);
+            _push2(`</div></section><section class="w-full lg:pr-10" data-v-9706bfc2${_scopeId}><ul class="menu bg-base-100 p-2 w-full h-min rounded-box" data-v-9706bfc2${_scopeId}><li class="menu-title py-2" data-v-9706bfc2${_scopeId}><span data-v-9706bfc2${_scopeId}>Type</span></li><!--[-->`);
             serverRenderer.exports.ssrRenderList(_ctx.types, (item, index2) => {
-              _push2(`<li class="text-xl" data-v-0e38af15${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#" + item.name)} class="${serverRenderer.exports.ssrRenderClass({
+              _push2(`<li class="text-xl" data-v-9706bfc2${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#" + item.name)} class="${serverRenderer.exports.ssrRenderClass({
                 active: _ctx.curTypes === index2,
                 capitalize: _ctx.curTypes === index2
-              })}" data-v-0e38af15${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.name)}</a></li>`);
+              })}" data-v-9706bfc2${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.name)}</a></li>`);
             });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}" data-v-0e38af15${_scopeId}></aside><div class="flex-1 relative overflow-hidden p-5 bg-base-100 rounded-md" data-v-0e38af15${_scopeId}>`);
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}" data-v-9706bfc2${_scopeId}></aside><div class="flex-1 relative overflow-hidden p-5 bg-base-100 rounded-md" data-v-9706bfc2${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(Swiper), {
               class: "swiper w-full rounded-2xl",
               modules,
@@ -7674,7 +8004,7 @@ const _sfc_main$a = {
                     }, {
                       default: vue_cjs_prod.withCtx((_3, _push4, _parent4, _scopeId3) => {
                         if (_push4) {
-                          _push4(`<img class="rounded-2xl xl:w-1/5 md:w-1/3 w-1/2"${serverRenderer.exports.ssrRenderAttr("src", vue_cjs_prod.unref($cdn) + item.attributes.url)} data-v-0e38af15${_scopeId3}>`);
+                          _push4(`<img class="rounded-2xl xl:w-1/5 md:w-1/3 w-1/2"${serverRenderer.exports.ssrRenderAttr("src", vue_cjs_prod.unref($cdn) + item.attributes.url)} data-v-9706bfc2${_scopeId3}>`);
                         } else {
                           return [
                             vue_cjs_prod.createVNode("img", {
@@ -7709,7 +8039,7 @@ const _sfc_main$a = {
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`<div class="flex items-center mt-6 flex-wrap mb-10" data-v-0e38af15${_scopeId}><a href="javascript:;" class="flex items-center justify-center" data-v-0e38af15${_scopeId}><img class="w-8 h-8 rounded-full relative -top-0.5" style="${serverRenderer.exports.ssrRenderStyle({ "box-shadow": "2px 2px 5px 1px rgb(0 0 0 / 20%)" })}"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} data-v-0e38af15${_scopeId}><span class="ml-3" data-v-0e38af15${_scopeId}> meetqy </span></a><a href="javascript:;" class="ml-6" data-v-0e38af15${_scopeId}><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-0e38af15${_scopeId}>\uE8B4</i><span class="ml-2" data-v-0e38af15${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).updatedAt.split("T")[0])}</span></a><a href="javascript:;" class="ml-6" data-v-0e38af15${_scopeId}><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-0e38af15${_scopeId}>\uE8F4</i><span class="ml-2" data-v-0e38af15${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).visit)}</span></a><a href="javascript:;" class="ml-6" data-v-0e38af15${_scopeId}><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-0e38af15${_scopeId}>\uE8B5</i><span class="ml-2" data-v-0e38af15${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).comment)}</span></a></div><article class="prose prose-neutral prose-a:text-blue-500 break-words mb-20" data-v-0e38af15${_scopeId}>${vue_cjs_prod.unref(content)}</article><div class="divider" data-v-0e38af15${_scopeId}>End</div><div class="py-12 flex justify-center items-center flex-wrap" data-v-0e38af15${_scopeId}><span class="text-lg font-semibold mr-4" data-v-0e38af15${_scopeId}>Link:</span><a${serverRenderer.exports.ssrRenderAttr("href", vue_cjs_prod.unref(post).link)} class="underline text-blue-500 break-words inline-block w-full text-center md:w-auto" data-v-0e38af15${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).link)}</a></div></div></main>`);
+            _push2(`<div class="flex items-center mt-6 flex-wrap mb-10" data-v-9706bfc2${_scopeId}><a href="javascript:;" class="flex items-center justify-center" data-v-9706bfc2${_scopeId}><img class="w-8 h-8 rounded-full relative -top-0.5" style="${serverRenderer.exports.ssrRenderStyle({ "box-shadow": "2px 2px 5px 1px rgb(0 0 0 / 20%)" })}"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} data-v-9706bfc2${_scopeId}><span class="ml-3" data-v-9706bfc2${_scopeId}> meetqy </span></a><a href="javascript:;" class="ml-6" data-v-9706bfc2${_scopeId}><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-9706bfc2${_scopeId}>\uE8B4</i><span class="ml-2" data-v-9706bfc2${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).updatedAt.split("T")[0])}</span></a><a href="javascript:;" class="ml-6" data-v-9706bfc2${_scopeId}><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-9706bfc2${_scopeId}>\uE8F4</i><span class="ml-2" data-v-9706bfc2${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).visit)}</span></a><a href="javascript:;" class="ml-6" data-v-9706bfc2${_scopeId}><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-9706bfc2${_scopeId}>\uE8B5</i><span class="ml-2" data-v-9706bfc2${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).comment)}</span></a></div><article class="prose prose-neutral prose-a:text-blue-500 break-words mb-20" data-v-9706bfc2${_scopeId}>${vue_cjs_prod.unref(content)}</article><div class="divider" data-v-9706bfc2${_scopeId}>End</div><div class="py-12 flex justify-center items-center flex-wrap" data-v-9706bfc2${_scopeId}><span class="text-lg font-semibold mr-4" data-v-9706bfc2${_scopeId}>Link:</span><a${serverRenderer.exports.ssrRenderAttr("href", vue_cjs_prod.unref(post).link)} class="underline text-blue-500 break-words inline-block w-full text-center md:w-auto" data-v-9706bfc2${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).link)}</a></div></div></main>`);
           } else {
             return [
               vue_cjs_prod.createVNode("main", { class: "main-content flex" }, [
@@ -7847,7 +8177,7 @@ _sfc_main$a.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/posts/[id].vue");
   return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
 };
-const _id_$2 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-0e38af15"]]);
+const _id_$2 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-9706bfc2"]]);
 const _id_$3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": _id_$2
@@ -7964,6 +8294,7 @@ const _sfc_main$8 = {
     const activeCode = vue_cjs_prod.ref(false);
     const { id } = route.params;
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`posts/${id}`, () => useStrapi4().find(`posts/${id}`, {
+      publicationState: "live" ,
       populate: ["tags"]
     }))), __temp = await __temp, __restore(), __temp);
     const post = vue_cjs_prod.computed(() => {
@@ -7974,7 +8305,7 @@ const _sfc_main$8 = {
     const { data: html } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/fragments/${file[0].toLowerCase()}/${file[1]}.html`, {
       baseURL: useBaseUrl()
     })), __temp = await __temp, __restore(), __temp);
-    const name = post.value.desciption.split("-");
+    const name = vue_cjs_prod.computed(() => ultra[post.value.title.split(" Part ")[1]]);
     const curTheme = vue_cjs_prod.ref("dark");
     const showCode = () => {
       activeCode.value = !activeCode.value;
@@ -8015,7 +8346,7 @@ const _sfc_main$8 = {
             serverRenderer.exports.ssrRenderList(themes, (item) => {
               _push2(`<li${serverRenderer.exports.ssrRenderAttr("data-theme", item)} class="${serverRenderer.exports.ssrRenderClass([{ "outline-dashed": curTheme.value === item }, "my-2 shadow rounded-box"])}"${_scopeId}><a href="javascript:;" class="flex justify-between hover:bg-transparent active:bg-transparent focus:bg-transparent"${_scopeId}><span${_scopeId}>${serverRenderer.exports.ssrInterpolate(item)}</span><div class="flex gap-1 h-4"${_scopeId}><div class="bg-primary w-2 rounded"${_scopeId}></div><div class="bg-secondary w-2 rounded"${_scopeId}></div><div class="bg-accent w-2 rounded"${_scopeId}></div><div class="bg-neutral w-2 rounded"${_scopeId}></div></div></a></li>`);
             });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"${_scopeId}><div class="prose mb-8"${_scopeId}><h2 class="flex justify-between"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).title)} <span${_scopeId}><small class="text-info"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(name)[0])}</small><small class="font-light ml-2 text-base-content text-opacity-50"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(name)[1])}</small></span></h2></div><div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("data-theme", curTheme.value)}${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-link": !activeCode.value }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${vue_cjs_prod.unref(html)}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value ? null : { display: "none" })}"${_scopeId}>                <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + vue_cjs_prod.unref(id))} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(html))}</code>
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 flex-shrink-0 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box"${_scopeId}><div class="prose mb-8"${_scopeId}><h2 class="flex justify-between capitalize"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(post).title)} <span${_scopeId}><small class="text-info"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(name)[0])}</small><small class="font-light ml-2 text-base-content text-opacity-50"${_scopeId}> (${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(name)[1])}) </small></span></h2></div><div class="mockup-window border bg-base-300 w-full mb-8"${serverRenderer.exports.ssrRenderAttr("data-theme", curTheme.value)}${_scopeId}><div class="${serverRenderer.exports.ssrRenderClass([{ "btn-link": !activeCode.value }, "btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"])}"${_scopeId}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"${_scopeId}></path></svg></div><div class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"${_scopeId}>${vue_cjs_prod.unref(html)}</div><pre class="bg-base-200 px-4" style="${serverRenderer.exports.ssrRenderStyle(activeCode.value ? null : { display: "none" })}"${_scopeId}>                <code${serverRenderer.exports.ssrRenderAttr("id", "pre-" + vue_cjs_prod.unref(id))} class="rounded-box"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(html))}</code>
             </pre></div></div></main>`);
           } else {
             return [
@@ -8077,11 +8408,11 @@ const _sfc_main$8 = {
                 ]),
                 vue_cjs_prod.createVNode("div", { class: "flex-1 relative overflow-hidden px-5 bg-base-100 py-10 rounded-box" }, [
                   vue_cjs_prod.createVNode("div", { class: "prose mb-8" }, [
-                    vue_cjs_prod.createVNode("h2", { class: "flex justify-between" }, [
+                    vue_cjs_prod.createVNode("h2", { class: "flex justify-between capitalize" }, [
                       vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(post).title) + " ", 1),
                       vue_cjs_prod.createVNode("span", null, [
                         vue_cjs_prod.createVNode("small", { class: "text-info" }, vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(name)[0]), 1),
-                        vue_cjs_prod.createVNode("small", { class: "font-light ml-2 text-base-content text-opacity-50" }, vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(name)[1]), 1)
+                        vue_cjs_prod.createVNode("small", { class: "font-light ml-2 text-base-content text-opacity-50" }, " (" + vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(name)[1]) + ") ", 1)
                       ])
                     ])
                   ]),
@@ -8645,6 +8976,13 @@ const _sfc_main = {
             const n = e2.match(/[0-9]+/)[0];
             const prefix = e2.split("-gray")[0];
             return `${prefix}-base-content ${prefix}-opacity-${+n / 10}`;
+          });
+        });
+        classname = classname.map((item) => {
+          return item.replace(/[a-z]+-slate-[0-9]+/, (e2) => {
+            const n = e2.match(/[0-9]+/)[0];
+            const prefix = e2.split("-slate")[0];
+            return `${prefix}-accent-focus ${prefix}-opacity-${+n / 10}`;
           });
         });
         return `class="${classname.join(" ")}"`;

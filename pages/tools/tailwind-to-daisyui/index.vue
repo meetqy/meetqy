@@ -91,6 +91,16 @@ const toDaisyUI = (str) => {
           return `${prefix}-base-content ${prefix}-opacity-${+n / 10}`;
         });
       });
+
+      // slate
+      classname = classname.map((item) => {
+        return item.replace(/[a-z]+-slate-[0-9]+/, (e) => {
+          const n = e.match(/[0-9]+/)[0];
+          const prefix = e.split("-slate")[0];
+          return `${prefix}-accent-focus ${prefix}-opacity-${+n / 10}`;
+        });
+      });
+
       return `class="${classname.join(" ")}"`;
     })
     .replace(/src=('|").*?("|')/g, `src='https://wcao.cc/r/a/xxx'`);
