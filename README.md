@@ -1,4 +1,4 @@
-<img src='https://wcao.cc/image-space/api/girls?xxx' width="375" height="568" align='left'>
+<img src='https://wcao.cc/image-space/api/girls?xxx' width="370" height="568" align='left'>
 
 # Hi 👋, I'm MeetQY
 
