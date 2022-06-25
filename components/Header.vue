@@ -7,9 +7,15 @@
     </span>
 
     <ul
-      class="menu text-neutral-content menu-horizontal rounded-box md:flex hidden"
+      class="menu menu-horizontal bg-base-100 bg-opacity-50 shadow-md text-base-content rounded-box md:flex hidden"
     >
-      <li v-for="item in navs" :key="item.name">
+      <li
+        v-for="item in navs"
+        :key="item.name"
+        :class="{
+          bordered: route.name.toString().includes(item.routeName),
+        }"
+      >
         <nuxt-link :to="item.url">
           {{ item.name }}
         </nuxt-link>
@@ -56,6 +62,8 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {});
 
+const route = useRoute();
+
 const isDark = useDark({
   selector: "html",
   attribute: "data-theme",
@@ -68,6 +76,7 @@ const toggleDark = useToggle(isDark);
 interface NavItem {
   name: string;
   url: string;
+  routeName: string;
   children?: NavItem[];
 }
 
@@ -75,6 +84,19 @@ const navs: NavItem[] = [
   {
     name: "首页",
     url: "/",
+    routeName: "index",
+    children: [],
+  },
+  {
+    name: "模板",
+    url: "/template/1",
+    routeName: "template",
+    children: [],
+  },
+  {
+    name: "工具",
+    url: "/tools/1",
+    routeName: "tools",
     children: [],
   },
 ];

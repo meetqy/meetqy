@@ -7,15 +7,21 @@
 </template>
 
 <script setup>
-useHead({
-  titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
-});
+const route = useRoute();
 
-const { data: postsRes } = await useAsyncData("index/1", () =>
+const { pageIndex } = route.params;
+
+const { data: postsRes } = await useAsyncData("tools/" + pageIndex, () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
-    populate: ["category", "headerImages", "tags"],
-    sort: ["updatedAt:desc"],
+    populate: ["category", "tags", "headerImages"],
+    filters: {
+      category: {
+        id: {
+          $eq: 2,
+        },
+      },
+    },
     pagination: {
       page: 1,
       pageSize: 15,
