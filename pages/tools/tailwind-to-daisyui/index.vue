@@ -103,7 +103,10 @@ const toDaisyUI = (str) => {
 
       return `class="${classname.join(" ")}"`;
     })
-    .replace(/src=('|").*?("|')/g, `src='https://wcao.cc/r/a/xxx'`);
+    .replace(/src=('|").*?("|')/g, (e) => {
+      if (e.includes("https://wcao.cc")) return e;
+      return `src='https://wcao.cc/r/a/xxx'`;
+    });
 };
 
 onMounted(async () => {

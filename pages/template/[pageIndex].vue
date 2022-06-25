@@ -15,6 +15,7 @@ const { data: postsRes } = await useAsyncData("tools/" + pageIndex, () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
     populate: ["category", "tags", "headerImages"],
+    sort: ["updatedAt:desc"],
     filters: {
       category: {
         id: {
