@@ -16,7 +16,10 @@
           </div>
         </section>
 
-        <section class="w-full xl:pr-10 pr-4 xl:mt-5">
+        <section
+          class="w-full xl:pr-10 pr-4"
+          :class="{ 'xl:mt-5': asideFixed }"
+        >
           <ul
             class="menu bg-base-100 p-2 w-full h-96 overflow-y-scroll rounded-box scrollbar"
           >
@@ -86,26 +89,52 @@
           class="mockup-window border bg-base-300 w-full mb-8"
           :data-theme="curTheme"
         >
-          <div
-            class="btn btn-sm btn-square btn-primary absolute right-8 top-2 gap-2"
-            :class="{ 'btn-link': !activeCode }"
-            @click="showCode"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
+          <div class="flex absolute right-4 top-2">
+            <div
+              class="btn btn-sm btn-square btn-primary mr-4"
+              title="查看源码"
+              :class="{ 'btn-link': !activeCode }"
+              @click="showCode"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+            </div>
+
+            <a
+              :href="post.link"
+              target="_blank"
+              class="btn btn-sm btn-square btn-ghost"
+              title="模板来源"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                />
+              </svg>
+            </a>
           </div>
+
           <div
             class="flex justify-center px-4 lg:pt-16 lg:pb-10 pt-8 pb-5 bg-base-200"
             v-html="html"

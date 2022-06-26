@@ -63,7 +63,7 @@
         </div>
 
         <p class="text-neutral-content mt-5">
-          摸鱼、养狗、干饭、找模板、写模板，生活就是如此的朴实无华！
+          摸鱼、养狗、干饭、收集模板、写模板，生活就是如此的朴实无华！
         </p>
         <p class="mt-4 about">
           <span
