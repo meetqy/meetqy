@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <div>
-      <div class="mt-12 flex justify-center px-32">
+      <div class="mt-12 flex justify-center xl:px-32">
         <div class="navbar bg-base-100 rounded-box bg-opacity-20 h-24">
           <a class="btn btn-ghost normal-case text-2xl m-auto">{{
             tag.name

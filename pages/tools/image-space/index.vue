@@ -52,6 +52,10 @@
       >
         <h1>Random Image</h1>
 
+        <p>
+          <nuxt-link to="/tools/image-space/1">演示1</nuxt-link>
+        </p>
+
         <p>根据类型随机生成一张图片</p>
 
         <ul>

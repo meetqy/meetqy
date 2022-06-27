@@ -4591,7 +4591,7 @@ function defineNuxtLink(options) {
     }
   });
 }
-const __nuxt_component_1$3 = defineNuxtLink({ componentName: "NuxtLink" });
+const __nuxt_component_2$2 = defineNuxtLink({ componentName: "NuxtLink" });
 var shared_cjs_prod = {};
 Object.defineProperty(shared_cjs_prod, "__esModule", { value: true });
 function makeMap(str, expectsLowerCase) {
@@ -5743,7 +5743,7 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$y = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$z = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemA",
   __ssrInlineRender: true,
   props: {
@@ -5757,7 +5757,7 @@ const _sfc_main$y = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   setup(__props) {
     const $cdn = useCdnUrl();
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_nuxt_link = __nuxt_component_1$3;
+      const _component_nuxt_link = __nuxt_component_2$2;
       _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
         class: "article-a",
         style: `background-image:url(${vue_cjs_prod.unref($cdn)}${__props.headerImages[0]})`
@@ -5780,14 +5780,14 @@ const _sfc_main$y = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$y = _sfc_main$y.setup;
-_sfc_main$y.setup = (props, ctx) => {
+const _sfc_setup$z = _sfc_main$z.setup;
+_sfc_main$z.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemA.vue");
-  return _sfc_setup$y ? _sfc_setup$y(props, ctx) : void 0;
+  return _sfc_setup$z ? _sfc_setup$z(props, ctx) : void 0;
 };
-const __nuxt_component_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["__scopeId", "data-v-15767cb2"]]);
-const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const __nuxt_component_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["__scopeId", "data-v-15767cb2"]]);
+const _sfc_main$y = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemC",
   __ssrInlineRender: true,
   props: {
@@ -5807,7 +5807,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       html.value = data.value;
     }
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_nuxt_link = __nuxt_component_1$3;
+      const _component_nuxt_link = __nuxt_component_2$2;
       _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-7f5ed05a><div class="flex justify-center px-4 relative" data-v-7f5ed05a>${html.value}</div>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
@@ -5828,14 +5828,14 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$x = _sfc_main$x.setup;
-_sfc_main$x.setup = (props, ctx) => {
+const _sfc_setup$y = _sfc_main$y.setup;
+_sfc_main$y.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
-  return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
+  return _sfc_setup$y ? _sfc_setup$y(props, ctx) : void 0;
 };
-const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-7f5ed05a"]]);
-const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["__scopeId", "data-v-7f5ed05a"]]);
+const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemB",
   __ssrInlineRender: true,
   props: {
@@ -5855,7 +5855,7 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const $cdn = useCdnUrl();
     const modules = [Navigation];
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_nuxt_link = __nuxt_component_1$3;
+      const _component_nuxt_link = __nuxt_component_2$2;
       _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "article-b" }, _attrs))} data-v-5bd887ee><div class="tags relative z-20" data-v-5bd887ee><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-5bd887ee>${serverRenderer.exports.ssrInterpolate(__props.category.name)}</a></div><header data-v-5bd887ee>`);
       _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(Swiper), {
         class: "rounded-t-2xl",
@@ -5922,14 +5922,14 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$w = _sfc_main$w.setup;
-_sfc_main$w.setup = (props, ctx) => {
+const _sfc_setup$x = _sfc_main$x.setup;
+_sfc_main$x.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemB.vue");
-  return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
+  return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-5bd887ee"]]);
-const _sfc_main$v = {
+const __nuxt_component_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-5bd887ee"]]);
+const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
   props: {
@@ -5952,7 +5952,7 @@ const _sfc_main$v = {
       const _component_grid_item_a = __nuxt_component_0$1;
       const _component_grid_item_c = __nuxt_component_1$2;
       const _component_grid_item_b = __nuxt_component_2$1;
-      const _component_nuxt_link = __nuxt_component_1$3;
+      const _component_nuxt_link = __nuxt_component_2$2;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-e696deae>`);
       if (props.posts) {
         _push(`<div class="multi-columns pt-5 md:pt-10 md:columns-2 columns-1 xl:columns-3" data-v-e696deae><!--[-->`);
@@ -6029,15 +6029,15 @@ const _sfc_main$v = {
     };
   }
 };
-const _sfc_setup$v = _sfc_main$v.setup;
-_sfc_main$v.setup = (props, ctx) => {
+const _sfc_setup$w = _sfc_main$w.setup;
+_sfc_main$w.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/PostList.vue");
-  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
+  return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["__scopeId", "data-v-e696deae"]]);
+const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-e696deae"]]);
 const _imports_0 = publicAssetsURL(`avatar.jpg`);
-const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$v = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "BottomAside",
   __ssrInlineRender: true,
   props: {
@@ -6045,7 +6045,7 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_nuxt_link = __nuxt_component_1$3;
+      const _component_nuxt_link = __nuxt_component_2$2;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "bottom-aside lg:grid-cols-3 md:grid-cols-2" }, _attrs))} data-v-4e9c0c50><div data-v-4e9c0c50><p class="bottom-title" data-v-4e9c0c50>Recent posts</p><ul data-v-4e9c0c50><!--[-->`);
       serverRenderer.exports.ssrRenderList(3, (item) => {
         _push(`<li class="flex mt-5" data-v-4e9c0c50><img${serverRenderer.exports.ssrRenderAttr("src", "https://wcao.cc/r/a/avatar?" + item)} alt="" data-v-4e9c0c50><div class="flex flex-col justify-center ml-5" data-v-4e9c0c50><span class="text-md text-base-content" data-v-4e9c0c50> June 5, 2019 </span><p class="text-xl text-base-300" data-v-4e9c0c50> Mars is the fourth planet from the Sun </p></div></li>`);
@@ -6084,13 +6084,13 @@ const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$u = _sfc_main$u.setup;
-_sfc_main$u.setup = (props, ctx) => {
+const _sfc_setup$v = _sfc_main$v.setup;
+_sfc_main$v.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/BottomAside.vue");
-  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
+  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
-const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["__scopeId", "data-v-4e9c0c50"]]);
+const __nuxt_component_2 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["__scopeId", "data-v-4e9c0c50"]]);
 const useStrapiVersion = () => {
   const config = useRuntimeConfig().public;
   return config.strapi.version;
@@ -6184,9 +6184,9 @@ const useStrapi4 = () => {
     delete: _delete
   };
 };
+const meta$g = void 0;
 const meta$f = void 0;
-const meta$e = void 0;
-const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$u = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "W",
   __ssrInlineRender: true,
   props: {
@@ -6209,13 +6209,13 @@ const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$t = _sfc_main$t.setup;
-_sfc_main$t.setup = (props, ctx) => {
+const _sfc_setup$u = _sfc_main$u.setup;
+_sfc_main$u.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
-  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
+  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const version = "0.0.14";
+const version = "0.0.15";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev",
@@ -6257,7 +6257,7 @@ const pkg = {
   dependencies,
   overrides
 };
-const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$t = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Logo",
   __ssrInlineRender: true,
   props: {
@@ -6276,8 +6276,8 @@ const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     ]);
     const { cao, week } = useTitle();
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_nuxt_link = __nuxt_component_1$3;
-      const _component_W = _sfc_main$t;
+      const _component_nuxt_link = __nuxt_component_2$2;
+      const _component_W = _sfc_main$u;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "flex items-end" }, _attrs))} data-v-87db058c><div class="flex items-center cursor-pointer logo" data-v-87db058c>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: "/",
@@ -6330,16 +6330,16 @@ const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$s = _sfc_main$s.setup;
-_sfc_main$s.setup = (props, ctx) => {
+const _sfc_setup$t = _sfc_main$t.setup;
+_sfc_main$t.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Logo.vue");
-  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
+  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["__scopeId", "data-v-87db058c"]]);
+const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-87db058c"]]);
+const meta$e = void 0;
 const meta$d = void 0;
 const meta$c = void 0;
-const meta$b = void 0;
 const ultra = [
   ["\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3 / \u521D\u4EE3\u30DE\u30F3", "Ultraman"],
   ["\u4F50\u83F2", "\u30BE\u30D5\u30A3\u30FC", "Zoffy"],
@@ -6434,6 +6434,7 @@ const ultra = [
   ["\u7EB3\u4F0A\u65AF\xB7\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30CA\u30A4\u30B9", "Ultraman Nice"],
   ["\u96F7\u53E4\u6D1B\u601D\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30B0\u30ED\u30B9", "Ultraman Regulos"]
 ];
+const meta$b = void 0;
 const meta$a = void 0;
 const meta$9 = void 0;
 const meta$8 = void 0;
@@ -6491,7 +6492,7 @@ const allLanguage = [
     mode: "application/ld+json"
   }
 ];
-const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Editor",
   __ssrInlineRender: true,
   props: {
@@ -6557,7 +6558,7 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$2;
-      const _component_nuxt_link = __nuxt_component_1$3;
+      const _component_nuxt_link = __nuxt_component_2$2;
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -6633,14 +6634,14 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$r = _sfc_main$r.setup;
-_sfc_main$r.setup = (props, ctx) => {
+const _sfc_setup$s = _sfc_main$s.setup;
+_sfc_main$s.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Editor.vue");
-  return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
+  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
 };
-const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["__scopeId", "data-v-40230bd6"]]);
-const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["__scopeId", "data-v-40230bd6"]]);
+const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "dart",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6681,14 +6682,14 @@ const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$q = _sfc_main$q.setup;
-_sfc_main$q.setup = (props, ctx) => {
+const _sfc_setup$r = _sfc_main$r.setup;
+_sfc_main$r.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/dart.vue");
-  return _sfc_setup$q ? _sfc_setup$q(props, ctx) : void 0;
+  return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
 };
 const meta$7 = void 0;
-const _sfc_main$p = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "index",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6729,14 +6730,14 @@ const _sfc_main$p = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$p = _sfc_main$p.setup;
-_sfc_main$p.setup = (props, ctx) => {
+const _sfc_setup$q = _sfc_main$q.setup;
+_sfc_main$q.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/index.vue");
-  return _sfc_setup$p ? _sfc_setup$p(props, ctx) : void 0;
+  return _sfc_setup$q ? _sfc_setup$q(props, ctx) : void 0;
 };
 const meta$6 = void 0;
-const _sfc_main$o = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$p = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "json-schema",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6779,11 +6780,11 @@ const _sfc_main$o = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$o = _sfc_main$o.setup;
-_sfc_main$o.setup = (props, ctx) => {
+const _sfc_setup$p = _sfc_main$p.setup;
+_sfc_main$p.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/json-schema.vue");
-  return _sfc_setup$o ? _sfc_setup$o(props, ctx) : void 0;
+  return _sfc_setup$p ? _sfc_setup$p(props, ctx) : void 0;
 };
 const meta$5 = void 0;
 function useJsontoMock(json) {
@@ -6813,7 +6814,7 @@ const jsonToMock_client = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.d
   __proto__: null,
   useJsontoMock
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$n = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$o = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "index",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6856,15 +6857,15 @@ const _sfc_main$n = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$n = _sfc_main$n.setup;
-_sfc_main$n.setup = (props, ctx) => {
+const _sfc_setup$o = _sfc_main$o.setup;
+_sfc_main$o.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/mockjs/index.vue");
-  return _sfc_setup$n ? _sfc_setup$n(props, ctx) : void 0;
+  return _sfc_setup$o ? _sfc_setup$o(props, ctx) : void 0;
 };
 const meta$4 = void 0;
 const meta$3 = void 0;
-const _sfc_main$m = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$n = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "typescript",
   __ssrInlineRender: true,
   setup(__props) {
@@ -6905,11 +6906,11 @@ const _sfc_main$m = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$m = _sfc_main$m.setup;
-_sfc_main$m.setup = (props, ctx) => {
+const _sfc_setup$n = _sfc_main$n.setup;
+_sfc_main$n.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/json-to-language/typescript.vue");
-  return _sfc_setup$m ? _sfc_setup$m(props, ctx) : void 0;
+  return _sfc_setup$n ? _sfc_setup$n(props, ctx) : void 0;
 };
 const meta$2 = void 0;
 const meta$1 = void 0;
@@ -6947,7 +6948,7 @@ const routes = [
     path: "//:pageIndex",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/index/[pageIndex].vue",
     children: [],
-    meta: meta$f,
+    meta: meta$g,
     alias: [],
     component: () => Promise.resolve().then(function() {
       return _pageIndex_$2;
@@ -6958,7 +6959,7 @@ const routes = [
     path: "/",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/index/index.vue",
     children: [],
-    meta: meta$e,
+    meta: meta$f,
     alias: [],
     component: () => Promise.resolve().then(function() {
       return index$4;
@@ -6969,7 +6970,7 @@ const routes = [
     path: "/posts/:id",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/posts/[id].vue",
     children: [],
-    meta: meta$d,
+    meta: meta$e,
     alias: [],
     component: () => Promise.resolve().then(function() {
       return _id_$3;
@@ -6980,7 +6981,7 @@ const routes = [
     path: "/tag/:id",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/tag/[id].vue",
     children: [],
-    meta: meta$c,
+    meta: meta$d,
     alias: [],
     component: () => Promise.resolve().then(function() {
       return _id_$1;
@@ -6991,7 +6992,7 @@ const routes = [
     path: "/template/:pageIndex",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/template/[pageIndex].vue",
     children: [],
-    meta: meta$b,
+    meta: meta$c,
     alias: [],
     component: () => Promise.resolve().then(function() {
       return _pageIndex_$1;
@@ -7002,7 +7003,7 @@ const routes = [
     path: "/template/detail/:id",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/template/detail/[id].vue",
     children: [],
-    meta: meta$a,
+    meta: meta$b,
     alias: [],
     component: () => Promise.resolve().then(function() {
       return _id_;
@@ -7013,10 +7014,21 @@ const routes = [
     path: "/tools/:pageIndex",
     file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/tools/[pageIndex].vue",
     children: [],
-    meta: meta$9,
+    meta: meta$a,
     alias: [],
     component: () => Promise.resolve().then(function() {
       return _pageIndex_;
+    })
+  },
+  {
+    name: "tools-image-space-1",
+    path: "/tools/image-space/1",
+    file: "/Users/meetqy/Desktop/my-template/nuxt-wcao.cc/pages/tools/image-space/1.vue",
+    children: [],
+    meta: meta$9,
+    alias: [],
+    component: () => Promise.resolve().then(function() {
+      return _1;
     })
   },
   {
@@ -7347,7 +7359,7 @@ const _plugins = [
   _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47node_modules_47_64nuxtjs_47strapi_47dist_47runtime_47strapi_46plugin,
   _47Users_47meetqy_47Desktop_47my_45template_47nuxt_45wcao_46cc_47plugins_47lazy_45img_46ts
 ];
-const _sfc_main$l = {
+const _sfc_main$m = {
   __name: "error",
   __ssrInlineRender: true,
   setup(__props) {
@@ -7369,7 +7381,7 @@ const _sfc_main$l = {
       };
     });
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_nuxt_link = __nuxt_component_1$3;
+      const _component_nuxt_link = __nuxt_component_2$2;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
         class: "full-screen",
         id: "error-page"
@@ -7393,14 +7405,14 @@ const _sfc_main$l = {
     };
   }
 };
-const _sfc_setup$l = _sfc_main$l.setup;
-_sfc_main$l.setup = (props, ctx) => {
+const _sfc_setup$m = _sfc_main$m.setup;
+_sfc_main$m.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("error.vue");
-  return _sfc_setup$l ? _sfc_setup$l(props, ctx) : void 0;
+  return _sfc_setup$m ? _sfc_setup$m(props, ctx) : void 0;
 };
-const ErrorComponent = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["__scopeId", "data-v-14b88f5a"]]);
-const _sfc_main$k = {
+const ErrorComponent = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["__scopeId", "data-v-14b88f5a"]]);
+const _sfc_main$l = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
@@ -7428,13 +7440,13 @@ const _sfc_main$k = {
     };
   }
 };
-const _sfc_setup$k = _sfc_main$k.setup;
-_sfc_main$k.setup = (props, ctx) => {
+const _sfc_setup$l = _sfc_main$l.setup;
+_sfc_main$l.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue");
-  return _sfc_setup$k ? _sfc_setup$k(props, ctx) : void 0;
+  return _sfc_setup$l ? _sfc_setup$l(props, ctx) : void 0;
 };
-const _sfc_main$j = {
+const _sfc_main$k = {
   __name: "NuxtLoadingBar",
   __ssrInlineRender: true,
   props: {
@@ -7519,13 +7531,13 @@ const _sfc_main$j = {
     };
   }
 };
-const _sfc_setup$j = _sfc_main$j.setup;
-_sfc_main$j.setup = (props, ctx) => {
+const _sfc_setup$k = _sfc_main$k.setup;
+_sfc_main$k.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/NuxtLoadingBar.vue");
-  return _sfc_setup$j ? _sfc_setup$j(props, ctx) : void 0;
+  return _sfc_setup$k ? _sfc_setup$k(props, ctx) : void 0;
 };
-const _sfc_main$i = {
+const _sfc_main$j = {
   __name: "app",
   __ssrInlineRender: true,
   setup(__props) {
@@ -7541,7 +7553,7 @@ const _sfc_main$i = {
       });
     });
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLoadingBar = _sfc_main$j;
+      const _component_NuxtLoadingBar = _sfc_main$k;
       const _component_NuxtPage = vue_cjs_prod.resolveComponent("NuxtPage");
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLoadingBar, { duration: 1e3 }, null, _parent));
@@ -7550,11 +7562,11 @@ const _sfc_main$i = {
     };
   }
 };
-const _sfc_setup$i = _sfc_main$i.setup;
-_sfc_main$i.setup = (props, ctx) => {
+const _sfc_setup$j = _sfc_main$j.setup;
+_sfc_main$j.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("app.vue");
-  return _sfc_setup$i ? _sfc_setup$i(props, ctx) : void 0;
+  return _sfc_setup$j ? _sfc_setup$j(props, ctx) : void 0;
 };
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch$1.create({
@@ -7565,8 +7577,8 @@ let entry;
 const plugins = normalizePlugins(_plugins);
 {
   entry = async function createNuxtAppServer(ssrContext) {
-    const vueApp = vue_cjs_prod.createApp(_sfc_main$k);
-    vueApp.component("App", _sfc_main$i);
+    const vueApp = vue_cjs_prod.createApp(_sfc_main$l);
+    vueApp.component("App", _sfc_main$j);
     const nuxt = createNuxtApp({ vueApp, ssrContext });
     try {
       await applyPlugins(nuxt, plugins);
@@ -7579,7 +7591,7 @@ const plugins = normalizePlugins(_plugins);
   };
 }
 const entry$1 = (ctx) => entry(ctx);
-const _sfc_main$h = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$i = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Header",
   __ssrInlineRender: true,
   props: {
@@ -7617,7 +7629,7 @@ const _sfc_main$h = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     ];
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Logo = __nuxt_component_1;
-      const _component_nuxt_link = __nuxt_component_1$3;
+      const _component_nuxt_link = __nuxt_component_2$2;
       _push(`<header${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
         class: ["flex justify-between items-center", __props.class]
       }, _attrs))}>`);
@@ -7649,13 +7661,13 @@ const _sfc_main$h = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$h = _sfc_main$h.setup;
-_sfc_main$h.setup = (props, ctx) => {
+const _sfc_setup$i = _sfc_main$i.setup;
+_sfc_main$i.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Header.vue");
-  return _sfc_setup$h ? _sfc_setup$h(props, ctx) : void 0;
+  return _sfc_setup$i ? _sfc_setup$i(props, ctx) : void 0;
 };
-const _sfc_main$g = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$h = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "Footer",
   __ssrInlineRender: true,
   props: {
@@ -7698,13 +7710,13 @@ const _sfc_main$g = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$g = _sfc_main$g.setup;
-_sfc_main$g.setup = (props, ctx) => {
+const _sfc_setup$h = _sfc_main$h.setup;
+_sfc_main$h.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Footer.vue");
-  return _sfc_setup$g ? _sfc_setup$g(props, ctx) : void 0;
+  return _sfc_setup$h ? _sfc_setup$h(props, ctx) : void 0;
 };
-const _sfc_main$f = /* @__PURE__ */ vue_cjs_prod.defineComponent({
+const _sfc_main$g = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "default",
   __ssrInlineRender: true,
   emits: ["change"],
@@ -7713,8 +7725,8 @@ const _sfc_main$f = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const { y } = useScroll(el);
     vue_cjs_prod.watch(y, (val) => emit("change", val));
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_Header = _sfc_main$h;
-      const _component_Footer = _sfc_main$g;
+      const _component_Header = _sfc_main$i;
+      const _component_Footer = _sfc_main$h;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
         id: "container",
         ref_key: "el",
@@ -7729,20 +7741,20 @@ const _sfc_main$f = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_setup$f = _sfc_main$f.setup;
-_sfc_main$f.setup = (props, ctx) => {
+const _sfc_setup$g = _sfc_main$g.setup;
+_sfc_main$g.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("layouts/default.vue");
-  return _sfc_setup$f ? _sfc_setup$f(props, ctx) : void 0;
+  return _sfc_setup$g ? _sfc_setup$g(props, ctx) : void 0;
 };
 const _default = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": _sfc_main$f
+  "default": _sfc_main$g
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$e = {};
+const _sfc_main$f = {};
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
-  const _component_Header = _sfc_main$h;
-  const _component_Footer = _sfc_main$g;
+  const _component_Header = _sfc_main$i;
+  const _component_Footer = _sfc_main$h;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "m-auto h-screen overflow-hidden flex-col flex" }, _attrs))}>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_Header, { class: "container m-auto flex-shrink-0 h-20 xl:px-32 px-4" }, {
     default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -7765,18 +7777,18 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$e = _sfc_main$e.setup;
-_sfc_main$e.setup = (props, ctx) => {
+const _sfc_setup$f = _sfc_main$f.setup;
+_sfc_main$f.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("layouts/tools.vue");
-  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
+  return _sfc_setup$f ? _sfc_setup$f(props, ctx) : void 0;
 };
-const tools = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["ssrRender", _sfc_ssrRender]]);
+const tools = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["ssrRender", _sfc_ssrRender]]);
 const tools$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": tools
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$d = {
+const _sfc_main$e = {
   __name: "[pageIndex]",
   __ssrInlineRender: true,
   async setup(__props) {
@@ -7828,17 +7840,17 @@ const _sfc_main$d = {
     };
   }
 };
-const _sfc_setup$d = _sfc_main$d.setup;
-_sfc_main$d.setup = (props, ctx) => {
+const _sfc_setup$e = _sfc_main$e.setup;
+_sfc_main$e.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index/[pageIndex].vue");
-  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
+  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
 };
 const _pageIndex_$2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": _sfc_main$d
+  "default": _sfc_main$e
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$c = {
+const _sfc_main$d = {
   __name: "index",
   __ssrInlineRender: true,
   async setup(__props) {
@@ -7888,17 +7900,17 @@ const _sfc_main$c = {
     };
   }
 };
-const _sfc_setup$c = _sfc_main$c.setup;
-_sfc_main$c.setup = (props, ctx) => {
+const _sfc_setup$d = _sfc_main$d.setup;
+_sfc_main$d.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index/index.vue");
-  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
+  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
 };
 const index$4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": _sfc_main$c
+  "default": _sfc_main$d
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$b = {
+const _sfc_main$c = {
   __name: "[id]",
   __ssrInlineRender: true,
   async setup(__props) {
@@ -8142,18 +8154,18 @@ const _sfc_main$b = {
     };
   }
 };
-const _sfc_setup$b = _sfc_main$b.setup;
-_sfc_main$b.setup = (props, ctx) => {
+const _sfc_setup$c = _sfc_main$c.setup;
+_sfc_main$c.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/posts/[id].vue");
-  return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
+  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
 };
-const _id_$2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-9706bfc2"]]);
+const _id_$2 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-9706bfc2"]]);
 const _id_$3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": _id_$2
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$a = {
+const _sfc_main$b = {
   __name: "[id]",
   __ssrInlineRender: true,
   async setup(__props) {
@@ -8188,7 +8200,7 @@ const _sfc_main$a = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div${_scopeId}><div class="mt-12 flex justify-center px-32"${_scopeId}><div class="navbar bg-base-100 rounded-box bg-opacity-20 h-24"${_scopeId}><a class="btn btn-ghost normal-case text-2xl m-auto"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(tag).name)}</a></div></div>`);
+            _push2(`<div${_scopeId}><div class="mt-12 flex justify-center xl:px-32"${_scopeId}><div class="navbar bg-base-100 rounded-box bg-opacity-20 h-24"${_scopeId}><a class="btn btn-ghost normal-case text-2xl m-auto"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(tag).name)}</a></div></div>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_PostList, {
               posts: vue_cjs_prod.unref(posts),
               pagination: vue_cjs_prod.unref(postsRes).meta.pagination
@@ -8197,7 +8209,7 @@ const _sfc_main$a = {
           } else {
             return [
               vue_cjs_prod.createVNode("div", null, [
-                vue_cjs_prod.createVNode("div", { class: "mt-12 flex justify-center px-32" }, [
+                vue_cjs_prod.createVNode("div", { class: "mt-12 flex justify-center xl:px-32" }, [
                   vue_cjs_prod.createVNode("div", { class: "navbar bg-base-100 rounded-box bg-opacity-20 h-24" }, [
                     vue_cjs_prod.createVNode("a", { class: "btn btn-ghost normal-case text-2xl m-auto" }, vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(tag).name), 1)
                   ])
@@ -8215,17 +8227,17 @@ const _sfc_main$a = {
     };
   }
 };
-const _sfc_setup$a = _sfc_main$a.setup;
-_sfc_main$a.setup = (props, ctx) => {
+const _sfc_setup$b = _sfc_main$b.setup;
+_sfc_main$b.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tag/[id].vue");
-  return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
+  return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
 };
 const _id_$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": _sfc_main$a
+  "default": _sfc_main$b
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$9 = {
+const _sfc_main$a = {
   __name: "[pageIndex]",
   __ssrInlineRender: true,
   async setup(__props) {
@@ -8281,17 +8293,17 @@ const _sfc_main$9 = {
     };
   }
 };
-const _sfc_setup$9 = _sfc_main$9.setup;
-_sfc_main$9.setup = (props, ctx) => {
+const _sfc_setup$a = _sfc_main$a.setup;
+_sfc_main$a.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/template/[pageIndex].vue");
-  return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
+  return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
 };
 const _pageIndex_$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": _sfc_main$9
+  "default": _sfc_main$a
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$8 = {
+const _sfc_main$9 = {
   __name: "[id]",
   __ssrInlineRender: true,
   async setup(__props) {
@@ -8527,17 +8539,17 @@ const _sfc_main$8 = {
     };
   }
 };
-const _sfc_setup$8 = _sfc_main$8.setup;
-_sfc_main$8.setup = (props, ctx) => {
+const _sfc_setup$9 = _sfc_main$9.setup;
+_sfc_main$9.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/template/detail/[id].vue");
-  return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
+  return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
 const _id_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": _sfc_main$8
+  "default": _sfc_main$9
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$7 = {
+const _sfc_main$8 = {
   __name: "[pageIndex]",
   __ssrInlineRender: true,
   async setup(__props) {
@@ -8592,13 +8604,109 @@ const _sfc_main$7 = {
     };
   }
 };
+const _sfc_setup$8 = _sfc_main$8.setup;
+_sfc_main$8.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/[pageIndex].vue");
+  return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
+};
+const _pageIndex_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  "default": _sfc_main$8
+}, Symbol.toStringTag, { value: "Module" }));
+const _sfc_main$7 = {
+  __name: "1",
+  __ssrInlineRender: true,
+  async setup(__props) {
+    let __temp, __restore;
+    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("image-space", () => useStrapi4().find(`posts/4`))), __temp = await __temp, __restore(), __temp);
+    const post = vue_cjs_prod.computed(() => {
+      return data.value.data.attributes;
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_nuxt_layout = __nuxt_component_0$2;
+      const _component_nuxt_link = __nuxt_component_2$2;
+      const _directive_lazy = vue_cjs_prod.resolveDirective("lazy");
+      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_layout, _attrs, {
+        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<div class="mt-12 mb-8 flex flex-col justify-center xl:px-32"${_scopeId}><div class="navbar bg-base-100 rounded-box h-24"${_scopeId}><a class="btn btn-ghost text-2xl m-auto capitalize"${_scopeId}> random image preview </a>`);
+            _push2(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
+              to: "/tools" + vue_cjs_prod.unref(post).to,
+              class: "text-center btn btn-link btn-info mt-4 underline capitalize"
+            }, {
+              default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
+                if (_push3) {
+                  _push3(` document \u{1F449}\u{1F3FB} `);
+                } else {
+                  return [
+                    vue_cjs_prod.createTextVNode(" document \u{1F449}\u{1F3FB} ")
+                  ];
+                }
+              }),
+              _: 1
+            }, _parent2, _scopeId));
+            _push2(`</div></div><div class="masonry"${_scopeId}><!--[-->`);
+            serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(post).imageSpace, (item) => {
+              _push2(`<div class="grid"${_scopeId}><img${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "rounded-md" }, serverRenderer.exports.ssrGetDirectiveProps(_ctx, _directive_lazy, {
+                src: `https://wcao.cc/r/a/${item.name}`,
+                loading: "/loading.gif"
+              })))}${_scopeId}><div class="mask"${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", `https://wcao.cc/r/a/${item.name}`)} target="_blank" class="pl-2 mt-2 text-2xl font-bold text-base-100 cursor-pointer hover:underline"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.name)}</a></div></div>`);
+            });
+            _push2(`<!--]--></div>`);
+          } else {
+            return [
+              vue_cjs_prod.createVNode("div", { class: "mt-12 mb-8 flex flex-col justify-center xl:px-32" }, [
+                vue_cjs_prod.createVNode("div", { class: "navbar bg-base-100 rounded-box h-24" }, [
+                  vue_cjs_prod.createVNode("a", { class: "btn btn-ghost text-2xl m-auto capitalize" }, " random image preview "),
+                  vue_cjs_prod.createVNode(_component_nuxt_link, {
+                    to: "/tools" + vue_cjs_prod.unref(post).to,
+                    class: "text-center btn btn-link btn-info mt-4 underline capitalize"
+                  }, {
+                    default: vue_cjs_prod.withCtx(() => [
+                      vue_cjs_prod.createTextVNode(" document \u{1F449}\u{1F3FB} ")
+                    ]),
+                    _: 1
+                  }, 8, ["to"])
+                ])
+              ]),
+              vue_cjs_prod.createVNode("div", { class: "masonry" }, [
+                (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(vue_cjs_prod.unref(post).imageSpace, (item) => {
+                  return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
+                    class: "grid",
+                    key: item.name
+                  }, [
+                    vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("img", { class: "rounded-md" }, null, 512), [
+                      [_directive_lazy, {
+                        src: `https://wcao.cc/r/a/${item.name}`,
+                        loading: "/loading.gif"
+                      }]
+                    ]),
+                    vue_cjs_prod.createVNode("div", { class: "mask" }, [
+                      vue_cjs_prod.createVNode("a", {
+                        href: `https://wcao.cc/r/a/${item.name}`,
+                        target: "_blank",
+                        class: "pl-2 mt-2 text-2xl font-bold text-base-100 cursor-pointer hover:underline"
+                      }, vue_cjs_prod.toDisplayString(item.name), 9, ["href"])
+                    ])
+                  ]);
+                }), 128))
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+    };
+  }
+};
 const _sfc_setup$7 = _sfc_main$7.setup;
 _sfc_main$7.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/[pageIndex].vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tools/image-space/1.vue");
   return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
 };
-const _pageIndex_ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const _1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": _sfc_main$7
 }, Symbol.toStringTag, { value: "Module" }));
@@ -8633,6 +8741,7 @@ const _sfc_main$6 = {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$2;
       const _component_Logo = __nuxt_component_1;
+      const _component_nuxt_link = __nuxt_component_2$2;
       const _directive_lazy = vue_cjs_prod.resolveDirective("lazy");
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
         title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -8658,7 +8767,20 @@ const _sfc_main$6 = {
                 capitalize: curTypes.value === index2
               })}"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.name)}</a></li>`);
             });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"${_scopeId}><h1${_scopeId}>Random Image</h1><p${_scopeId}>\u6839\u636E\u7C7B\u578B\u968F\u673A\u751F\u6210\u4E00\u5F20\u56FE\u7247</p><ul${_scopeId}><li${_scopeId}>\u89C4\u5219: https://wcao.cc/image-space/api/{\u7C7B\u578B}</li><li${_scopeId}>\u4E00\u4E2A\u9875\u9762\u4F7F\u7528\u591A\u5F20: \u89C4\u5219\u540E\u9762\u52A0\u4E0A\u53C2\u6570\uFF0C\u4FDD\u8BC1\u94FE\u63A5\u4E0D\u540C\uFF01\uFF01\uFF01</li></ul><!--[-->`);
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"${_scopeId}><h1${_scopeId}>Random Image</h1><p${_scopeId}>`);
+            _push2(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, { to: "/tools/image-space/1" }, {
+              default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
+                if (_push3) {
+                  _push3(`\u6F14\u793A1`);
+                } else {
+                  return [
+                    vue_cjs_prod.createTextVNode("\u6F14\u793A1")
+                  ];
+                }
+              }),
+              _: 1
+            }, _parent2, _scopeId));
+            _push2(`</p><p${_scopeId}>\u6839\u636E\u7C7B\u578B\u968F\u673A\u751F\u6210\u4E00\u5F20\u56FE\u7247</p><ul${_scopeId}><li${_scopeId}>\u89C4\u5219: https://wcao.cc/image-space/api/{\u7C7B\u578B}</li><li${_scopeId}>\u4E00\u4E2A\u9875\u9762\u4F7F\u7528\u591A\u5F20: \u89C4\u5219\u540E\u9762\u52A0\u4E0A\u53C2\u6570\uFF0C\u4FDD\u8BC1\u94FE\u63A5\u4E0D\u540C\uFF01\uFF01\uFF01</li></ul><!--[-->`);
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(types), (item) => {
               _push2(`<article${_scopeId}><h2${serverRenderer.exports.ssrRenderAttr("id", item.name)} class="capitalize flex justify-between"${_scopeId}><span${_scopeId}><small class="text-base-300"${_scopeId}># </small>${serverRenderer.exports.ssrInterpolate(item.name)}</span>`);
               if (item.link) {
@@ -8720,6 +8842,14 @@ const _sfc_main$6 = {
                 ]),
                 vue_cjs_prod.createVNode("div", { class: "flex-1 px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500" }, [
                   vue_cjs_prod.createVNode("h1", null, "Random Image"),
+                  vue_cjs_prod.createVNode("p", null, [
+                    vue_cjs_prod.createVNode(_component_nuxt_link, { to: "/tools/image-space/1" }, {
+                      default: vue_cjs_prod.withCtx(() => [
+                        vue_cjs_prod.createTextVNode("\u6F14\u793A1")
+                      ]),
+                      _: 1
+                    })
+                  ]),
                   vue_cjs_prod.createVNode("p", null, "\u6839\u636E\u7C7B\u578B\u968F\u673A\u751F\u6210\u4E00\u5F20\u56FE\u7247"),
                   vue_cjs_prod.createVNode("ul", null, [
                     vue_cjs_prod.createVNode("li", null, "\u89C4\u5219: https://wcao.cc/image-space/api/{\u7C7B\u578B}"),
