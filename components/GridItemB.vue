@@ -9,7 +9,7 @@
       </a>
     </div>
     <header>
-      <Swiper class="rounded-t-2xl" :modules="modules" navigation>
+      <Swiper class="rounded-t-2xl" :modules="modules" :navigation="true">
         <swiper-slide v-for="item in headerImages" :key="item">
           <div
             class="bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200 relative"
@@ -88,9 +88,7 @@ const props = withDefaults(defineProps<Props>(), {
   comment: 0,
 });
 
-const toLink = computed(() =>
-  props.to ? props.to + props.id : `/posts/${props.id}`
-);
+const toLink = computed(() => (props.to ? props.to : `/posts/${props.id}`));
 
 const $cdn = useCdnUrl();
 

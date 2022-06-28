@@ -26,7 +26,7 @@
     "json_typegen_wasm": "^0.7.0",
     "markdown-it": "^13.0.1",
     "quicktype-core": "^6.0.71",
-    "swiper": "^8.1.6",
+    "swiper": "^8.2.5",
     "to-json-schema": "^0.2.5",
     "vue3-highlightjs": "^1.0.5",
     "vue3-lazyload": "^0.3.4"

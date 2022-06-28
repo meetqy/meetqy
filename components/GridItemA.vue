@@ -2,7 +2,7 @@
   <article
     class="article-a"
     :style="`background-image:url(${$cdn}${headerImages[0]})`"
-    @click="$router.push('/tools' + to)"
+    @click="$router.push(to)"
   >
     <div class="bg-base-100 pt-10 rounded-2xl bg-opacity-80">
       <div class="tags">
@@ -23,7 +23,7 @@
 
       <main class="text-base-content text-center px-4">
         <h1 class="title py-2">
-          <nuxt-link :to="'/tools' + to">
+          <nuxt-link :to="to">
             {{ title }}
           </nuxt-link>
         </h1>

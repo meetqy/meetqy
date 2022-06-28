@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      class="multi-columns pt-5 md:pt-10 md:columns-2 columns-1 xl:columns-3"
-      v-if="props.posts"
-    >
+    <div class="multi-columns" v-if="props.posts">
       <div class="block" v-for="post in props.posts" :key="post.id">
         <grid-item-a
           v-if="post.attributes.useTemplate === 'a'"
@@ -85,7 +82,7 @@ const getHeaderImages = (post) => {
 
 <style scoped lang="postcss">
 .multi-columns {
-  column-gap: 40px;
+  @apply gap-10 pt-5 md:pt-10 md:columns-2 columns-1 xl:columns-3;
 
   .block {
     display: block;

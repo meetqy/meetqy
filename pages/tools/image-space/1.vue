@@ -1,21 +1,22 @@
 <template>
   <nuxt-layout>
-    <div class="mt-12 mb-8 flex flex-col justify-center xl:px-32">
+    <!-- <div class="mt-12 mb-8 flex flex-col justify-center xl:px-32">
       <div class="navbar bg-base-100 rounded-box h-24">
         <a class="btn btn-ghost text-2xl m-auto capitalize">
           random image preview
         </a>
-
-        <nuxt-link
-          :to="'/tools' + post.to"
-          class="text-center btn btn-link btn-info mt-4 underline capitalize"
-        >
-          document 👉🏻
-        </nuxt-link>
       </div>
-    </div>
+    </div> -->
 
     <div class="masonry">
+      <div class="grid">
+        <nuxt-link
+          :to="'/tools' + post.to"
+          class="btn btn-ghost mt-4 underline capitalize"
+        >
+          查看文档 👉🏻
+        </nuxt-link>
+      </div>
       <div class="grid" v-for="item in post.imageSpace" :key="item.name">
         <img
           class="rounded-md"
@@ -39,6 +40,12 @@
 </template>
 
 <script setup>
+onMounted(() => {
+  useHead({
+    titleTemplate: "Random image 随机图片服务 - 展示1",
+  });
+});
+
 const { data } = await useAsyncData("image-space", () =>
   useStrapi4().find(`posts/4`)
 );
