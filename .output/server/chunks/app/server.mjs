@@ -6219,7 +6219,7 @@ _sfc_main$w.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const version = "0.0.16";
+const version = "0.0.17";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev",
@@ -7633,6 +7633,9 @@ const _sfc_main$k = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       valueLight: "light"
     });
     useToggle(isDark);
+    const active = (name) => {
+      return route.name.split("-")[0].includes(name);
+    };
     const navs = [
       {
         name: "\u9996\u9875",
@@ -7671,7 +7674,7 @@ const _sfc_main$k = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       _push(`</span><ul class="menu menu-horizontal bg-base-100 bg-opacity-50 shadow-md text-base-content rounded-box md:flex hidden"><!--[-->`);
       serverRenderer.exports.ssrRenderList(navs, (item) => {
         _push(`<li class="${serverRenderer.exports.ssrRenderClass({
-          bordered: vue_cjs_prod.unref(route).name.toString().includes(item.routeName)
+          bordered: active(item.routeName)
         })}">`);
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: item.url

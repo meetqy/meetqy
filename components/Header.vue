@@ -13,7 +13,7 @@
         v-for="item in navs"
         :key="item.name"
         :class="{
-          bordered: route.name.toString().includes(item.routeName),
+          bordered: active(item.routeName),
         }"
       >
         <nuxt-link :to="item.url">
@@ -79,6 +79,10 @@ interface NavItem {
   routeName: string;
   children?: NavItem[];
 }
+
+const active = (name: string) => {
+  return (route.name as string).split("-")[0].includes(name);
+};
 
 const navs: NavItem[] = [
   {
