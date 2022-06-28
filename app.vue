@@ -41,9 +41,7 @@ html {
   width: 100vw;
   height: var(--app-height);
   @apply transition-all;
-}
 
-html[data-theme="light"] {
   &::before {
     content: "";
     @apply fixed left-0 top-0 w-screen h-screen -z-10;

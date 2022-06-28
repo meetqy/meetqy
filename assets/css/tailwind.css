@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  /* layout tools 使用 */
   .tools-body {
     height: calc(100vh - 160px);
   }
 
-  /* 主页内容区域样式 */
+  /* layout default 使用 */
   .main-content {
     @apply h-full w-full mt-5 lg:mt-10;
   }

@@ -40,7 +40,7 @@
 
     <div class="paging md:py-10 py-5">
       <nuxt-link
-        :to="'/' + (pagination.page - 1)"
+        :to="`/${prevPagePrefix}${pagination.page - 1}`"
         class="btn rounded-full btn-sm btn-info capitalize"
         :class="{ 'btn-disabled': pagination.page <= 1 }"
       >
@@ -52,7 +52,7 @@
       </span>
 
       <nuxt-link
-        :to="'/' + (pagination.page + 1)"
+        :to="`/${nextPagePrefix}${pagination.page + 1}`"
         class="btn rounded-full btn-sm btn-info capitalize"
         :class="{ 'btn-disabled': pagination.page >= pagination.pageCount }"
       >
@@ -66,6 +66,8 @@
 const props = defineProps({
   posts: Array,
   pagination: Object,
+  prevPagePrefix: String,
+  nextPagePrefix: String,
 });
 
 const getCategory = (post) => {

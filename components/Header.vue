@@ -99,5 +99,11 @@ const navs: NavItem[] = [
     routeName: "tools",
     children: [],
   },
+  {
+    name: "测试功能",
+    url: "/beta/",
+    routeName: "beta",
+    children: [],
+  },
 ];
 </script>
