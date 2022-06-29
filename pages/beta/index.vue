@@ -6,9 +6,9 @@
           <h2 class="card-title">Iframe 加载模板</h2>
           <p>模板和blog分离，模板支持多语言、多主题预览，数据基于mockjs</p>
           <div class="card-actions justify-end">
-            <button class="btn btn-primary">
-              <nuxt-link to="/beta/template">体验</nuxt-link>
-            </button>
+            <nuxt-link to="/beta/template">
+              <button class="btn btn-primary">体验</button>
+            </nuxt-link>
           </div>
         </div>
       </div>

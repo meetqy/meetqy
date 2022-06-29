@@ -5876,11 +5876,11 @@ const _sfc_main$z = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const modules = [Navigation];
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2$2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "article-b" }, _attrs))} data-v-6234e49b><div class="tags relative z-20" data-v-6234e49b><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-6234e49b>${serverRenderer.exports.ssrInterpolate(__props.category.name)}</a></div><header data-v-6234e49b>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "article-b" }, _attrs))} data-v-53b95b58><div class="tags relative z-20" data-v-53b95b58><a href="javascript:;" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-53b95b58>${serverRenderer.exports.ssrInterpolate(__props.category.name)}</a></div><header data-v-53b95b58>`);
       _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(Swiper), {
         class: "rounded-t-2xl",
         modules,
-        navigation: true
+        navigation: __props.headerImages && __props.headerImages.length > 1
       }, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -5889,7 +5889,7 @@ const _sfc_main$z = /* @__PURE__ */ vue_cjs_prod.defineComponent({
               _push2(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(SwiperSlide), { key: item }, {
                 default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
-                    _push3(`<div class="bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200 relative" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`)}" data-v-6234e49b${_scopeId2}><div class="swiper-mask" data-v-6234e49b${_scopeId2}></div></div>`);
+                    _push3(`<div class="bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200 relative" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(${vue_cjs_prod.unref($cdn) + item});height: 225px`)}" data-v-53b95b58${_scopeId2}><div class="swiper-mask" data-v-53b95b58${_scopeId2}></div></div>`);
                   } else {
                     return [
                       vue_cjs_prod.createVNode("div", {
@@ -5925,7 +5925,7 @@ const _sfc_main$z = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<div class="flex justify-center mt-5 flex-col items-center" data-v-6234e49b><time class="flex items-center capitalize" data-v-6234e49b><i class="text-2xl iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-6234e49b>\uE8B4</i><span class="ml-2 text-sm" data-v-6234e49b>${serverRenderer.exports.ssrInterpolate(__props.time)}</span></time></div></header><main class="text-center px-4" data-v-6234e49b><h1 class="title py-2 text-center" data-v-6234e49b>`);
+      _push(`<div class="flex justify-center mt-5 flex-col items-center" data-v-53b95b58><time class="flex items-center capitalize" data-v-53b95b58><i class="text-2xl iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-53b95b58>\uE8B4</i><span class="ml-2 text-sm" data-v-53b95b58>${serverRenderer.exports.ssrInterpolate(__props.time)}</span></time></div></header><main class="text-center px-4" data-v-53b95b58><h1 class="title py-2 text-center" data-v-53b95b58>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, { to: vue_cjs_prod.unref(toLink) }, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -5938,7 +5938,7 @@ const _sfc_main$z = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</h1><p class="text-opacity-60 text-base-content font-light text-center" data-v-6234e49b>${serverRenderer.exports.ssrInterpolate(__props.desciption)}</p></main><footer class="flex justify-between items-center mt-10" data-v-6234e49b><a href="javascript:;" class="flex items-center" data-v-6234e49b><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-6234e49b></span><span class="author-name" data-v-6234e49b>meetqy</span></a><div class="text-sm text-base-content text-opacity-60" data-v-6234e49b><a href="javascript:;" data-v-6234e49b><span class="mr-1" data-v-6234e49b>${serverRenderer.exports.ssrInterpolate(__props.visit || 0)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-6234e49b>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-6234e49b><span class="mr-1" data-v-6234e49b>${serverRenderer.exports.ssrInterpolate(__props.comment || 0)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-6234e49b>\uE8B5</i></a></div></footer></article>`);
+      _push(`</h1><p class="text-opacity-60 text-base-content font-light text-center" data-v-53b95b58>${serverRenderer.exports.ssrInterpolate(__props.desciption)}</p></main><footer class="flex justify-between items-center mt-10" data-v-53b95b58><a href="javascript:;" class="flex items-center" data-v-53b95b58><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-53b95b58></span><span class="author-name" data-v-53b95b58>meetqy</span></a><div class="text-sm text-base-content text-opacity-60" data-v-53b95b58><a href="javascript:;" data-v-53b95b58><span class="mr-1" data-v-53b95b58>${serverRenderer.exports.ssrInterpolate(__props.visit || 0)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-53b95b58>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-53b95b58><span class="mr-1" data-v-53b95b58>${serverRenderer.exports.ssrInterpolate(__props.comment || 0)}</span><i class="iconfont" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#e84e89" })}" data-v-53b95b58>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -5948,7 +5948,7 @@ _sfc_main$z.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemB.vue");
   return _sfc_setup$z ? _sfc_setup$z(props, ctx) : void 0;
 };
-const __nuxt_component_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["__scopeId", "data-v-6234e49b"]]);
+const __nuxt_component_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["__scopeId", "data-v-53b95b58"]]);
 const _sfc_main$y = {
   __name: "PostList",
   __ssrInlineRender: true,
@@ -6237,7 +6237,7 @@ _sfc_main$w.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const version = "0.0.18";
+const version = "0.0.19";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev",
@@ -7848,20 +7848,20 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
     default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<div class="columns-4 gap-4 mt-12"${_scopeId}><div class="card w-96 bg-base-100 shadow-xl"${_scopeId}><div class="card-body"${_scopeId}><h2 class="card-title"${_scopeId}>Iframe \u52A0\u8F7D\u6A21\u677F</h2><p${_scopeId}>\u6A21\u677F\u548Cblog\u5206\u79BB\uFF0C\u6A21\u677F\u652F\u6301\u591A\u8BED\u8A00\u3001\u591A\u4E3B\u9898\u9884\u89C8\uFF0C\u6570\u636E\u57FA\u4E8Emockjs</p><div class="card-actions justify-end"${_scopeId}><button class="btn btn-primary"${_scopeId}>`);
+        _push2(`<div class="columns-4 gap-4 mt-12"${_scopeId}><div class="card w-96 bg-base-100 shadow-xl"${_scopeId}><div class="card-body"${_scopeId}><h2 class="card-title"${_scopeId}>Iframe \u52A0\u8F7D\u6A21\u677F</h2><p${_scopeId}>\u6A21\u677F\u548Cblog\u5206\u79BB\uFF0C\u6A21\u677F\u652F\u6301\u591A\u8BED\u8A00\u3001\u591A\u4E3B\u9898\u9884\u89C8\uFF0C\u6570\u636E\u57FA\u4E8Emockjs</p><div class="card-actions justify-end"${_scopeId}>`);
         _push2(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, { to: "/beta/template" }, {
           default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
             if (_push3) {
-              _push3(`\u4F53\u9A8C`);
+              _push3(`<button class="btn btn-primary"${_scopeId2}>\u4F53\u9A8C</button>`);
             } else {
               return [
-                vue_cjs_prod.createTextVNode("\u4F53\u9A8C")
+                vue_cjs_prod.createVNode("button", { class: "btn btn-primary" }, "\u4F53\u9A8C")
               ];
             }
           }),
           _: 1
         }, _parent2, _scopeId));
-        _push2(`</button></div></div></div></div>`);
+        _push2(`</div></div></div></div>`);
       } else {
         return [
           vue_cjs_prod.createVNode("div", { class: "columns-4 gap-4 mt-12" }, [
@@ -7870,14 +7870,12 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
                 vue_cjs_prod.createVNode("h2", { class: "card-title" }, "Iframe \u52A0\u8F7D\u6A21\u677F"),
                 vue_cjs_prod.createVNode("p", null, "\u6A21\u677F\u548Cblog\u5206\u79BB\uFF0C\u6A21\u677F\u652F\u6301\u591A\u8BED\u8A00\u3001\u591A\u4E3B\u9898\u9884\u89C8\uFF0C\u6570\u636E\u57FA\u4E8Emockjs"),
                 vue_cjs_prod.createVNode("div", { class: "card-actions justify-end" }, [
-                  vue_cjs_prod.createVNode("button", { class: "btn btn-primary" }, [
-                    vue_cjs_prod.createVNode(_component_nuxt_link, { to: "/beta/template" }, {
-                      default: vue_cjs_prod.withCtx(() => [
-                        vue_cjs_prod.createTextVNode("\u4F53\u9A8C")
-                      ]),
-                      _: 1
-                    })
-                  ])
+                  vue_cjs_prod.createVNode(_component_nuxt_link, { to: "/beta/template" }, {
+                    default: vue_cjs_prod.withCtx(() => [
+                      vue_cjs_prod.createVNode("button", { class: "btn btn-primary" }, "\u4F53\u9A8C")
+                    ]),
+                    _: 1
+                  })
                 ])
               ])
             ])
@@ -7905,13 +7903,13 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_layout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
     default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<div class="tools-body overflow-hidden"${_scopeId}><iframe class="w-full h-full" src="https://wcao.cc/beauty-template/zh/card/1" frameborder="0"${_scopeId}></iframe></div>`);
+        _push2(`<div class="tools-body overflow-hidden"${_scopeId}><iframe class="w-full h-full" src="https://wcao.cc/beauty-template/en/card/1" frameborder="0"${_scopeId}></iframe></div>`);
       } else {
         return [
           vue_cjs_prod.createVNode("div", { class: "tools-body overflow-hidden" }, [
             vue_cjs_prod.createVNode("iframe", {
               class: "w-full h-full",
-              src: "https://wcao.cc/beauty-template/zh/card/1",
+              src: "https://wcao.cc/beauty-template/en/card/1",
               frameborder: "0"
             })
           ])

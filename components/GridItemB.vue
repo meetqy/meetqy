@@ -9,7 +9,11 @@
       </a>
     </div>
     <header>
-      <Swiper class="rounded-t-2xl" :modules="modules" :navigation="true">
+      <Swiper
+        class="rounded-t-2xl"
+        :modules="modules"
+        :navigation="headerImages && headerImages.length > 1"
+      >
         <swiper-slide v-for="item in headerImages" :key="item">
           <div
             class="bg-cover hover:bg-right-bottom transition-all duration-500 ease-linear delay-200 relative"
