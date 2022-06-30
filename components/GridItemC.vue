@@ -1,11 +1,11 @@
 <template>
   <article
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
-    @click="$router.push(`/template/detail/${id}`)"
+    @click="$router.push(goTo(id))"
   >
-    <div v-html="html" class="flex justify-center px-4 relative" />
+    <div v-html="html" class="flex justify-center px-4 relative z-20" />
 
-    <nuxt-link :to="`/template/detail/${id}`" class="opacity-0 absolute">
+    <nuxt-link :to="goTo(id)" class="opacity-0 absolute">
       go to {{ title }}
     </nuxt-link>
 
@@ -51,9 +51,14 @@ interface Props {
   title: string;
   id: string;
   category: CategoryItem;
+  to: String;
 }
 
 const props = defineProps<Props>();
+
+const goTo = (id: string) => {
+  return (props.to || "/template/detail/") + id;
+};
 
 const html = ref("");
 

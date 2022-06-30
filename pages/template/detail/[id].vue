@@ -241,9 +241,11 @@ const onChange = (y) => {
 
 const asideFixed = ref(false);
 
+const ultraName = computed(() => ultra[file[1]]);
+
 onMounted(() => {
   useHead({
-    titleTemplate: `${post.value.title}:${post.value.desciption} - ${tags.value
+    titleTemplate: `${post.value.title}:${ultraName.value[1]} - ${tags.value
       .map((item) => item.attributes.name)
       .join(",")}模板`,
   });

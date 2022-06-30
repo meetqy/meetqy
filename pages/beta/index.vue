@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <div class="columns-4 gap-4 mt-12">
+    <div class="grids grid-cols-4 gap-4 mt-12 h-screen">
       <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
           <h2 class="card-title">Iframe 加载模板</h2>
