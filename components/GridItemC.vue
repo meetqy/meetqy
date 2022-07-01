@@ -5,12 +5,15 @@
   >
     <div v-html="html" class="flex justify-center px-4 relative z-20" />
 
-    <nuxt-link :to="goTo(id)" class="opacity-0 absolute">
+    <nuxt-link
+      :to="goTo(id)"
+      class="opacity-0 absolute cursor-pointer capitalize"
+    >
       go to {{ title }}
     </nuxt-link>
 
     <div
-      class="absolute pt-10 rounded-lg left-0 top-0 z-10 w-full h-full cursor-pointer"
+      class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer"
     >
       <div class="tags">
         <a
