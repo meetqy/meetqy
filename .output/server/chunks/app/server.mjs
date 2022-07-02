@@ -5845,7 +5845,7 @@ const _sfc_main$B = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     }
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2$2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-4993022d><div class="flex justify-center px-4 relative z-20" data-v-4993022d>${html.value}</div><div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-4993022d><div class="tags" data-v-4993022d>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-c493c2d2><div class="flex justify-center px-4 relative z-20" data-v-c493c2d2>${html.value}</div><div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-c493c2d2><div class="tags" data-v-c493c2d2>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: __props.category.path,
         style: `color: ${__props.category.color};${__props.category.bgColor}`
@@ -5861,7 +5861,7 @@ const _sfc_main$B = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-4993022d>`);
+      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-c493c2d2>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -5892,7 +5892,7 @@ const _sfc_main$B = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-4993022d><a href="javascript:;" class="flex items-center" data-v-4993022d><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-4993022d></span><span class="author-name" data-v-4993022d>meetqy</span></a><div class="text-base-content text-sm" data-v-4993022d><a href="javascript:;" data-v-4993022d><span class="mr-1" data-v-4993022d>23719</span><i class="iconfont" data-v-4993022d>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-4993022d><span class="mr-1" data-v-4993022d>23719</span><i class="iconfont" data-v-4993022d>\uE8B5</i></a></div></footer></article>`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-c493c2d2><a href="javascript:;" class="flex items-center" data-v-c493c2d2><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-c493c2d2></span><span class="author-name" data-v-c493c2d2>meetqy</span></a><div class="text-base-content text-sm" data-v-c493c2d2><a href="javascript:;" data-v-c493c2d2><span class="mr-1" data-v-c493c2d2>23719</span><i class="iconfont" data-v-c493c2d2>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-c493c2d2><span class="mr-1" data-v-c493c2d2>23719</span><i class="iconfont" data-v-c493c2d2>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -5902,7 +5902,7 @@ _sfc_main$B.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$B ? _sfc_setup$B(props, ctx) : void 0;
 };
-const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["__scopeId", "data-v-4993022d"]]);
+const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["__scopeId", "data-v-c493c2d2"]]);
 const _sfc_main$A = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemB",
   __ssrInlineRender: true,
@@ -6301,7 +6301,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const version = "0.0.22";
+const version = "0.0.23";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev",
