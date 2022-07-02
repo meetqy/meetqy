@@ -1,31 +1,43 @@
 <template>
   <article
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
-    @click="$router.push(goTo(id))"
   >
-    <div v-html="html" class="flex justify-center px-4 relative z-20" />
-
-    <nuxt-link
-      :to="goTo(id)"
-      class="opacity-0 absolute cursor-pointer capitalize"
-    >
-      go to {{ title }}
-    </nuxt-link>
+    <div
+      v-html="html"
+      class="flex justify-center px-4 relative z-20"
+      @click="$router.push(goTo(id))"
+    />
 
     <div
       class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer"
     >
       <div class="tags">
-        <a
-          href="javascript:;"
+        <nuxt-link
+          :to="category.path"
           :style="`color: ${category.color};${category.bgColor}`"
         >
           {{ category.name }}
-        </a>
+        </nuxt-link>
       </div>
     </div>
 
-    <footer class="flex justify-between items-center">
+    <div class="w-full flex justify-between absolute left-0 top-0 -z-20">
+      <nuxt-link
+        :to="`/template/detail/${id}`"
+        class="cursor-pointer capitalize btn"
+      >
+        查看详情
+      </nuxt-link>
+
+      <nuxt-link
+        :to="`/template/detail/pro-${id}`"
+        class="cursor-pointer capitalize btn"
+      >
+        查看详情 [pro]
+      </nuxt-link>
+    </div>
+
+    <footer class="flex justify-between items-center relative z-50">
       <a href="javascript:;" class="flex items-center">
         <span
           class="author-image"

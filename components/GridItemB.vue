@@ -1,12 +1,12 @@
 <template>
   <article class="article-b">
     <div class="tags relative z-20">
-      <a
-        href="javascript:;"
+      <nuxt-link
+        :to="category.path"
         :style="`color: ${category.color};${category.bgColor}`"
       >
         {{ category.name }}
-      </a>
+      </nuxt-link>
     </div>
     <header>
       <Swiper

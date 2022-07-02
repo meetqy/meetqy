@@ -4,4 +4,5 @@ export interface CategoryItem {
   name: string;
   sort: number;
   templateType: "a" | "b";
+  path: string;
 }

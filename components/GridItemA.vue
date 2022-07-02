@@ -6,12 +6,12 @@
   >
     <div class="bg-base-100 pt-10 rounded-2xl bg-opacity-80">
       <div class="tags">
-        <a
-          href="javascript:;"
+        <nuxt-link
+          :to="category.path"
           :style="`color: ${category.color};${category.bgColor}`"
         >
           {{ category.name }}
-        </a>
+        </nuxt-link>
       </div>
 
       <header class="relative flex justify-center items-center flex-col px-4">
