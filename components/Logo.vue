@@ -48,6 +48,12 @@
           <div class="card-body">
             <h6 class="card-title mb-2">网站基本信息</h6>
             <p
+              class="flex justify-between items-center border-base-200 pb-2 border-b"
+            >
+              <span class="capitalize">运行</span>
+              <span class="capitalize text-info">{{ time }}</span>
+            </p>
+            <p
               v-for="(item, index) in websiteInfo"
               class="flex justify-between items-center border-base-200 pb-2"
               :class="{ 'border-b': index < websiteInfo.length - 1 }"
@@ -65,6 +71,7 @@
 </template>
 
 <script setup lang="ts">
+import { useInterval } from "@vueuse/core";
 import pkg from "~/package.json";
 
 const websiteInfo = ref([
@@ -86,6 +93,30 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { cao, week } = useTitle();
+
+const counter = useInterval(1000);
+
+const time = ref();
+
+watch(counter, (val) => {
+  const t = (Date.now() - startTime) / 1000;
+
+  time.value = getDuration(t);
+});
+
+const getDuration = (second) => {
+  var duration;
+  var days = Math.floor(second / 86400);
+  var hours = Math.floor((second % 86400) / 3600);
+  var minutes = Math.floor(((second % 86400) % 3600) / 60);
+  var seconds = Math.floor(((second % 86400) % 3600) % 60);
+  if (days > 0)
+    duration = days + "天" + hours + "时" + minutes + "分" + seconds + "秒";
+  else if (hours > 0) duration = hours + "时" + minutes + "分" + seconds + "秒";
+  else if (minutes > 0) duration = minutes + "分" + seconds + "秒";
+  else if (seconds > 0) duration = seconds + "秒";
+  return duration;
+};
 </script>
 
 <style lang="postcss" scoped>
