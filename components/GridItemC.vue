@@ -1,12 +1,9 @@
 <template>
   <article
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
+    @click="$router.push(goTo(id))"
   >
-    <div
-      v-html="html"
-      class="flex justify-center px-4 relative z-20"
-      @click="$router.push(goTo(id))"
-    />
+    <div v-html="html" class="flex justify-center px-4 relative z-20" />
 
     <div
       class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer"
