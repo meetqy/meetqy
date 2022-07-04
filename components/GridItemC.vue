@@ -28,9 +28,10 @@
 
       <nuxt-link
         :to="`/template/detail/pro-${id}`"
+        v-if="to"
         class="cursor-pointer capitalize btn"
       >
-        查看详情 [pro]
+        查看详情 [pro] {{ to }}
       </nuxt-link>
     </div>
 
@@ -63,7 +64,7 @@ interface Props {
   title: string;
   id: string;
   category: CategoryItem;
-  to: String;
+  to: string;
 }
 
 const props = defineProps<Props>();
