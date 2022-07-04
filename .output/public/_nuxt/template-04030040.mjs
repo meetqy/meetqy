@@ -1,1 +1,0 @@
-import{_ as o,o as a,c,w as s,a as r,b as e}from"./entry-9bda4147.mjs";const n={},_=e("div",{class:"tools-body overflow-hidden"},[e("iframe",{class:"w-full h-full",src:"https://wcao.cc/beauty-template/en/card/1",frameborder:"0"})],-1);function l(d,f){const t=r;return a(),c(t,{name:"tools"},{default:s(()=>[_]),_:1})}var u=o(n,[["render",l]]);export{u as default};
