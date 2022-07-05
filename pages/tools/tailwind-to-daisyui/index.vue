@@ -2,8 +2,8 @@
   <nuxt-layout name="tools">
     <template #title>快速把 Tailwind 转换为 DaisyUI 主题 </template>
 
-    <div class="hidden lg:block">
-      <main class="tailwind-to-daisyui flex">
+    <div class="hidden lg:block h-full">
+      <main class="h-full flex tailwind-to-daisyui">
         <div ref="leftEditorElement" class="w-1/2"></div>
 
         <div class="w-1/2 lang-editor" ref="rightEditorElement"></div>

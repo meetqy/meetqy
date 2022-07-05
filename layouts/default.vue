@@ -7,7 +7,7 @@
         <slot></slot>
       </main>
 
-      <Footer class="flex flex-col items-center justify-center mt-20" />
+      <Footer class="flex flex-col items-center justify-center mt-20 mb-12" />
     </div>
   </div>
 </template>
