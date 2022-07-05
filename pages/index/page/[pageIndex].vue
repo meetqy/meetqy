@@ -6,7 +6,6 @@
       :next-page-prefix="'page/'"
       :pagination="postsRes.meta.pagination"
     />
-    <!-- <BottomAside :tags="tags" /> -->
   </NuxtLayout>
 </template>
 
@@ -21,7 +20,6 @@ useHead({
 const { data: postsRes } = await useAsyncData(`index/${pageIndex}`, () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
-    populate: ["category", "headerImages", "tags"],
     sort: ["updatedAt:desc"],
     pagination: {
       page: pageIndex,
@@ -31,12 +29,4 @@ const { data: postsRes } = await useAsyncData(`index/${pageIndex}`, () =>
 );
 
 const posts = computed(() => postsRes.value.data);
-
-const { data: tagsRes } = await useAsyncData("tags", () =>
-  useStrapi4().find("tags", {
-    publicationState: useIsProducton() ? "live" : "preview",
-    populate: ["posts"],
-  })
-);
-const tags = computed(() => tagsRes.value.data);
 </script>

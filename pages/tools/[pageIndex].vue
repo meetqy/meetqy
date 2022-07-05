@@ -1,8 +1,6 @@
 <template>
   <NuxtLayout>
-    <PostList :posts="posts" :pagination="postsRes.meta.pagination" />
-
-    <BottomAside :tags="tags" />
+    <ToolList :posts="posts" :pagination="postsRes.meta.pagination" />
   </NuxtLayout>
 </template>
 
@@ -11,17 +9,10 @@ const route = useRoute();
 
 const { pageIndex } = route.params;
 
-const { data: postsRes } = await useAsyncData("template/" + pageIndex, () =>
-  useStrapi4().find("posts", {
+const { data: postsRes } = await useAsyncData("tools/" + pageIndex, () =>
+  useStrapi4().find("tools", {
     publicationState: useIsProducton() ? "live" : "preview",
-    populate: ["category", "tags", "headerImages"],
-    filters: {
-      category: {
-        id: {
-          $eq: 5,
-        },
-      },
-    },
+    populate: ["image"],
     pagination: {
       page: 1,
       pageSize: 15,
@@ -29,13 +20,7 @@ const { data: postsRes } = await useAsyncData("template/" + pageIndex, () =>
   })
 );
 
-const posts = computed(() => postsRes.value.data);
+console.log(postsRes.value);
 
-const { data: tagsRes } = await useAsyncData("tags", () =>
-  useStrapi4().find("tags", {
-    publicationState: useIsProducton() ? "live" : "preview",
-    populate: ["posts"],
-  })
-);
-const tags = computed(() => tagsRes.value.data);
+const posts = computed(() => postsRes.value.data);
 </script>

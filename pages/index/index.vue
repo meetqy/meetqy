@@ -6,8 +6,6 @@
       :next-page-prefix="'page/'"
       :pagination="postsRes.meta.pagination"
     />
-
-    <!-- <BottomAside :tags="tags" /> -->
   </NuxtLayout>
 </template>
 
@@ -28,12 +26,4 @@ const { data: postsRes } = await useAsyncData("index/1", () =>
 );
 
 const posts = computed(() => postsRes.value.data);
-
-const { data: tagsRes } = await useAsyncData("tags", () =>
-  useStrapi4().find("tags", {
-    publicationState: useIsProducton() ? "live" : "preview",
-    populate: ["posts"],
-  })
-);
-const tags = computed(() => tagsRes.value.data);
 </script>
