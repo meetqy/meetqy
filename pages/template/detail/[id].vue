@@ -194,15 +194,12 @@ const { id } = route.params;
 const { data } = await useAsyncData(`posts/${id}`, () =>
   useStrapi4().find(`posts/${id}`, {
     publicationState: useIsProducton() ? "live" : "preview",
-    populate: ["tags"],
   })
 );
 
 const post = computed(() => {
   return data.value.data.attributes;
 });
-
-const tags = computed(() => post.value.tags.data);
 
 const file = post.value.title.split(" Part ");
 const { data: html } = await useFetch(
@@ -245,9 +242,7 @@ const ultraName = computed(() => ultra[file[1]]);
 
 onMounted(() => {
   useHead({
-    titleTemplate: `${post.value.title}:${ultraName.value[1]} - ${tags.value
-      .map((item) => item.attributes.name)
-      .join(",")}模板`,
+    titleTemplate: `${post.value.title}:${ultraName.value[1]} - 模板`,
   });
 });
 </script>

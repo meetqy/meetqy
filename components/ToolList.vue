@@ -4,7 +4,7 @@
       <div class="block" v-for="post in props.posts" :key="post.id">
         <grid-item-a
           :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
+          :desciption="post.attributes.description"
           :time="post.attributes.updatedAt.split('T')[0]"
           :to="post.attributes.to"
           :header-images="getImage(post)"

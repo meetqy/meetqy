@@ -20,7 +20,5 @@ const { data: postsRes } = await useAsyncData("tools/" + pageIndex, () =>
   })
 );
 
-console.log(postsRes.value);
-
 const posts = computed(() => postsRes.value.data);
 </script>
