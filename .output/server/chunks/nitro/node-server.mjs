@@ -330,313 +330,313 @@ const assets = {
   "/avatar.jpg": {
     "type": "image/jpeg",
     "etag": "\"3edb-MqMXKlI1VNFCrXABCXREW+TV35Y\"",
-    "mtime": "2022-07-05T07:02:50.495Z",
+    "mtime": "2022-07-05T08:26:08.456Z",
     "path": "../public/avatar.jpg"
   },
   "/favicon.ico": {
     "type": "image/vnd.microsoft.icon",
     "etag": "\"1083e-BvV7vE5mRznpgMSqd51r4oQbOr0\"",
-    "mtime": "2022-07-05T07:02:50.495Z",
+    "mtime": "2022-07-05T08:26:08.456Z",
     "path": "../public/favicon.ico"
   },
   "/github-contribution-grid-snake.gif": {
     "type": "image/gif",
     "etag": "\"394eb-nYC5TzsVy1gw/x4ooWbj/gBPETA\"",
-    "mtime": "2022-07-05T07:02:50.487Z",
+    "mtime": "2022-07-05T08:26:08.449Z",
     "path": "../public/github-contribution-grid-snake.gif"
   },
   "/github-contribution-grid-snake.svg": {
     "type": "image/svg+xml",
     "etag": "\"11982-0SgOwJMmk+0kRsvoQ/oTU6nAw00\"",
-    "mtime": "2022-07-05T07:02:50.487Z",
+    "mtime": "2022-07-05T08:26:08.448Z",
     "path": "../public/github-contribution-grid-snake.svg"
   },
   "/loading.gif": {
     "type": "image/gif",
     "etag": "\"13344-NygZOxL5F7FJIMdQYNOAoX+sjRM\"",
-    "mtime": "2022-07-05T07:02:50.486Z",
+    "mtime": "2022-07-05T08:26:08.448Z",
     "path": "../public/loading.gif"
   },
   "/robots.txt": {
     "type": "text/plain; charset=utf-8",
     "etag": "\"26-SG58r6mmzshIr97g7jLG5QJuRow\"",
-    "mtime": "2022-07-05T07:02:50.486Z",
+    "mtime": "2022-07-05T08:26:08.447Z",
     "path": "../public/robots.txt"
   },
-  "/_nuxt/1-66378a72.mjs": {
+  "/_nuxt/1-464c1687.mjs": {
     "type": "application/javascript",
-    "etag": "\"54a-SWPf4XMUmaLRrj3bpHpdS3ucgbA\"",
-    "mtime": "2022-07-05T07:02:50.485Z",
-    "path": "../public/_nuxt/1-66378a72.mjs"
+    "etag": "\"54a-Ruw+GhjHBSYPiYndl6owkll102g\"",
+    "mtime": "2022-07-05T08:26:08.446Z",
+    "path": "../public/_nuxt/1-464c1687.mjs"
   },
-  "/_nuxt/Editor-e7638889.mjs": {
+  "/_nuxt/Editor-b5f52064.mjs": {
     "type": "application/javascript",
-    "etag": "\"111d-NOpIIYZLC8elgWE20Cva4J/PRfE\"",
-    "mtime": "2022-07-05T07:02:50.484Z",
-    "path": "../public/_nuxt/Editor-e7638889.mjs"
+    "etag": "\"111d-+3iJkAzRnGskVsbhAc+FK4PIsFg\"",
+    "mtime": "2022-07-05T08:26:08.446Z",
+    "path": "../public/_nuxt/Editor-b5f52064.mjs"
   },
-  "/_nuxt/Footer-88a5b6df.mjs": {
+  "/_nuxt/Footer-f028ca53.mjs": {
     "type": "application/javascript",
-    "etag": "\"c7f-qsOIu+k/zTHaS6kLhSMv7bGgJeA\"",
-    "mtime": "2022-07-05T07:02:50.484Z",
-    "path": "../public/_nuxt/Footer-88a5b6df.mjs"
+    "etag": "\"c76-uL4SlH29oXZz/Qc7ntWbSAQTu4c\"",
+    "mtime": "2022-07-05T08:26:08.446Z",
+    "path": "../public/_nuxt/Footer-f028ca53.mjs"
   },
-  "/_nuxt/Logo-f34bad8a.mjs": {
+  "/_nuxt/Logo-5cb5cd4b.mjs": {
     "type": "application/javascript",
-    "etag": "\"2429-cq/vSMVwjpw+r+q/A3gR/S/eZF0\"",
-    "mtime": "2022-07-05T07:02:50.483Z",
-    "path": "../public/_nuxt/Logo-f34bad8a.mjs"
+    "etag": "\"2429-+P76UJ/QIsQ2TTsHjLaNDhaq9BM\"",
+    "mtime": "2022-07-05T08:26:08.445Z",
+    "path": "../public/_nuxt/Logo-5cb5cd4b.mjs"
   },
-  "/_nuxt/PostList-4e40b11a.mjs": {
+  "/_nuxt/PostList-f8e51767.mjs": {
     "type": "application/javascript",
-    "etag": "\"eb3-1SkzWVhhlRxkiFxhREtqKSOv3Mk\"",
-    "mtime": "2022-07-05T07:02:50.483Z",
-    "path": "../public/_nuxt/PostList-4e40b11a.mjs"
+    "etag": "\"eb3-dtxKvdZVzMGRfaEm6QMZ4ZhSKxM\"",
+    "mtime": "2022-07-05T08:26:08.445Z",
+    "path": "../public/_nuxt/PostList-f8e51767.mjs"
   },
-  "/_nuxt/_id_-8ed9c6cd.mjs": {
+  "/_nuxt/_id_-81c86702.mjs": {
     "type": "application/javascript",
-    "etag": "\"fd888-yScHQdYC4Fb5NvT9q3GFTmxF1I0\"",
-    "mtime": "2022-07-05T07:02:50.482Z",
-    "path": "../public/_nuxt/_id_-8ed9c6cd.mjs"
+    "etag": "\"fd888-FnUas/19dkNigkKaH9Gxqx0S560\"",
+    "mtime": "2022-07-05T08:26:08.445Z",
+    "path": "../public/_nuxt/_id_-81c86702.mjs"
   },
-  "/_nuxt/_pageIndex_-8602c762.mjs": {
+  "/_nuxt/_pageIndex_-54fbe88e.mjs": {
     "type": "application/javascript",
-    "etag": "\"1181-hXTc9Yb8J590/Ui9JmqCn2CLGfk\"",
-    "mtime": "2022-07-05T07:02:50.480Z",
-    "path": "../public/_nuxt/_pageIndex_-8602c762.mjs"
+    "etag": "\"1181-UN8SLoJndTJFoetDpJN2AULqZSQ\"",
+    "mtime": "2022-07-05T08:26:08.442Z",
+    "path": "../public/_nuxt/_pageIndex_-54fbe88e.mjs"
   },
-  "/_nuxt/_pageIndex_-fe785e48.mjs": {
+  "/_nuxt/_pageIndex_-6ef7b21f.mjs": {
     "type": "application/javascript",
-    "etag": "\"3e2-IfhrrMcwrIa1kbxNTNI1cOl+mCc\"",
-    "mtime": "2022-07-05T07:02:50.480Z",
-    "path": "../public/_nuxt/_pageIndex_-fe785e48.mjs"
+    "etag": "\"3e2-Z8gbw0kDt9lzr9kKnJKTue1O+3o\"",
+    "mtime": "2022-07-05T08:26:08.442Z",
+    "path": "../public/_nuxt/_pageIndex_-6ef7b21f.mjs"
   },
-  "/_nuxt/dart-a4b1d032.mjs": {
+  "/_nuxt/dart-55a94141.mjs": {
     "type": "application/javascript",
-    "etag": "\"417-yuOxE6oSi5GqggyhdPM4l+a5gZk\"",
-    "mtime": "2022-07-05T07:02:50.479Z",
-    "path": "../public/_nuxt/dart-a4b1d032.mjs"
+    "etag": "\"417-mO8l2HuX6kX/ZtpuI0vVoKrNJO8\"",
+    "mtime": "2022-07-05T08:26:08.441Z",
+    "path": "../public/_nuxt/dart-55a94141.mjs"
   },
-  "/_nuxt/default-34f10dd2.mjs": {
+  "/_nuxt/default-c5a660c0.mjs": {
     "type": "application/javascript",
-    "etag": "\"34e-9+nW+WClQXEQFVkIsQbnV+iLmKY\"",
-    "mtime": "2022-07-05T07:02:50.479Z",
-    "path": "../public/_nuxt/default-34f10dd2.mjs"
+    "etag": "\"354-Ox8YjXTCYaz3BVgJR3rF89qe0yo\"",
+    "mtime": "2022-07-05T08:26:08.441Z",
+    "path": "../public/_nuxt/default-c5a660c0.mjs"
   },
   "/_nuxt/default.a53239a6.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"1f4-MhGZKoHafAPQvzBEETHynP7Mnf8\"",
-    "mtime": "2022-07-05T07:02:50.478Z",
+    "mtime": "2022-07-05T08:26:08.441Z",
     "path": "../public/_nuxt/default.a53239a6.css"
   },
   "/_nuxt/default.client-b4a32b21.mjs": {
     "type": "application/javascript",
     "etag": "\"e05-GV+5CbImV3Am2AfgSUfKlxg+AJQ\"",
-    "mtime": "2022-07-05T07:02:50.478Z",
+    "mtime": "2022-07-05T08:26:08.440Z",
     "path": "../public/_nuxt/default.client-b4a32b21.mjs"
   },
-  "/_nuxt/entry-bb83c21c.mjs": {
+  "/_nuxt/entry-8b3347e6.mjs": {
     "type": "application/javascript",
-    "etag": "\"68eb6-bhnQ8Oaa2ry1K4xq+fYXLxk83bw\"",
-    "mtime": "2022-07-05T07:02:50.477Z",
-    "path": "../public/_nuxt/entry-bb83c21c.mjs"
+    "etag": "\"68eb6-Qe9x6qdm2/pC4bu2WtGm/vJt5Tg\"",
+    "mtime": "2022-07-05T08:26:08.440Z",
+    "path": "../public/_nuxt/entry-8b3347e6.mjs"
   },
-  "/_nuxt/entry.d3d50e75.css": {
+  "/_nuxt/entry.013e5d9a.css": {
     "type": "text/css; charset=utf-8",
-    "etag": "\"1d6ff-N+Rw90x/lGWDc55WRJpoJikxO5Y\"",
-    "mtime": "2022-07-05T07:02:50.475Z",
-    "path": "../public/_nuxt/entry.d3d50e75.css"
+    "etag": "\"1d719-7c+IonPrufO5pqx6pgn+anWDC8c\"",
+    "mtime": "2022-07-05T08:26:08.438Z",
+    "path": "../public/_nuxt/entry.013e5d9a.css"
   },
-  "/_nuxt/fetch-4ff69e9b.mjs": {
+  "/_nuxt/fetch-6180408d.mjs": {
     "type": "application/javascript",
-    "etag": "\"17a0-Ok9cOV5IuLTzWCChaW5XPyzICZM\"",
-    "mtime": "2022-07-05T07:02:50.474Z",
-    "path": "../public/_nuxt/fetch-4ff69e9b.mjs"
+    "etag": "\"17a0-7ZKOb4Ss7OAx4d95ciMiEeahzmc\"",
+    "mtime": "2022-07-05T08:26:08.438Z",
+    "path": "../public/_nuxt/fetch-6180408d.mjs"
   },
-  "/_nuxt/index-30b812ba.mjs": {
+  "/_nuxt/index-1785d741.mjs": {
     "type": "application/javascript",
-    "etag": "\"396-IgAhVx5/HTDSfkL/WzO60y0d6C4\"",
-    "mtime": "2022-07-05T07:02:50.472Z",
-    "path": "../public/_nuxt/index-30b812ba.mjs"
+    "etag": "\"396-bGef21f87S44f2YL94wtNRlhtsQ\"",
+    "mtime": "2022-07-05T08:26:08.437Z",
+    "path": "../public/_nuxt/index-1785d741.mjs"
   },
-  "/_nuxt/index-3b975e33.mjs": {
+  "/_nuxt/index-1853613d.mjs": {
     "type": "application/javascript",
-    "etag": "\"3c6-6UkBFr7n0rvHJQDT7ZkQcug8EQc\"",
-    "mtime": "2022-07-05T07:02:50.471Z",
-    "path": "../public/_nuxt/index-3b975e33.mjs"
+    "etag": "\"15ef-ewsh1vStdvZJnP/n/9//PDw1VvM\"",
+    "mtime": "2022-07-05T08:26:08.436Z",
+    "path": "../public/_nuxt/index-1853613d.mjs"
   },
-  "/_nuxt/index-4b3a2120.mjs": {
+  "/_nuxt/index-22416a65.mjs": {
     "type": "application/javascript",
-    "etag": "\"405-5tef8dZZnK2/3v3+DkzslUXmd5g\"",
-    "mtime": "2022-07-05T07:02:50.471Z",
-    "path": "../public/_nuxt/index-4b3a2120.mjs"
+    "etag": "\"c34-nYT05ltZMObJAUyi11M0DDDKlSY\"",
+    "mtime": "2022-07-05T08:26:08.436Z",
+    "path": "../public/_nuxt/index-22416a65.mjs"
   },
-  "/_nuxt/index-57645cee.mjs": {
+  "/_nuxt/index-2b52c19b.mjs": {
     "type": "application/javascript",
-    "etag": "\"c34-mKGasa6j1R6BKGJsL3FXJ+9P8dk\"",
-    "mtime": "2022-07-05T07:02:50.470Z",
-    "path": "../public/_nuxt/index-57645cee.mjs"
+    "etag": "\"aa0-dMKor7jvw6aWYPB816yMoN8ctyk\"",
+    "mtime": "2022-07-05T08:26:08.435Z",
+    "path": "../public/_nuxt/index-2b52c19b.mjs"
   },
-  "/_nuxt/index-97d0f2e4.mjs": {
+  "/_nuxt/index-4a5be794.mjs": {
     "type": "application/javascript",
-    "etag": "\"15ef-nrIh2BWyzeiHm5OpwRSXuLORVjE\"",
-    "mtime": "2022-07-05T07:02:50.469Z",
-    "path": "../public/_nuxt/index-97d0f2e4.mjs"
+    "etag": "\"3c6-u0YYGrGfO1okUH1Vdg4G3A3rRhU\"",
+    "mtime": "2022-07-05T08:26:08.435Z",
+    "path": "../public/_nuxt/index-4a5be794.mjs"
   },
-  "/_nuxt/index-f9bc806f.mjs": {
+  "/_nuxt/index-97a9af0d.mjs": {
     "type": "application/javascript",
-    "etag": "\"a92-/f8xUb5QLLFkGbc9YRKJbi8dZqk\"",
-    "mtime": "2022-07-05T07:02:50.469Z",
-    "path": "../public/_nuxt/index-f9bc806f.mjs"
+    "etag": "\"405-imO2WjypEgVYDMB3UT53ot9X4Tk\"",
+    "mtime": "2022-07-05T08:26:08.435Z",
+    "path": "../public/_nuxt/index-97a9af0d.mjs"
   },
-  "/_nuxt/json-schema-f7eb9af2.mjs": {
+  "/_nuxt/json-schema-6704fc9e.mjs": {
     "type": "application/javascript",
-    "etag": "\"3ec-mI9i8kWR1vOKK+ceaRy0wNdxhr8\"",
-    "mtime": "2022-07-05T07:02:50.468Z",
-    "path": "../public/_nuxt/json-schema-f7eb9af2.mjs"
+    "etag": "\"3ec-5NKSl4r9/dFjpIss4ZuaSnxjnp0\"",
+    "mtime": "2022-07-05T08:26:08.434Z",
+    "path": "../public/_nuxt/json-schema-6704fc9e.mjs"
   },
   "/_nuxt/jsonToMock.client-bf35b3a9.mjs": {
     "type": "application/javascript",
     "etag": "\"1b9-Z0aN1FOx++dr1hyYmzPdNXhlDQM\"",
-    "mtime": "2022-07-05T07:02:50.467Z",
+    "mtime": "2022-07-05T08:26:08.434Z",
     "path": "../public/_nuxt/jsonToMock.client-bf35b3a9.mjs"
   },
   "/_nuxt/manifest.json": {
     "type": "application/json",
-    "etag": "\"1c34-RgOIt/3j2KBreaBy3EGz1Q/bT6o\"",
-    "mtime": "2022-07-05T07:02:50.466Z",
+    "etag": "\"1c34-XvVl+jRh9tZ65njwLqFC++6MjjE\"",
+    "mtime": "2022-07-05T08:26:08.433Z",
     "path": "../public/_nuxt/manifest.json"
   },
-  "/_nuxt/pro-_id_-1d7cc39b.mjs": {
+  "/_nuxt/pro-_id_-1c19a18f.mjs": {
     "type": "application/javascript",
-    "etag": "\"471-sFSvz8TfKd0bYSVLVJ6YD47RtcI\"",
-    "mtime": "2022-07-05T07:02:50.466Z",
-    "path": "../public/_nuxt/pro-_id_-1d7cc39b.mjs"
+    "etag": "\"55b-z0tcd2WqoHkz2Jj76FZlLnP6gxU\"",
+    "mtime": "2022-07-05T08:26:08.433Z",
+    "path": "../public/_nuxt/pro-_id_-1c19a18f.mjs"
   },
-  "/_nuxt/tools-5a2e4363.mjs": {
+  "/_nuxt/tools-9fd36dd1.mjs": {
     "type": "application/javascript",
-    "etag": "\"25c-0Cwg7dY96TMjJWWZi5s0vAT9Etk\"",
-    "mtime": "2022-07-05T07:02:50.465Z",
-    "path": "../public/_nuxt/tools-5a2e4363.mjs"
+    "etag": "\"260-YQPWT6Oc7RbIt2kTw4QS89+TZ9A\"",
+    "mtime": "2022-07-05T08:26:08.432Z",
+    "path": "../public/_nuxt/tools-9fd36dd1.mjs"
   },
-  "/_nuxt/typescript-dfe5dc1b.mjs": {
+  "/_nuxt/typescript-570aed3d.mjs": {
     "type": "application/javascript",
-    "etag": "\"429-SthJqjVBEW+v8cNvNkElwGsJ/ck\"",
-    "mtime": "2022-07-05T07:02:50.465Z",
-    "path": "../public/_nuxt/typescript-dfe5dc1b.mjs"
+    "etag": "\"429-FsvAY5zBVw+sS0yKJHf8Q4YkxS8\"",
+    "mtime": "2022-07-05T08:26:08.432Z",
+    "path": "../public/_nuxt/typescript-570aed3d.mjs"
   },
   "/_nuxt/ultra-45387058.mjs": {
     "type": "application/javascript",
     "etag": "\"2447-AWGFagEs8Y0utnLLfupsx4Dl3LI\"",
-    "mtime": "2022-07-05T07:02:50.464Z",
+    "mtime": "2022-07-05T08:26:08.431Z",
     "path": "../public/_nuxt/ultra-45387058.mjs"
   },
-  "/_nuxt/useStrapi4-d4060669.mjs": {
+  "/_nuxt/useStrapi4-b5afa5dc.mjs": {
     "type": "application/javascript",
-    "etag": "\"aab-aGxC3grLEhYFOb+PwpCA7e+2LtM\"",
-    "mtime": "2022-07-05T07:02:50.463Z",
-    "path": "../public/_nuxt/useStrapi4-d4060669.mjs"
+    "etag": "\"aab-ZiVSsvzL64h5vm8vT45OPIpAQTg\"",
+    "mtime": "2022-07-05T08:26:08.431Z",
+    "path": "../public/_nuxt/useStrapi4-b5afa5dc.mjs"
   },
-  "/_nuxt/xml-d9e9bb65.mjs": {
+  "/_nuxt/xml-9a510929.mjs": {
     "type": "application/javascript",
-    "etag": "\"1934-En1qvLXiS36WVeEPb4iSmvaLRlQ\"",
-    "mtime": "2022-07-05T07:02:50.462Z",
-    "path": "../public/_nuxt/xml-d9e9bb65.mjs"
+    "etag": "\"1934-fKW+Errbn9nGGm6DQ+jRbz/lR+U\"",
+    "mtime": "2022-07-05T08:26:08.431Z",
+    "path": "../public/_nuxt/xml-9a510929.mjs"
   },
   "/fragments/card/1.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"48e-yYoGtSKhkBGFqB3hwc0UFj+celE\"",
-    "mtime": "2022-07-05T07:02:50.494Z",
+    "mtime": "2022-07-05T08:26:08.455Z",
     "path": "../public/fragments/card/1.html"
   },
   "/fragments/card/10.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"14eb-CaRMk0epq9PWVm8hf6sGJ5Zu3Zk\"",
-    "mtime": "2022-07-05T07:02:50.494Z",
+    "mtime": "2022-07-05T08:26:08.455Z",
     "path": "../public/fragments/card/10.html"
   },
   "/fragments/card/11.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"315-i71tI50dwlK/NNHZSCt6J+uTUAs\"",
-    "mtime": "2022-07-05T07:02:50.494Z",
+    "mtime": "2022-07-05T08:26:08.454Z",
     "path": "../public/fragments/card/11.html"
   },
   "/fragments/card/12.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"ae1-hMqpXsEiKR+B2pirQaiahBx6KO8\"",
-    "mtime": "2022-07-05T07:02:50.493Z",
+    "mtime": "2022-07-05T08:26:08.454Z",
     "path": "../public/fragments/card/12.html"
   },
   "/fragments/card/13.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"a76-YvY4c8Eof3eFhmFgLbXQ7Xecmvo\"",
-    "mtime": "2022-07-05T07:02:50.493Z",
+    "mtime": "2022-07-05T08:26:08.453Z",
     "path": "../public/fragments/card/13.html"
   },
   "/fragments/card/14.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"1203-qLA3yqbMyeMv18ZhmktrZa9oSQQ\"",
-    "mtime": "2022-07-05T07:02:50.493Z",
+    "mtime": "2022-07-05T08:26:08.453Z",
     "path": "../public/fragments/card/14.html"
   },
   "/fragments/card/15.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"37b-vk/OismeepzXqfujN7to/yk19T8\"",
-    "mtime": "2022-07-05T07:02:50.492Z",
+    "mtime": "2022-07-05T08:26:08.453Z",
     "path": "../public/fragments/card/15.html"
   },
   "/fragments/card/16.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"a63-LdAOMjLtcVyBmcM6FwhWrMvd0S4\"",
-    "mtime": "2022-07-05T07:02:50.492Z",
+    "mtime": "2022-07-05T08:26:08.452Z",
     "path": "../public/fragments/card/16.html"
   },
   "/fragments/card/2.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"4d1-Ku9fHlTup2zuQYIeOJ+B4g54d0Y\"",
-    "mtime": "2022-07-05T07:02:50.491Z",
+    "mtime": "2022-07-05T08:26:08.452Z",
     "path": "../public/fragments/card/2.html"
   },
   "/fragments/card/3.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"485-z7dodEe/F45duSTWfLmWgIwXnNw\"",
-    "mtime": "2022-07-05T07:02:50.491Z",
+    "mtime": "2022-07-05T08:26:08.451Z",
     "path": "../public/fragments/card/3.html"
   },
   "/fragments/card/4.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"b0d-8rPaSg9Bb+bUz/XOp73ArYioXb0\"",
-    "mtime": "2022-07-05T07:02:50.491Z",
+    "mtime": "2022-07-05T08:26:08.451Z",
     "path": "../public/fragments/card/4.html"
   },
   "/fragments/card/5.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"2dc-r2ynUJ4PFwRlraBWqesqeDmVZ68\"",
-    "mtime": "2022-07-05T07:02:50.491Z",
+    "mtime": "2022-07-05T08:26:08.451Z",
     "path": "../public/fragments/card/5.html"
   },
   "/fragments/card/6.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"59f-dO/t/sW+Y2SaTbPrkfSmzjnY5Qw\"",
-    "mtime": "2022-07-05T07:02:50.490Z",
+    "mtime": "2022-07-05T08:26:08.451Z",
     "path": "../public/fragments/card/6.html"
   },
   "/fragments/card/7.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"5d1-unrE6LjxSs5C1i0yPKa2MsJevLM\"",
-    "mtime": "2022-07-05T07:02:50.490Z",
+    "mtime": "2022-07-05T08:26:08.450Z",
     "path": "../public/fragments/card/7.html"
   },
   "/fragments/card/8.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"90f-a65Agzp8LjP6VtNMTLW7wynvkGc\"",
-    "mtime": "2022-07-05T07:02:50.489Z",
+    "mtime": "2022-07-05T08:26:08.450Z",
     "path": "../public/fragments/card/8.html"
   },
   "/fragments/card/9.html": {
     "type": "text/html; charset=utf-8",
     "etag": "\"11fa-/DSk682nrDgFLRIyR2FMa6VqR58\"",
-    "mtime": "2022-07-05T07:02:50.489Z",
+    "mtime": "2022-07-05T08:26:08.450Z",
     "path": "../public/fragments/card/9.html"
   }
 };

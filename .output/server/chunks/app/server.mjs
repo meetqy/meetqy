@@ -1,5 +1,5 @@
 import { v as vue_cjs_prod, s as serverRenderer, r as require$$0 } from '../handlers/renderer.mjs';
-import { hasProtocol, isEqual, withBase, withQuery, joinURL } from 'ufo';
+import { hasProtocol, joinURL, isEqual, withBase, withQuery } from 'ufo';
 import { stringify } from 'qs';
 import { useInterval, useDark, useToggle, useScroll } from '@vueuse/core';
 import hljs from 'highlight.js';
@@ -495,6 +495,10 @@ const Headers = _globalThis$2.Headers;
 const $fetch$1 = createFetch({ fetch, Headers });
 const appConfig = useRuntimeConfig$1().app;
 const baseURL = () => appConfig.baseURL;
+const publicAssetsURL = (...path) => {
+  const publicBase = appConfig.cdnURL || appConfig.baseURL;
+  return path.length ? joinURL(publicBase, ...path) : publicBase;
+};
 function flatHooks(configHooks, hooks = {}, parentName) {
   for (const key in configHooks) {
     const subHook = configHooks[key];
@@ -4846,7 +4850,7 @@ _sfc_main$u.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const version = "1.0.0";
+const version = "1.0.1";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -5085,6 +5089,7 @@ const ultra = [
   ["\u96F7\u53E4\u6D1B\u601D\u5965\u7279\u66FC", "\u30A6\u30EB\u30C8\u30E9\u30DE\u30F3\u30EC\u30B0\u30ED\u30B9", "Ultraman Regulos"]
 ];
 const meta$c = void 0;
+const _imports_0 = publicAssetsURL(`loading.gif`);
 const meta$b = void 0;
 const _sfc_main$s = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemA",
@@ -6451,9 +6456,7 @@ const _sfc_main$f = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Logo = __nuxt_component_1$1;
-      _push(`<footer${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
-        class: [__props.class, "py-8"]
-      }, _attrs))}>`);
+      _push(`<footer${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: __props.class }, _attrs))}>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_Logo, {
         style: __props.showLogo ? null : { display: "none" },
         "show-week": false
@@ -6488,7 +6491,7 @@ const _sfc_main$e = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       _push(`<main class="w-full">`);
       serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
       _push(`</main>`);
-      _push(serverRenderer.exports.ssrRenderComponent(_component_Footer, { class: "flex flex-col items-center justify-center mt-20" }, null, _parent));
+      _push(serverRenderer.exports.ssrRenderComponent(_component_Footer, { class: "flex flex-col items-center justify-center mt-20 mb-12" }, null, _parent));
       _push(`</div></div>`);
     };
   }
@@ -6520,11 +6523,11 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
     }),
     _: 3
   }, _parent));
-  _push(`<div class="flex-1">`);
+  _push(`<div class="tools-body">`);
   serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(`</div>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_Footer, {
-    class: "flex justify-center items-center flex-shrink-0 h-20",
+    class: "flex justify-center items-center flex-shrink-0 h-12",
     "show-logo": false
   }, null, _parent));
   _push(`</div>`);
@@ -6904,20 +6907,22 @@ const _sfc_main$9 = {
     let __temp, __restore;
     const route = useRoute();
     const { id } = route.params;
+    const loading = vue_cjs_prod.ref(true);
+    const onLoad = (e) => {
+      loading.value = false;
+    };
+    const getUrl = () => `https://wcao.cc/` ;
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`posts/${id}`, () => useStrapi4().find(`posts/${id}`, {
-      publicationState: "live" ,
-      populate: ["tags"]
+      publicationState: "live" 
     }))), __temp = await __temp, __restore(), __temp);
-    const post = vue_cjs_prod.computed(() => {
-      return data.value.data.attributes;
-    });
-    const tags = vue_cjs_prod.computed(() => post.value.tags.data);
+    const post = vue_cjs_prod.computed(() => data.value.data.attributes);
     const file = post.value.title.split(" Part ");
     const ultraName = vue_cjs_prod.computed(() => ultra[file[1]]);
-    vue_cjs_prod.onMounted(() => {
-      console.log(ultraName.value);
+    vue_cjs_prod.onMounted(async () => {
+      await vue_cjs_prod.nextTick();
+      loading.value = false;
       useHead({
-        titleTemplate: `${post.value.title}:${ultraName.value[1]} - ${tags.value.map((item) => item.attributes.name).join(",")}\u6A21\u677F`
+        titleTemplate: `${post.value.title}:${ultraName.value[1]} - \u6A21\u677F`
       });
     });
     return (_ctx, _push, _parent, _attrs) => {
@@ -6925,15 +6930,28 @@ const _sfc_main$9 = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_layout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="tools-body overflow-hidden"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `https://wcao.cc/beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe></div>`);
+            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${getUrl()}beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe>`);
+            if (loading.value) {
+              _push2(`<div class="w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"${_scopeId}><img${serverRenderer.exports.ssrRenderAttr("src", _imports_0)}${_scopeId}></div>`);
+            } else {
+              _push2(`<!---->`);
+            }
+            _push2(`</div>`);
           } else {
             return [
-              vue_cjs_prod.createVNode("div", { class: "tools-body overflow-hidden" }, [
+              vue_cjs_prod.createVNode("div", { class: "tools-body overflow-hidden relative" }, [
                 vue_cjs_prod.createVNode("iframe", {
                   class: "w-full h-full",
-                  src: `https://wcao.cc/beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`,
-                  frameborder: "0"
-                }, null, 8, ["src"])
+                  src: `${getUrl()}beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`,
+                  frameborder: "0",
+                  onLoad
+                }, null, 40, ["src"]),
+                loading.value ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
+                  key: 0,
+                  class: "w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"
+                }, [
+                  vue_cjs_prod.createVNode("img", { src: _imports_0 })
+                ])) : vue_cjs_prod.createCommentVNode("", true)
               ])
             ];
           }
@@ -7666,11 +7684,11 @@ const _sfc_main = {
         }),
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="hidden lg:block"${_scopeId}><main class="tailwind-to-daisyui flex"${_scopeId}><div class="w-1/2"${_scopeId}></div><div class="w-1/2 lang-editor"${_scopeId}></div></main></div><div class="prose flex justify-center items-center h-full lg:hidden"${_scopeId}><h2 class="text-white"${_scopeId}>\u5DE5\u5177\u7C7B\u4E0D\u9002\u5408\u5728\u624B\u673A\u7AEF\u4E0A\u663E\u793A</h2></div>`);
+            _push2(`<div class="hidden lg:block h-full"${_scopeId}><main class="h-full flex tailwind-to-daisyui"${_scopeId}><div class="w-1/2"${_scopeId}></div><div class="w-1/2 lang-editor"${_scopeId}></div></main></div><div class="prose flex justify-center items-center h-full lg:hidden"${_scopeId}><h2 class="text-white"${_scopeId}>\u5DE5\u5177\u7C7B\u4E0D\u9002\u5408\u5728\u624B\u673A\u7AEF\u4E0A\u663E\u793A</h2></div>`);
           } else {
             return [
-              vue_cjs_prod.createVNode("div", { class: "hidden lg:block" }, [
-                vue_cjs_prod.createVNode("main", { class: "tailwind-to-daisyui flex" }, [
+              vue_cjs_prod.createVNode("div", { class: "hidden lg:block h-full" }, [
+                vue_cjs_prod.createVNode("main", { class: "h-full flex tailwind-to-daisyui" }, [
                   vue_cjs_prod.createVNode("div", {
                     ref_key: "leftEditorElement",
                     ref: leftEditorElement,
