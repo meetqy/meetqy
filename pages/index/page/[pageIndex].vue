@@ -6,15 +6,13 @@
       :next-page-prefix="'page/'"
       :pagination="postsRes.meta.pagination"
     />
-    <BottomAside :tags="tags" />
+    <!-- <BottomAside :tags="tags" /> -->
   </NuxtLayout>
 </template>
 
 <script setup>
 const route = useRoute();
 const { pageIndex } = route.params;
-
-console.log(pageIndex);
 
 useHead({
   titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,

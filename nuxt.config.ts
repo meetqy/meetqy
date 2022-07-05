@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi"],
   strapi: {
     entities: ["tag"],
-    url: "https://wcao.cc/strapi",
+    url: "https://strapi.wcao.cc",
   },
 
   autoImports: {
