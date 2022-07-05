@@ -92,21 +92,9 @@ const navs: NavItem[] = [
     children: [],
   },
   {
-    name: "模板",
-    url: "/template/1",
-    routeName: "template",
-    children: [],
-  },
-  {
     name: "工具",
     url: "/tools/1",
     routeName: "tools",
-    children: [],
-  },
-  {
-    name: "测试功能",
-    url: "/beta/",
-    routeName: "beta",
     children: [],
   },
 ];
