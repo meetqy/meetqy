@@ -98,8 +98,8 @@
 <script setup>
 const curTypes = ref(0);
 
-const { data } = await useAsyncData("image-space", () =>
-  useStrapi4().find(`posts/4`)
+const { data } = await useAsyncData("tools/random-image", () =>
+  useStrapi4().find(`tools/4`)
 );
 
 const post = computed(() => {
@@ -108,18 +108,18 @@ const post = computed(() => {
 
 onMounted(() => {
   useHead({
-    titleTemplate: `${post.value.title} - ${post.value.desciption}`,
+    titleTemplate: `${post.value.title} - ${post.value.description}`,
     meta: [
       {
         name: "description",
-        content: `${post.value.desciption}`,
+        content: `${post.value.description}`,
       },
     ],
   });
 });
 
 const types = computed(() => {
-  return post.value.imageSpace;
+  return post.value.extend;
 });
 
 const onChange = (y) => {
