@@ -2,16 +2,6 @@
   <div>
     <div class="multi-columns" v-if="props.posts">
       <div class="block" v-for="post in props.posts" :key="post.id">
-        <!-- <grid-item-a
-          v-if="post.attributes.useTemplate === 'a'"
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :category="getCategory(post)"
-          :header-images="getHeaderImages(post)"
-          :to="post.attributes.to"
-        /> -->
-
         <grid-item-c
           :title="post.attributes.title"
           :category="{
@@ -25,19 +15,6 @@
           :id="post.id + ''"
           :to="post.attributes.to || ''"
         />
-
-        <!-- <grid-item-b
-          v-else
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :visit="post.attributes.visit"
-          :comment="post.attributes.comment"
-          :category="getCategory(post)"
-          :header-images="getHeaderImages(post)"
-          :id="post.id + ''"
-          :to="post.attributes.to"
-        />-->
       </div>
     </div>
 
