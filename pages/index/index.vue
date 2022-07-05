@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout>
+  <NuxtLayout ref="defaultLayout">
     <PostList
       :posts="posts"
       :prev-page-prefix="'page/'"
@@ -18,6 +18,7 @@ const { data: postsRes } = await useAsyncData("index/1", () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
     sort: ["updatedAt:desc"],
+    populate: ["tags"],
     pagination: {
       page: 1,
       pageSize: 15,

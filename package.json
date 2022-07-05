@@ -25,6 +25,7 @@
     "json-ts": "^1.6.4",
     "json_typegen_wasm": "^0.7.0",
     "markdown-it": "^13.0.1",
+    "perfect-scrollbar": "^1.5.5",
     "quicktype-core": "^6.0.71",
     "swiper": "^8.2.5",
     "to-json-schema": "^0.2.5",

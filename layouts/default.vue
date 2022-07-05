@@ -14,6 +14,8 @@
 
 <script setup lang="ts">
 import { useScroll } from "@vueuse/core";
+import PerfectScrollbar from "perfect-scrollbar";
+import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 const emit = defineEmits<{
   (event: "change", y: number): void;
@@ -21,6 +23,17 @@ const emit = defineEmits<{
 
 const el = ref<HTMLElement | null>(null);
 const { y } = useScroll(el);
+
+const ps = ref();
+
+onMounted(async () => {
+  await nextTick();
+  ps.value = new PerfectScrollbar(el.value);
+});
+
+onUnmounted(() => {
+  ps.value && ps.value.destroy();
+});
 
 watch(y, (val) => emit("change", val));
 </script>

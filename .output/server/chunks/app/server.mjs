@@ -5,6 +5,7 @@ import { useInterval, useDark, useToggle, useScroll } from '@vueuse/core';
 import hljs from 'highlight.js';
 import toJsonSchema from 'to-json-schema';
 import jsonFormat from 'json-format';
+import PerfectScrollbar from 'perfect-scrollbar';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
@@ -4565,17 +4566,17 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "GridItemC",
   __ssrInlineRender: true,
   props: {
-    title: null,
     id: null,
-    category: null,
-    to: null
+    post: null,
+    tags: null,
+    category: null
   },
   async setup(__props) {
     let __temp, __restore;
     const props = __props;
     const html = vue_cjs_prod.ref("");
     if (props.category.name === "\u6A21\u677F") {
-      const file = props.title.split(" Part ");
+      const file = props.post.title.split(" Part ");
       const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/fragments/${file[0].toLowerCase()}/${file[1]}.html`, {
         baseURL: useBaseUrl()
       })), __temp = await __temp, __restore(), __temp);
@@ -4583,7 +4584,7 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     }
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-a4f78300><div class="flex justify-center px-4 relative z-20" data-v-a4f78300>${html.value}</div><div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-a4f78300><div class="tags" data-v-a4f78300>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-5794c50a><div class="flex justify-center px-4 relative z-20" data-v-5794c50a>${html.value}</div><div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-5794c50a><div class="tags" data-v-5794c50a>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: __props.category.path,
         style: `color: ${__props.category.color};${__props.category.bgColor}`
@@ -4599,7 +4600,7 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-a4f78300>`);
+      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-5794c50a>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -4615,17 +4616,17 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      if (__props.to) {
+      if (__props.post.to) {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/template/detail/pro-${__props.id}`,
           class: "cursor-pointer capitalize btn"
         }, {
           default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(` \u67E5\u770B\u8BE6\u60C5 [pro] ${serverRenderer.exports.ssrInterpolate(__props.to)}`);
+              _push2(` \u67E5\u770B\u8BE6\u60C5 [pro] ${serverRenderer.exports.ssrInterpolate(__props.post.to)}`);
             } else {
               return [
-                vue_cjs_prod.createTextVNode(" \u67E5\u770B\u8BE6\u60C5 [pro] " + vue_cjs_prod.toDisplayString(__props.to), 1)
+                vue_cjs_prod.createTextVNode(" \u67E5\u770B\u8BE6\u60C5 [pro] " + vue_cjs_prod.toDisplayString(__props.post.to), 1)
               ];
             }
           }),
@@ -4634,7 +4635,25 @@ const _sfc_main$w = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       } else {
         _push(`<!---->`);
       }
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-a4f78300><a href="javascript:;" class="flex items-center" data-v-a4f78300><span class="author-image" style="${serverRenderer.exports.ssrRenderStyle({ "background-image": "url('/avatar.jpg')" })}" data-v-a4f78300></span><span class="author-name" data-v-a4f78300>meetqy</span></a><div class="text-base-content text-sm" data-v-a4f78300><a href="javascript:;" data-v-a4f78300><span class="mr-1" data-v-a4f78300>23719</span><i class="iconfont" data-v-a4f78300>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-a4f78300><span class="mr-1" data-v-a4f78300>23719</span><i class="iconfont" data-v-a4f78300>\uE8B5</i></a></div></footer></article>`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-5794c50a><div class="flex-1" data-v-5794c50a><!--[-->`);
+      serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
+        _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
+          class: "badge mr-2",
+          key: item.id
+        }, {
+          default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`${serverRenderer.exports.ssrInterpolate(item.attributes.name)}`);
+            } else {
+              return [
+                vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(item.attributes.name), 1)
+              ];
+            }
+          }),
+          _: 2
+        }, _parent));
+      });
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-5794c50a><a href="javascript:;" data-v-5794c50a><span class="mr-1" data-v-5794c50a>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-5794c50a>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-5794c50a><span class="mr-1" data-v-5794c50a>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-5794c50a>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -4644,7 +4663,7 @@ _sfc_main$w.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-a4f78300"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-5794c50a"]]);
 const _sfc_main$v = {
   __name: "PostList",
   __ssrInlineRender: true,
@@ -4659,13 +4678,14 @@ const _sfc_main$v = {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_grid_item_c = __nuxt_component_0$2;
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-0b9687b2>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-7c638bb4>`);
       if (props.posts) {
-        _push(`<div class="multi-columns" data-v-0b9687b2><!--[-->`);
+        _push(`<div class="multi-columns" data-v-7c638bb4><!--[-->`);
         serverRenderer.exports.ssrRenderList(props.posts, (post) => {
-          _push(`<div class="block" data-v-0b9687b2>`);
+          _push(`<div class="block" data-v-7c638bb4>`);
           _push(serverRenderer.exports.ssrRenderComponent(_component_grid_item_c, {
-            title: post.attributes.title,
+            post: post.attributes,
+            tags: post.attributes.tags.data,
             category: {
               name: "\u6A21\u677F",
               sort: 1,
@@ -4674,8 +4694,7 @@ const _sfc_main$v = {
               bgColor: "background: linear-gradient(to right, #5c258d, #4389a2);",
               path: ""
             },
-            id: post.id + "",
-            to: post.attributes.to || ""
+            id: post.id + ""
           }, null, _parent));
           _push(`</div>`);
         });
@@ -4683,7 +4702,7 @@ const _sfc_main$v = {
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="paging md:py-10 py-5" data-v-0b9687b2>`);
+      _push(`<div class="paging md:py-10 py-5" data-v-7c638bb4>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/${__props.prevPagePrefix}${__props.pagination.page - 1}`,
         class: ["btn rounded-full btn-sm btn-info capitalize", { "btn-disabled": __props.pagination.page <= 1 }]
@@ -4699,7 +4718,7 @@ const _sfc_main$v = {
         }),
         _: 1
       }, _parent));
-      _push(`<span class="px-5 text-neutral-content" data-v-0b9687b2>${serverRenderer.exports.ssrInterpolate(__props.pagination.page)} / ${serverRenderer.exports.ssrInterpolate(__props.pagination.pageCount)}</span>`);
+      _push(`<span class="px-5 text-neutral-content" data-v-7c638bb4>${serverRenderer.exports.ssrInterpolate(__props.pagination.page)} / ${serverRenderer.exports.ssrInterpolate(__props.pagination.pageCount)}</span>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/${__props.nextPagePrefix}${__props.pagination.page + 1}`,
         class: ["btn rounded-full btn-sm btn-info capitalize", { "btn-disabled": __props.pagination.page >= __props.pagination.pageCount }]
@@ -4725,7 +4744,7 @@ _sfc_main$v.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/PostList.vue");
   return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
-const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["__scopeId", "data-v-0b9687b2"]]);
+const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["__scopeId", "data-v-7c638bb4"]]);
 const useStrapiVersion = () => {
   const config = useRuntimeConfig().public;
   return config.strapi.version;
@@ -4850,7 +4869,7 @@ _sfc_main$u.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const version = "1.0.2";
+const version = "1.0.3";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -4875,6 +4894,7 @@ const dependencies = {
   "json-ts": "^1.6.4",
   json_typegen_wasm: "^0.7.0",
   "markdown-it": "^13.0.1",
+  "perfect-scrollbar": "^1.5.5",
   "quicktype-core": "^6.0.71",
   swiper: "^8.2.5",
   "to-json-schema": "^0.2.5",
@@ -6478,6 +6498,14 @@ const _sfc_main$e = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   setup(__props, { emit }) {
     const el = vue_cjs_prod.ref(null);
     const { y } = useScroll(el);
+    const ps = vue_cjs_prod.ref();
+    vue_cjs_prod.onMounted(async () => {
+      await vue_cjs_prod.nextTick();
+      ps.value = new PerfectScrollbar(el.value);
+    });
+    vue_cjs_prod.onUnmounted(() => {
+      ps.value && ps.value.destroy();
+    });
     vue_cjs_prod.watch(y, (val) => emit("change", val));
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Header = _sfc_main$g;
@@ -6554,6 +6582,7 @@ const _sfc_main$c = {
     const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("index/1", () => useStrapi4().find("posts", {
       publicationState: "live" ,
       sort: ["updatedAt:desc"],
+      populate: ["tags"],
       pagination: {
         page: 1,
         pageSize: 15
@@ -6563,7 +6592,7 @@ const _sfc_main$c = {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$3;
       const _component_PostList = __nuxt_component_1$2;
-      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
+      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ ref: "defaultLayout" }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             _push2(serverRenderer.exports.ssrRenderComponent(_component_PostList, {

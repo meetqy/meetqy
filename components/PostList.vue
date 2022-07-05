@@ -3,7 +3,8 @@
     <div class="multi-columns" v-if="props.posts">
       <div class="block" v-for="post in props.posts" :key="post.id">
         <grid-item-c
-          :title="post.attributes.title"
+          :post="post.attributes"
+          :tags="post.attributes.tags.data"
           :category="{
             name: '模板',
             sort: 1,
@@ -13,7 +14,6 @@
             path: '',
           }"
           :id="post.id + ''"
-          :to="post.attributes.to || ''"
         />
       </div>
     </div>
