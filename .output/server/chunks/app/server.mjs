@@ -4850,7 +4850,7 @@ _sfc_main$u.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const version = "1.0.1";
+const version = "1.0.2";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -6908,6 +6908,7 @@ const _sfc_main$9 = {
     const route = useRoute();
     const { id } = route.params;
     const loading = vue_cjs_prod.ref(true);
+    const iframe = vue_cjs_prod.ref();
     const onLoad = (e) => {
       loading.value = false;
     };
@@ -6919,8 +6920,9 @@ const _sfc_main$9 = {
     const file = post.value.title.split(" Part ");
     const ultraName = vue_cjs_prod.computed(() => ultra[file[1]]);
     vue_cjs_prod.onMounted(async () => {
-      await vue_cjs_prod.nextTick();
-      loading.value = false;
+      iframe.value.addEventListener("load", (e) => {
+        loading.value = false;
+      });
       useHead({
         titleTemplate: `${post.value.title}:${ultraName.value[1]} - \u6A21\u677F`
       });
@@ -6944,7 +6946,9 @@ const _sfc_main$9 = {
                   class: "w-full h-full",
                   src: `${getUrl()}beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`,
                   frameborder: "0",
-                  onLoad
+                  onLoad,
+                  ref_key: "iframe",
+                  ref: iframe
                 }, null, 40, ["src"]),
                 loading.value ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
                   key: 0,

@@ -6,6 +6,7 @@
         :src="`${getUrl()}beauty-template/en/card/${file[1]}`"
         frameborder="0"
         @load="onLoad"
+        ref="iframe"
       />
 
       <div
@@ -23,6 +24,8 @@ const route = useRoute();
 const { id } = route.params;
 
 const loading = ref(true);
+
+const iframe = ref();
 
 const onLoad = (e) => {
   loading.value = false;
@@ -44,9 +47,9 @@ const file = post.value.title.split(" Part ");
 const ultraName = computed(() => ultra[file[1]]);
 
 onMounted(async () => {
-  await nextTick();
-
-  loading.value = false;
+  iframe.value.addEventListener("load", (e) => {
+    loading.value = false;
+  });
 
   useHead({
     titleTemplate: `${post.value.title}:${ultraName.value[1]} - 模板`,
