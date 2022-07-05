@@ -4846,7 +4846,7 @@ _sfc_main$u.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const version = "0.0.23";
+const version = "1.0.0";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -6968,6 +6968,11 @@ const _sfc_main$8 = {
         pageSize: 15
       }
     }))), __temp = await __temp, __restore(), __temp);
+    vue_cjs_prod.onMounted(() => {
+      useHead({
+        titleTemplate: `\u5DE5\u5177\u5408\u96C6 - \u7B2C${pageIndex}\u9875`
+      });
+    });
     const posts = vue_cjs_prod.computed(() => postsRes.value.data);
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$3;

@@ -20,5 +20,11 @@ const { data: postsRes } = await useAsyncData("tools/" + pageIndex, () =>
   })
 );
 
+onMounted(() => {
+  useHead({
+    titleTemplate: `工具合集 - 第${pageIndex}页`,
+  });
+});
+
 const posts = computed(() => postsRes.value.data);
 </script>
