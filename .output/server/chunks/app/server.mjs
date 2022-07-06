@@ -4869,7 +4869,7 @@ _sfc_main$u.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const version = "1.0.4";
+const version = "1.0.5";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -6964,7 +6964,7 @@ const _sfc_main$9 = {
           if (_push2) {
             _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${getUrl()}beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe>`);
             if (loading.value) {
-              _push2(`<div class="w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"${_scopeId}><img${serverRenderer.exports.ssrRenderAttr("src", _imports_0)}${_scopeId}></div>`);
+              _push2(`<div class="w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"${_scopeId}><img class="w-32"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)}${_scopeId}></div>`);
             } else {
               _push2(`<!---->`);
             }
@@ -6984,7 +6984,10 @@ const _sfc_main$9 = {
                   key: 0,
                   class: "w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"
                 }, [
-                  vue_cjs_prod.createVNode("img", { src: _imports_0 })
+                  vue_cjs_prod.createVNode("img", {
+                    class: "w-32",
+                    src: _imports_0
+                  })
                 ])) : vue_cjs_prod.createCommentVNode("", true)
               ])
             ];
@@ -7646,6 +7649,20 @@ const _sfc_main = {
       }, 50);
     };
     const toDaisyUI = (str) => {
+      function varClassFromTo(classname, from, to) {
+        const reg = new RegExp(`[a-z]+-${from}(-[0-9]+)?`);
+        return classname.map((item) => {
+          return item.replace(reg, (e) => {
+            const n = e.match(/[0-9]+/);
+            const prefix = e.split(`-${from}`)[0];
+            if (n) {
+              return `${prefix}${to} ${prefix}-opacity-${+n[0] / 10}`;
+            } else {
+              return `${prefix}${to}`;
+            }
+          });
+        });
+      }
       return str.replace(/class=('|").*?("|')/g, (e) => {
         let classname = e.split("class=")[1].replace(/'|"/g, "").split(" ");
         const btn = classname.filter((item) => /hover|focus/.test(item));
@@ -7653,23 +7670,12 @@ const _sfc_main = {
           classname = ["btn", "capitalize", "btn-primary"];
         }
         classname = classname.filter((item) => !/dark:/.test(item));
-        classname = classname.map((item) => item.replace(/bg-white/, "bg-base-100"));
-        classname = classname.map((item) => item.replace(/blue-(\d)+/, "primary"));
-        classname = classname.map((item) => item.replace(/green-(\d)+/, "success"));
-        classname = classname.map((item) => {
-          return item.replace(/[a-z]+-gray-[0-9]+/, (e2) => {
-            const n = e2.match(/[0-9]+/)[0];
-            const prefix = e2.split("-gray")[0];
-            return `${prefix}-base-content ${prefix}-opacity-${+n / 10}`;
-          });
-        });
-        classname = classname.map((item) => {
-          return item.replace(/[a-z]+-slate-[0-9]+/, (e2) => {
-            const n = e2.match(/[0-9]+/)[0];
-            const prefix = e2.split("-slate")[0];
-            return `${prefix}-accent-focus ${prefix}-opacity-${+n / 10}`;
-          });
-        });
+        classname = varClassFromTo(classname, "white", "-base-100");
+        classname = varClassFromTo(classname, "blue", "-primary");
+        classname = varClassFromTo(classname, "green", "-success");
+        classname = varClassFromTo(classname, "gray", "-base-content");
+        classname = varClassFromTo(classname, "slate", "-accent-focus");
+        classname = varClassFromTo(classname, "violet", "-primary");
         return `class="${classname.join(" ")}"`;
       }).replace(/src=('|").*?("|')/g, (e) => {
         if (e.includes("https://wcao.cc"))
