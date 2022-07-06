@@ -4869,7 +4869,7 @@ _sfc_main$u.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const version = "1.0.3";
+const version = "1.0.4";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -6640,6 +6640,7 @@ const _sfc_main$b = {
     const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`index/${pageIndex}`, () => useStrapi4().find("posts", {
       publicationState: "live" ,
       sort: ["updatedAt:desc"],
+      populate: ["tags"],
       pagination: {
         page: pageIndex,
         pageSize: 15
