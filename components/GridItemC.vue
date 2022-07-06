@@ -40,7 +40,12 @@
       @click.stop=""
     >
       <div class="flex-1">
-        <nuxt-link class="badge mr-2" :key="item.id" v-for="item in tags">
+        <nuxt-link
+          :to="`/tag/${item.attributes.name}/1`"
+          class="badge mr-2"
+          :key="item.id"
+          v-for="item in tags"
+        >
           {{ item.attributes.name }}
         </nuxt-link>
       </div>

@@ -2,25 +2,32 @@
   <NuxtLayout>
     <PostList
       :posts="posts"
-      :prev-page-prefix="'page/'"
-      :next-page-prefix="'page/'"
+      :prev-page-prefix="'tag/'"
+      :next-page-prefix="'tag/'"
       :pagination="postsRes.meta.pagination"
-    />
+    >
+      <template #title>{{ name }}</template>
+    </PostList>
   </NuxtLayout>
 </template>
 
 <script setup>
-useHead({
-  titleTemplate: `${useTitle().title} - 今天星期${useTitle().week}`,
-});
+const { name, pageIndex } = useRoute().params;
 
-const { data: postsRes } = await useAsyncData("index/1", () =>
+const { data: postsRes } = await useAsyncData(`tag/${name}`, () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
     sort: ["updatedAt:desc"],
     populate: ["tags"],
+    filters: {
+      tags: {
+        name: {
+          $in: name,
+        },
+      },
+    },
     pagination: {
-      page: 1,
+      page: pageIndex,
       pageSize: 15,
     },
   })

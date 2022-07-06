@@ -1,7 +1,9 @@
 <template>
   <div id="container" ref="el">
     <div class="container lg:max-w-full xl:container mx-auto px-3">
-      <Header class="border-b-2 border-base-100 border-opacity-25 py-8" />
+      <Header class="border-b-2 border-base-100 border-opacity-25 py-8">
+        <slot name="title"></slot>
+      </Header>
 
       <main class="w-full">
         <slot></slot>
