@@ -13,7 +13,7 @@
         class="w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"
         v-if="loading"
       >
-        <img src="/loading.gif" />
+        <img class="w-32" src="/loading.gif" />
       </div>
     </div>
   </nuxt-layout>
