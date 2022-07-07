@@ -28,28 +28,35 @@
 
       <nuxt-link
         :to="`/template/detail/pro-${id}`"
-        v-if="to"
+        v-if="post.to"
         class="cursor-pointer capitalize btn"
       >
-        查看详情 [pro] {{ to }}
+        查看详情 [pro] {{ post.to }}
       </nuxt-link>
     </div>
 
-    <footer class="flex justify-between items-center relative z-50">
-      <a href="javascript:;" class="flex items-center">
-        <span
-          class="author-image"
-          style="background-image: url('/avatar.jpg')"
-        ></span>
-        <span class="author-name">meetqy</span>
-      </a>
+    <footer
+      class="flex justify-between items-center relative z-50"
+      @click.stop=""
+    >
+      <div class="flex-1">
+        <nuxt-link
+          :to="`/tag/${item.attributes.name}/1`"
+          class="badge mr-2"
+          :key="item.id"
+          v-for="item in tags"
+        >
+          {{ item.attributes.name }}
+        </nuxt-link>
+      </div>
+
       <div class="text-base-content text-sm">
         <a href="javascript:;">
-          <span class="mr-1">23719</span>
+          <span class="mr-1">{{ post.visit || 1 }}</span>
           <i class="iconfont">&#xe8f4;</i>
         </a>
         <a href="javascript:;" class="ml-4">
-          <span class="mr-1">23719</span>
+          <span class="mr-1">{{ post.comment || 1 }}</span>
           <i class="iconfont">&#xe8b5;</i>
         </a>
       </div>
@@ -61,22 +68,28 @@
 import { CategoryItem } from "~~/composables/type";
 
 interface Props {
-  title: string;
   id: string;
+  post: {
+    title: string;
+    comment: number;
+    visit: number;
+    link: string;
+    to: string;
+  };
+  tags: any[];
   category: CategoryItem;
-  to: string;
 }
 
 const props = defineProps<Props>();
 
 const goTo = (id: string) => {
-  return (props.to || "/template/detail/") + id;
+  return (props.post.to || "/template/detail/") + id;
 };
 
 const html = ref("");
 
 if (props.category.name === "模板") {
-  const file = props.title.split(" Part ");
+  const file = props.post.title.split(" Part ");
   const { data } = await useFetch(
     `/fragments/${file[0].toLowerCase()}/${file[1]}.html`,
     {

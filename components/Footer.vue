@@ -1,5 +1,5 @@
 <template>
-  <footer :class="class" class="py-8">
+  <footer :class="class">
     <Logo v-show="showLogo" :show-week="false" />
     <p
       class="text-neutral-content text-sm flex flex-col-reverse xl:flex-row justify-center items-center"

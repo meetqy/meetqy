@@ -2,9 +2,9 @@
   <header class="flex justify-between items-center" :class="class">
     <Logo />
 
-    <span class="text-base-100 underline">
+    <div class="flex-1">
       <slot></slot>
-    </span>
+    </div>
 
     <ul
       class="menu menu-horizontal bg-base-100 bg-opacity-50 shadow-md text-base-content rounded-box md:flex hidden"
@@ -92,21 +92,9 @@ const navs: NavItem[] = [
     children: [],
   },
   {
-    name: "模板",
-    url: "/template/1",
-    routeName: "template",
-    children: [],
-  },
-  {
     name: "工具",
     url: "/tools/1",
     routeName: "tools",
-    children: [],
-  },
-  {
-    name: "测试功能",
-    url: "/beta/",
-    routeName: "beta",
     children: [],
   },
 ];

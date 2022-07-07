@@ -11,13 +11,13 @@
     <div class="masonry">
       <div class="grid">
         <nuxt-link
-          :to="'/tools' + post.to"
+          :to="post.to"
           class="btn btn-ghost mt-4 underline capitalize"
         >
           查看文档 👉🏻
         </nuxt-link>
       </div>
-      <div class="grid" v-for="item in post.imageSpace" :key="item.name">
+      <div class="grid" v-for="item in post.extend" :key="item.name">
         <img
           class="rounded-md"
           v-lazy="{
@@ -46,8 +46,8 @@ onMounted(() => {
   });
 });
 
-const { data } = await useAsyncData("image-space", () =>
-  useStrapi4().find(`posts/4`)
+const { data } = await useAsyncData("tools/random-image", () =>
+  useStrapi4().find(`tools/4`)
 );
 
 const post = computed(() => {

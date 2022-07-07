@@ -79,7 +79,7 @@ const websiteInfo = ref([
   { name: "前端框架", val: "Nuxt3 + Vite", badge: false },
   { name: "UI", val: "TailwindCSS + DaisyUI", badge: false },
   { name: "后端API", val: "Strapi", badge: false },
-  { name: "服务器", val: "Google Cloud", badge: false },
+  { name: "服务器", val: "misaka", badge: false },
   { name: "CDN", val: "cloudflare", badge: false },
   { name: "域名", val: "godaddy", badge: false },
 ]);

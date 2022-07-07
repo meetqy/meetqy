@@ -2,35 +2,18 @@
   <div>
     <div class="multi-columns" v-if="props.posts">
       <div class="block" v-for="post in props.posts" :key="post.id">
-        <grid-item-a
-          v-if="post.attributes.useTemplate === 'a'"
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :category="getCategory(post)"
-          :header-images="getHeaderImages(post)"
-          :to="post.attributes.to"
-        />
-
         <grid-item-c
-          v-else-if="post.attributes.useTemplate === 'c'"
-          :title="post.attributes.title"
-          :category="getCategory(post)"
+          :post="post.attributes"
+          :tags="post.attributes.tags.data"
+          :category="{
+            name: '模板',
+            sort: 1,
+            templateType: 'b',
+            color: '#fff',
+            bgColor: 'background: linear-gradient(to right, #5c258d, #4389a2);',
+            path: '',
+          }"
           :id="post.id + ''"
-          :to="post.attributes.to"
-        />
-
-        <grid-item-b
-          v-else
-          :title="post.attributes.title"
-          :desciption="post.attributes.desciption"
-          :time="post.attributes.updatedAt.split('T')[0]"
-          :visit="post.attributes.visit"
-          :comment="post.attributes.comment"
-          :category="getCategory(post)"
-          :header-images="getHeaderImages(post)"
-          :id="post.id + ''"
-          :to="post.attributes.to"
         />
       </div>
     </div>
@@ -66,18 +49,6 @@ const props = defineProps({
   prevPagePrefix: String,
   nextPagePrefix: String,
 });
-
-const getCategory = (post) => {
-  return post.attributes.category.data.attributes;
-};
-
-const getHeaderImages = (post) => {
-  if (post.attributes.headerImages.data) {
-    return post.attributes.headerImages.data.map((item) => item.attributes.url);
-  } else {
-    return [];
-  }
-};
 </script>
 
 <style scoped lang="postcss">

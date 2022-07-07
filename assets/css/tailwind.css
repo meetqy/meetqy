@@ -5,7 +5,7 @@
 @layer components {
   /* layout tools 使用 */
   .tools-body {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 128px);
   }
 
   /* layout default 使用 */

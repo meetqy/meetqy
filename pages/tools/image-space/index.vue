@@ -1,6 +1,12 @@
 <template>
   <NuxtLayout @change="onChange">
-    <template #title>Random Image</template>
+    <template #title>
+      <div class="w-full flex justify-end pr-10">
+        <button class="btn rounded-box border-0 bg-opacity-50 capitalize">
+          Random Image
+        </button>
+      </div>
+    </template>
     <main class="main-content flex">
       <aside
         :class="[
@@ -98,8 +104,8 @@
 <script setup>
 const curTypes = ref(0);
 
-const { data } = await useAsyncData("image-space", () =>
-  useStrapi4().find(`posts/4`)
+const { data } = await useAsyncData("tools/random-image", () =>
+  useStrapi4().find(`tools/4`)
 );
 
 const post = computed(() => {
@@ -108,18 +114,18 @@ const post = computed(() => {
 
 onMounted(() => {
   useHead({
-    titleTemplate: `${post.value.title} - ${post.value.desciption}`,
+    titleTemplate: `${post.value.title} - ${post.value.description}`,
     meta: [
       {
         name: "description",
-        content: `${post.value.desciption}`,
+        content: `${post.value.description}`,
       },
     ],
   });
 });
 
 const types = computed(() => {
-  return post.value.imageSpace;
+  return post.value.extend;
 });
 
 const onChange = (y) => {

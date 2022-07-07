@@ -31,7 +31,7 @@ onMounted(() => {
 
 #container {
   height: var(--app-height);
-  @apply overflow-y-scroll;
+  @apply relative;
 }
 
 html {

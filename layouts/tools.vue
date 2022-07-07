@@ -4,12 +4,12 @@
       <slot name="title"></slot>
     </Header>
 
-    <div class="flex-1">
+    <div class="tools-body">
       <slot></slot>
     </div>
 
     <Footer
-      class="flex justify-center items-center flex-shrink-0 h-20"
+      class="flex justify-center items-center flex-shrink-0 h-12"
       :show-logo="false"
     />
   </div>

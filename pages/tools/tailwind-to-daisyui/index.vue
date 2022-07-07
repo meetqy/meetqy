@@ -1,9 +1,15 @@
 <template>
   <nuxt-layout name="tools">
-    <template #title>快速把 Tailwind 转换为 DaisyUI 主题 </template>
+    <template #title>
+      <div class="w-full flex justify-end pr-10">
+        <button class="btn rounded-box border-0 bg-opacity-50 capitalize">
+          快速把 Tailwind 转换为 DaisyUI 主题
+        </button>
+      </div>
+    </template>
 
-    <div class="hidden lg:block">
-      <main class="tailwind-to-daisyui flex">
+    <div class="hidden lg:block h-full">
+      <main class="h-full flex tailwind-to-daisyui">
         <div ref="leftEditorElement" class="w-1/2"></div>
 
         <div class="w-1/2 lang-editor" ref="rightEditorElement"></div>
@@ -57,6 +63,23 @@ const setRightMirror = async (code) => {
 
 // 转换daisyui
 const toDaisyUI = (str) => {
+  function varClassFromTo(classname, from, to) {
+    const reg = new RegExp(`[a-z]+-${from}(-[0-9]+)?`);
+
+    return classname.map((item) => {
+      return item.replace(reg, (e) => {
+        const n = e.match(/[0-9]+/);
+        const prefix = e.split(`-${from}`)[0];
+
+        if (n) {
+          return `${prefix}${to} ${prefix}-opacity-${+n[0] / 10}`;
+        } else {
+          return `${prefix}${to}`;
+        }
+      });
+    });
+  }
+
   return str
     .replace(/class=('|").*?("|')/g, (e) => {
       let classname = e.split("class=")[1].replace(/'|"/g, "").split(" ");
@@ -65,41 +88,27 @@ const toDaisyUI = (str) => {
       if (btn.length > 1) {
         classname = ["btn", "capitalize", "btn-primary"];
       }
+
       // 移除 dark:xxx
       classname = classname.filter((item) => !/dark:/.test(item));
 
-      // bg-white 替换为 bg-base-100
-      classname = classname.map((item) =>
-        item.replace(/bg-white/, "bg-base-100")
-      );
+      // white
+      classname = varClassFromTo(classname, "white", "-base-100");
 
-      // *-blue-*  => primary
-      classname = classname.map((item) =>
-        item.replace(/blue-(\d)+/, "primary")
-      );
+      // blue
+      classname = varClassFromTo(classname, "blue", "-primary");
 
-      // *-green-*  => success
-      classname = classname.map((item) =>
-        item.replace(/green-(\d)+/, "success")
-      );
+      // green
+      classname = varClassFromTo(classname, "green", "-success");
 
       // gray
-      classname = classname.map((item) => {
-        return item.replace(/[a-z]+-gray-[0-9]+/, (e) => {
-          const n = e.match(/[0-9]+/)[0];
-          const prefix = e.split("-gray")[0];
-          return `${prefix}-base-content ${prefix}-opacity-${+n / 10}`;
-        });
-      });
+      classname = varClassFromTo(classname, "gray", "-base-content");
 
       // slate
-      classname = classname.map((item) => {
-        return item.replace(/[a-z]+-slate-[0-9]+/, (e) => {
-          const n = e.match(/[0-9]+/)[0];
-          const prefix = e.split("-slate")[0];
-          return `${prefix}-accent-focus ${prefix}-opacity-${+n / 10}`;
-        });
-      });
+      classname = varClassFromTo(classname, "slate", "-accent-focus");
+
+      // violet
+      classname = varClassFromTo(classname, "violet", "-primary");
 
       return `class="${classname.join(" ")}"`;
     })

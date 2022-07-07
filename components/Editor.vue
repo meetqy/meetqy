@@ -1,7 +1,11 @@
 <template>
   <NuxtLayout name="tools">
     <template #title>
-      to {{ curLanguageIndex > -1 && language[curLanguageIndex].language }}
+      <div class="w-full flex justify-end pr-10">
+        <button class="btn rounded-box border-0 bg-opacity-50 capitalize">
+          to {{ curLanguageIndex > -1 && language[curLanguageIndex].language }}
+        </button>
+      </div>
     </template>
 
     <div class="hidden lg:block">
