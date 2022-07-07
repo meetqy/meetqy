@@ -90,15 +90,15 @@ const html = ref("");
 
 if (props.category.name === "模板") {
   const file = props.post.title.split(" Part ");
-  // const { data } = await useFetch(
-  //   `/fragments/${file[0].toLowerCase()}/${file[1]}.html`,
-  //   {
-  //     baseURL: useBaseUrl(),
-  //   }
-  // );
-  const { data } = await useFetch(`/beauty-template/${file[0]}/${file[1]}`, {
-    baseURL: useTemplateUrl(),
-  });
+  const { data } = await useFetch(
+    `/fragments/${file[0].toLowerCase()}/${file[1]}.html`,
+    {
+      baseURL: useBaseUrl(),
+    }
+  );
+  // const { data } = await useFetch(`/beauty-template/${file[0]}/${file[1]}`, {
+  //   baseURL: useTemplateUrl(),
+  // });
 
   html.value = data.value as string;
 }

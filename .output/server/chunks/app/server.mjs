@@ -4542,9 +4542,6 @@ const useCdnUrl = () => useStrapiUrl().replace("/api", "");
 const useBaseUrl = () => {
   return "https://wcao.cc" ;
 };
-const useTemplateUrl = () => {
-  return "https://wcao.cc" ;
-};
 const useTitle = () => {
   const cao = ["cao", "ca\u014D", "ca\xF3", "ca\u01D2", "ca\xF2"];
   const day = new Date().getDay();
@@ -4580,14 +4577,14 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const html = vue_cjs_prod.ref("");
     if (props.category.name === "\u6A21\u677F") {
       const file = props.post.title.split(" Part ");
-      const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/beauty-template/${file[0]}/${file[1]}`, {
-        baseURL: useTemplateUrl()
+      const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/fragments/${file[0].toLowerCase()}/${file[1]}.html`, {
+        baseURL: useBaseUrl()
       })), __temp = await __temp, __restore(), __temp);
       html.value = data.value;
     }
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-5d145810><div class="flex justify-center px-4 relative z-20" data-v-5d145810>${html.value}</div><div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-5d145810><div class="tags" data-v-5d145810>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-51011534><div class="flex justify-center px-4 relative z-20" data-v-51011534>${html.value}</div><div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-51011534><div class="tags" data-v-51011534>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: __props.category.path,
         style: `color: ${__props.category.color};${__props.category.bgColor}`
@@ -4603,7 +4600,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-5d145810>`);
+      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-51011534>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -4638,7 +4635,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       } else {
         _push(`<!---->`);
       }
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-5d145810><div class="flex-1" data-v-5d145810><!--[-->`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-51011534><div class="flex-1" data-v-51011534><!--[-->`);
       serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/tag/${item.attributes.name}/1`,
@@ -4657,7 +4654,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-5d145810><a href="javascript:;" data-v-5d145810><span class="mr-1" data-v-5d145810>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-5d145810>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-5d145810><span class="mr-1" data-v-5d145810>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-5d145810>\uE8B5</i></a></div></footer></article>`);
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-51011534><a href="javascript:;" data-v-51011534><span class="mr-1" data-v-51011534>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-51011534>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-51011534><span class="mr-1" data-v-51011534>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-51011534>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -4667,7 +4664,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-5d145810"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-51011534"]]);
 const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
