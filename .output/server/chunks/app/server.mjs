@@ -4424,7 +4424,7 @@ const Components = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePr
   Html,
   Body
 }, Symbol.toStringTag, { value: "Module" }));
-const metaConfig = { "globalMeta": { "charset": "utf-8", "viewport": "width=device-width, initial-scale=1", "meta": [{ "name": "keywords", "content": "web\u524D\u7AEF,flutter,uniapp,\u6A21\u677F,template,flutter,\u524D\u7AEF\u5DE5\u5177,blog" }, { "name": "description", "content": "\u6536\u96C6\u7684\u591A\u4E3B\u9898\u6A21\u677F\uFF0C\u6A21\u677F\u3001\u524D\u7AEF\u76F8\u5173\u5728\u7EBF\u5DE5\u5177 - \u5367\u69FD(wo ca\xF2)" }, { "name": "viewport", "content": "width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" }], "link": [], "style": [], "script": [] } };
+const metaConfig = { "globalMeta": { "charset": "utf-8", "viewport": "width=device-width, initial-scale=1", "meta": [{ "name": "keywords", "content": "web\u524D\u7AEF,flutter,uniapp,\u6A21\u677F,template,\u524D\u7AEF\u5DE5\u5177,blog" }, { "name": "description", "content": "\u6536\u96C6\u7684\u591A\u4E3B\u9898\u6A21\u677F\uFF0C\u6A21\u677F\u3001\u524D\u7AEF\u76F8\u5173\u5728\u7EBF\u5DE5\u5177 - \u5367\u69FD(wo ca\xF2)" }, { "name": "viewport", "content": "width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" }], "link": [], "style": [], "script": [] } };
 const metaMixin = {
   created() {
     const instance = vue_cjs_prod.getCurrentInstance();
@@ -4871,7 +4871,7 @@ _sfc_main$v.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
-const version = "1.0.6";
+const version = "1.0.7";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -6446,9 +6446,9 @@ const _sfc_main$h = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         class: ["flex justify-between items-center", __props.class]
       }, _attrs))}>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent));
-      _push(`<span class="text-base-100 underline">`);
+      _push(`<div class="flex-1">`);
       serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
-      _push(`</span><ul class="menu menu-horizontal bg-base-100 bg-opacity-50 shadow-md text-base-content rounded-box md:flex hidden"><!--[-->`);
+      _push(`</div><ul class="menu menu-horizontal bg-base-100 bg-opacity-50 shadow-md text-base-content rounded-box md:flex hidden"><!--[-->`);
       serverRenderer.exports.ssrRenderList(navs, (item) => {
         _push(`<li class="${serverRenderer.exports.ssrRenderClass({
           bordered: active(item.routeName)
@@ -6735,7 +6735,18 @@ const _sfc_main$b = {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$3;
       const _component_PostList = __nuxt_component_1$2;
-      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
+      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ name: "default" }, _attrs), {
+        title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<div class="w-full flex justify-end pr-10"${_scopeId}><button class="btn rounded-box border-0 bg-opacity-50 capitalize"${_scopeId}>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(name))}</button></div>`);
+          } else {
+            return [
+              vue_cjs_prod.createVNode("div", { class: "w-full flex justify-end pr-10" }, [
+                vue_cjs_prod.createVNode("button", { class: "btn rounded-box border-0 bg-opacity-50 capitalize" }, vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(name)), 1)
+              ])
+            ];
+          }
+        }),
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             _push2(serverRenderer.exports.ssrRenderComponent(_component_PostList, {
@@ -6743,18 +6754,7 @@ const _sfc_main$b = {
               "prev-page-prefix": "tag/",
               "next-page-prefix": "tag/",
               pagination: vue_cjs_prod.unref(postsRes).meta.pagination
-            }, {
-              title: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
-                if (_push3) {
-                  _push3(`${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(name))}`);
-                } else {
-                  return [
-                    vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(name)), 1)
-                  ];
-                }
-              }),
-              _: 1
-            }, _parent2, _scopeId));
+            }, null, _parent2, _scopeId));
           } else {
             return [
               vue_cjs_prod.createVNode(_component_PostList, {
@@ -6762,12 +6762,7 @@ const _sfc_main$b = {
                 "prev-page-prefix": "tag/",
                 "next-page-prefix": "tag/",
                 pagination: vue_cjs_prod.unref(postsRes).meta.pagination
-              }, {
-                title: vue_cjs_prod.withCtx(() => [
-                  vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(name)), 1)
-                ]),
-                _: 1
-              }, 8, ["posts", "pagination"])
+              }, null, 8, ["posts", "pagination"])
             ];
           }
         }),
