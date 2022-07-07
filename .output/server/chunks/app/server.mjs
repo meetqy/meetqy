@@ -4871,7 +4871,7 @@ _sfc_main$v.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
-const version = "1.0.7";
+const version = "1.0.8";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -5388,16 +5388,18 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` to ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(curLanguageIndex) > -1 && vue_cjs_prod.unref(language)[vue_cjs_prod.unref(curLanguageIndex)].language)}`);
+            _push2(`<div class="w-full flex justify-end pr-10" data-v-4a662560${_scopeId}><button class="btn rounded-box border-0 bg-opacity-50 capitalize" data-v-4a662560${_scopeId}> to ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(curLanguageIndex) > -1 && vue_cjs_prod.unref(language)[vue_cjs_prod.unref(curLanguageIndex)].language)}</button></div>`);
           } else {
             return [
-              vue_cjs_prod.createTextVNode(" to " + vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(curLanguageIndex) > -1 && vue_cjs_prod.unref(language)[vue_cjs_prod.unref(curLanguageIndex)].language), 1)
+              vue_cjs_prod.createVNode("div", { class: "w-full flex justify-end pr-10" }, [
+                vue_cjs_prod.createVNode("button", { class: "btn rounded-box border-0 bg-opacity-50 capitalize" }, " to " + vue_cjs_prod.toDisplayString(vue_cjs_prod.unref(curLanguageIndex) > -1 && vue_cjs_prod.unref(language)[vue_cjs_prod.unref(curLanguageIndex)].language), 1)
+              ])
             ];
           }
         }),
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="hidden lg:block" data-v-40230bd6${_scopeId}><main class="json-to-language flex" data-v-40230bd6${_scopeId}><div class="w-2/5" data-v-40230bd6${_scopeId}></div><div class="w-16 flex-shrink-0 bg-white bg-opacity-50 border-r-8 border-r-white border-y-8 border-y-orange-600 flex flex-col items-center" data-v-40230bd6${_scopeId}><!--[-->`);
+            _push2(`<div class="hidden lg:block" data-v-4a662560${_scopeId}><main class="json-to-language flex" data-v-4a662560${_scopeId}><div class="w-2/5" data-v-4a662560${_scopeId}></div><div class="w-16 flex-shrink-0 bg-white bg-opacity-50 border-r-8 border-r-white border-y-8 border-y-orange-600 flex flex-col items-center" data-v-4a662560${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(language), (item, index2) => {
               _push2(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
                 key: item.name,
@@ -5405,7 +5407,7 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
               }, {
                 default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
-                    _push3(`<div class="${serverRenderer.exports.ssrRenderClass([item.className, { active: vue_cjs_prod.unref(curLanguageIndex) === index2 }])}" data-v-40230bd6${_scopeId2}>${serverRenderer.exports.ssrInterpolate(item.name)}</div>`);
+                    _push3(`<div class="${serverRenderer.exports.ssrRenderClass([item.className, { active: vue_cjs_prod.unref(curLanguageIndex) === index2 }])}" data-v-4a662560${_scopeId2}>${serverRenderer.exports.ssrInterpolate(item.name)}</div>`);
                   } else {
                     return [
                       vue_cjs_prod.createVNode("div", {
@@ -5417,7 +5419,7 @@ const _sfc_main$r = /* @__PURE__ */ vue_cjs_prod.defineComponent({
                 _: 2
               }, _parent2, _scopeId));
             });
-            _push2(`<!--]--></div><div class="flex-1 lang-editor" data-v-40230bd6${_scopeId}></div></main></div><div class="prose flex justify-center items-center h-full lg:hidden" data-v-40230bd6${_scopeId}><h2 class="text-white" data-v-40230bd6${_scopeId}>\u5DE5\u5177\u7C7B\u4E0D\u9002\u5408\u5728\u624B\u673A\u7AEF\u4E0A\u663E\u793A</h2></div>`);
+            _push2(`<!--]--></div><div class="flex-1 lang-editor" data-v-4a662560${_scopeId}></div></main></div><div class="prose flex justify-center items-center h-full lg:hidden" data-v-4a662560${_scopeId}><h2 class="text-white" data-v-4a662560${_scopeId}>\u5DE5\u5177\u7C7B\u4E0D\u9002\u5408\u5728\u624B\u673A\u7AEF\u4E0A\u663E\u793A</h2></div>`);
           } else {
             return [
               vue_cjs_prod.createVNode("div", { class: "hidden lg:block" }, [
@@ -5466,7 +5468,7 @@ _sfc_main$r.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/Editor.vue");
   return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
 };
-const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["__scopeId", "data-v-40230bd6"]]);
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["__scopeId", "data-v-4a662560"]]);
 const _sfc_main$q = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   __name: "dart",
   __ssrInlineRender: true,
@@ -6732,6 +6734,9 @@ const _sfc_main$b = {
       }
     }))), __temp = await __temp, __restore(), __temp);
     const posts = vue_cjs_prod.computed(() => postsRes.value.data);
+    useHead({
+      titleTemplate: `\u6807\u7B7E - ${name}/${pageIndex}`
+    });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLayout = __nuxt_component_0$3;
       const _component_PostList = __nuxt_component_1$2;
@@ -7293,10 +7298,12 @@ const _sfc_main$6 = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, vue_cjs_prod.mergeProps({ onChange }, _attrs), {
         title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`Random Image`);
+            _push2(`<div class="w-full flex justify-end pr-10"${_scopeId}><button class="btn rounded-box border-0 bg-opacity-50 capitalize"${_scopeId}> Random Image </button></div>`);
           } else {
             return [
-              vue_cjs_prod.createTextVNode("Random Image")
+              vue_cjs_prod.createVNode("div", { class: "w-full flex justify-end pr-10" }, [
+                vue_cjs_prod.createVNode("button", { class: "btn rounded-box border-0 bg-opacity-50 capitalize" }, " Random Image ")
+              ])
             ];
           }
         }),
@@ -7811,10 +7818,12 @@ const _sfc_main = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_layout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`\u5FEB\u901F\u628A Tailwind \u8F6C\u6362\u4E3A DaisyUI \u4E3B\u9898 `);
+            _push2(`<div class="w-full flex justify-end pr-10"${_scopeId}><button class="btn rounded-box border-0 bg-opacity-50 capitalize"${_scopeId}> \u5FEB\u901F\u628A Tailwind \u8F6C\u6362\u4E3A DaisyUI \u4E3B\u9898 </button></div>`);
           } else {
             return [
-              vue_cjs_prod.createTextVNode("\u5FEB\u901F\u628A Tailwind \u8F6C\u6362\u4E3A DaisyUI \u4E3B\u9898 ")
+              vue_cjs_prod.createVNode("div", { class: "w-full flex justify-end pr-10" }, [
+                vue_cjs_prod.createVNode("button", { class: "btn rounded-box border-0 bg-opacity-50 capitalize" }, " \u5FEB\u901F\u628A Tailwind \u8F6C\u6362\u4E3A DaisyUI \u4E3B\u9898 ")
+              ])
             ];
           }
         }),
