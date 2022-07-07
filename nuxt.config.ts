@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "keywords",
-          content: "web前端,flutter,uniapp,模板,template,flutter,前端工具,blog",
+          content: "web前端,flutter,uniapp,模板,template,前端工具,blog",
         },
         {
           name: "description",

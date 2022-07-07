@@ -1,13 +1,19 @@
 <template>
-  <NuxtLayout>
+  <NuxtLayout name="default">
+    <template #title>
+      <div class="w-full flex justify-end pr-10">
+        <button class="btn rounded-box border-0 bg-opacity-50 capitalize">
+          {{ name }}
+        </button>
+      </div>
+    </template>
+
     <PostList
       :posts="posts"
       :prev-page-prefix="'tag/'"
       :next-page-prefix="'tag/'"
       :pagination="postsRes.meta.pagination"
-    >
-      <template #title>{{ name }}</template>
-    </PostList>
+    />
   </NuxtLayout>
 </template>
 

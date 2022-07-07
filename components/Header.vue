@@ -2,9 +2,9 @@
   <header class="flex justify-between items-center" :class="class">
     <Logo />
 
-    <span class="text-base-100 underline">
+    <div class="flex-1">
       <slot></slot>
-    </span>
+    </div>
 
     <ul
       class="menu menu-horizontal bg-base-100 bg-opacity-50 shadow-md text-base-content rounded-box md:flex hidden"
