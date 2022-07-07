@@ -1,6 +1,12 @@
 <template>
   <nuxt-layout name="tools">
-    <template #title>快速把 Tailwind 转换为 DaisyUI 主题 </template>
+    <template #title>
+      <div class="w-full flex justify-end pr-10">
+        <button class="btn rounded-box border-0 bg-opacity-50 capitalize">
+          快速把 Tailwind 转换为 DaisyUI 主题
+        </button>
+      </div>
+    </template>
 
     <div class="hidden lg:block h-full">
       <main class="h-full flex tailwind-to-daisyui">

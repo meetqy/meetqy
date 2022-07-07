@@ -1,6 +1,12 @@
 <template>
   <NuxtLayout @change="onChange">
-    <template #title>Random Image</template>
+    <template #title>
+      <div class="w-full flex justify-end pr-10">
+        <button class="btn rounded-box border-0 bg-opacity-50 capitalize">
+          Random Image
+        </button>
+      </div>
+    </template>
     <main class="main-content flex">
       <aside
         :class="[

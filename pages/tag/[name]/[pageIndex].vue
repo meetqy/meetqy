@@ -40,4 +40,8 @@ const { data: postsRes } = await useAsyncData(`tag/${name}`, () =>
 );
 
 const posts = computed(() => postsRes.value.data);
+
+useHead({
+  titleTemplate: `标签 - ${name}/${pageIndex}`,
+});
 </script>
