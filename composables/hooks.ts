@@ -7,6 +7,10 @@ export const useBaseUrl = () => {
   return useIsProducton() ? "https://wcao.cc" : "http://localhost:3001";
 };
 
+export const useTemplateUrl = () => {
+  return useIsProducton() ? "https://wcao.cc" : "http://localhost:3008";
+};
+
 export const useTitle = () => {
   const cao = ["cao", "caō", "caó", "caǒ", "caò"];
 
