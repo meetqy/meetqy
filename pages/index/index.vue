@@ -18,7 +18,7 @@ const { data: postsRes } = await useAsyncData("index/1", () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
     sort: ["updatedAt:desc"],
-    populate: ["tags"],
+    populate: ["tags", "light"],
     pagination: {
       page: 1,
       pageSize: 15,

@@ -9,6 +9,7 @@
     "start": "nuxt start"
   },
   "devDependencies": {
+    "@nuxt/image": "^0.7.1",
     "@nuxtjs/tailwindcss": "^5.1.2",
     "nuxt": "^3.0.0-rc.4",
     "postcss-color-gray": "^5.0.0"

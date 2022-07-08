@@ -3,7 +3,12 @@
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
     @click="$router.push(goTo(id))"
   >
-    <div v-html="html" class="flex justify-center px-4 relative z-20" />
+    <div
+      v-if="light"
+      class="overflow-hidden h-96 w-full z-40 bg-top hover:bg-bottom transition-all duration-[3000ms]"
+      :style="`background-image:url(https://strapi.wcao.cc${light.attributes.url});background-size: 100%`"
+    />
+    <div v-else v-html="html" class="flex justify-center px-4 relative z-20" />
 
     <div
       class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer"
@@ -75,6 +80,7 @@ interface Props {
     visit: number;
     link: string;
     to: string;
+    light: any;
   };
   tags: any[];
   category: CategoryItem;
@@ -82,20 +88,21 @@ interface Props {
 
 const props = defineProps<Props>();
 
+const light = computed(() => props.post.light.data);
+console.log(light.value);
+
 const goTo = (id: string) => {
   return (props.post.to || "/template/detail/") + id;
 };
 
 const html = ref("");
 
-if (props.category.name === "模板") {
-  const file = props.post.title.split(" Part ");
-  const { data } = await useFetch(`/beauty-template/${file[0]}/${file[1]}`, {
-    baseURL: useTemplateUrl(),
-  });
+const file = props.post.title.split(" Part ");
+const { data } = await useFetch(`/beauty-template/${file[0]}/${file[1]}`, {
+  baseURL: useTemplateUrl(),
+});
 
-  html.value = (data.value as string).match(/<wcao>([\s\S]*)<\/wcao>/)[1];
-}
+html.value = (data.value as string).match(/<wcao>([\s\S]*)<\/wcao>/)[1];
 </script>
 
 <style lang="postcss" scoped>

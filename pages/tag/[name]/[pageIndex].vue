@@ -24,7 +24,7 @@ const { data: postsRes } = await useAsyncData(`tag/${name}`, () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
     sort: ["updatedAt:desc"],
-    populate: ["tags"],
+    populate: ["tags", "light"],
     filters: {
       tags: {
         name: {
