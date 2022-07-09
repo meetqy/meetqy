@@ -4,7 +4,6 @@ module.exports = {
     "./pages/index/*.{vue,jsx,tsx,js}",
     "./pages/posts/*.{vue,jsx,tsx,js}",
     "./pages/tools/*.{vue,jsx,tsx,js}",
-    "./public/**/*.html",
   ],
   darkMode: "media",
   theme: {
