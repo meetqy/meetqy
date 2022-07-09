@@ -18,6 +18,7 @@
           <nuxt-img
             :src="useAssetUrl(light.attributes.url)"
             :height="random(320, 640)"
+            sizes="xl:360px lg:448px md:360 sm:334px 2xl:445px"
             loading="lazy"
           />
         </picture>
