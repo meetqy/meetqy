@@ -4,7 +4,10 @@
     @click="$router.push(goTo(id))"
   >
     <div v-if="light" class="w-full z-40 bg-top px-4">
-      <div class="h-96 w-full shadow-md rounded-box relative" ref="picScroll">
+      <div
+        class="max-h-[640px] w-full shadow-md rounded-box relative"
+        ref="picScroll"
+      >
         <picture>
           <source
             :srcset="useAssetUrl(dark.attributes.url)"
