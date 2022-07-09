@@ -4917,7 +4917,7 @@ const useCdnUrl = () => useStrapiUrl().replace("/api", "");
 const useTemplateUrl = () => {
   return "https://wcao.cc" ;
 };
-const useAssetUrl = (url) => `https://strapi.wcao.cc${url}`;
+const useAssetUrl = (url) => `https://strapi.wcao.cc/uploads/f_webp/${url.replace(/\/uploads/, "")}`;
 const useTitle = () => {
   const cao = ["cao", "ca\u014D", "ca\xF3", "ca\u01D2", "ca\xF2"];
   const day = new Date().getDay();
@@ -4959,11 +4959,11 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_img = __nuxt_component_0$3;
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-7c8b9f45>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-55a88ba2>`);
       if (vue_cjs_prod.unref(light)) {
-        _push(`<div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-7c8b9f45><div class="max-h-[640px] w-full rounded-box relative" data-v-7c8b9f45><picture data-v-7c8b9f45><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-7c8b9f45><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-7c8b9f45>`);
+        _push(`<div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-55a88ba2><div class="max-h-[640px] w-full rounded-box relative" data-v-55a88ba2><picture data-v-55a88ba2><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-55a88ba2><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-55a88ba2>`);
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_img, {
-          src: vue_cjs_prod.unref(light).attributes.url,
+          src: vue_cjs_prod.unref(light).attributes.url.replace(/\/uploads/, ""),
           height: random(320, 640),
           format: "webp",
           sizes: "xl:360px lg:448px md:360 sm:334px 2xl:445px",
@@ -4972,9 +4972,9 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }, null, _parent));
         _push(`</picture></div></div>`);
       } else {
-        _push(`<div class="flex justify-center px-4 relative z-20" data-v-7c8b9f45>${html.value}</div>`);
+        _push(`<div class="flex justify-center px-4 relative z-20" data-v-55a88ba2>${html.value}</div>`);
       }
-      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-7c8b9f45><div class="tags" data-v-7c8b9f45>`);
+      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-55a88ba2><div class="tags" data-v-55a88ba2>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: __props.category.path,
         style: `color: ${__props.category.color};${__props.category.bgColor}`
@@ -4990,7 +4990,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-7c8b9f45>`);
+      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-55a88ba2>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -5021,7 +5021,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-7c8b9f45><div class="flex-1" data-v-7c8b9f45><!--[-->`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-55a88ba2><div class="flex-1" data-v-55a88ba2><!--[-->`);
       serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/tag/${item.attributes.name}/1`,
@@ -5040,7 +5040,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-7c8b9f45><a href="javascript:;" data-v-7c8b9f45><span class="mr-1" data-v-7c8b9f45>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-7c8b9f45>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-7c8b9f45><span class="mr-1" data-v-7c8b9f45>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-7c8b9f45>\uE8B5</i></a></div></footer></article>`);
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-55a88ba2><a href="javascript:;" data-v-55a88ba2><span class="mr-1" data-v-55a88ba2>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-55a88ba2>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-55a88ba2><span class="mr-1" data-v-55a88ba2>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-55a88ba2>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -5050,7 +5050,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-7c8b9f45"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-55a88ba2"]]);
 const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
@@ -6526,7 +6526,7 @@ const imageOptions = {
   "alias": {}
 };
 imageOptions.providers = {
-  ["strapi"]: { provider: strapiRuntime$1030951216, defaults: { "baseURL": "https://strapi.wcao.cc" } },
+  ["strapi"]: { provider: strapiRuntime$1030951216, defaults: { "baseURL": "https://strapi.wcao.cc/uploads/f_webp/" } },
   ["ipx"]: { provider: ipxRuntime$3721367805, defaults: {} }
 };
 const useStrapiUser = () => useState("strapi_user");

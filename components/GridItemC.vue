@@ -15,7 +15,7 @@
             media="(prefers-color-scheme: light)"
           />
           <nuxt-img
-            :src="light.attributes.url"
+            :src="light.attributes.url.replace(/\/uploads/, '')"
             :height="random(320, 640)"
             format="webp"
             sizes="xl:360px lg:448px md:360 sm:334px 2xl:445px"
@@ -119,6 +119,7 @@ const props = defineProps<Props>();
 
 const light = computed(() => props.post.light.data);
 const dark = computed(() => props.post.dark.data);
+// console.log(light.value);
 
 const picScroll = ref();
 

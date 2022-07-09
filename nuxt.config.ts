@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi", "@nuxt/image-edge"],
   image: {
     strapi: {
-      baseURL: "https://strapi.wcao.cc",
+      baseURL: "https://strapi.wcao.cc/uploads/f_webp/",
     },
   },
 
