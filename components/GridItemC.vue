@@ -3,11 +3,22 @@
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
     @click="$router.push(goTo(id))"
   >
-    <div
-      v-if="light"
-      class="overflow-hidden h-96 w-full z-40 bg-top hover:bg-bottom transition-all duration-[3000ms]"
-      :style="`background-image:url(https://strapi.wcao.cc${light.attributes.url});background-size: 100%`"
-    />
+    <div v-if="light" class="w-full z-40 bg-top px-4">
+      <div class="h-96 w-full shadow-md rounded-box relative" ref="picScroll">
+        <picture>
+          <source
+            :srcset="useAssetUrl(dark.attributes.url)"
+            media="(prefers-color-scheme: dark)"
+          />
+          <source
+            :srcset="useAssetUrl(light.attributes.url)"
+            media="(prefers-color-scheme: light)"
+          />
+          <img :src="useAssetUrl(light.attributes.url)" />
+        </picture>
+      </div>
+    </div>
+
     <div v-else v-html="html" class="flex justify-center px-4 relative z-20" />
 
     <div
@@ -71,6 +82,7 @@
 
 <script lang="ts" setup>
 import { CategoryItem } from "~~/composables/type";
+import PerfectScrollbar from "perfect-scrollbar";
 
 interface Props {
   id: string;
@@ -81,6 +93,7 @@ interface Props {
     link: string;
     to: string;
     light: any;
+    dark: any;
   };
   tags: any[];
   category: CategoryItem;
@@ -89,11 +102,17 @@ interface Props {
 const props = defineProps<Props>();
 
 const light = computed(() => props.post.light.data);
-console.log(light.value);
+const dark = computed(() => props.post.dark.data);
 
 const goTo = (id: string) => {
   return (props.post.to || "/template/detail/") + id;
 };
+
+const picScroll = ref();
+
+onMounted(() => {
+  picScroll.value && new PerfectScrollbar(picScroll.value);
+});
 
 const html = ref("");
 

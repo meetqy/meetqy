@@ -11,6 +11,8 @@ export const useTemplateUrl = () => {
   return useIsProducton() ? "https://wcao.cc" : "http://localhost:3008";
 };
 
+export const useAssetUrl = (url) => `https://strapi.wcao.cc${url}`;
+
 export const useTitle = () => {
   const cao = ["cao", "caō", "caó", "caǒ", "caò"];
 

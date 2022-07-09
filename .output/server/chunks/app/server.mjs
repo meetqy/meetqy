@@ -1,7 +1,7 @@
 import { v as vue_cjs_prod, s as serverRenderer, r as require$$0 } from '../handlers/renderer.mjs';
 import { hasProtocol, joinURL, isEqual, withBase, withQuery } from 'ufo';
 import { stringify } from 'qs';
-import { useInterval, useDark, useToggle, useScroll } from '@vueuse/core';
+import { useInterval, useDark, useToggle, usePreferredColorScheme, useScroll } from '@vueuse/core';
 import hljs from 'highlight.js';
 import toJsonSchema from 'to-json-schema';
 import jsonFormat from 'json-format';
@@ -4545,6 +4545,7 @@ const useBaseUrl = () => {
 const useTemplateUrl = () => {
   return "https://wcao.cc" ;
 };
+const useAssetUrl = (url) => `https://strapi.wcao.cc${url}`;
 const useTitle = () => {
   const cao = ["cao", "ca\u014D", "ca\xF3", "ca\u01D2", "ca\xF2"];
   const day = new Date().getDay();
@@ -4578,7 +4579,11 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     let __temp, __restore;
     const props = __props;
     const light = vue_cjs_prod.computed(() => props.post.light.data);
-    console.log(light.value);
+    const dark = vue_cjs_prod.computed(() => props.post.dark.data);
+    const picScroll = vue_cjs_prod.ref();
+    vue_cjs_prod.onMounted(() => {
+      picScroll.value && new PerfectScrollbar(picScroll.value);
+    });
     const html = vue_cjs_prod.ref("");
     const file = props.post.title.split(" Part ");
     const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/beauty-template/${file[0]}/${file[1]}`, {
@@ -4587,13 +4592,13 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     html.value = data.value.match(/<wcao>([\s\S]*)<\/wcao>/)[1];
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-47709c5e>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-51987f46>`);
       if (vue_cjs_prod.unref(light)) {
-        _push(`<div class="overflow-hidden h-96 w-full z-40 bg-top hover:bg-bottom transition-all duration-[3000ms]" style="${serverRenderer.exports.ssrRenderStyle(`background-image:url(https://strapi.wcao.cc${vue_cjs_prod.unref(light).attributes.url});background-size: 100%`)}" data-v-47709c5e></div>`);
+        _push(`<div class="w-full z-40 bg-top px-4" data-v-51987f46><div class="h-96 w-full shadow-md rounded-box relative" data-v-51987f46><picture data-v-51987f46><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-51987f46><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-51987f46><img${serverRenderer.exports.ssrRenderAttr("src", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} data-v-51987f46></picture></div></div>`);
       } else {
-        _push(`<div class="flex justify-center px-4 relative z-20" data-v-47709c5e>${html.value}</div>`);
+        _push(`<div class="flex justify-center px-4 relative z-20" data-v-51987f46>${html.value}</div>`);
       }
-      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-47709c5e><div class="tags" data-v-47709c5e>`);
+      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-51987f46><div class="tags" data-v-51987f46>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: __props.category.path,
         style: `color: ${__props.category.color};${__props.category.bgColor}`
@@ -4609,7 +4614,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-47709c5e>`);
+      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-51987f46>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -4644,7 +4649,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       } else {
         _push(`<!---->`);
       }
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-47709c5e><div class="flex-1" data-v-47709c5e><!--[-->`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-51987f46><div class="flex-1" data-v-51987f46><!--[-->`);
       serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/tag/${item.attributes.name}/1`,
@@ -4663,7 +4668,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-47709c5e><a href="javascript:;" data-v-47709c5e><span class="mr-1" data-v-47709c5e>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-47709c5e>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-47709c5e><span class="mr-1" data-v-47709c5e>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-47709c5e>\uE8B5</i></a></div></footer></article>`);
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-51987f46><a href="javascript:;" data-v-51987f46><span class="mr-1" data-v-51987f46>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-51987f46>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-51987f46><span class="mr-1" data-v-51987f46>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-51987f46>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -4673,7 +4678,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-47709c5e"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-51987f46"]]);
 const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
@@ -6434,6 +6439,7 @@ const _sfc_main$h = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       valueLight: "light"
     });
     useToggle(isDark);
+    console.log(usePreferredColorScheme().value);
     const active = (name) => {
       return route.name.split("-")[0].includes(name);
     };
@@ -6618,7 +6624,7 @@ const _sfc_main$d = {
     const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData("index/1", () => useStrapi4().find("posts", {
       publicationState: "live" ,
       sort: ["updatedAt:desc"],
-      populate: ["tags", "light"],
+      populate: ["tags", "light", "dark"],
       pagination: {
         page: 1,
         pageSize: 15
@@ -6676,7 +6682,7 @@ const _sfc_main$c = {
     const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`index/${pageIndex}`, () => useStrapi4().find("posts", {
       publicationState: "live" ,
       sort: ["updatedAt:desc"],
-      populate: ["tags", "light"],
+      populate: ["tags", "light", "dark"],
       pagination: {
         page: pageIndex,
         pageSize: 15
@@ -6730,7 +6736,7 @@ const _sfc_main$b = {
     const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`tag/${name}`, () => useStrapi4().find("posts", {
       publicationState: "live" ,
       sort: ["updatedAt:desc"],
-      populate: ["tags", "light"],
+      populate: ["tags", "light", "dark"],
       filters: {
         tags: {
           name: {

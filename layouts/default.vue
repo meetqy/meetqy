@@ -39,32 +39,3 @@ onUnmounted(() => {
 
 watch(y, (val) => emit("change", val));
 </script>
-
-<style lang="postcss">
-.prose {
-  max-width: 100%;
-}
-
-.swiper {
-  user-select: none;
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 36px;
-    height: 36px;
-    @apply flex items-center justify-center rounded-full bg-error;
-
-    &::after {
-      font-size: 18px;
-      color: #fff;
-    }
-  }
-
-  .swiper-button-next {
-    &::after {
-      position: relative;
-      left: 2px;
-    }
-  }
-}
-</style>

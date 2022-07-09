@@ -53,7 +53,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useDark, useToggle } from "@vueuse/core";
+import { useDark, usePreferredColorScheme, useToggle } from "@vueuse/core";
 
 interface Props {
   height?: number;
@@ -72,6 +72,8 @@ const isDark = useDark({
 });
 
 const toggleDark = useToggle(isDark);
+
+console.log(usePreferredColorScheme().value);
 
 interface NavItem {
   name: string;
