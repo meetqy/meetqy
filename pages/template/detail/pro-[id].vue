@@ -3,7 +3,7 @@
     <div class="tools-body overflow-hidden relative">
       <iframe
         class="w-full h-full"
-        :src="`${useTemplateUrl()}/beauty-template/en/card/${file[1]}`"
+        :src="`${useTemplateUrl()}/beauty-template/en/${file[0]}/${file[1]}`"
         frameborder="0"
         @load="onLoad"
         ref="iframe"

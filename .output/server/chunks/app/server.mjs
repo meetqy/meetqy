@@ -7934,7 +7934,7 @@ const _sfc_main$a = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_layout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${useTemplateUrl()}/beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe>`);
+            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${useTemplateUrl()}/beauty-template/en/${vue_cjs_prod.unref(file)[0]}/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe>`);
             if (loading.value) {
               _push2(`<div class="w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"${_scopeId}><img class="w-32"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)}${_scopeId}></div>`);
             } else {
@@ -7946,7 +7946,7 @@ const _sfc_main$a = {
               vue_cjs_prod.createVNode("div", { class: "tools-body overflow-hidden relative" }, [
                 vue_cjs_prod.createVNode("iframe", {
                   class: "w-full h-full",
-                  src: `${useTemplateUrl()}/beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`,
+                  src: `${useTemplateUrl()}/beauty-template/en/${vue_cjs_prod.unref(file)[0]}/${vue_cjs_prod.unref(file)[1]}`,
                   frameborder: "0",
                   onLoad,
                   ref_key: "iframe",
@@ -8011,7 +8011,7 @@ const _sfc_main$9 = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_layout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${useTemplateUrl()}/beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe>`);
+            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${useTemplateUrl()}/beauty-template/en/${vue_cjs_prod.unref(file)[0]}/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe>`);
             if (loading.value) {
               _push2(`<div class="w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"${_scopeId}><img class="w-32"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)}${_scopeId}></div>`);
             } else {
@@ -8023,7 +8023,7 @@ const _sfc_main$9 = {
               vue_cjs_prod.createVNode("div", { class: "tools-body overflow-hidden relative" }, [
                 vue_cjs_prod.createVNode("iframe", {
                   class: "w-full h-full",
-                  src: `${useTemplateUrl()}/beauty-template/en/card/${vue_cjs_prod.unref(file)[1]}`,
+                  src: `${useTemplateUrl()}/beauty-template/en/${vue_cjs_prod.unref(file)[0]}/${vue_cjs_prod.unref(file)[1]}`,
                   frameborder: "0",
                   onLoad,
                   ref_key: "iframe",
