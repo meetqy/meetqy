@@ -14,14 +14,25 @@
             :srcset="useAssetUrl(light.attributes.url)"
             media="(prefers-color-scheme: light)"
           />
-          <!-- <img :src="useAssetUrl(light.attributes.url)" /> -->
           <nuxt-img
-            :src="useAssetUrl(light.attributes.url)"
+            :src="light.attributes.url"
             :height="random(320, 640)"
+            format="webp"
             sizes="xl:360px lg:448px md:360 sm:334px 2xl:445px"
             loading="lazy"
+            provider="strapi"
           />
         </picture>
+        <!-- <img :src="useAssetUrl(light.attributes.url)" /> -->
+
+        <!-- <nuxt-img
+          :src="light.attributes.url"
+          :height="random(320, 640)"
+          format="webp"
+          sizes="xl:360px lg:448px md:360 sm:334px 2xl:445px"
+          loading="lazy"
+          provider="strapi"
+        /> -->
       </div>
     </div>
 

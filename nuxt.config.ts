@@ -6,6 +6,12 @@ export default defineNuxtConfig({
     shim: false,
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi", "@nuxt/image-edge"],
+  image: {
+    strapi: {
+      baseURL: "https://strapi.wcao.cc",
+    },
+  },
+
   strapi: {
     entities: ["tag"],
     url: "https://strapi.wcao.cc",
