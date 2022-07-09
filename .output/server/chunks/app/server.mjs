@@ -3,7 +3,7 @@ import { hasProtocol, joinURL, isEqual, withLeadingSlash, parseURL, encodeParam,
 import { stringify } from 'qs';
 import toJsonSchema from 'to-json-schema';
 import jsonFormat from 'json-format';
-import { useInterval, useDark, useToggle, usePreferredColorScheme, useScroll } from '@vueuse/core';
+import { useInterval, useDark, useToggle, useScroll } from '@vueuse/core';
 import PerfectScrollbar from 'perfect-scrollbar';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
@@ -5504,7 +5504,7 @@ _sfc_main$t.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const version = "1.0.10";
+const version = "1.0.11";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
@@ -6892,7 +6892,6 @@ const _sfc_main$h = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       valueLight: "light"
     });
     useToggle(isDark);
-    console.log(usePreferredColorScheme().value);
     const active = (name) => {
       return route.name.split("-")[0].includes(name);
     };
@@ -7934,7 +7933,7 @@ const _sfc_main$a = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_layout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${useTemplateUrl()}/beauty-template/en/${vue_cjs_prod.unref(file)[0]}/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe>`);
+            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${useTemplateUrl()}/beauty-template/en/${vue_cjs_prod.unref(file)[0]}/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0" allow="clipboard-read;clipboard-write"${_scopeId}></iframe>`);
             if (loading.value) {
               _push2(`<div class="w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"${_scopeId}><img class="w-32"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)}${_scopeId}></div>`);
             } else {
@@ -7950,7 +7949,8 @@ const _sfc_main$a = {
                   frameborder: "0",
                   onLoad,
                   ref_key: "iframe",
-                  ref: iframe
+                  ref: iframe,
+                  allow: "clipboard-read;clipboard-write"
                 }, null, 40, ["src"]),
                 loading.value ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
                   key: 0,
@@ -8011,7 +8011,7 @@ const _sfc_main$9 = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_layout, vue_cjs_prod.mergeProps({ name: "tools" }, _attrs), {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${useTemplateUrl()}/beauty-template/en/${vue_cjs_prod.unref(file)[0]}/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0"${_scopeId}></iframe>`);
+            _push2(`<div class="tools-body overflow-hidden relative"${_scopeId}><iframe class="w-full h-full"${serverRenderer.exports.ssrRenderAttr("src", `${useTemplateUrl()}/beauty-template/en/${vue_cjs_prod.unref(file)[0]}/${vue_cjs_prod.unref(file)[1]}`)} frameborder="0" allow="clipboard-read;clipboard-write"${_scopeId}></iframe>`);
             if (loading.value) {
               _push2(`<div class="w-full h-full left-0 top-0 absolute flex justify-center items-center bg-base-100 bg-opacity-50"${_scopeId}><img class="w-32"${serverRenderer.exports.ssrRenderAttr("src", _imports_0)}${_scopeId}></div>`);
             } else {
@@ -8027,7 +8027,8 @@ const _sfc_main$9 = {
                   frameborder: "0",
                   onLoad,
                   ref_key: "iframe",
-                  ref: iframe
+                  ref: iframe,
+                  allow: "clipboard-read;clipboard-write"
                 }, null, 40, ["src"]),
                 loading.value ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
                   key: 0,

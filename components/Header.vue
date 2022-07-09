@@ -73,7 +73,7 @@ const isDark = useDark({
 
 const toggleDark = useToggle(isDark);
 
-console.log(usePreferredColorScheme().value);
+// console.log(usePreferredColorScheme().value);
 
 interface NavItem {
   name: string;

@@ -7,6 +7,7 @@
         frameborder="0"
         @load="onLoad"
         ref="iframe"
+        allow="clipboard-read;clipboard-write"
       />
 
       <div
