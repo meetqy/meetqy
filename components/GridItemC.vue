@@ -3,7 +3,7 @@
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
     @click="$router.push(`/template/detail/pro-${id}`)"
   >
-    <div v-if="light" class="w-full z-40 bg-top px-4 cursor-pointer">
+    <div class="w-full z-40 bg-top px-4 cursor-pointer">
       <div class="max-h-[640px] w-full rounded-box relative" ref="picScroll">
         <picture>
           <source
@@ -35,8 +35,6 @@
         /> -->
       </div>
     </div>
-
-    <div v-else v-html="html" class="flex justify-center px-4 relative z-20" />
 
     <div
       class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer"
@@ -119,7 +117,6 @@ const props = defineProps<Props>();
 
 const light = computed(() => props.post.light.data);
 const dark = computed(() => props.post.dark.data);
-// console.log(light.value);
 
 const picScroll = ref();
 
@@ -128,15 +125,6 @@ const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 onMounted(() => {
   picScroll.value && new PerfectScrollbar(picScroll.value);
 });
-
-const html = ref("");
-
-const file = props.post.title.split(" Part ");
-const { data } = await useFetch(`/beauty-template/${file[0]}/${file[1]}`, {
-  baseURL: useTemplateUrl(),
-});
-
-html.value = (data.value as string).match(/<wcao>([\s\S]*)<\/wcao>/)[1];
 </script>
 
 <style lang="postcss" scoped>

@@ -946,7 +946,7 @@ var vueRouter_cjs_prod = {};
   const TRAILING_SLASH_RE = /\/$/;
   const removeTrailingSlash = (path) => path.replace(TRAILING_SLASH_RE, "");
   function parseURL2(parseQuery2, location2, currentLocation = "/") {
-    let path, query = {}, searchString = "", hash2 = "";
+    let path, query = {}, searchString = "", hash = "";
     const searchPos = location2.indexOf("?");
     const hashPos = location2.indexOf("#", searchPos > -1 ? searchPos : 0);
     if (searchPos > -1) {
@@ -956,14 +956,14 @@ var vueRouter_cjs_prod = {};
     }
     if (hashPos > -1) {
       path = path || location2.slice(0, hashPos);
-      hash2 = location2.slice(hashPos, location2.length);
+      hash = location2.slice(hashPos, location2.length);
     }
     path = resolveRelativePath(path != null ? path : location2, currentLocation);
     return {
-      fullPath: path + (searchString && "?") + searchString + hash2,
+      fullPath: path + (searchString && "?") + searchString + hash,
       path,
       query,
-      hash: hash2
+      hash
     };
   }
   function stringifyURL(stringifyQuery2, location2) {
@@ -1051,17 +1051,17 @@ var vueRouter_cjs_prod = {};
   });
   let createBaseLocation = () => location.protocol + "//" + location.host;
   function createCurrentLocation(base, location2) {
-    const { pathname, search, hash: hash2 } = location2;
+    const { pathname, search, hash } = location2;
     const hashPos = base.indexOf("#");
     if (hashPos > -1) {
-      let slicePos = hash2.includes(base.slice(hashPos)) ? base.slice(hashPos).length : 1;
-      let pathFromHash = hash2.slice(slicePos);
+      let slicePos = hash.includes(base.slice(hashPos)) ? base.slice(hashPos).length : 1;
+      let pathFromHash = hash.slice(slicePos);
       if (pathFromHash[0] !== "/")
         pathFromHash = "/" + pathFromHash;
       return stripBase(pathFromHash, "");
     }
     const path = stripBase(pathname, base);
-    return path + search + hash2;
+    return path + search + hash;
   }
   function useHistoryListeners(base, historyState, currentLocation, replace) {
     let listeners = [];
@@ -1828,10 +1828,10 @@ var vueRouter_cjs_prod = {};
   function mergeMetaFields(matched) {
     return matched.reduce((meta2, record) => assign(meta2, record.meta), {});
   }
-  function mergeOptions(defaults2, partialOptions) {
+  function mergeOptions(defaults, partialOptions) {
     const options = {};
-    for (const key in defaults2) {
-      options[key] = key in partialOptions ? partialOptions[key] : defaults2[key];
+    for (const key in defaults) {
+      options[key] = key in partialOptions ? partialOptions[key] : defaults[key];
     }
     return options;
   }
@@ -2272,16 +2272,16 @@ var vueRouter_cjs_prod = {};
         currentLocation.params = encodeParams(currentLocation.params);
       }
       const matchedRoute = matcher.resolve(matcherLocation, currentLocation);
-      const hash2 = rawLocation.hash || "";
+      const hash = rawLocation.hash || "";
       matchedRoute.params = normalizeParams(decodeParams(matchedRoute.params));
       const fullPath = stringifyURL(stringifyQuery$1, assign({}, rawLocation, {
-        hash: encodeHash(hash2),
+        hash: encodeHash(hash),
         path: matchedRoute.path
       }));
       const href = routerHistory.createHref(fullPath);
       return assign({
         fullPath,
-        hash: hash2,
+        hash,
         query: stringifyQuery$1 === stringifyQuery ? normalizeQuery(rawLocation.query) : rawLocation.query || {}
       }, matchedRoute, {
         redirectedFrom: void 0,
@@ -2727,357 +2727,6 @@ const throwError = (_err) => {
   }
   return err;
 };
-function murmurHash(key, seed = 0) {
-  if (typeof key === "string") {
-    key = createBuffer(key);
-  }
-  let i = 0;
-  let h1 = seed;
-  let k1;
-  let h1b;
-  const remainder = key.length & 3;
-  const bytes = key.length - remainder;
-  const c1 = 3432918353;
-  const c2 = 461845907;
-  while (i < bytes) {
-    k1 = key[i] & 255 | (key[++i] & 255) << 8 | (key[++i] & 255) << 16 | (key[++i] & 255) << 24;
-    ++i;
-    k1 = (k1 & 65535) * c1 + (((k1 >>> 16) * c1 & 65535) << 16) & 4294967295;
-    k1 = k1 << 15 | k1 >>> 17;
-    k1 = (k1 & 65535) * c2 + (((k1 >>> 16) * c2 & 65535) << 16) & 4294967295;
-    h1 ^= k1;
-    h1 = h1 << 13 | h1 >>> 19;
-    h1b = (h1 & 65535) * 5 + (((h1 >>> 16) * 5 & 65535) << 16) & 4294967295;
-    h1 = (h1b & 65535) + 27492 + (((h1b >>> 16) + 58964 & 65535) << 16);
-  }
-  k1 = 0;
-  switch (remainder) {
-    case 3:
-      k1 ^= (key[i + 2] & 255) << 16;
-      break;
-    case 2:
-      k1 ^= (key[i + 1] & 255) << 8;
-      break;
-    case 1:
-      k1 ^= key[i] & 255;
-      k1 = (k1 & 65535) * c1 + (((k1 >>> 16) * c1 & 65535) << 16) & 4294967295;
-      k1 = k1 << 15 | k1 >>> 17;
-      k1 = (k1 & 65535) * c2 + (((k1 >>> 16) * c2 & 65535) << 16) & 4294967295;
-      h1 ^= k1;
-  }
-  h1 ^= key.length;
-  h1 ^= h1 >>> 16;
-  h1 = (h1 & 65535) * 2246822507 + (((h1 >>> 16) * 2246822507 & 65535) << 16) & 4294967295;
-  h1 ^= h1 >>> 13;
-  h1 = (h1 & 65535) * 3266489909 + (((h1 >>> 16) * 3266489909 & 65535) << 16) & 4294967295;
-  h1 ^= h1 >>> 16;
-  return h1 >>> 0;
-}
-function createBuffer(val) {
-  return new TextEncoder().encode(val);
-}
-const defaults = {
-  ignoreUnknown: false,
-  respectType: false,
-  respectFunctionNames: false,
-  respectFunctionProperties: false,
-  unorderedObjects: true,
-  unorderedArrays: false,
-  unorderedSets: false
-};
-function objectHash(object, options = {}) {
-  options = __spreadValues(__spreadValues({}, defaults), options);
-  const hasher = createHasher(options);
-  hasher.dispatch(object);
-  return hasher.toString();
-}
-function createHasher(options) {
-  const buff = [];
-  let context = [];
-  const write = (str) => {
-    buff.push(str);
-  };
-  return {
-    toString() {
-      return buff.join("");
-    },
-    getContext() {
-      return context;
-    },
-    dispatch(value) {
-      if (options.replacer) {
-        value = options.replacer(value);
-      }
-      const type = value === null ? "null" : typeof value;
-      return this["_" + type](value);
-    },
-    _object(object) {
-      const pattern = /\[object (.*)\]/i;
-      const objString = Object.prototype.toString.call(object);
-      const _objType = pattern.exec(objString);
-      const objType = _objType ? _objType[1].toLowerCase() : "unknown:[" + objString.toLowerCase() + "]";
-      let objectNumber = null;
-      if ((objectNumber = context.indexOf(object)) >= 0) {
-        return this.dispatch("[CIRCULAR:" + objectNumber + "]");
-      } else {
-        context.push(object);
-      }
-      if (typeof Buffer !== "undefined" && Buffer.isBuffer && Buffer.isBuffer(object)) {
-        write("buffer:");
-        return write(object.toString("utf8"));
-      }
-      if (objType !== "object" && objType !== "function" && objType !== "asyncfunction") {
-        if (this["_" + objType]) {
-          this["_" + objType](object);
-        } else if (options.ignoreUnknown) {
-          return write("[" + objType + "]");
-        } else {
-          throw new Error('Unknown object type "' + objType + '"');
-        }
-      } else {
-        let keys2 = Object.keys(object);
-        if (options.unorderedObjects) {
-          keys2 = keys2.sort();
-        }
-        if (options.respectType !== false && !isNativeFunction(object)) {
-          keys2.splice(0, 0, "prototype", "__proto__", "letructor");
-        }
-        if (options.excludeKeys) {
-          keys2 = keys2.filter(function(key) {
-            return !options.excludeKeys(key);
-          });
-        }
-        write("object:" + keys2.length + ":");
-        return keys2.forEach((key) => {
-          this.dispatch(key);
-          write(":");
-          if (!options.excludeValues) {
-            this.dispatch(object[key]);
-          }
-          write(",");
-        });
-      }
-    },
-    _array(arr, unordered) {
-      unordered = typeof unordered !== "undefined" ? unordered : options.unorderedArrays !== false;
-      write("array:" + arr.length + ":");
-      if (!unordered || arr.length <= 1) {
-        return arr.forEach((entry2) => {
-          return this.dispatch(entry2);
-        });
-      }
-      const contextAdditions = [];
-      const entries = arr.map((entry2) => {
-        const hasher = createHasher(options);
-        hasher.dispatch(entry2);
-        contextAdditions.push(hasher.getContext());
-        return hasher.toString();
-      });
-      context = context.concat(contextAdditions);
-      entries.sort();
-      return this._array(entries, false);
-    },
-    _date(date) {
-      return write("date:" + date.toJSON());
-    },
-    _symbol(sym) {
-      return write("symbol:" + sym.toString());
-    },
-    _error(err) {
-      return write("error:" + err.toString());
-    },
-    _boolean(bool) {
-      return write("bool:" + bool.toString());
-    },
-    _string(string) {
-      write("string:" + string.length + ":");
-      write(string.toString());
-    },
-    _function(fn) {
-      write("fn:");
-      if (isNativeFunction(fn)) {
-        this.dispatch("[native]");
-      } else {
-        this.dispatch(fn.toString());
-      }
-      if (options.respectFunctionNames !== false) {
-        this.dispatch("function-name:" + String(fn.name));
-      }
-      if (options.respectFunctionProperties) {
-        this._object(fn);
-      }
-    },
-    _number(number) {
-      return write("number:" + number.toString());
-    },
-    _xml(xml) {
-      return write("xml:" + xml.toString());
-    },
-    _null() {
-      return write("Null");
-    },
-    _undefined() {
-      return write("Undefined");
-    },
-    _regexp(regex) {
-      return write("regex:" + regex.toString());
-    },
-    _uint8array(arr) {
-      write("uint8array:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _uint8clampedarray(arr) {
-      write("uint8clampedarray:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _int8array(arr) {
-      write("int8array:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _uint16array(arr) {
-      write("uint16array:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _int16array(arr) {
-      write("int16array:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _uint32array(arr) {
-      write("uint32array:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _int32array(arr) {
-      write("int32array:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _float32array(arr) {
-      write("float32array:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _float64array(arr) {
-      write("float64array:");
-      return this.dispatch(Array.prototype.slice.call(arr));
-    },
-    _arraybuffer(arr) {
-      write("arraybuffer:");
-      return this.dispatch(new Uint8Array(arr));
-    },
-    _url(url) {
-      return write("url:" + url.toString());
-    },
-    _map(map) {
-      write("map:");
-      const arr = Array.from(map);
-      return this._array(arr, options.unorderedSets !== false);
-    },
-    _set(set) {
-      write("set:");
-      const arr = Array.from(set);
-      return this._array(arr, options.unorderedSets !== false);
-    },
-    _file(file) {
-      write("file:");
-      return this.dispatch([file.name, file.size, file.type, file.lastModfied]);
-    },
-    _blob() {
-      if (options.ignoreUnknown) {
-        return write("[blob]");
-      }
-      throw new Error('Hashing Blob objects is currently not supported\nUse "options.replacer" or "options.ignoreUnknown"\n');
-    },
-    _domwindow() {
-      return write("domwindow");
-    },
-    _bigint(number) {
-      return write("bigint:" + number.toString());
-    },
-    _process() {
-      return write("process");
-    },
-    _timer() {
-      return write("timer");
-    },
-    _pipe() {
-      return write("pipe");
-    },
-    _tcp() {
-      return write("tcp");
-    },
-    _udp() {
-      return write("udp");
-    },
-    _tty() {
-      return write("tty");
-    },
-    _statwatcher() {
-      return write("statwatcher");
-    },
-    _securecontext() {
-      return write("securecontext");
-    },
-    _connection() {
-      return write("connection");
-    },
-    _zlib() {
-      return write("zlib");
-    },
-    _context() {
-      return write("context");
-    },
-    _nodescript() {
-      return write("nodescript");
-    },
-    _httpparser() {
-      return write("httpparser");
-    },
-    _dataview() {
-      return write("dataview");
-    },
-    _signal() {
-      return write("signal");
-    },
-    _fsevent() {
-      return write("fsevent");
-    },
-    _tlswrap() {
-      return write("tlswrap");
-    }
-  };
-}
-function isNativeFunction(f) {
-  if (typeof f !== "function") {
-    return false;
-  }
-  const exp = /^function\s+\w*\s*\(\s*\)\s*{\s+\[native code\]\s+}$/i;
-  return exp.exec(Function.prototype.toString.call(f)) != null;
-}
-function hash(object, options = {}) {
-  const hashed = typeof object === "string" ? object : objectHash(object, options);
-  return String(murmurHash(hashed));
-}
-function useFetch(request, opts = {}) {
-  const key = "$f_" + (opts.key || hash([request, __spreadProps(__spreadValues({}, opts), { transform: null })]));
-  const _request = vue_cjs_prod.computed(() => {
-    let r = request;
-    if (typeof r === "function") {
-      r = r();
-    }
-    return vue_cjs_prod.isRef(r) ? r.value : r;
-  });
-  const _fetchOptions = __spreadProps(__spreadValues({}, opts), {
-    cache: typeof opts.cache === "boolean" ? void 0 : opts.cache
-  });
-  const _asyncDataOptions = __spreadProps(__spreadValues({}, opts), {
-    watch: [
-      _request,
-      ...opts.watch || []
-    ]
-  });
-  const asyncData = useAsyncData(key, () => {
-    return $fetch(_request.value, _fetchOptions);
-  }, _asyncDataOptions);
-  return asyncData;
-}
 const decode = decodeURIComponent;
 const encode = encodeURIComponent;
 const pairSplitRegExp = /; */;
@@ -4158,11 +3807,11 @@ var renderHeadToString = (head) => {
 function isObject(val) {
   return val !== null && typeof val === "object";
 }
-function _defu(baseObj, defaults2, namespace = ".", merger) {
-  if (!isObject(defaults2)) {
+function _defu(baseObj, defaults, namespace = ".", merger) {
+  if (!isObject(defaults)) {
     return _defu(baseObj, {}, namespace, merger);
   }
-  const obj = Object.assign({}, defaults2);
+  const obj = Object.assign({}, defaults);
   for (const key in baseObj) {
     if (key === "__proto__" || key === "constructor") {
       continue;
@@ -4701,7 +4350,7 @@ function resolveImage(ctx, input, options) {
       url: input
     };
   }
-  const { provider, defaults: defaults2 } = getProvider(ctx, options.provider || ctx.options.provider);
+  const { provider, defaults } = getProvider(ctx, options.provider || ctx.options.provider);
   const preset = getPreset(ctx, options.preset);
   input = hasProtocol(input) ? input : withLeadingSlash(input);
   if (!provider.supportsAlias) {
@@ -4719,7 +4368,7 @@ function resolveImage(ctx, input, options) {
       };
     }
   }
-  const _options = defu(options, preset, defaults2);
+  const _options = defu(options, preset, defaults);
   _options.modifiers = __spreadValues({}, _options.modifiers);
   const expectedFormat = _options.modifiers.format;
   if ((_a = _options.modifiers) == null ? void 0 : _a.width) {
@@ -4940,8 +4589,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     tags: null,
     category: null
   },
-  async setup(__props) {
-    let __temp, __restore;
+  setup(__props) {
     const props = __props;
     const light = vue_cjs_prod.computed(() => props.post.light.data);
     const dark = vue_cjs_prod.computed(() => props.post.dark.data);
@@ -4950,31 +4598,19 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     vue_cjs_prod.onMounted(() => {
       picScroll.value && new PerfectScrollbar(picScroll.value);
     });
-    const html = vue_cjs_prod.ref("");
-    const file = props.post.title.split(" Part ");
-    const { data } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useFetch(`/beauty-template/${file[0]}/${file[1]}`, {
-      baseURL: useTemplateUrl()
-    })), __temp = await __temp, __restore(), __temp);
-    html.value = data.value.match(/<wcao>([\s\S]*)<\/wcao>/)[1];
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_img = __nuxt_component_0$3;
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-55a88ba2>`);
-      if (vue_cjs_prod.unref(light)) {
-        _push(`<div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-55a88ba2><div class="max-h-[640px] w-full rounded-box relative" data-v-55a88ba2><picture data-v-55a88ba2><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-55a88ba2><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-55a88ba2>`);
-        _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_img, {
-          src: vue_cjs_prod.unref(light).attributes.url.replace(/\/uploads/, ""),
-          height: random(320, 640),
-          format: "webp",
-          sizes: "xl:360px lg:448px md:360 sm:334px 2xl:445px",
-          loading: "lazy",
-          provider: "strapi"
-        }, null, _parent));
-        _push(`</picture></div></div>`);
-      } else {
-        _push(`<div class="flex justify-center px-4 relative z-20" data-v-55a88ba2>${html.value}</div>`);
-      }
-      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-55a88ba2><div class="tags" data-v-55a88ba2>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-36ab3fd2><div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-36ab3fd2><div class="max-h-[640px] w-full rounded-box relative" data-v-36ab3fd2><picture data-v-36ab3fd2><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-36ab3fd2><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-36ab3fd2>`);
+      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_img, {
+        src: vue_cjs_prod.unref(light).attributes.url.replace(/\/uploads/, ""),
+        height: random(320, 640),
+        format: "webp",
+        sizes: "xl:360px lg:448px md:360 sm:334px 2xl:445px",
+        loading: "lazy",
+        provider: "strapi"
+      }, null, _parent));
+      _push(`</picture></div></div><div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-36ab3fd2><div class="tags" data-v-36ab3fd2>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: __props.category.path,
         style: `color: ${__props.category.color};${__props.category.bgColor}`
@@ -4990,7 +4626,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-55a88ba2>`);
+      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-36ab3fd2>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -5021,7 +4657,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-55a88ba2><div class="flex-1" data-v-55a88ba2><!--[-->`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-36ab3fd2><div class="flex-1" data-v-36ab3fd2><!--[-->`);
       serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/tag/${item.attributes.name}/1`,
@@ -5040,7 +4676,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-55a88ba2><a href="javascript:;" data-v-55a88ba2><span class="mr-1" data-v-55a88ba2>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-55a88ba2>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-55a88ba2><span class="mr-1" data-v-55a88ba2>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-55a88ba2>\uE8B5</i></a></div></footer></article>`);
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-36ab3fd2><a href="javascript:;" data-v-36ab3fd2><span class="mr-1" data-v-36ab3fd2>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-36ab3fd2>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-36ab3fd2><span class="mr-1" data-v-36ab3fd2>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-36ab3fd2>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -5050,7 +4686,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-55a88ba2"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-36ab3fd2"]]);
 const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
