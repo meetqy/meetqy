@@ -3,7 +3,7 @@
     <div class="tools-body overflow-hidden relative">
       <iframe
         class="w-full h-full"
-        :src="`${getUrl()}beauty-template/en/card/${file[1]}`"
+        :src="`${useTemplateUrl()}/beauty-template/en/card/${file[1]}`"
         frameborder="0"
         @load="onLoad"
         ref="iframe"
@@ -30,9 +30,6 @@ const iframe = ref();
 const onLoad = (e) => {
   loading.value = false;
 };
-
-const getUrl = () =>
-  useIsProducton() ? `https://wcao.cc/` : `http://localhost:3008/`;
 
 const { data } = await useAsyncData(`posts/${id}`, () =>
   useStrapi4().find(`posts/${id}`, {

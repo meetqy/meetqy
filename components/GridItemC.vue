@@ -1,9 +1,9 @@
 <template>
   <article
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
-    @click="$router.push(goTo(id))"
+    @click="$router.push(`/template/detail/pro-${id}`)"
   >
-    <div v-if="light" class="w-full z-40 bg-top px-4">
+    <div v-if="light" class="w-full z-40 bg-top px-4 cursor-pointer">
       <div
         class="max-h-[640px] w-full shadow-md rounded-box relative"
         ref="picScroll"
@@ -47,7 +47,6 @@
 
       <nuxt-link
         :to="`/template/detail/pro-${id}`"
-        v-if="post.to"
         class="cursor-pointer capitalize btn"
       >
         查看详情 [pro] {{ post.to }}
@@ -106,10 +105,6 @@ const props = defineProps<Props>();
 
 const light = computed(() => props.post.light.data);
 const dark = computed(() => props.post.dark.data);
-
-const goTo = (id: string) => {
-  return (props.post.to || "/template/detail/") + id;
-};
 
 const picScroll = ref();
 
