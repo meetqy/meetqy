@@ -14,7 +14,12 @@
             :srcset="useAssetUrl(light.attributes.url)"
             media="(prefers-color-scheme: light)"
           />
-          <img :src="useAssetUrl(light.attributes.url)" />
+          <!-- <img :src="useAssetUrl(light.attributes.url)" /> -->
+          <nuxt-img
+            :src="useAssetUrl(light.attributes.url)"
+            :height="random(320, 640)"
+            loading="lazy"
+          />
         </picture>
       </div>
     </div>
@@ -104,6 +109,8 @@ const light = computed(() => props.post.light.data);
 const dark = computed(() => props.post.dark.data);
 
 const picScroll = ref();
+
+const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 onMounted(() => {
   picScroll.value && new PerfectScrollbar(picScroll.value);

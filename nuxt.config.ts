@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi", "@nuxt/image-edge"],
   strapi: {
     entities: ["tag"],
     url: "https://strapi.wcao.cc",
