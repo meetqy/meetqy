@@ -29,5 +29,5 @@
 
 ![](https://github.com/meetqy/beauty-template/raw/main/readme/preview.gif)
 
-- 😯 线上体验 👉🏻 [wcao.cc](https://wcao.cc/template/1)
+- 😯 线上体验 👉🏻 [wcao.cc](https://wcao.cc)
 - 🐲 仓库地址 👉 [HelloWebUI](https://github.com/meetqy/HelloWebUI)
