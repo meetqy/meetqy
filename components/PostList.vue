@@ -49,6 +49,8 @@ const props = defineProps({
   prevPagePrefix: String,
   nextPagePrefix: String,
 });
+
+// console.log(props.posts[0]);
 </script>
 
 <style scoped lang="postcss">

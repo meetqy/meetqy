@@ -1,6 +1,7 @@
 <template>
   <NuxtLayout>
     <PostList
+      v-if="posts"
       :posts="posts"
       :prev-page-prefix="'page/'"
       :next-page-prefix="'page/'"

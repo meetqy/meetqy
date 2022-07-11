@@ -4601,16 +4601,22 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_img = __nuxt_component_0$3;
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-36ab3fd2><div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-36ab3fd2><div class="max-h-[640px] w-full rounded-box relative" data-v-36ab3fd2><picture data-v-36ab3fd2><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-36ab3fd2><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-36ab3fd2>`);
-      _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_img, {
-        src: vue_cjs_prod.unref(light).attributes.url.replace(/\/uploads/, ""),
-        height: random(320, 640),
-        format: "webp",
-        sizes: "xl:360px lg:448px md:360 sm:334px 2xl:445px",
-        loading: "lazy",
-        provider: "strapi"
-      }, null, _parent));
-      _push(`</picture></div></div><div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-36ab3fd2><div class="tags" data-v-36ab3fd2>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-c90139ca>`);
+      if (vue_cjs_prod.unref(dark) && vue_cjs_prod.unref(light)) {
+        _push(`<div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-c90139ca><div class="max-h-[640px] w-full rounded-box relative" data-v-c90139ca><picture data-v-c90139ca><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-c90139ca><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-c90139ca>`);
+        _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_img, {
+          src: vue_cjs_prod.unref(light).attributes.url.replace(/\/uploads/, ""),
+          height: random(320, 640),
+          format: "webp",
+          sizes: "xl:360px lg:448px md:360 sm:334px 2xl:445px",
+          loading: "lazy",
+          provider: "strapi"
+        }, null, _parent));
+        _push(`</picture></div></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-c90139ca><div class="tags" data-v-c90139ca>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: __props.category.path,
         style: `color: ${__props.category.color};${__props.category.bgColor}`
@@ -4626,7 +4632,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-36ab3fd2>`);
+      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-c90139ca>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -4657,7 +4663,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-36ab3fd2><div class="flex-1" data-v-36ab3fd2><!--[-->`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-c90139ca><div class="flex-1" data-v-c90139ca><!--[-->`);
       serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/tag/${item.attributes.name}/1`,
@@ -4676,7 +4682,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-36ab3fd2><a href="javascript:;" data-v-36ab3fd2><span class="mr-1" data-v-36ab3fd2>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-36ab3fd2>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-36ab3fd2><span class="mr-1" data-v-36ab3fd2>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-36ab3fd2>\uE8B5</i></a></div></footer></article>`);
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-c90139ca><a href="javascript:;" data-v-c90139ca><span class="mr-1" data-v-c90139ca>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-c90139ca>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-c90139ca><span class="mr-1" data-v-c90139ca>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-c90139ca>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -4686,7 +4692,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-36ab3fd2"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-c90139ca"]]);
 const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
@@ -4701,11 +4707,11 @@ const _sfc_main$w = {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_grid_item_c = __nuxt_component_0$2;
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-7c638bb4>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-6cc69c0e>`);
       if (props.posts) {
-        _push(`<div class="multi-columns" data-v-7c638bb4><!--[-->`);
+        _push(`<div class="multi-columns" data-v-6cc69c0e><!--[-->`);
         serverRenderer.exports.ssrRenderList(props.posts, (post) => {
-          _push(`<div class="block" data-v-7c638bb4>`);
+          _push(`<div class="block" data-v-6cc69c0e>`);
           _push(serverRenderer.exports.ssrRenderComponent(_component_grid_item_c, {
             post: post.attributes,
             tags: post.attributes.tags.data,
@@ -4725,7 +4731,7 @@ const _sfc_main$w = {
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="paging md:py-10 py-5" data-v-7c638bb4>`);
+      _push(`<div class="paging md:py-10 py-5" data-v-6cc69c0e>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/${__props.prevPagePrefix}${__props.pagination.page - 1}`,
         class: ["btn rounded-full btn-sm btn-info capitalize", { "btn-disabled": __props.pagination.page <= 1 }]
@@ -4741,7 +4747,7 @@ const _sfc_main$w = {
         }),
         _: 1
       }, _parent));
-      _push(`<span class="px-5 text-neutral-content" data-v-7c638bb4>${serverRenderer.exports.ssrInterpolate(__props.pagination.page)} / ${serverRenderer.exports.ssrInterpolate(__props.pagination.pageCount)}</span>`);
+      _push(`<span class="px-5 text-neutral-content" data-v-6cc69c0e>${serverRenderer.exports.ssrInterpolate(__props.pagination.page)} / ${serverRenderer.exports.ssrInterpolate(__props.pagination.pageCount)}</span>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/${__props.nextPagePrefix}${__props.pagination.page + 1}`,
         class: ["btn rounded-full btn-sm btn-info capitalize", { "btn-disabled": __props.pagination.page >= __props.pagination.pageCount }]
@@ -4767,7 +4773,7 @@ _sfc_main$w.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/PostList.vue");
   return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-7c638bb4"]]);
+const __nuxt_component_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-6cc69c0e"]]);
 const useStrapiVersion = () => {
   const config = useRuntimeConfig().public;
   return config.strapi.version;
@@ -7373,20 +7379,25 @@ const _sfc_main$d = {
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(serverRenderer.exports.ssrRenderComponent(_component_PostList, {
-              posts: vue_cjs_prod.unref(posts),
-              "prev-page-prefix": "page/",
-              "next-page-prefix": "page/",
-              pagination: vue_cjs_prod.unref(postsRes).meta.pagination
-            }, null, _parent2, _scopeId));
-          } else {
-            return [
-              vue_cjs_prod.createVNode(_component_PostList, {
+            if (vue_cjs_prod.unref(posts)) {
+              _push2(serverRenderer.exports.ssrRenderComponent(_component_PostList, {
                 posts: vue_cjs_prod.unref(posts),
                 "prev-page-prefix": "page/",
                 "next-page-prefix": "page/",
                 pagination: vue_cjs_prod.unref(postsRes).meta.pagination
-              }, null, 8, ["posts", "pagination"])
+              }, null, _parent2, _scopeId));
+            } else {
+              _push2(`<!---->`);
+            }
+          } else {
+            return [
+              vue_cjs_prod.unref(posts) ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_PostList, {
+                key: 0,
+                posts: vue_cjs_prod.unref(posts),
+                "prev-page-prefix": "page/",
+                "next-page-prefix": "page/",
+                pagination: vue_cjs_prod.unref(postsRes).meta.pagination
+              }, null, 8, ["posts", "pagination"])) : vue_cjs_prod.createCommentVNode("", true)
             ];
           }
         }),

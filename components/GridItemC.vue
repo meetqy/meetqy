@@ -3,7 +3,7 @@
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
     @click="$router.push(`/template/detail/pro-${id}`)"
   >
-    <div class="w-full z-40 bg-top px-4 cursor-pointer">
+    <div class="w-full z-40 bg-top px-4 cursor-pointer" v-if="dark && light">
       <div class="max-h-[640px] w-full rounded-box relative" ref="picScroll">
         <picture>
           <source
@@ -23,16 +23,6 @@
             provider="strapi"
           />
         </picture>
-        <!-- <img :src="useAssetUrl(light.attributes.url)" /> -->
-
-        <!-- <nuxt-img
-          :src="light.attributes.url"
-          :height="random(320, 640)"
-          format="webp"
-          sizes="xl:360px lg:448px md:360 sm:334px 2xl:445px"
-          loading="lazy"
-          provider="strapi"
-        /> -->
       </div>
     </div>
 
