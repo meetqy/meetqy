@@ -4566,7 +4566,7 @@ const useCdnUrl = () => useStrapiUrl().replace("/api", "");
 const useTemplateUrl = () => {
   return "https://wcao.cc" ;
 };
-const useAssetUrl = (url) => `https://strapi.wcao.cc/uploads/f_webp/${url.replace(/\/uploads/, "")}`;
+const useAssetUrl = (url) => `https://strapi.wcao.cc/uploads/f_webp${url.replace(/\/uploads/, "")}`;
 const useTitle = () => {
   const cao = ["cao", "ca\u014D", "ca\xF3", "ca\u01D2", "ca\xF2"];
   const day = new Date().getDay();
@@ -4594,19 +4594,17 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     const light = vue_cjs_prod.computed(() => props.post.light.data);
     const dark = vue_cjs_prod.computed(() => props.post.dark.data);
     const picScroll = vue_cjs_prod.ref();
-    const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
     vue_cjs_prod.onMounted(() => {
       picScroll.value && new PerfectScrollbar(picScroll.value);
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_img = __nuxt_component_0$3;
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-c90139ca>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-e15ad3aa>`);
       if (vue_cjs_prod.unref(dark) && vue_cjs_prod.unref(light)) {
-        _push(`<div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-c90139ca><div class="max-h-[640px] w-full rounded-box relative" data-v-c90139ca><picture data-v-c90139ca><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-c90139ca><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-c90139ca>`);
+        _push(`<div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-e15ad3aa><div class="max-h-[600px] min-h-[100px] w-full rounded-box relative" data-v-e15ad3aa><picture data-v-e15ad3aa><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url))} media="(prefers-color-scheme: dark)" data-v-e15ad3aa><source${serverRenderer.exports.ssrRenderAttr("srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url))} media="(prefers-color-scheme: light)" data-v-e15ad3aa>`);
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_img, {
           src: vue_cjs_prod.unref(light).attributes.url.replace(/\/uploads/, ""),
-          height: random(320, 640),
           format: "webp",
           sizes: "xl:360px lg:448px md:360 sm:334px 2xl:445px",
           loading: "lazy",
@@ -4616,7 +4614,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-c90139ca><div class="tags" data-v-c90139ca>`);
+      _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-e15ad3aa><div class="tags" data-v-e15ad3aa>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: __props.category.path,
         style: `color: ${__props.category.color};${__props.category.bgColor}`
@@ -4632,7 +4630,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-c90139ca>`);
+      _push(`</div></div><div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-e15ad3aa>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -4663,7 +4661,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-c90139ca><div class="flex-1" data-v-c90139ca><!--[-->`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-e15ad3aa><div class="flex-1" data-v-e15ad3aa><!--[-->`);
       serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/tag/${item.attributes.name}/1`,
@@ -4682,7 +4680,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-c90139ca><a href="javascript:;" data-v-c90139ca><span class="mr-1" data-v-c90139ca>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-c90139ca>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-c90139ca><span class="mr-1" data-v-c90139ca>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-c90139ca>\uE8B5</i></a></div></footer></article>`);
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-e15ad3aa><a href="javascript:;" data-v-e15ad3aa><span class="mr-1" data-v-e15ad3aa>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-e15ad3aa>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-e15ad3aa><span class="mr-1" data-v-e15ad3aa>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-e15ad3aa>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -4692,7 +4690,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-c90139ca"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-e15ad3aa"]]);
 const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
@@ -6168,7 +6166,7 @@ const imageOptions = {
   "alias": {}
 };
 imageOptions.providers = {
-  ["strapi"]: { provider: strapiRuntime$1030951216, defaults: { "baseURL": "https://strapi.wcao.cc/uploads/f_webp/" } },
+  ["strapi"]: { provider: strapiRuntime$1030951216, defaults: { "baseURL": "https://strapi.wcao.cc/uploads/f_webp" } },
   ["ipx"]: { provider: ipxRuntime$3721367805, defaults: {} }
 };
 const useStrapiUser = () => useState("strapi_user");

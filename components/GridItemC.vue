@@ -4,7 +4,10 @@
     @click="$router.push(`/template/detail/pro-${id}`)"
   >
     <div class="w-full z-40 bg-top px-4 cursor-pointer" v-if="dark && light">
-      <div class="max-h-[640px] w-full rounded-box relative" ref="picScroll">
+      <div
+        class="max-h-[600px] min-h-[100px] w-full rounded-box relative"
+        ref="picScroll"
+      >
         <picture>
           <source
             :srcset="useAssetUrl(dark.attributes.url)"
@@ -14,9 +17,9 @@
             :srcset="useAssetUrl(light.attributes.url)"
             media="(prefers-color-scheme: light)"
           />
+
           <nuxt-img
             :src="light.attributes.url.replace(/\/uploads/, '')"
-            :height="random(320, 640)"
             format="webp"
             sizes="xl:360px lg:448px md:360 sm:334px 2xl:445px"
             loading="lazy"

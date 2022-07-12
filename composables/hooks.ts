@@ -12,7 +12,7 @@ export const useTemplateUrl = () => {
 };
 
 export const useAssetUrl = (url) =>
-  `https://strapi.wcao.cc/uploads/f_webp/${url.replace(/\/uploads/, "")}`;
+  `https://strapi.wcao.cc/uploads/f_webp${url.replace(/\/uploads/, "")}`;
 
 export const useTitle = () => {
   const cao = ["cao", "caō", "caó", "caǒ", "caò"];
