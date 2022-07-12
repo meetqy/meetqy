@@ -5144,7 +5144,7 @@ _sfc_main$t.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const version = "1.0.11";
+const version = "1.0.12";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",
