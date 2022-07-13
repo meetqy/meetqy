@@ -3,17 +3,19 @@
     class="relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md"
     @click="$router.push(`/template/detail/pro-${id}`)"
   >
-    <div class="w-full z-40 bg-top px-4 cursor-pointer" v-if="dark && light">
+    <div class="w-full z-40 bg-top px-4 cursor-pointer">
       <div
         class="max-h-[600px] min-h-[100px] w-full rounded-box relative"
         ref="picScroll"
       >
         <picture>
           <source
+            v-if="dark"
             :srcset="useAssetUrl(dark.attributes.url)"
             media="(prefers-color-scheme: dark)"
           />
           <source
+            v-if="light"
             :srcset="useAssetUrl(light.attributes.url)"
             media="(prefers-color-scheme: light)"
           />
@@ -110,6 +112,7 @@ const props = defineProps<Props>();
 
 const light = computed(() => props.post.light.data);
 const dark = computed(() => props.post.dark.data);
+// console.log(light.value, dark.value);
 
 const picScroll = ref();
 
