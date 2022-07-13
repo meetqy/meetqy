@@ -33,14 +33,16 @@
 
     <div
       class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer"
+      v-if="!post.to"
     >
       <div class="tags">
-        <nuxt-link
-          :to="category.path"
+        <a
+          href="javascript:;"
+          class="text-xs"
           :style="`color: ${category.color};${category.bgColor}`"
         >
-          {{ category.name }}
-        </nuxt-link>
+          完善中
+        </a>
       </div>
     </div>
 
@@ -115,8 +117,6 @@ const dark = computed(() => props.post.dark.data);
 // console.log(light.value, dark.value);
 
 const picScroll = ref();
-
-const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 onMounted(() => {
   picScroll.value && new PerfectScrollbar(picScroll.value);
