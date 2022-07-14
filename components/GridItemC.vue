@@ -94,6 +94,7 @@
 <script lang="ts" setup>
 import { CategoryItem } from "~~/composables/type";
 import PerfectScrollbar from "perfect-scrollbar";
+import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 interface Props {
   id: string;

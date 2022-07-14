@@ -6,6 +6,7 @@
     url("//at.alicdn.com/t/font_3433072_vye6ejsttnc.woff") format("woff"),
     url("//at.alicdn.com/t/font_3433072_vye6ejsttnc.ttf") format("truetype"),
     url("#iconfont") format("svg");
+  font-display: auto;
 }
 
 .iconfont {
