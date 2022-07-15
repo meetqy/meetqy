@@ -66,7 +66,7 @@
     </div>
 
     <footer
-      class="flex justify-between items-center relative z-50"
+      class="flex justify-between items-center relative z-50 py-4 px-4 bg-base-100 mt-4 rounded-b-lg"
       @click.stop=""
     >
       <div class="flex-1">
@@ -117,7 +117,6 @@ interface Props {
 const props = defineProps<Props>();
 
 const { $lazyLoadInstance } = useNuxtApp();
-
 if ($lazyLoadInstance) {
   setTimeout(() => {
     $lazyLoadInstance.update();
@@ -137,24 +136,19 @@ onMounted(() => {
 </script>
 
 <style lang="postcss" scoped>
+img:not([src]):not([srcset]) {
+  @apply relative;
+  &::after {
+    content: url("/loading.svg");
+    @apply absolute left-0 top-0 z-50 w-full h-full bg-base-200 flex justify-center;
+  }
+}
+
 .tags {
   @apply absolute w-full -top-4 right-0 text-center;
 
   a {
     @apply text-base-100 rounded-box py-2 px-6;
-  }
-}
-
-footer {
-  @apply py-4 px-4 bg-base-100 mt-4 rounded-b-lg;
-
-  .author-name {
-    letter-spacing: 0.5px;
-    @apply text-base-content text-sm;
-  }
-
-  .author-image {
-    @apply w-9 h-9 rounded-full mr-2 inline-block bg-cover;
   }
 }
 </style>
