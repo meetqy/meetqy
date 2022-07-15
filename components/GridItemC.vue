@@ -5,27 +5,27 @@
   >
     <div class="w-full z-40 bg-top px-4 cursor-pointer">
       <div
-        class="max-h-[600px] min-h-[100px] w-full rounded-box relative"
+        class="max-h-[600px] min-h-[200px] w-full rounded-box relative"
         ref="picScroll"
       >
         <picture>
           <source
             v-if="dark"
-            :srcset="useAssetUrl(dark.attributes.url)"
+            :data-srcset="useAssetUrl(dark.attributes.url, ['f_webp', 'w_500'])"
             media="(prefers-color-scheme: dark)"
           />
           <source
             v-if="light"
-            :srcset="useAssetUrl(light.attributes.url)"
+            :data-srcset="
+              useAssetUrl(light.attributes.url, ['f_webp', 'w_500'])
+            "
             media="(prefers-color-scheme: light)"
           />
 
-          <nuxt-img
-            :src="light.attributes.url.replace(/\/uploads/, '')"
-            format="webp"
-            sizes="xl:360px lg:448px md:360 sm:334px 2xl:445px"
-            loading="lazy"
-            provider="strapi"
+          <img
+            :alt="post.title"
+            class="lazy"
+            :data-src="useAssetUrl(light.attributes.url, ['f_webp', 'w_500'])"
           />
         </picture>
       </div>
@@ -92,6 +92,7 @@
 </template>
 
 <script lang="ts" setup>
+import LazyLoad from "vanilla-lazyload";
 import { CategoryItem } from "~~/composables/type";
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
@@ -121,6 +122,11 @@ const picScroll = ref();
 
 onMounted(() => {
   picScroll.value && new PerfectScrollbar(picScroll.value);
+
+  var lazyLoadInstance = new LazyLoad({
+    // Your custom settings go here
+  });
+  lazyLoadInstance.update();
 });
 </script>
 

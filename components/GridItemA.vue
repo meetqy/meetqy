@@ -1,7 +1,10 @@
 <template>
   <article
     class="article-a"
-    :style="`background-image:url(${$cdn}${headerImages[0]})`"
+    :style="`background-image:url(${useAssetUrl(headerImages[0], [
+      'f_webp',
+      'w_500',
+    ])})`"
     @click="$router.push(to)"
   >
     <div class="bg-base-100 pt-10 rounded-2xl bg-opacity-80">
