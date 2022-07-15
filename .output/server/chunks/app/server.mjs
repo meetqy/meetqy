@@ -4,7 +4,6 @@ import { stringify } from 'qs';
 import toJsonSchema from 'to-json-schema';
 import jsonFormat from 'json-format';
 import { useInterval, useDark, useToggle, useScroll } from '@vueuse/core';
-import LazyLoad from 'vanilla-lazyload';
 import PerfectScrollbar from 'perfect-scrollbar';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
@@ -4223,34 +4222,39 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
   },
   setup(__props) {
     const props = __props;
+    const { $lazyLoadInstance } = useNuxtApp();
+    if ($lazyLoadInstance) {
+      setTimeout(() => {
+        $lazyLoadInstance.update();
+      });
+    }
     const light = vue_cjs_prod.computed(() => props.post.light.data);
     const dark = vue_cjs_prod.computed(() => props.post.dark.data);
     const picScroll = vue_cjs_prod.ref();
     vue_cjs_prod.onMounted(() => {
       picScroll.value && new PerfectScrollbar(picScroll.value);
-      var lazyLoadInstance = new LazyLoad({});
-      lazyLoadInstance.update();
+      $lazyLoadInstance.update();
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-37cb1396><div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-37cb1396><div class="max-h-[600px] min-h-[200px] w-full rounded-box relative" data-v-37cb1396><picture data-v-37cb1396>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-639d60ed><div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-639d60ed><div class="max-h-[600px] min-h-[200px] w-full rounded-box relative" data-v-639d60ed><picture data-v-639d60ed>`);
       if (vue_cjs_prod.unref(dark)) {
-        _push(`<source preload${serverRenderer.exports.ssrRenderAttr("data-srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url, ["f_webp", "w_500"]))} media="(prefers-color-scheme: dark)" data-v-37cb1396>`);
+        _push(`<source preload${serverRenderer.exports.ssrRenderAttr("data-srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url, ["f_webp", "w_500"]))} media="(prefers-color-scheme: dark)" data-v-639d60ed>`);
       } else {
         _push(`<!---->`);
       }
       if (vue_cjs_prod.unref(light)) {
-        _push(`<source preload${serverRenderer.exports.ssrRenderAttr("data-srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url, ["f_webp", "w_500"]))} media="(prefers-color-scheme: light)" data-v-37cb1396>`);
+        _push(`<source preload${serverRenderer.exports.ssrRenderAttr("data-srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url, ["f_webp", "w_500"]))} media="(prefers-color-scheme: light)" data-v-639d60ed>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<img${serverRenderer.exports.ssrRenderAttr("alt", __props.post.title)} class="lazy" preload${serverRenderer.exports.ssrRenderAttr("data-src", useAssetUrl(vue_cjs_prod.unref(light).attributes.url, ["f_webp", "w_500"]))} data-v-37cb1396></picture></div></div>`);
+      _push(`<img${serverRenderer.exports.ssrRenderAttr("alt", __props.post.title)} class="lazy" preload${serverRenderer.exports.ssrRenderAttr("data-src", useAssetUrl(vue_cjs_prod.unref(light).attributes.url, ["f_webp", "w_500"]))} data-v-639d60ed></picture></div></div>`);
       if (!__props.post.to) {
-        _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-37cb1396><div class="tags" data-v-37cb1396><a href="javascript:;" class="text-xs" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-37cb1396> \u5B8C\u5584\u4E2D </a></div></div>`);
+        _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-639d60ed><div class="tags" data-v-639d60ed><a href="javascript:;" class="text-xs" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-639d60ed> \u5B8C\u5584\u4E2D </a></div></div>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-37cb1396>`);
+      _push(`<div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-639d60ed>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -4281,7 +4285,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-37cb1396><div class="flex-1" data-v-37cb1396><!--[-->`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-639d60ed><div class="flex-1" data-v-639d60ed><!--[-->`);
       serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/tag/${item.attributes.name}/1`,
@@ -4300,7 +4304,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-37cb1396><a href="javascript:;" data-v-37cb1396><span class="mr-1" data-v-37cb1396>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-37cb1396>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-37cb1396><span class="mr-1" data-v-37cb1396>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-37cb1396>\uE8B5</i></a></div></footer></article>`);
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-639d60ed><a href="javascript:;" data-v-639d60ed><span class="mr-1" data-v-639d60ed>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-639d60ed>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-639d60ed><span class="mr-1" data-v-639d60ed>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-639d60ed>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -4310,7 +4314,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-37cb1396"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-639d60ed"]]);
 const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
@@ -6686,7 +6690,7 @@ const _sfc_main$7 = {
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(post).extend, (item) => {
               _push2(`<div class="grid"${_scopeId}><img${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "rounded-md" }, serverRenderer.exports.ssrGetDirectiveProps(_ctx, _directive_lazy, {
                 src: `https://wcao.cc/r/a/${item.name}`,
-                loading: "/loading.gif"
+                loading: "/loading.svg"
               })))}${_scopeId}><div class="mask"${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", `https://wcao.cc/r/a/${item.name}`)} target="_blank" class="pl-2 mt-2 text-2xl font-bold text-base-100 cursor-pointer hover:underline"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.name)}</a></div></div>`);
             });
             _push2(`<!--]--></div>`);
@@ -6712,7 +6716,7 @@ const _sfc_main$7 = {
                     vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("img", { class: "rounded-md" }, null, 512), [
                       [_directive_lazy, {
                         src: `https://wcao.cc/r/a/${item.name}`,
-                        loading: "/loading.gif"
+                        loading: "/loading.svg"
                       }]
                     ]),
                     vue_cjs_prod.createVNode("div", { class: "mask" }, [
@@ -6790,19 +6794,19 @@ const _sfc_main$6 = {
         }),
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<main class="main-content flex"${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
+            _push2(`<div class="flex"${_scopeId}><aside class="${serverRenderer.exports.ssrRenderClass([
               { fixed: asideFixed.value },
               "top-0 w-96 max-h-screen hidden lg:flex flex-col z-10 "
-            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full xl:pr-10 pr-5 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
+            ])}"${_scopeId}><section class="${serverRenderer.exports.ssrRenderClass([{ hidden: !asideFixed.value }, "w-full xl:mr-10 pr-5 my-5"])}"${_scopeId}><div class="p-2 h-min rounded-box"${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_Logo, null, null, _parent2, _scopeId));
-            _push2(`</div></section><section class="w-full xl:pr-10 pr-4"${_scopeId}><ul class="menu bg-base-100 p-2 w-full rounded-box overflow-y-scroll h-96 scrollbar"${_scopeId}><li class="menu-title py-2"${_scopeId}><span${_scopeId}>Type</span></li><!--[-->`);
+            _push2(`</div></section><section class="w-full xl:mr-10 pr-4"${_scopeId}><ul class="menu bg-base-100 p-2 w-full rounded-box overflow-y-scroll h-96 scrollbar"${_scopeId}><li class="menu-title py-2"${_scopeId}><span${_scopeId}>Type</span></li><!--[-->`);
             serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(types), (item, index2) => {
               _push2(`<li class="text-xl"${_scopeId}><a${serverRenderer.exports.ssrRenderAttr("href", "#" + item.name)} class="${serverRenderer.exports.ssrRenderClass({
                 active: curTypes.value === index2,
                 capitalize: curTypes.value === index2
               })}"${_scopeId}>${serverRenderer.exports.ssrInterpolate(item.name)}</a></li>`);
             });
-            _push2(`<!--]--></ul></section></aside><aside class="w-96 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"${_scopeId}><h1${_scopeId}>Random Image</h1><p${_scopeId}>`);
+            _push2(`<!--]--></ul></section></aside><aside class="w-96 opacity-0 hidden lg:flex" style="${serverRenderer.exports.ssrRenderStyle(asideFixed.value ? null : { display: "none" })}"${_scopeId}></aside><div class="flex-1 max-w-full px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"${_scopeId}><h1${_scopeId}>Random Image</h1><p${_scopeId}>`);
             _push2(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, { to: "/tools/image-space/1" }, {
               default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
@@ -6827,15 +6831,15 @@ const _sfc_main$6 = {
               serverRenderer.exports.ssrRenderList(4, (num) => {
                 _push2(`<img${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "w-48 rounded-md my-0" }, serverRenderer.exports.ssrGetDirectiveProps(_ctx, _directive_lazy, {
                   src: `https://wcao.cc/image-space/api/${item.name}?${num}`,
-                  loading: "/loading.gif"
+                  loading: "/loading.svg"
                 })))}${_scopeId}>`);
               });
               _push2(`<!--]--></div><p${_scopeId}>Try</p><pre${_scopeId}> https://wcao.cc/image-space/api/${serverRenderer.exports.ssrInterpolate(item.name)}?xxx </pre></article>`);
             });
-            _push2(`<!--]--></div></main>`);
+            _push2(`<!--]--></div></div>`);
           } else {
             return [
-              vue_cjs_prod.createVNode("main", { class: "main-content flex" }, [
+              vue_cjs_prod.createVNode("div", { class: "flex" }, [
                 vue_cjs_prod.createVNode("aside", {
                   class: [
                     { fixed: asideFixed.value },
@@ -6843,13 +6847,13 @@ const _sfc_main$6 = {
                   ]
                 }, [
                   vue_cjs_prod.createVNode("section", {
-                    class: ["w-full xl:pr-10 pr-5 my-5", { hidden: !asideFixed.value }]
+                    class: ["w-full xl:mr-10 pr-5 my-5", { hidden: !asideFixed.value }]
                   }, [
                     vue_cjs_prod.createVNode("div", { class: "p-2 h-min rounded-box" }, [
                       vue_cjs_prod.createVNode(_component_Logo)
                     ])
                   ], 2),
-                  vue_cjs_prod.createVNode("section", { class: "w-full xl:pr-10 pr-4" }, [
+                  vue_cjs_prod.createVNode("section", { class: "w-full xl:mr-10 pr-4" }, [
                     vue_cjs_prod.createVNode("ul", { class: "menu bg-base-100 p-2 w-full rounded-box overflow-y-scroll h-96 scrollbar" }, [
                       vue_cjs_prod.createVNode("li", { class: "menu-title py-2" }, [
                         vue_cjs_prod.createVNode("span", null, "Type")
@@ -6875,7 +6879,7 @@ const _sfc_main$6 = {
                 vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("aside", { class: "w-96 opacity-0 hidden lg:flex" }, null, 512), [
                   [vue_cjs_prod.vShow, asideFixed.value]
                 ]),
-                vue_cjs_prod.createVNode("div", { class: "flex-1 px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500" }, [
+                vue_cjs_prod.createVNode("div", { class: "flex-1 max-w-full px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500" }, [
                   vue_cjs_prod.createVNode("h1", null, "Random Image"),
                   vue_cjs_prod.createVNode("p", null, [
                     vue_cjs_prod.createVNode(_component_nuxt_link, { to: "/tools/image-space/1" }, {
@@ -6912,7 +6916,7 @@ const _sfc_main$6 = {
                           return vue_cjs_prod.withDirectives(vue_cjs_prod.createVNode("img", { class: "w-48 rounded-md my-0" }, null, 512), [
                             [_directive_lazy, {
                               src: `https://wcao.cc/image-space/api/${item.name}?${num}`,
-                              loading: "/loading.gif"
+                              loading: "/loading.svg"
                             }]
                           ]);
                         }), 64))

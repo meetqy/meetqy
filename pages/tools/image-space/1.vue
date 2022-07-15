@@ -22,7 +22,7 @@
           class="rounded-md"
           v-lazy="{
             src: `https://wcao.cc/r/a/${item.name}`,
-            loading: '/loading.gif',
+            loading: '/loading.svg',
           }"
         />
         <div class="mask">

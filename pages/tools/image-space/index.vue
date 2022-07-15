@@ -7,7 +7,7 @@
         </button>
       </div>
     </template>
-    <main class="main-content flex">
+    <div class="flex">
       <aside
         :class="[
           { fixed: asideFixed },
@@ -15,7 +15,7 @@
         ]"
       >
         <section
-          class="w-full xl:pr-10 pr-5 my-5"
+          class="w-full xl:mr-10 pr-5 my-5"
           :class="{ hidden: !asideFixed }"
         >
           <div class="p-2 h-min rounded-box">
@@ -23,7 +23,7 @@
           </div>
         </section>
 
-        <section class="w-full xl:pr-10 pr-4">
+        <section class="w-full xl:mr-10 pr-4">
           <ul
             class="menu bg-base-100 p-2 w-full rounded-box overflow-y-scroll h-96 scrollbar"
           >
@@ -54,7 +54,7 @@
       <aside class="w-96 opacity-0 hidden lg:flex" v-show="asideFixed"></aside>
 
       <div
-        class="flex-1 px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"
+        class="flex-1 max-w-full px-5 py-10 bg-base-100 rounded-md prose prose-neutral prose-a:text-blue-500"
       >
         <h1>Random Image</h1>
 
@@ -88,7 +88,7 @@
               class="w-48 rounded-md my-0"
               v-lazy="{
                 src: `https://wcao.cc/image-space/api/${item.name}?${num}`,
-                loading: '/loading.gif',
+                loading: '/loading.svg',
               }"
             />
           </div>
@@ -97,7 +97,7 @@
           <pre> https://wcao.cc/image-space/api/{{ item.name }}?xxx </pre>
         </article>
       </div>
-    </main>
+    </div>
   </NuxtLayout>
 </template>
 

@@ -95,7 +95,6 @@
 </template>
 
 <script lang="ts" setup>
-import LazyLoad from "vanilla-lazyload";
 import { CategoryItem } from "~~/composables/type";
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
@@ -117,19 +116,23 @@ interface Props {
 
 const props = defineProps<Props>();
 
+const { $lazyLoadInstance } = useNuxtApp();
+
+if ($lazyLoadInstance) {
+  setTimeout(() => {
+    $lazyLoadInstance.update();
+  });
+}
+
 const light = computed(() => props.post.light.data);
 const dark = computed(() => props.post.dark.data);
-// console.log(light.value, dark.value);
 
 const picScroll = ref();
 
 onMounted(() => {
   picScroll.value && new PerfectScrollbar(picScroll.value);
 
-  var lazyLoadInstance = new LazyLoad({
-    // Your custom settings go here
-  });
-  lazyLoadInstance.update();
+  $lazyLoadInstance.update();
 });
 </script>
 
