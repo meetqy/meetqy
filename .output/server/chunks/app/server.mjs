@@ -4233,24 +4233,24 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_2;
-      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-cc04b54e><div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-cc04b54e><div class="max-h-[600px] min-h-[200px] w-full rounded-box relative" data-v-cc04b54e><picture data-v-cc04b54e>`);
+      _push(`<article${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "relative flex flex-col justify-center bg-base-200 pt-4 rounded-lg shadow-md" }, _attrs))} data-v-37cb1396><div class="w-full z-40 bg-top px-4 cursor-pointer" data-v-37cb1396><div class="max-h-[600px] min-h-[200px] w-full rounded-box relative" data-v-37cb1396><picture data-v-37cb1396>`);
       if (vue_cjs_prod.unref(dark)) {
-        _push(`<source${serverRenderer.exports.ssrRenderAttr("data-srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url, ["f_webp", "w_500"]))} media="(prefers-color-scheme: dark)" data-v-cc04b54e>`);
+        _push(`<source preload${serverRenderer.exports.ssrRenderAttr("data-srcset", useAssetUrl(vue_cjs_prod.unref(dark).attributes.url, ["f_webp", "w_500"]))} media="(prefers-color-scheme: dark)" data-v-37cb1396>`);
       } else {
         _push(`<!---->`);
       }
       if (vue_cjs_prod.unref(light)) {
-        _push(`<source${serverRenderer.exports.ssrRenderAttr("data-srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url, ["f_webp", "w_500"]))} media="(prefers-color-scheme: light)" data-v-cc04b54e>`);
+        _push(`<source preload${serverRenderer.exports.ssrRenderAttr("data-srcset", useAssetUrl(vue_cjs_prod.unref(light).attributes.url, ["f_webp", "w_500"]))} media="(prefers-color-scheme: light)" data-v-37cb1396>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<img${serverRenderer.exports.ssrRenderAttr("alt", __props.post.title)} class="lazy"${serverRenderer.exports.ssrRenderAttr("data-src", useAssetUrl(vue_cjs_prod.unref(light).attributes.url, ["f_webp", "w_500"]))} data-v-cc04b54e></picture></div></div>`);
+      _push(`<img${serverRenderer.exports.ssrRenderAttr("alt", __props.post.title)} class="lazy" preload${serverRenderer.exports.ssrRenderAttr("data-src", useAssetUrl(vue_cjs_prod.unref(light).attributes.url, ["f_webp", "w_500"]))} data-v-37cb1396></picture></div></div>`);
       if (!__props.post.to) {
-        _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-cc04b54e><div class="tags" data-v-cc04b54e><a href="javascript:;" class="text-xs" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-cc04b54e> \u5B8C\u5584\u4E2D </a></div></div>`);
+        _push(`<div class="absolute pt-10 rounded-lg left-0 top-0 z-30 w-full h-full cursor-pointer" data-v-37cb1396><div class="tags" data-v-37cb1396><a href="javascript:;" class="text-xs" style="${serverRenderer.exports.ssrRenderStyle(`color: ${__props.category.color};${__props.category.bgColor}`)}" data-v-37cb1396> \u5B8C\u5584\u4E2D </a></div></div>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-cc04b54e>`);
+      _push(`<div class="w-full flex justify-between absolute left-0 top-0 -z-20" data-v-37cb1396>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
         to: `/template/detail/${__props.id}`,
         class: "cursor-pointer capitalize btn"
@@ -4281,7 +4281,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-cc04b54e><div class="flex-1" data-v-cc04b54e><!--[-->`);
+      _push(`</div><footer class="flex justify-between items-center relative z-50" data-v-37cb1396><div class="flex-1" data-v-37cb1396><!--[-->`);
       serverRenderer.exports.ssrRenderList(__props.tags, (item) => {
         _push(serverRenderer.exports.ssrRenderComponent(_component_nuxt_link, {
           to: `/tag/${item.attributes.name}/1`,
@@ -4300,7 +4300,7 @@ const _sfc_main$x = /* @__PURE__ */ vue_cjs_prod.defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-cc04b54e><a href="javascript:;" data-v-cc04b54e><span class="mr-1" data-v-cc04b54e>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-cc04b54e>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-cc04b54e><span class="mr-1" data-v-cc04b54e>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-cc04b54e>\uE8B5</i></a></div></footer></article>`);
+      _push(`<!--]--></div><div class="text-base-content text-sm" data-v-37cb1396><a href="javascript:;" data-v-37cb1396><span class="mr-1" data-v-37cb1396>${serverRenderer.exports.ssrInterpolate(__props.post.visit || 1)}</span><i class="iconfont" data-v-37cb1396>\uE8F4</i></a><a href="javascript:;" class="ml-4" data-v-37cb1396><span class="mr-1" data-v-37cb1396>${serverRenderer.exports.ssrInterpolate(__props.post.comment || 1)}</span><i class="iconfont" data-v-37cb1396>\uE8B5</i></a></div></footer></article>`);
     };
   }
 });
@@ -4310,7 +4310,7 @@ _sfc_main$x.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/GridItemC.vue");
   return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-cc04b54e"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["__scopeId", "data-v-37cb1396"]]);
 const _sfc_main$w = {
   __name: "PostList",
   __ssrInlineRender: true,
@@ -4767,7 +4767,7 @@ _sfc_main$t.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/W.vue");
   return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const version = "1.0.13";
+const version = "1.0.14";
 const scripts = {
   build: "nuxt build",
   dev: " nuxt dev --port 3001",

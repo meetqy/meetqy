@@ -11,11 +11,13 @@
         <picture>
           <source
             v-if="dark"
+            preload
             :data-srcset="useAssetUrl(dark.attributes.url, ['f_webp', 'w_500'])"
             media="(prefers-color-scheme: dark)"
           />
           <source
             v-if="light"
+            preload
             :data-srcset="
               useAssetUrl(light.attributes.url, ['f_webp', 'w_500'])
             "
@@ -25,6 +27,7 @@
           <img
             :alt="post.title"
             class="lazy"
+            preload
             :data-src="useAssetUrl(light.attributes.url, ['f_webp', 'w_500'])"
           />
         </picture>
