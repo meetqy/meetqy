@@ -10,8 +10,8 @@
 
     <PostList
       :posts="posts"
-      :prev-page-prefix="'tag/'"
-      :next-page-prefix="'tag/'"
+      :prev-page-prefix="`tag/${name}/`"
+      :next-page-prefix="`tag/${name}/`"
       :pagination="postsRes.meta.pagination"
     />
   </NuxtLayout>

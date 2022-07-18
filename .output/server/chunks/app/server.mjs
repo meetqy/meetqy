@@ -6408,18 +6408,18 @@ const _sfc_main$b = {
           if (_push2) {
             _push2(serverRenderer.exports.ssrRenderComponent(_component_PostList, {
               posts: vue_cjs_prod.unref(posts),
-              "prev-page-prefix": "tag/",
-              "next-page-prefix": "tag/",
+              "prev-page-prefix": `tag/${vue_cjs_prod.unref(name)}/`,
+              "next-page-prefix": `tag/${vue_cjs_prod.unref(name)}/`,
               pagination: vue_cjs_prod.unref(postsRes).meta.pagination
             }, null, _parent2, _scopeId));
           } else {
             return [
               vue_cjs_prod.createVNode(_component_PostList, {
                 posts: vue_cjs_prod.unref(posts),
-                "prev-page-prefix": "tag/",
-                "next-page-prefix": "tag/",
+                "prev-page-prefix": `tag/${vue_cjs_prod.unref(name)}/`,
+                "next-page-prefix": `tag/${vue_cjs_prod.unref(name)}/`,
                 pagination: vue_cjs_prod.unref(postsRes).meta.pagination
-              }, null, 8, ["posts", "pagination"])
+              }, null, 8, ["posts", "prev-page-prefix", "next-page-prefix", "pagination"])
             ];
           }
         }),
