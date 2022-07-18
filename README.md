@@ -1,4 +1,4 @@
-<img src='https://p.wcao.cc/w358,h507' align='left'>
+<img src='https://p.wcao.cc/w358,h480' align='left'>
 
 # Hi 👋, I'm MeetQY
 
