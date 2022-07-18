@@ -6369,7 +6369,7 @@ const _sfc_main$b = {
   async setup(__props) {
     let __temp, __restore;
     const { name, pageIndex } = useRoute().params;
-    const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`tag/${name}`, () => useStrapi4().find("posts", {
+    const { data: postsRes } = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useAsyncData(`tag/${name}/${pageIndex}`, () => useStrapi4().find("posts", {
       publicationState: "live" ,
       sort: ["updatedAt:desc"],
       populate: ["tags", "light", "dark"],

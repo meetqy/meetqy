@@ -20,7 +20,7 @@
 <script setup>
 const { name, pageIndex } = useRoute().params;
 
-const { data: postsRes } = await useAsyncData(`tag/${name}`, () =>
+const { data: postsRes } = await useAsyncData(`tag/${name}/${pageIndex}`, () =>
   useStrapi4().find("posts", {
     publicationState: useIsProducton() ? "live" : "preview",
     sort: ["updatedAt:desc"],
