@@ -120,7 +120,7 @@ const { $lazyLoadInstance } = useNuxtApp();
 if ($lazyLoadInstance) {
   setTimeout(() => {
     $lazyLoadInstance.update();
-  });
+  }, 1000);
 }
 
 const light = computed(() => props.post.light.data);
