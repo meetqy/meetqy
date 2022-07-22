@@ -21,13 +21,9 @@
 -..----.-.---../-.-..-...-.-.--/-...-..-.-------/-.--..-..-.-..-/---.--.-....-../-..---.-..-...-/-.-----.--.-..-/--..........-.
 ```
 
-## My commit snake
+## 模板预览
 
-![](./public/github-contribution-grid-snake.gif)
+![](https://github.com/meetqy/beauty-template/raw/main/readme/preview.jpg)
 
-## 收集改造的模板
-
-![](https://github.com/meetqy/beauty-template/raw/main/readme/preview.gif)
-
-- 😯 线上体验 👉🏻 [wcao.cc](https://wcao.cc)
-- 🐲 仓库地址 👉 [HelloWebUI](https://github.com/meetqy/HelloWebUI)
+- 😯 [所有模板](https://wcao.cc) 
+- 🐲 [仓库地址](https://github.com/meetqy/wcao.cc-template)
