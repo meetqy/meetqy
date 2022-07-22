@@ -25,9 +25,9 @@
 
 ![](./public/github-contribution-grid-snake.gif)
 
-## 收集改造的模板
+## 喜欢的模板
 
-![](https://github.com/meetqy/beauty-template/raw/main/readme/preview.gif)
+![](https://github.com/meetqy/beauty-template/raw/main/readme/preview.jpg)
 
 - 😯 线上体验 👉🏻 [wcao.cc](https://wcao.cc)
 - 🐲 仓库地址 👉 [HelloWebUI](https://github.com/meetqy/HelloWebUI)
