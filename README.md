@@ -25,5 +25,5 @@
 
 ![](https://github.com/meetqy/beauty-template/raw/main/readme/preview.jpg)
 
-- 😯 [在线预览](https://wcao.cc) 
+- 😯 在线预览 [wcao.cc](https://wcao.cc) or [youweb.cc](https://youweb.cc)
 - 🐲 [仓库地址](https://github.com/meetqy/wcao.cc)
