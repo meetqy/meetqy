@@ -7,7 +7,9 @@
 - 🤩 CV 大法好呀，CV 大法妙
 
 
-## 模板预览
+## 🚀 wcao.cc
+
+分享响应式、多主题模板和组件，基于 tailwindcss、daisyui。
 
 ![1 2022-08-13 20_11_20](https://user-images.githubusercontent.com/18411315/184493541-15ade418-da23-4cc5-a6c7-238f047f537c.gif)
 
