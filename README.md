@@ -14,5 +14,5 @@
 ![1 2022-08-13 20_11_20](https://user-images.githubusercontent.com/18411315/184493541-15ade418-da23-4cc5-a6c7-238f047f537c.gif)
 
 
-- 😯 在线预览 [wcao.cc](https://wcao.cc) or [youweb.cc](https://youweb.cc)
-- 🐲 [仓库地址](https://github.com/meetqy/wcao.cc)
+- 😯 在线预览 [css.ist](https://css.ist) or [wcao.cc](https://wcao.cc)
+- 🐲 [仓库地址](https://github.com/meetqy/css.ist)
