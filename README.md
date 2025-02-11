@@ -1,6 +1,6 @@
 # NameSage - AI-Powered Chinese Name Generator 🎯
 
-[English](README.md) | [简体中文](README_zh.md)
+[English](README.md) | [简体中文](README_zh.md) | [日本語](README_ja.md)
 
 A modern web application that generates culturally appropriate Chinese names for non-native speakers, powered by AI technology and featuring a Neobrutalism design style.
 
