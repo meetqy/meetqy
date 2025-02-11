@@ -18,7 +18,6 @@ Preview: https://namesage.hellokaton.me
 - 🔉**Pronunciation Guides**: Offers Pinyin support for accurate pronunciation
 - 🔄**Multiple Suggestions**: Generates multiple name options for selection
 - 🌍**Cross-Cultural Adaptation**: Adapts names to suit cultural preferences
-- 💫**Professional Verification**: Ensures name suitability and cultural appropriateness
 - 📖**Personal Stories**: Integrates personal stories and meanings into name suggestions
 
 ## 🛠️ Tech Stack
