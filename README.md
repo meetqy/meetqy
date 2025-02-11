@@ -8,6 +8,8 @@ A modern web application that generates culturally appropriate Chinese names for
 
 ![snipate_1.png](screenshots/snipate_1.png)
 
+Preview: https://namesage.hellokaton.me
+
 ## ✨ Key Features
 
 - 🤖**AI-Powered Generation**: Creates Chinese names based on personal characteristics and preferences
