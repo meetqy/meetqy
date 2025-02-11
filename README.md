@@ -38,7 +38,7 @@ A modern web application that generates culturally appropriate Chinese names for
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/namesage.git
+git clone https://github.com/hellokaton/namesage.git
 ```
 
 2. Install dependencies:
