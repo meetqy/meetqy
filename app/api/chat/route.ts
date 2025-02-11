@@ -55,7 +55,7 @@ export async function POST(req: Request) {
     const result = streamText({
         model: openai(process.env.OPENAI_MODEL!),
         maxTokens: 300,
-        temperature: 1,
+        temperature: 0.9,
         maxRetries: 2,
         system: systemPrompt,
         prompt: userMessage,
