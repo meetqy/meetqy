@@ -78,6 +78,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 🙏 Acknowledgments
 
-- UI components from [shadcn/ui](https://ui.shadcn.com)
+- UI components from [neobrutalism](https://www.neobrutalism.dev)
 - Icons from [Lucide](https://lucide.dev)
 - AI powered by deepseek

@@ -78,6 +78,6 @@ pnpm dev
 
 ## 🙏 致谢
 
-- UI 组件来自 [shadcn/ui](https://ui.shadcn.com)
+- UI 组件来自 [neobrutalism](https://www.neobrutalism.dev)
 - 图标来自 [Lucide](https://lucide.dev)
 - AI 支持由 deepseek 提供
