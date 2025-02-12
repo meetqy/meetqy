@@ -1,6 +1,6 @@
 # NameSage - AI 智能中文起名助手 🎯
 
-[English](README.md) | [简体中文](README_zh.md)
+[English](README.md) | [简体中文](README_zh.md) | [日本語](README_ja.md)
 
 一个现代的 Web 应用，帮助非中文母语者创建有意义且文化适宜的中文名字，使用Next.js构建，采用新野蛮主义设计风格。
 
