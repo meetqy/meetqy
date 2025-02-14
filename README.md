@@ -16,7 +16,6 @@ Preview: https://namesage.hellokaton.me
 - 🎯 **Cultural Context**: Provides detailed explanations of name meanings and cultural significance
 - 🔍**Character Analysis**: Includes stroke counts and explanations for each character
 - 🔉**Pronunciation Guides**: Offers Pinyin support for accurate pronunciation
-- 🔄**Multiple Suggestions**: Generates multiple name options for selection
 - 🌍**Cross-Cultural Adaptation**: Adapts names to suit cultural preferences
 - 📖**Personal Stories**: Integrates personal stories and meanings into name suggestions
 
