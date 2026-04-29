@@ -1,29 +1,31 @@
-# Create T3 App
+<div class="site-links">
+  <a href="https://anicolors.com" class="site-btn" target="_blank">
+    <img src="https://anicolors.com/favicon.ico" alt="AniColors">
+    <span>Discover and Create Anime & Game Colors</span>
+  </a>
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+  <a href="https://zcoloring.com" class="site-btn" target="_blank">
+    <img src="https://zcoloring.com/favicon.ico" alt="ZColoring">
+    <span>Free AI Coloring Page Generator</span>
+  </a>
 
-## What's next? How do I make an app with this?
+  <a href="https://ipalettes.com" class="site-btn" target="_blank">
+    <img src="https://ipalettes.com/favicon.ico" alt="IPalettes">
+    <span>Free AI Color Palette Generator</span>
+  </a>
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+  <a href="https://topsters.co" class="site-btn" target="_blank">
+    <img src="https://topsters.co/favicon.ico" alt="Topsters">
+    <span>Create and export your top albums collage</span>
+  </a>
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+  <a href="https://pindou.org" class="site-btn" target="_blank">
+    <img src="https://pindou.org/favicon.ico" alt="Pindou">
+    <span>A Hub for Perler Bead Creators</span>
+  </a>
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+  <a href="https://shipchart.org" class="site-btn" target="_blank">
+    <img src="https://shipchart.org/favicon.ico" alt="ShipChart">
+    <span>Relationship Shipping Chart Maker</span>
+  </a>
+</div>
