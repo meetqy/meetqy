@@ -87,7 +87,7 @@ export default async function MyProducts() {
 
   return (
     <div className="my-products">
-      <h1>My Products</h1>
+      <h2>My Products</h2>
       <ul>
         {products.map((product) => (
           <li key={product.href}>
