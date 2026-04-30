@@ -4,7 +4,7 @@ import "./index.css";
 export default async function MyProducts() {
   let htmlContent = "";
   try {
-    const res = await fetch("https://raw.githubusercontent.com/meetqy/meetqy/refs/heads/main/README.md", { next: { revalidate: 3600 } });
+    const res = await fetch(`https://raw.githubusercontent.com/meetqy/meetqy/refs/heads/main/README.md?t=${Date.now()}`, { next: { revalidate: 3600 } });
     const content = await res.text();
     htmlContent = await marked.parse(content);
   } catch (err) {
