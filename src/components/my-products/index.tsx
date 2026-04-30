@@ -2,66 +2,52 @@ import { marked, type Tokens } from "marked";
 import "./index.css";
 
 export default async function MyProducts() {
-  const products: { name: string; href: string; icon: string; desc: string }[] =
-    [];
+  const products: { name: string; href: string; icon: string; desc: string }[] = [];
 
   try {
-    const res = await fetch(
-      "https://raw.githubusercontent.com/meetqy/meetqy/refs/heads/main/README.md",
-      { next: { revalidate: 3600 } },
-    );
+    const res = await fetch("https://raw.githubusercontent.com/meetqy/meetqy/refs/heads/main/README.md", { next: { revalidate: 3600 } });
     const content = await res.text();
     const tokens = marked.lexer(content);
 
     // Find table token
-    const tableToken = tokens.find((t) => t.type === "table") as
-      | Tokens.Table
-      | undefined;
+    const tableToken = tokens.find((t) => t.type === "table") as Tokens.Table | undefined;
 
     if (tableToken) {
       for (const row of tableToken.rows) {
-        const nameCell = row[0];
-        const descCell = row[1];
+        const iconCell = row[0];
+        const nameCell = row[1];
+        const descCell = row[2];
 
-        if (!nameCell || !descCell) continue;
+        if (!iconCell || !nameCell || !descCell) continue;
 
-        // Use marked.lexer on the cell content to extract link and image
-        const cellTokens = marked.lexer(nameCell.text);
-        const linkToken = cellTokens.find((t) => t.type === "link") as
-          | Tokens.Link
-          | undefined;
+        // Extract icon from img tag in the first cell
+        const iconMatch = iconCell.text.match(/src="([^"]+)"/);
+        const icon = iconMatch ? iconMatch[1] : "";
+
+        // Extract name and href from the second cell
+        const nameTokens = marked.lexer(nameCell.text);
+        const linkToken = nameTokens.find((t) => t.type === "link") as Tokens.Link | undefined;
 
         if (linkToken) {
-          const imgToken = linkToken.tokens.find((t) => t.type === "image") as
-            | Tokens.Image
-            | undefined;
-          const strongToken = linkToken.tokens.find(
-            (t) => t.type === "strong",
-          ) as Tokens.Strong | undefined;
+          const strongToken = linkToken.tokens.find((t) => t.type === "strong") as Tokens.Strong | undefined;
 
           products.push({
             name: strongToken?.text ?? linkToken.text,
             href: linkToken.href,
-            icon: imgToken?.href ?? "",
+            icon: icon ?? "",
             desc: descCell.text,
           });
         }
       }
     } else {
       // Fallback to old list format if table not found
-      const listToken = tokens.find((t) => t.type === "list") as
-        | Tokens.List
-        | undefined;
+      const listToken = tokens.find((t) => t.type === "list") as Tokens.List | undefined;
       if (listToken) {
         for (const item of listToken.items) {
           const cellTokens = marked.lexer(item.text);
-          const linkToken = cellTokens.find((t) => t.type === "link") as
-            | Tokens.Link
-            | undefined;
+          const linkToken = cellTokens.find((t) => t.type === "link") as Tokens.Link | undefined;
           if (linkToken) {
-            const imgToken = linkToken.tokens.find((t) => t.type === "image") as
-              | Tokens.Image
-              | undefined;
+            const imgToken = linkToken.tokens.find((t) => t.type === "image") as Tokens.Image | undefined;
             const textParts = linkToken.text.split(":");
             const name =
               textParts[0]
