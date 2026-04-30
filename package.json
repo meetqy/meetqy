@@ -15,7 +15,8 @@
     "preview:cf": "opennextjs-cloudflare preview",
     "start": "next start",
     "typegen": "wrangler types",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "upgrade:next": "npx @next/codemod@canary upgrade latest"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
@@ -23,6 +24,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.14.0",
+    "marked": "^18.0.2",
     "next": "^15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

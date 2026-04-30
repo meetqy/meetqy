@@ -1,32 +1,56 @@
-.site-links {
+.my-products {
+  max-width: 1280px;
+  margin: 12px auto;
+  padding: 0 1rem;
+}
+
+.my-products h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.my-products ul {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin: 12px auto;
-  max-width: 1280px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.site-btn {
+.my-products li {
+  margin: 0;
+}
+
+.my-products a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   padding: 10px 14px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 10px;
   text-decoration: none;
-  color: #111;
-  background: #fff;
+  color: var(--foreground);
+  background: var(--background);
   font-size: 14px;
   transition: 0.2s ease;
 }
 
-.site-btn:hover {
-  border-color: #bbb;
+.my-products a:hover {
+  border-color: var(--ring);
   transform: translateY(-1px);
+  background: var(--accent);
+  color: var(--accent-foreground);
 }
 
-.site-btn img {
+.my-products a img {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+  margin-right: 4px;
+}
+
+.my-products a strong {
+  font-weight: 600;
 }
