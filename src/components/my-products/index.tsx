@@ -5,7 +5,7 @@ export default async function MyProducts() {
   const products: { name: string; href: string; icon: string; desc: string }[] = [];
 
   try {
-    const res = await fetch("https://raw.githubusercontent.com/meetqy/meetqy/refs/heads/main/README.md", { next: { revalidate: 3600 } });
+    const res = await fetch(`https://raw.githubusercontent.com/meetqy/meetqy/refs/heads/main/README.md?t=${Date.now()}`, { next: { revalidate: 3600 } });
     const content = await res.text();
     const tokens = marked.lexer(content);
 
@@ -24,9 +24,22 @@ export default async function MyProducts() {
         const iconMatch = iconCell.text.match(/src="([^"]+)"/);
         const icon = iconMatch ? iconMatch[1] : "";
 
-        // Extract name and href from the second cell
-        const nameTokens = marked.lexer(nameCell.text);
-        const linkToken = nameTokens.find((t) => t.type === "link") as Tokens.Link | undefined;
+        // The cell content might be wrapped in a paragraph by the lexer
+        const cellTokens = marked.lexer(nameCell.text);
+
+        // Helper to find link token recursively in case it's nested
+        const findLink = (tks: any[]): Tokens.Link | undefined => {
+          for (const t of tks) {
+            if (t.type === "link") return t;
+            if (t.tokens) {
+              const found = findLink(t.tokens);
+              if (found) return found;
+            }
+          }
+          return undefined;
+        };
+
+        const linkToken = findLink(cellTokens);
 
         if (linkToken) {
           const strongToken = linkToken.tokens.find((t) => t.type === "strong") as Tokens.Strong | undefined;
