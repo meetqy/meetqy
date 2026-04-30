@@ -1,23 +1,11 @@
 .my-products {
-  max-width: 1280px;
-  margin: 12px auto;
-  padding: 0 1rem;
-}
-
-.my-products h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--foreground);
-}
-
-.my-products ul {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 12px auto;
+  max-width: 1280px;
 }
 
 .my-products li {
