@@ -33,4 +33,9 @@
     <img src="https://binderpage.com/favicon.ico" alt="BinderPage.com">
     <span>Design and organize your card binders</span>
   </a>
+
+  <a href="https://amptomw.com" class="site-btn" target="_blank">
+    <img src="https://amptomw.com/favicon.ico" alt="amptomw.com">
+    <span>Amps to Watts Calculator</span>
+  </a>
 </div>
