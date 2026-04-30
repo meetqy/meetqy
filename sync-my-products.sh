@@ -20,9 +20,6 @@ echo "📂 Source: $SOURCE_DIR"
 echo "🔍 Searching in: $SEARCH_ROOT"
 echo "--------------------------------------------------"
 
-# Count updated projects
-count=0
-
 # Find all directories named 'my-products' under the search root, excluding the source itself
 # Also exclude node_modules to speed up search and avoid false positives
 find "$SEARCH_ROOT" -type d -name "my-products" -not -path "*/node_modules/*" | while read -r target_dir; do
@@ -31,17 +28,48 @@ find "$SEARCH_ROOT" -type d -name "my-products" -not -path "*/node_modules/*" | 
         continue
     fi
 
-    echo "更新项目: $target_dir"
+    echo "--------------------------------------------------"
+    echo "📦 更新项目目录: $target_dir"
     
-    # Copy index.tsx, index.css and utils.ts
+    # 1. 同步文件
     cp "$SOURCE_DIR/index.tsx" "$target_dir/"
     cp "$SOURCE_DIR/index.css" "$target_dir/"
     cp "$SOURCE_DIR/utils.ts" "$target_dir/"
-    
-    echo "✅ 已同步 $target_dir"
-    ((count++))
+    echo "✅ 文件同步完成"
+
+    # 2. 查找项目根目录并检查依赖
+    project_root="$target_dir"
+    while [[ "$project_root" != "$SEARCH_ROOT" && ! -f "$project_root/package.json" ]]; do
+        project_root=$(dirname "$project_root")
+    done
+
+    if [ -f "$project_root/package.json" ]; then
+        echo "🏠 项目根目录: $project_root"
+        
+        # 检查是否安装了 marked
+        if ! grep -q "\"marked\":" "$project_root/package.json"; then
+            echo "📥 正在安装 marked 依赖..."
+            (cd "$project_root" && pnpm add marked)
+            echo "✅ marked 安装完成"
+        else
+            echo "✅ marked 已经安装"
+        fi
+
+        # 3. Git 提交并推送
+        if [ -d "$project_root/.git" ]; then
+            echo "🌿 检测到 Git 仓库，正在提交更改..."
+            (cd "$project_root" && \
+             git add . && \
+             git commit -m "chore: sync my-products component and update readme format" && \
+             git push)
+            echo "🚀 Git 提交并推送完成"
+        else
+            echo "⚠️ 未检测到 Git 仓库，跳过提交"
+        fi
+    else
+        echo "⚠️ 未找到 package.json，跳过依赖检查和 Git 操作"
+    fi
 done
 
 echo "--------------------------------------------------"
-echo "✨ 同步完成！"
-echo "💡 提示: 请确保目标项目已安装 'marked' 依赖 (pnpm add marked)"
+echo "✨ 所有项目同步处理完成！"
