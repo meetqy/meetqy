@@ -56,10 +56,10 @@ export function FixedLeftAd() {
 
   return (
     <iframe
-      ref={iframeRef}
       className="fixed left-0 top-14 z-100 hidden xl:block border-0 h-full"
-      style={{ width: "160px" }}
+      ref={iframeRef}
       sandbox="allow-scripts allow-same-origin"
+      style={{ width: "160px" }}
       title="Advertisement"
     />
   );

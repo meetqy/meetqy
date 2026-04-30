@@ -47,5 +47,13 @@ export function AdUnit({ atKey, format, height, width }: AdUnitProps) {
     doc.close();
   }, [atKey, format, height, width]);
 
-  return <iframe ref={iframeRef} className="border-0" style={{ width: `${width}px`, height: `${height}px` }} sandbox="allow-scripts allow-same-origin" title="Advertisement" />;
+  return (
+    <iframe
+      className="border-0"
+      ref={iframeRef}
+      sandbox="allow-scripts allow-same-origin"
+      style={{ width: `${width}px`, height: `${height}px` }}
+      title="Advertisement"
+    />
+  );
 }
