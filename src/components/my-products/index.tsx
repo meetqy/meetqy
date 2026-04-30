@@ -1,17 +1,104 @@
-import { marked } from "marked";
+import { marked, type Tokens } from "marked";
 import "./index.css";
 
 export default async function MyProducts() {
-  let htmlContent = "";
+  const products: { name: string; href: string; icon: string; desc: string }[] =
+    [];
+
   try {
-    const res = await fetch(`https://raw.githubusercontent.com/meetqy/meetqy/refs/heads/main/README.md?t=${Date.now()}`, { next: { revalidate: 3600 } });
+    const res = await fetch(
+      "https://raw.githubusercontent.com/meetqy/meetqy/refs/heads/main/README.md",
+      { next: { revalidate: 3600 } },
+    );
     const content = await res.text();
-    htmlContent = await marked.parse(content);
+    const tokens = marked.lexer(content);
+
+    // Find table token
+    const tableToken = tokens.find((t) => t.type === "table") as
+      | Tokens.Table
+      | undefined;
+
+    if (tableToken) {
+      for (const row of tableToken.rows) {
+        const nameCell = row[0];
+        const descCell = row[1];
+
+        if (!nameCell || !descCell) continue;
+
+        // Use marked.lexer on the cell content to extract link and image
+        const cellTokens = marked.lexer(nameCell.text);
+        const linkToken = cellTokens.find((t) => t.type === "link") as
+          | Tokens.Link
+          | undefined;
+
+        if (linkToken) {
+          const imgToken = linkToken.tokens.find((t) => t.type === "image") as
+            | Tokens.Image
+            | undefined;
+          const strongToken = linkToken.tokens.find(
+            (t) => t.type === "strong",
+          ) as Tokens.Strong | undefined;
+
+          products.push({
+            name: strongToken?.text ?? linkToken.text,
+            href: linkToken.href,
+            icon: imgToken?.href ?? "",
+            desc: descCell.text,
+          });
+        }
+      }
+    } else {
+      // Fallback to old list format if table not found
+      const listToken = tokens.find((t) => t.type === "list") as
+        | Tokens.List
+        | undefined;
+      if (listToken) {
+        for (const item of listToken.items) {
+          const cellTokens = marked.lexer(item.text);
+          const linkToken = cellTokens.find((t) => t.type === "link") as
+            | Tokens.Link
+            | undefined;
+          if (linkToken) {
+            const imgToken = linkToken.tokens.find((t) => t.type === "image") as
+              | Tokens.Image
+              | undefined;
+            const textParts = linkToken.text.split(":");
+            const name =
+              textParts[0]
+                ?.replace(/\[!\[.*\]\(.*\)\s*\*\*/, "")
+                .replace(/\*\*$/, "")
+                .trim() ?? "";
+            const desc = textParts[1]?.trim() ?? "";
+
+            products.push({
+              name: name,
+              href: linkToken.href,
+              icon: imgToken?.href ?? "",
+              desc: desc,
+            });
+          }
+        }
+      }
+    }
   } catch (err) {
     console.error("Failed to fetch products:", err);
   }
 
-  if (!htmlContent) return null;
+  if (products.length === 0) return null;
 
-  return <div className="my-products" dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+  return (
+    <div className="my-products">
+      <h1>My Products</h1>
+      <ul>
+        {products.map((product) => (
+          <li key={product.href}>
+            <a href={product.href} rel="noreferrer" target="_blank">
+              {product.icon && <img alt={product.name} src={product.icon} />}
+              <strong>{product.name}</strong>: {product.desc}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
