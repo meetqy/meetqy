@@ -11,3 +11,4 @@
 | <img src="https://binderpage.com/favicon.ico" width="24" height="24" alt="BinderPage.com">         | [**Binder Page**](https://binderpage.com)          | Design and organize your card binders     |
 | <img src="https://amptomw.com/favicon.ico" width="24" height="24" alt="amptomw.com">               | [**Amp To Mw**](https://amptomw.com)               | Amps to Watts Calculator                  |
 | <img src="https://changesvgcolor.com/favicon.ico" width="24" height="24" alt="changesvgcolor.com"> | [**Change SVG Color**](https://changesvgcolor.com) | Change SVG Color Online                   |
+| <img src="https://biassort.com/favicon.ico" width="24" height="24" alt="biassort.com">             | [**Biassort**](https://biassort.com)               | Create Your Bias Sorter                   |
