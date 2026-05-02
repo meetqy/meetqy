@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function FixedLeftAd() {
+export function NativeBanner1_4() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isPC, setIsPC] = useState<boolean | null>(null);
 
@@ -54,13 +54,5 @@ export function FixedLeftAd() {
 
   if (!isPC) return null;
 
-  return (
-    <iframe
-      className="fixed left-0 top-14 z-100 hidden xl:block border-0 h-full"
-      ref={iframeRef}
-      sandbox="allow-scripts allow-same-origin"
-      style={{ width: "160px" }}
-      title="Advertisement"
-    />
-  );
+  return <iframe className="fixed left-0 top-14 z-100 hidden xl:block border-0 h-full" ref={iframeRef} sandbox="allow-scripts allow-same-origin" style={{ width: "160px" }} title="Advertisement" />;
 }
