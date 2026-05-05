@@ -32,5 +32,5 @@ export function NativeBanner4_1() {
     doc.close();
   }, []);
 
-  return <iframe ref={iframeRef} style={{ width: "100%", border: 0, display: "block" }} sandbox="allow-scripts allow-same-origin" title="Advertisement" />;
+  return <iframe ref={iframeRef} style={{ height: 240, width: "100%", maxWidth: 1280, margin: "auto", border: 0, display: "block" }} sandbox="allow-scripts allow-same-origin" title="Advertisement" />;
 }
