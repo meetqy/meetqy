@@ -1,19 +1,22 @@
 ## My Products
 
-| Icon                                                                                               | Name                                                                                         | Description                               |
-| :------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------- | :---------------------------------------- |
-| <img src="https://anicolors.com/favicon.ico" width="24" height="24" alt="AniColors">               | [**AniColors**](https://anicolors.com) 停止维护                                              | Discover and Create Anime & Game Colors   |
-| <img src="https://zcoloring.com/favicon.ico" width="24" height="24" alt="ZColoring">               | [**ZColoring**](https://zcoloring.com) 被 Google 惩罚，最高单月广告 $600                     | Free AI Coloring Page Generator           |
-| <img src="https://ipalettes.com/favicon.ico" width="24" height="24" alt="IPalettes">               | [**IPalettes**](https://ipalettes.com) 服务器到期，忘记备份数据，数据掉了，停止维护          | Free AI Color Palette Generator           |
-| <img src="https://topsters.co/favicon.ico" width="24" height="24" alt="Topsters">                  | [**Topsters**](https://topsters.co) pv 5k/m 提升中                                           | Create and export your top albums collage |
-| <img src="https://pindou.org/favicon.ico" width="24" height="24" alt="Pindou">                     | [**Pindou**](https://pindou.org) 拼豆关键词，同时运营公众号，目前 6000 粉丝，单篇最高访问 7w | A Hub for Perler Bead Creators            |
-| <img src="https://shipchart.org/favicon.ico" width="24" height="24" alt="ShipChart">               | [**ShipChart**](https://shipchart.org) pv 4k/m                                               | Relationship Shipping Chart Maker         |
-| <img src="https://binderpage.com/favicon.ico" width="24" height="24" alt="BinderPage.com">         | [**Binder Page**](https://binderpage.com) 目前未维护，可以访问                               | Design and organize your card binders     |
-| <img src="https://amptomw.com/favicon.ico" width="24" height="24" alt="amptomw.com">               | [**Amp To Mw**](https://amptomw.com) demo                                                    | Amps to Watts Calculator                  |
-| <img src="https://changesvgcolor.com/favicon.ico" width="24" height="24" alt="changesvgcolor.com"> | [**Change SVG Color**](https://changesvgcolor.com) demo                                      | Change SVG Color Online                   |
-| <img src="https://biassort.com/favicon.ico" width="24" height="24" alt="biassort.com">             | [**Biassort**](https://biassort.com) 关键词 "bias sorter" 排名第一，月 18k/m 提升中          | Create Your Bias Sorter                   |
-| <img src="https://alignmentchart.org/favicon.ico" width="24" height="24" alt="alignmentchart.org"> | [**Alignment Chart**](https://alignmentchart.org) 重构了，关键词掉了                         | Free Alignment Chart Generator            |
-| <img src="https://timetodecimal.org/favicon.ico" width="24" height="24" alt="timetodecimal.org">   | [**Time to Decimal**](https://timetodecimal.org) demo                                        | Free Time to Decimal Calculator           |
-| <img src="https://tagsextractor.org/favicon.ico" width="24" height="24" alt="tagsextractor.org">   | [**Tag Extractor**](https://tagsextractor.org) demo                                          | Free Youtube Tag Extractor                |
-| <img src="https://headshot.cv/favicon.ico" width="24" height="24" alt="headshot.cv">               | [**headshot.cv**](https://headshot.cv) 停止维护                                              | AI Headshot and ID Photo Generator        |
-| <img src="https://inset.im/favicon.ico" width="24" height="24" alt="inset.im">                     | [**inset.im**](https://inset.im)                                                             | S3 Web Browser for Organizing Assets      |
+| Status | Icon | Name | Description | Notes |
+| :----: | :--- | :--- | :---------- | :---- |
+| ✅ | <img src="https://pindou.org/favicon.ico" width="24" height="24" alt="Pindou"> | [**Pindou**](https://pindou.org) | A Hub for Perler Bead Creators | 拼豆关键词，同时运营公众号，目前 6000 粉丝，单篇最高访问 7w |
+| ✅ | <img src="https://biassort.com/favicon.ico" width="24" height="24" alt="biassort.com"> | [**Biassort**](https://biassort.com) | Create Your Bias Sorter | 关键词 "bias sorter" 排名第一，月 18k/m 提升中 |
+| ✅ | <img src="https://topsters.co/favicon.ico" width="24" height="24" alt="Topsters"> | [**Topsters**](https://topsters.co) | Create and export your top albums collage | pv 5k/m 提升中 |
+| ✅ | <img src="https://shipchart.org/favicon.ico" width="24" height="24" alt="ShipChart"> | [**ShipChart**](https://shipchart.org) | Relationship Shipping Chart Maker | pv 4k/m |
+| ✅ | <img src="https://zcoloring.com/favicon.ico" width="24" height="24" alt="ZColoring"> | [**ZColoring**](https://zcoloring.com) | Free AI Coloring Page Generator | 被 Google 惩罚，最高单月广告 $600 |
+| ✅ | <img src="https://alignmentchart.org/favicon.ico" width="24" height="24" alt="alignmentchart.org"> | [**Alignment Chart**](https://alignmentchart.org) | Free Alignment Chart Generator | 重构了，关键词掉了 |
+| ✅ | <img src="https://binderpage.com/favicon.ico" width="24" height="24" alt="BinderPage.com"> | [**Binder Page**](https://binderpage.com) | Design and organize your card binders | 目前未维护，可以访问 |
+| ✅ | <img src="https://inset.im/favicon.ico" width="24" height="24" alt="inset.im"> | [**inset.im**](https://inset.im) | S3 Web Browser for Organizing Assets | — |
+| ✅ | <img src="https://amptomw.com/favicon.ico" width="24" height="24" alt="amptomw.com"> | [**Amp To Mw**](https://amptomw.com) | Amps to Watts Calculator | demo |
+| ✅ | <img src="https://changesvgcolor.com/favicon.ico" width="24" height="24" alt="changesvgcolor.com"> | [**Change SVG Color**](https://changesvgcolor.com) | Change SVG Color Online | demo |
+| ✅ | <img src="https://timetodecimal.org/favicon.ico" width="24" height="24" alt="timetodecimal.org"> | [**Time to Decimal**](https://timetodecimal.org) | Free Time to Decimal Calculator | demo |
+| ✅ | <img src="https://tagsextractor.org/favicon.ico" width="24" height="24" alt="tagsextractor.org"> | [**Tag Extractor**](https://tagsextractor.org) | Free Youtube Tag Extractor | demo |
+| ⛔ | <img src="https://anicolors.com/favicon.ico" width="24" height="24" alt="AniColors"> | [**AniColors**](https://anicolors.com) | Discover and Create Anime & Game Colors | 停止维护 |
+| ⛔ | <img src="https://ipalettes.com/favicon.ico" width="24" height="24" alt="IPalettes"> | [**IPalettes**](https://ipalettes.com) | Free AI Color Palette Generator | 停止维护，服务器到期，忘记备份数据，数据掉了 |
+| ⛔ | <img src="https://headshot.cv/favicon.ico" width="24" height="24" alt="headshot.cv"> | [**headshot.cv**](https://headshot.cv) | AI Headshot and ID Photo Generator | 停止维护 |
+| ⛔ | <img src="https://aspoem.com/favicon.ico" width="24" height="24" alt="aspoem.com"> | [**AsPoem**](https://aspoem.com) |  开源的现代化诗词网站 | 暂时停止维护，服务器到期，数据没导出来 |
+
+> ✅ 运行中 · ⛔ 已停止维护
