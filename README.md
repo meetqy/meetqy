@@ -10,10 +10,10 @@
 | ✅ | <img src="https://alignmentchart.org/favicon.ico" width="24" height="24" alt="alignmentchart.org"> | [**Alignment Chart**](https://alignmentchart.org) | Free Alignment Chart Generator | 重构了，关键词掉了 |
 | ✅ | <img src="https://binderpage.com/favicon.ico" width="24" height="24" alt="BinderPage.com"> | [**Binder Page**](https://binderpage.com) | Design and organize your card binders | 目前未维护，可以访问 |
 | ✅ | <img src="https://inset.im/favicon.ico" width="24" height="24" alt="inset.im"> | [**inset.im**](https://inset.im) | S3 Web Browser for Organizing Assets | — |
-| ✅ | <img src="https://amptomw.com/favicon.ico" width="24" height="24" alt="amptomw.com"> | [**Amp To Mw**](https://amptomw.com) | Amps to Watts Calculator | demo |
-| ✅ | <img src="https://changesvgcolor.com/favicon.ico" width="24" height="24" alt="changesvgcolor.com"> | [**Change SVG Color**](https://changesvgcolor.com) | Change SVG Color Online | demo |
-| ✅ | <img src="https://timetodecimal.org/favicon.ico" width="24" height="24" alt="timetodecimal.org"> | [**Time to Decimal**](https://timetodecimal.org) | Free Time to Decimal Calculator | demo |
-| ✅ | <img src="https://tagsextractor.org/favicon.ico" width="24" height="24" alt="tagsextractor.org"> | [**Tag Extractor**](https://tagsextractor.org) | Free Youtube Tag Extractor | demo |
+| ✅ | <img src="https://amptomw.com/favicon.ico" width="24" height="24" alt="amptomw.com"> | [**Amp To Mw**](https://amptomw.com) | Amps to Watts Calculator | seo demo |
+| ✅ | <img src="https://changesvgcolor.com/favicon.ico" width="24" height="24" alt="changesvgcolor.com"> | [**Change SVG Color**](https://changesvgcolor.com) | Change SVG Color Online | seo demo |
+| ✅ | <img src="https://timetodecimal.org/favicon.ico" width="24" height="24" alt="timetodecimal.org"> | [**Time to Decimal**](https://timetodecimal.org) | Free Time to Decimal Calculator | seo demo |
+| ✅ | <img src="https://tagsextractor.org/favicon.ico" width="24" height="24" alt="tagsextractor.org"> | [**Tag Extractor**](https://tagsextractor.org) | Free Youtube Tag Extractor | seo demo |
 | ⛔ | <img src="https://anicolors.com/favicon.ico" width="24" height="24" alt="AniColors"> | [**AniColors**](https://anicolors.com) | Discover and Create Anime & Game Colors | 停止维护 |
 | ⛔ | <img src="https://ipalettes.com/favicon.ico" width="24" height="24" alt="IPalettes"> | [**IPalettes**](https://ipalettes.com) | Free AI Color Palette Generator | 停止维护，服务器到期，忘记备份数据，数据掉了 |
 | ⛔ | <img src="https://headshot.cv/favicon.ico" width="24" height="24" alt="headshot.cv"> | [**headshot.cv**](https://headshot.cv) | AI Headshot and ID Photo Generator | 停止维护 |
