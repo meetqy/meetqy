@@ -16,7 +16,7 @@
 |   ⛔   | <img src="https://anicolors.com/favicon.ico" width="24" height="24" alt="AniColors">               | [**AniColors**](https://anicolors.com)             | Discover and Create Anime & Game Colors   | 停止维护                                                    |
 |   ⛔   | <img src="https://ipalettes.com/favicon.ico" width="24" height="24" alt="IPalettes">               | [**IPalettes**](https://ipalettes.com)             | Free AI Color Palette Generator           | 停止维护，服务器到期，忘记备份数据，数据掉了                |
 |   ⛔   | <img src="https://headshot.cv/favicon.ico" width="24" height="24" alt="headshot.cv">               | [**headshot.cv**](https://headshot.cv)             | AI Headshot and ID Photo Generator        | 停止维护                                                    |
-|   ⛔   | <img src="https://aspoem.com/favicon.ico" width="24" height="24" alt="aspoem.com">                 | [**AsPoem**](https://aspoem.com)                   | 开源的现代化诗词网站                      | 暂时停止维护，服务器到期，数据没导出来                      |
+|   ⛔   | <img src="https://aspoem.com/favicon.ico" width="24" height="24" alt="aspoem.com">                 | [**AsPoem**](https://aspoem.com)                   | 开源的现代化诗词网站                      | 暂时停止维护，服务器到期，数据没导出来，靠社媒上线首月 100k                      |
 |   ✅   | <img src="https://binderpage.com/favicon.ico" width="24" height="24" alt="BinderPage.com">         | [**Binder Page**](https://binderpage.com)          | Design and organize your card binders     | 停止维护，SEO demo                                          |
 
 > ✅ 运行中 · ⛔ 已停止维护
